@@ -4,8 +4,8 @@
 \usepackage{mathtools}
 \usepackage{hyperref}
 
-\usepackage[backend=biber,style=numeric]{biblatex}
-\bibliography{../AGI-book}
+% \usepackage[backend=biber,style=numeric]{biblatex}
+% \bibliography{../AGI-book}
 % \renewcommand*{\bibfont}{\footnotesize}
 
 \usepackage{graphicx} % Allows including images
@@ -15,7 +15,7 @@
 \usepackage{verbatim} % for comments
 % \usepackage{newtxtext,newtxmath}	% Times New Roman font
 
-\numberwithin{equation}{subsection}
+% \numberwithin{equation}{subsection}
 
 \newcommand{\underdash}[1]{%
 	\tikz[baseline=(toUnderline.base)]{
@@ -54,7 +54,48 @@
 % 多谢 支持 \smiley
 
 \setcounter{section}{-1}
-\section{Background}
+\section{Introduction}
+
+The ``standard model'' is a way of thinking, that may help us better understand the general theory of AGI systems.
+
+The essence of the standard model is just to identify a \textbf{Working Memory} or ``state'' of the AGI system.
+
+\section{Reinforcement learning}
+
+The simplest form of a \textbf{dynamical system}:
+
+When we add an ``action'' or ``control'' variable to it, it becomes the simplest \textbf{control system}:
+
+which is the setting for Dynamic Programming or Reinforcement Learning.
+
+\section{Standard model}
+
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.9]{AGI-standard-model.png}}}
+\end{equation}
+
+\section{Neural Turing Machine and BERT}
+
+The \textbf{attention mechanism} was first proposed in the ``\textbf{Neural Turing Machine}'' paper by Graves et al.
+
+\section{Relation to the biological brain}
+
+The prefrontal cortex maintains a number of ``thoughts'' with sub-populations or, perhaps, with \textbf{micro-columns}.  These activated sub-populations are in competition with each other, through \textbf{lateral inhibition}.  The thought(s) that win are the thoughts we retain -- they ``make sense''.
+
+\section{Abductive reasoning}
+
+Abductive reasoning is basically just \textbf{bidirectional} inference.
+
+This harks back to the ART (Adaptive Resonance Theory) proposed by Grossberg and Carpenter beginning in the 1980s.
+
+\section{Dealing with assumptions}
+
+An assumption is a $\lambda$-term.  It maps a \textbf{proof witness} to a new proposition.
+
+For example, ``If I play move $x$ now, I will checkmate in 3 moves".
+
+
+
 
 
 
