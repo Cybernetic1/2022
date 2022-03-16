@@ -60,6 +60,8 @@ The ``standard model'' is a way of thinking, that may help us better understand 
 
 The essence of the standard model is just to identify a \textbf{Working Memory} or ``state'' of the AGI system.
 
+One benefit of our theory is that it relates Transformers / BERT / GPT to AGI systems.  These language models are phenomenally intelligent, yet many people criticize them as not ``truly'' intelligent.  The standard model suggests that they are indeed linked to AGI.  There are other benefits.
+
 \section{Reinforcement learning}
 
 The simplest form of a \textbf{dynamical system}:
@@ -86,17 +88,28 @@ The prefrontal cortex maintains a number of ``thoughts'' with sub-populations or
 
 Abductive reasoning is basically just \textbf{bidirectional} inference.
 
-This harks back to the ART (Adaptive Resonance Theory) proposed by Grossberg and Carpenter beginning in the 1980s.
+When a system has both forward and backward connections, it forms a loop and its dynamics is likely to produce ``resonance''.  This harks back to the ART (Adaptive Resonance Theory) proposed by Grossberg and Carpenter beginning in the 1980s.
+
+Such resonance behavior can be viewed as the system seeking to minimize an energy, ie, trying to find the ``best explanation'' to a set of facts.  
 
 \section{Dealing with assumptions}
 
-An assumption is a $\lambda$-term.  It maps a \textbf{proof witness} to a new proposition.
+Example of an assumption:  ``If I play move $x$ now, I will checkmate in 3 moves".
 
-For example, ``If I play move $x$ now, I will checkmate in 3 moves".
+Suppose $M, N$ are proofs of $M: \phi \rightarrow \psi$ and $N: \phi$.  Then the proof of $\psi$ would be the application of $M$ to $N$, denoted as $@(M, N)$ or simply $M N$.
 
+The assumption rule (Ax):
+\begin{equation}
+\Gamma, \phi \vdash \phi \qquad (\mbox{Ax})
+\end{equation}
+for example can be written as:
+\begin{equation}
+x : \phi, \; y : \psi \vdash x : \phi \qquad (\mbox{Ax})
+\end{equation}
+which is why we say that an assumption is a \textbf{$\lambda$-variable}.  
 
+\textbf{Discharging} an assumption (ie, using the $\rightarrow$I rule) results in a $\lambda$-term.
 
-
-
+An AGI needs the ability to place an implication $\phi \rightarrow \psi$ into working memory, and to prove it using the ($\rightarrow$ I) rule, ie, making an assumption.
 
 \end{document}
