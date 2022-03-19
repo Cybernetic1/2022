@@ -12,6 +12,7 @@
 \usepackage{tikz-cd}
 \usepackage{tikz}
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
+\usepackage{bm}
 \usepackage{verbatim} % for comments
 % \usepackage{newtxtext,newtxmath}	% Times New Roman font
 
@@ -23,6 +24,9 @@
 		\draw[dashed] ([yshift=-0pt]toUnderline.south west) -- ([yshift=-0pt]toUnderline.south east);
 	}%
 }%
+
+\newcommand{\bO}[0]{$\pmb{\bm{\Circle}}$}
+\newcommand{\bX}[0]{$\pmb{\bm{\times}}$}
 
 \DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
 \DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
@@ -111,5 +115,49 @@ which is why we say that an assumption is a \textbf{$\lambda$-variable}.
 \textbf{Discharging} an assumption (ie, using the $\rightarrow$I rule) results in a $\lambda$-term.
 
 An AGI needs the ability to place an implication $\phi \rightarrow \psi$ into working memory, and to prove it using the ($\rightarrow$ I) rule, ie, by making an assumption.
+
+\subsection{Tic Tac Toe example}
+
+Assume the current board is
+\scalebox{0.5}{
+\begin{tabular}{c|c|c}
+	    &     & \bO \\ \hline
+	\bO & \bX &     \\ \hline
+	\bX &     & 
+\end{tabular}} and it's \bX's turn to play.
+
+\bX \ can do the ``double fork'' by playing
+\scalebox{0.5}{
+	\begin{tabular}{c|c|c}
+		&     & \bO \\ \hline
+		\bO & \bX &     \\ \hline
+		\bX &     & {\color{red}\bX}
+\end{tabular}}.
+
+But how can an AGI know (or prove) this?
+
+If the current board is 
+\scalebox{0.5}{
+	\begin{tabular}{c|c|c}
+		&     & \bO \\ \hline
+		\bO & \bX &     \\ \hline
+		\bX &     & \bX
+\end{tabular}}  then a double fork exists.  We need a predicate to detect double forks.
+
+We need to reason that even if \ \bO \ plays the ``blocking'' move
+\scalebox{0.5}{
+\begin{tabular}{c|c|c}
+	{\color{red}\bO} &     & \bO \\ \hline
+	\bO & \bX &     \\ \hline
+	\bX &     & \bX
+\end{tabular}}  , \bX \ can still win.
+
+We can easily express the conditions for \bX-can-win, but the difficult part is to make the assumption in {\color{red}red}, in other words:
+\begin{equation}
+\mbox{{\color{red}red-move}} \rightarrow \mbox{\bX-can-win}
+\end{equation}
+The difficulty lies in that the LHS is \textbf{not true} under the current facts.  This conditional statement must be proven by, first, assuming the LHS, and then deriving the RHS.  Then the assumption is \textbf{discharged} and the conditional statement is proven, via the ($\rightarrow$ I) rule.
+
+In the old days, in classical AI, assumptions are handled with \textbf{Truth Maintenance Systems} that keep track of inference traces symbolically.  These systems can get quite complicated with the need to track multiple assumptions.  For example, when we plan a bank robbery, we need to consider many possible forking scenarios.  
 
 \end{document}
