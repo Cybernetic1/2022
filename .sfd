@@ -1,0 +1,125 @@
+SplineFontDB: 3.0
+FontName: font310
+FullName: font310
+FamilyName: SVGFont 1
+Weight: Regular
+Copyright: 
+Version: 
+ItalicAngle: 0
+UnderlinePosition: 0
+UnderlineWidth: 0
+Ascent: 819
+Descent: 205
+InvalidEm: 0
+LayerCount: 2
+Layer: 0 0 "Back" 1
+Layer: 1 0 "Fore" 0
+XUID: [1021 150 823598782 1884965]
+OS2Version: 0
+OS2_WeightWidthSlopeOnly: 0
+OS2_UseTypoMetrics: 0
+CreationTime: 1647624745
+ModificationTime: 1647626329
+PfmFamily: 17
+TTFWeight: 400
+TTFWidth: 5
+LineGap: 92
+VLineGap: 92
+OS2TypoAscent: 0
+OS2TypoAOffset: 1
+OS2TypoDescent: 0
+OS2TypoDOffset: 1
+OS2TypoLinegap: 92
+OS2WinAscent: 0
+OS2WinAOffset: 1
+OS2WinDescent: 0
+OS2WinDOffset: 1
+HheadAscent: 0
+HheadAOffset: 1
+HheadDescent: 0
+HheadDOffset: 1
+OS2Vendor: 'PfEd'
+Lookup: 258 0 0 "'kern' Horizontal Kerning in Latin lookup 0" { "'kern' Horizontal Kerning in Latin lookup 0 subtable"  } ['kern' ('latn' <'dflt' > ) ]
+MarkAttachClasses: 1
+DEI: 91125
+Encoding: Original
+UnicodeInterp: none
+NameList: AGL For New Fonts
+DisplaySize: -48
+AntiAlias: 1
+FitToEm: 0
+WinInfo: 0 16 4
+BeginPrivate: 0
+EndPrivate
+BeginChars: 12 3
+
+StartChar: uni0000
+Encoding: 0 0 0
+Width: 1024
+Flags: H
+LayerCount: 2
+Fore
+SplineSet
+0 0 m 1
+ 0 1024 l 1
+ 1000 1024 l 1
+ 1000 0 l 1
+ 0 0 l 1
+EndSplineSet
+Validated: 1
+EndChar
+
+StartChar: O
+Encoding: 1 79 1
+Width: 1024
+Flags: H
+LayerCount: 2
+Fore
+SplineSet
+308 638 m 0
+ 260 610 239 574 239 500 c 0
+ 239 426 260 390 308 362 c 0
+ 357 334 373 334 405 334 c 0
+ 437 334 453 334 502 362 c 0
+ 550 390 573 426 573 500 c 0
+ 573 574 550 610 502 638 c 0
+ 453 666 437 666 405 666 c 0
+ 373 666 357 666 308 638 c 0
+284 291 m 0
+ 204 337 163 407 163 500 c 0
+ 163 593 204 663 284 709 c 0
+ 324 732 364 744 405 744 c 0
+ 445 744 485 732 526 709 c 0
+ 606 663 647 593 647 500 c 0
+ 647 407 606 337 526 291 c 0
+ 485 268 445 256 405 256 c 0
+ 364 256 324 268 284 291 c 0
+EndSplineSet
+Validated: 1
+EndChar
+
+StartChar: X
+Encoding: 2 88 2
+Width: 1024
+Flags: H
+LayerCount: 2
+Fore
+SplineSet
+425 488 m 1
+ 615 297 l 1
+ 556 238 l 1
+ 365 429 l 1
+ 175 238 l 1
+ 116 297 l 1
+ 306 488 l 1
+ 116 679 l 1
+ 175 738 l 1
+ 365 547 l 1
+ 557 738 l 1
+ 616 679 l 1
+ 425 488 l 1
+EndSplineSet
+Validated: 1
+EndChar
+EndChars
+EndSplineFont
