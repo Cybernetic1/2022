@@ -11,6 +11,7 @@
 \usepackage{graphicx} % Allows including images
 \usepackage{tikz-cd}
 \usepackage{tikz}
+\usetikzlibrary{shapes}
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
 \usepackage{bm}
 \usepackage{verbatim} % for comments
@@ -68,13 +69,25 @@ One benefit of our theory is that it relates Transformers / BERT / GPT to AGI sy
 
 \section{Reinforcement learning}
 
-The simplest form of a \textbf{dynamical system}:
+This is the simplest form of a \textbf{dynamical system}:
+\begin{equation}
+\begin{tikzpicture}[->]
+\node[rectangle,draw,label=0:{{$\quad =$} ``working memory"}] (C) {state $x$};
+\path (C) edge [out=30,in=150,looseness=4,ultra thick] node [above] {transition function $F$} (C);
+\end{tikzpicture}
+\end{equation}
+When we add an ``action'' or ``control'' variable $u$ to it, it becomes the most basic  \textbf{control system}:
+\begin{equation}
+\begin{tikzpicture}[->]
+\node[rectangle,draw] (C) {$x$};
+\path (C) edge [out=30,in=150,looseness=7,ultra thick] node [above] {$F(x, u)$} (C);
+\end{tikzpicture}
+\end{equation}
+which is the setting for Dynamic Programming or \textbf{Reinforcement Learning}.  The optimal solution for such systems is governed by the \textbf{Hamilton-Jacobi-Bellman equation}.
 
-When we add an ``action'' or ``control'' variable to it, it becomes the simplest \textbf{control system}:
+It is because this setup is so simple, that I am quite confident to call it the standard model.
 
-which is the setting for Dynamic Programming or Reinforcement Learning.
-
-\section{Standard model}
+\section{The standard model in relation to other systems}
 
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.9]{AGI-standard-model.png}}}
@@ -86,7 +99,13 @@ The \textbf{attention mechanism} was first proposed in the ``\textbf{Neural Turi
 
 \section{Relation to the biological brain}
 
-The prefrontal cortex maintains a number of ``thoughts'' with sub-populations or, perhaps, with \textbf{micro-columns}.  These activated sub-populations are in competition with each other, through \textbf{lateral inhibition}.  The thought(s) that win are the thoughts we retain -- they ``make sense''.
+There are two distinct aspects in the brain:
+\begin{itemize}
+	\item \textbf{Short-term} or Working Memory is the \textbf{electric activation} of neuronal populations.
+	\item \textbf{Long-term} memory is stored as \textbf{synaptic strengths}, established by synaptic formation and strengthening.  The transfer from STM to LTM is called \textbf{memory consolidation}.
+\end{itemize}
+
+One theory has it that the prefrontal cortex maintains a number of ``thoughts'' with sub-populations or, perhaps, with \textbf{micro-columns}.  These activated sub-populations are in competition with each other, through \textbf{lateral inhibition}.  The thought(s) that win are the thoughts we retain -- they ``make sense''.
 
 \section{Abductive reasoning}
 
@@ -128,26 +147,26 @@ Assume the current board is
 
 \bX \ can do the ``double fork'' by playing
 \scalebox{0.5}{
-	\begin{tabular}{c|c|c}
+\begin{tabular}{c|c|c}
 		&     & \bO \\ \hline
-		\bO & \bX &     \\ \hline
-		\bX &     & {\color{red}\bX}
+	\bO & \bX &     \\ \hline
+	\bX &     & {\color{red}\bX}
 \end{tabular}}.
 
 But how can an AGI know (or prove) this?
 
 If the current board is 
 \scalebox{0.5}{
-	\begin{tabular}{c|c|c}
+\begin{tabular}{c|c|c}
 		&     & \bO \\ \hline
-		\bO & \bX &     \\ \hline
-		\bX &     & \bX
+	\bO & \bX &     \\ \hline
+	\bX &     & \bX
 \end{tabular}}  then a double fork exists.  We need a predicate to detect double forks.
 
 We need to reason that even if \ \bO \ plays the ``blocking'' move
 \scalebox{0.5}{
 \begin{tabular}{c|c|c}
-	{\color{red}\bO} &     & \bO \\ \hline
+{\color{red}\bO} &     & \bO \\ \hline
 	\bO & \bX &     \\ \hline
 	\bX &     & \bX
 \end{tabular}}  , \bX \ can still win.
