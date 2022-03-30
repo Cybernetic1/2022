@@ -90,12 +90,14 @@ I call this the ``standard model'' because of the extreme simplicity of this set
 
 %\section{The standard model in relation to other systems}
 
-Next we look at how the standard model relates to other important aspects of AGI:
+The following diagram shows how the standard model relates to several other important areas, so we can reap profits from their interactions:
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.9]{AGI-standard-model.png}}}
+\vcenter{\hbox{\includegraphics[scale=0.8]{AGI-standard-model.png}}}
 \end{equation}
 
-\section{Neural Turing Machine and BERT}
+Recently, Yann LeCun's \textbf{Energy-Based Models} offers a way to circumvent the problem of learning probability distributions over actions, when the action space is huge and high-dimensional.
+
+\section{Neural Turing Machines and Transformers}
 
 The \textbf{attention mechanism} was first proposed in the ``\textbf{Neural Turing Machine}'' paper by Graves \textit{et al}.
 
@@ -104,30 +106,62 @@ Recall that a Turing machine is a \textbf{Finite State Machine} augmented with a
 \vcenter{\hbox{\includegraphics[scale=0.9]{Turing-machine.png}}}
 \end{equation}
 
-In Neural Turing Machines, Graves \textit{et al} proposed the attention mechanism for an RNN to read and write from a \textbf{Memory Matrix}, using a content-based addressing method.
+In Neural Turing Machines, Graves \textit{et al} proposed the attention mechanism for an RNN ``Controller'' (playing the role of the Finite State Machine) to read and write from a \textbf{Memory Matrix} (the tape), using a content-based addressing method.
 
-The research done by Olah \textit{et al}, in their paper \textit{A Mathematical Framework for Transformer Circuits}, is very helpful towards understanding Transformers and Self-Attention.  The paper is technically quite challenging, but thanks to the guidance of professor Xiao Da from Beijing I was able to understand the main ideas.  Here I offer some pointers to help others understand the paper, without explaining it in full details.
+The Memory Matrix $M$ consists of $N$ items, each of constant size.  \textit{The discreteness of the address would introduce discontinuities in gradients of the output}, hence we need an \textbf{Attention Vector} to focus on a specific location in the memory matrix $M$.
 
-First, it is helpful to recall this diagram describing Self-Attention (ripped from a blog article on the web):
+The Attention Vector $a$ is calculated via the following formula, familiar to students of the Transformer: 
+\begin{equation}
+\vec{a} = \mathrm{soft} \max_i \{  \mathcal{D}(K, M_i) \}
+\end{equation}
+where $D()$ is a similarity measure between the key $K$ and memory item $M_i$.  The key $K$ is emitted by the Controller as the value that it is looking for.
+
+This then evolved into the \textbf{Self Attention} mechanism used in all Transformers.  Now let us refresh with this diagram illustrating Self-Attention (ripped from a blog article on the web):
+
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.35]{self-attention.png}}}
 \end{equation}
 
-The Self Attention $A$ is held constant.
+The research done by Olah \textit{et al}, in their 2021 paper \textit{\uline{A Mathematical Framework for Transformer Circuits}}, is very helpful towards understanding Transformers and Self-Attention.  The paper is technically quite challenging, but thanks to the guidance of professor Xiao Da from Beijing I was able to understand the main ideas.  Here I offer some pointers to help others understand the paper, without explaining it in full details.
 
-Just as a linear map is defined between two vector spaces:
+The Self Attention $A$ is calculated by matrix operations followed by \textbf{softmax}, and thus is non-linear.  However, when $A$ is held constant, the Transformer becomes a linear operation that can be expressed as \textbf{tensor products}:
+
 \begin{equation}
-F: U \rightarrow V
+\vcenter{\hbox{\includegraphics[scale=0.4]{Transformer-circuit-1.png}}}
 \end{equation}
-one can define a bi-linear map:
+
+\begin{tcolorbox}[breakable, parbox=false, fonttitle=\bfseries, title=Tensor product]
+	
+	Recall that a \textbf{linear} map is defined between two vector spaces:
+	\begin{equation}
+	F: U \rightarrow V .
+	\end{equation}
+	Similarly one can define a \textbf{bi-linear} map:
+	\begin{equation}
+	\Phi : V \times W \rightarrow U
+	\end{equation}
+	that is linear in both its first and second arguments.  The tensor product $\otimes$ is the \textbf{universal} multi-linear map.
+	
+	The tensor product generalizes to the mathematically important \textbf{monoidal categories}.  The latter captures the associativity (and optionally commutativity, for which we have symmetric monoidal categories), but the linearity is abstracted away.
+	
+	Monoidal categories can be depicted by \textbf{String Diagrams}.  There are also \textbf{Neural String Diagrams} that describe the structure of neural networks.  For example, the Transformer layer is \textbf{equivariant} in its inputs.
+
+\end{tcolorbox}
+
+In the Transformer, we can see \textbf{Input Values} flowing through some ``circuits'' defined by matrices to yield the \textbf{Output Values}:
 \begin{equation}
-\Phi : V \times W \rightarrow U
+\vcenter{\hbox{\includegraphics[scale=0.4]{Transformer-circuit-2.png}}}
 \end{equation}
-that is linear in both its first and second arguments.  The tensor product $\otimes$ is the \textbf{universal} bi-linear map.
 
-The tensor product generalizes to the mathematically important \textbf{monoidal categories}.
-
-Eigen-value plots show that ``copy'' maps are ubiquitous in Transformers.  These may be interpreted as universally-quantified ($\forall$) logic rules.
+Some Attention Heads merely perform ``\textbf{copying}'' of a vector from a previous layer to the next.  If we spell this out as a linear equation, $W \vec{x} = \lambda \vec{x}$, where the transformation $W$ merely results in a \textbf{scaling} of the vector $\vec{x}$.  This is just an eigenvector equation.  So if we plot the eigenvalues of the transformation matrices on the complex plane, the ``copy'' maps would have eigenvalues close to positive real numbers.  The results shows that such ``copy'' maps are ubiquitous in Attention Heads (here 10 out of 12 maps are positive):
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.47]{eigenvalue-plot-of-Attention-Heads.png}}}
+\end{equation}
+Such Attention Heads may be interpreted as \textbf{universally-quantified} ($\forall$) logic rules.  For example when we say ``all men are mortal'':
+\begin{equation}
+\forall x. \; Human(x) \Rightarrow Mortal(x)
+\end{equation}
+any object instantiated as $x$ (eg. ``Socrates'') would have to be \textbf{copied} from the LHS to the RHS.
 
 \section{Relation to the biological brain}
 
@@ -143,6 +177,8 @@ One theory has it that the prefrontal cortex maintains a number of ``thoughts'' 
 
 Abductive reasoning is basically just \textbf{bidirectional} inference.
 
+Abduction has been relatively neglected in AGI research, which focuses on forward inference.  Recently there is a call to study this important aspect.
+
 When a system has both forward and backward connections, it forms a loop and its dynamics is likely to produce ``resonance''.  This harks back to the ART (Adaptive Resonance Theory) proposed by Grossberg and Carpenter beginning in the 1980s.
 
 Such resonance behavior can be viewed as the system seeking to minimize an energy, ie, trying to find the ``best explanation'' to a set of facts.  
@@ -150,6 +186,52 @@ Such resonance behavior can be viewed as the system seeking to minimize an energ
 \section{Dealing with assumptions}
 
 Example of an assumption:  ``If I play move $x$ now, I will checkmate in 3 moves".
+
+\begin{tcolorbox}[breakable, parbox=false, fonttitle=\bfseries, title=Tic Tac Toe example]
+	
+	Assume the current board is
+	\scalebox{0.5}{
+		\begin{tabular}{c|c|c}
+			&     & \bO \\ \hline
+			\bO & \bX &     \\ \hline
+			\bX &     & 
+	\end{tabular}} and it's \bX's turn to play.
+	
+	\bX \ can do the ``double fork'' by playing
+	\scalebox{0.5}{
+		\begin{tabular}{c|c|c}
+			&     & \bO \\ \hline
+			\bO & \bX &     \\ \hline
+			\bX &     & {\color{red}\bX}
+	\end{tabular}}.
+	
+	But how can an AGI know (or prove) this?
+	
+	If the current board is 
+	\scalebox{0.5}{
+		\begin{tabular}{c|c|c}
+			&     & \bO \\ \hline
+			\bO & \bX &     \\ \hline
+			\bX &     & \bX
+	\end{tabular}}  then a double fork exists.  We need a predicate to detect double forks.
+	
+	We need to reason that even if \ \bO \ plays the ``blocking'' move
+	\scalebox{0.5}{
+		\begin{tabular}{c|c|c}
+			{\color{red}\bO} &     & \bO \\ \hline
+			\bO & \bX &     \\ \hline
+			\bX &     & \bX
+	\end{tabular}}  , \bX \ can still win.
+	
+	We can easily express the conditions for \bX-can-win, but the difficult part is to make the assumption in {\color{red}red}, in other words:
+	\begin{equation}
+	\mbox{{\color{red}red-move}} \rightarrow \mbox{\bX-can-win}
+	\end{equation}
+	The difficulty lies in that the LHS is \textbf{not true} under the current facts.  This conditional statement must be proven by, first, assuming the LHS, and then deriving the RHS.  Then the assumption is \textbf{discharged} and the conditional statement is proven, via the ($\rightarrow$ I) rule.
+	
+\end{tcolorbox}
+
+In the old days, in classical AI, assumptions are handled with \textbf{Truth Maintenance Systems} that keep track of inference traces symbolically.  These systems can get quite complicated with the need to track multiple assumptions.  For example, when we plan a bank robbery, we need to consider many possible forking scenarios.  
 
 Suppose $M, N$ are proofs of $M: \phi \rightarrow \psi$ and $N: \phi$.  Then the proof of $\psi$ would be the application of $M$ to $N$, denoted as $@(M, N)$ or simply $M N$.
 
@@ -166,54 +248,6 @@ which is why we say that an assumption is a \textbf{$\lambda$-variable}.
 \textbf{Discharging} an assumption (ie, using the $\rightarrow$I rule) results in a $\lambda$-term.
 
 An AGI needs the ability to place an implication $\phi \rightarrow \psi$ into working memory, and to prove it using the ($\rightarrow$ I) rule, ie, by making an assumption.
-
-\begin{tcolorbox}[breakable, parbox=false, fonttitle=\bfseries, title=Tic Tac Toe example]
-
-% \subsection{Tic Tac Toe example}
-
-Assume the current board is
-\scalebox{0.5}{
-\begin{tabular}{c|c|c}
-	    &     & \bO \\ \hline
-	\bO & \bX &     \\ \hline
-	\bX &     & 
-\end{tabular}} and it's \bX's turn to play.
-
-\bX \ can do the ``double fork'' by playing
-\scalebox{0.5}{
-\begin{tabular}{c|c|c}
-		&     & \bO \\ \hline
-	\bO & \bX &     \\ \hline
-	\bX &     & {\color{red}\bX}
-\end{tabular}}.
-
-But how can an AGI know (or prove) this?
-
-If the current board is 
-\scalebox{0.5}{
-\begin{tabular}{c|c|c}
-		&     & \bO \\ \hline
-	\bO & \bX &     \\ \hline
-	\bX &     & \bX
-\end{tabular}}  then a double fork exists.  We need a predicate to detect double forks.
-
-We need to reason that even if \ \bO \ plays the ``blocking'' move
-\scalebox{0.5}{
-\begin{tabular}{c|c|c}
-{\color{red}\bO} &     & \bO \\ \hline
-	\bO & \bX &     \\ \hline
-	\bX &     & \bX
-\end{tabular}}  , \bX \ can still win.
-
-We can easily express the conditions for \bX-can-win, but the difficult part is to make the assumption in {\color{red}red}, in other words:
-\begin{equation}
-\mbox{{\color{red}red-move}} \rightarrow \mbox{\bX-can-win}
-\end{equation}
-The difficulty lies in that the LHS is \textbf{not true} under the current facts.  This conditional statement must be proven by, first, assuming the LHS, and then deriving the RHS.  Then the assumption is \textbf{discharged} and the conditional statement is proven, via the ($\rightarrow$ I) rule.
-
-In the old days, in classical AI, assumptions are handled with \textbf{Truth Maintenance Systems} that keep track of inference traces symbolically.  These systems can get quite complicated with the need to track multiple assumptions.  For example, when we plan a bank robbery, we need to consider many possible forking scenarios.  
-
-\end{tcolorbox}
 
 \textbf{Algorithm:}  Put the assumption $A$ in Working Memory.  Make inferences, marking all conclusions with $A \rightarrow *$.  When enough conclusions are obtained, remove the assumption $A$ from Working Memory.
 
