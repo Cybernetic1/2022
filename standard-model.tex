@@ -77,11 +77,11 @@ This is the simplest form of a \textbf{dynamical system}:
 \path (C) edge [out=30,in=150,looseness=4,ultra thick] node [above] {transition function $F$} (C);
 \end{tikzpicture}
 \end{equation}
-When we add an ``action'' or ``control'' variable $u$ to it, it becomes the most basic  \textbf{control system}:
+When we add a ``control'' or ``action'' variable $a$ to it, it becomes the most basic  \textbf{control system}:
 \begin{equation}
 \begin{tikzpicture}[->]
 \node[rectangle,draw] (C) {$x$};
-\path (C) edge [out=30,in=150,looseness=7,ultra thick] node [above] {$F(x, u)$} (C);
+\path (C) edge [out=30,in=150,looseness=7,ultra thick] node [above] {$F(x, a)$} (C);
 \end{tikzpicture}
 \end{equation}
 which is the setting for Dynamic Programming or \textbf{Reinforcement Learning}.  The optimal solution for such systems is governed by the \textbf{Hamilton-Jacobi-Bellman equation}.
@@ -95,11 +95,11 @@ The following diagram shows how the standard model relates to several other impo
 \vcenter{\hbox{\includegraphics[scale=0.8]{AGI-standard-model.png}}}
 \end{equation}
 
-Recently, Yann LeCun's \textbf{Energy-Based Models} offers a way to circumvent the problem of learning probability distributions over actions, when the action space is huge and high-dimensional.
+Recently, Yann LeCun's \textbf{Energy-Based Models} offers a way to circumvent the problem of learning probability distributions over actions, when the action space is hugely high-dimensional.
 
 \section{Neural Turing Machines and Transformers}
 
-The \textbf{attention mechanism} was first proposed in the ``\textbf{Neural Turing Machine}'' paper by Graves \textit{et al}.
+The \textbf{attention mechanism} was first proposed in the ``\textbf{Neural Turing Machine}''  paper by Graves \textit{et al} [2014].
 
 Recall that a Turing machine is a \textbf{Finite State Machine} augmented with a \textbf{Memory Tape}:
 \begin{equation}
@@ -110,7 +110,7 @@ In Neural Turing Machines, Graves \textit{et al} proposed the attention mechanis
 
 The Memory Matrix $M$ consists of $N$ items, each of constant size.  \textit{The discreteness of the address would introduce discontinuities in gradients of the output}, hence we need an \textbf{Attention Vector} to focus on a specific location in the memory matrix $M$.
 
-The Attention Vector $a$ is calculated via the following formula, familiar to students of the Transformer: 
+The Attention Vector $\vec{a}$ is calculated via the following formula, familiar to students of the Transformer: 
 \begin{equation}
 \vec{a} = \mathrm{soft} \max_i \{  \mathcal{D}(K, M_i) \}
 \end{equation}
@@ -127,6 +127,7 @@ The research done by Olah \textit{et al}, in their 2021 paper \textit{\uline{A M
 The Self Attention $A$ is calculated by matrix operations followed by \textbf{softmax}, and thus is non-linear.  However, when $A$ is held constant, the Transformer becomes a linear operation that can be expressed as \textbf{tensor products}:
 
 \begin{equation}
+\label{eqn:circuit1}
 \vcenter{\hbox{\includegraphics[scale=0.4]{Transformer-circuit-1.png}}}
 \end{equation}
 
@@ -148,6 +149,8 @@ The Self Attention $A$ is calculated by matrix operations followed by \textbf{so
 
 \end{tcolorbox}
 
+In equation (\ref{eqn:circuit1}), it is helpful to know the rows and columns of the input, and that the tensor product takes care of them separately.  For example $\mathrm{Id} \otimes W$ means that ....
+
 In the Transformer, we can see \textbf{Input Values} flowing through some ``circuits'' defined by matrices to yield the \textbf{Output Values}:
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.4]{Transformer-circuit-2.png}}}
@@ -157,7 +160,7 @@ Some Attention Heads merely perform ``\textbf{copying}'' of a vector from a prev
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.47]{eigenvalue-plot-of-Attention-Heads.png}}}
 \end{equation}
-Such Attention Heads may be interpreted as \textbf{universally-quantified} ($\forall$) logic rules.  For example when we say ``all men are mortal'':
+Such Attention Heads may be interpreted as \textbf{universally-quantified} ($\forall$) logic formulas.  For example when we say ``all men are mortal'':
 \begin{equation}
 \forall x. \; Human(x) \Rightarrow Mortal(x)
 \end{equation}
@@ -175,13 +178,22 @@ One theory has it that the prefrontal cortex maintains a number of ``thoughts'' 
 
 \section{Abductive reasoning}
 
-Abductive reasoning is basically just \textbf{bidirectional} inference.
+Abduction has been relatively neglected in AGI research, which had focused on forward inference.  Recently there is a call to study this important aspect.
 
-Abduction has been relatively neglected in AGI research, which focuses on forward inference.  Recently there is a call to study this important aspect.
+In logic, abduction means finding the \textbf{explanation} for some known facts.  An explanation $E$ is simply some propositions that imply the known fact $F$, ie, $E \Rightarrow F$.  For example, why is Marilyn Monroe sexy?  That's because she has a pretty face, big boobs, and a big ass.  So, $E_1 \wedge E_2 \wedge .... \Rightarrow \mathrm{Sexy}$.  Those conditions \textbf{imply} she is sexy, and they are the \textbf{explanation} for her sexiness.
 
-When a system has both forward and backward connections, it forms a loop and its dynamics is likely to produce ``resonance''.  This harks back to the ART (Adaptive Resonance Theory) proposed by Grossberg and Carpenter beginning in the 1980s.
+Why is abduction important?  For example, when a waitress says ``The Ham Sandwich left a big tip'', \textit{Ham Sandwich} here refers to the customer who ordered it (an example of metonymy).  The AI knows the plain facts such as that someone ordered a ham sandwich, and then it abduces that the most likely \textbf{interpretation} of the phrase ``Ham Sandwich'' is as the person associated with it.  This is the basis of \textbf{Abductive Interpretation of Natural Language} proposed by Jerry Hobbs:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{Jerry-Hobbs.png}}}
+\end{equation}
+
+So abductive reasoning is basically just \textbf{bidirectional} inference.
+
+When a system has both forward and backward connections, it forms a loop and its dynamics is likely to produce ``\textbf{resonance}''.  This harks back to the ART (\textbf{Adaptive Resonance Theory}) proposed by Grossberg and Carpenter beginning in the 1980s.
 
 Such resonance behavior can be viewed as the system seeking to minimize an energy, ie, trying to find the ``best explanation'' to a set of facts.  
+
+This is also corroberated by neuroscientific evidence:  areas in the cerebral cortex are replete with both forward- as well as \textbf{back-projections}.
 
 \section{Dealing with assumptions}
 
@@ -245,10 +257,10 @@ x : \phi, \; y : \psi \vdash x : \phi \qquad (\mbox{Ax})
 \end{equation}
 which is why we say that an assumption is a \textbf{$\lambda$-variable}.  
 
-\textbf{Discharging} an assumption (ie, using the $\rightarrow$I rule) results in a $\lambda$-term.
+\textbf{Discharging} an assumption (ie, using the $\rightarrow$I rule) results in a \textbf{$\lambda$-term}.
 
 An AGI needs the ability to place an implication $\phi \rightarrow \psi$ into working memory, and to prove it using the ($\rightarrow$ I) rule, ie, by making an assumption.
 
-\textbf{Algorithm:}  Put the assumption $A$ in Working Memory.  Make inferences, marking all conclusions with $A \rightarrow *$.  When enough conclusions are obtained, remove the assumption $A$ from Working Memory.
+\textbf{Algorithm:}  Put the assumption $A$ in Working Memory.  Make inferences, marking all conclusions with the prefix $A \rightarrow *$.  When enough conclusions are obtained, remove the assumption $A$ from Working Memory.
 
 \end{document}
