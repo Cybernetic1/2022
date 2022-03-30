@@ -15,6 +15,7 @@
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
 \usepackage{bm}
 \usepackage{verbatim} % for comments
+\usepackage[most]{tcolorbox}
 % \usepackage{newtxtext,newtxmath}	% Times New Roman font
 
 % \numberwithin{equation}{subsection}
@@ -43,7 +44,7 @@
 
 \begin{document}
 
-\title{\bfseries\color{blue}{\Huge AGI standard model}\\ --- a proposal}
+\title{\bfseries\color{blue}{\Huge AGI standard model}\\ --- trying to establish a consensus}
 \author{YKY} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 %{
@@ -85,17 +86,48 @@ When we add an ``action'' or ``control'' variable $u$ to it, it becomes the most
 \end{equation}
 which is the setting for Dynamic Programming or \textbf{Reinforcement Learning}.  The optimal solution for such systems is governed by the \textbf{Hamilton-Jacobi-Bellman equation}.
 
-It is because this setup is so simple, that I am quite confident to call it the standard model.
+I call this the ``standard model'' because of the extreme simplicity of this setup, and that I don't know of other alternative models that deviate much from it.
 
-\section{The standard model in relation to other systems}
+%\section{The standard model in relation to other systems}
 
+Next we look at how the standard model relates to other important aspects of AGI:
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.9]{AGI-standard-model.png}}}
 \end{equation}
 
 \section{Neural Turing Machine and BERT}
 
-The \textbf{attention mechanism} was first proposed in the ``\textbf{Neural Turing Machine}'' paper by Graves et al.
+The \textbf{attention mechanism} was first proposed in the ``\textbf{Neural Turing Machine}'' paper by Graves \textit{et al}.
+
+Recall that a Turing machine is a \textbf{Finite State Machine} augmented with a \textbf{Memory Tape}:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.9]{Turing-machine.png}}}
+\end{equation}
+
+In Neural Turing Machines, Graves \textit{et al} proposed the attention mechanism for an RNN to read and write from a \textbf{Memory Matrix}, using a content-based addressing method.
+
+The research done by Olah \textit{et al}, in their paper \textit{A Mathematical Framework for Transformer Circuits}, is very helpful towards understanding Transformers and Self-Attention.  The paper is technically quite challenging, but thanks to the guidance of professor Xiao Da from Beijing I was able to understand the main ideas.  Here I offer some pointers to help others understand the paper, without explaining it in full details.
+
+First, it is helpful to recall this diagram describing Self-Attention (ripped from a blog article on the web):
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.35]{self-attention.png}}}
+\end{equation}
+
+The Self Attention $A$ is held constant.
+
+Just as a linear map is defined between two vector spaces:
+\begin{equation}
+F: U \rightarrow V
+\end{equation}
+one can define a bi-linear map:
+\begin{equation}
+\Phi : V \times W \rightarrow U
+\end{equation}
+that is linear in both its first and second arguments.  The tensor product $\otimes$ is the \textbf{universal} bi-linear map.
+
+The tensor product generalizes to the mathematically important \textbf{monoidal categories}.
+
+Eigen-value plots show that ``copy'' maps are ubiquitous in Transformers.  These may be interpreted as universally-quantified ($\forall$) logic rules.
 
 \section{Relation to the biological brain}
 
@@ -135,7 +167,9 @@ which is why we say that an assumption is a \textbf{$\lambda$-variable}.
 
 An AGI needs the ability to place an implication $\phi \rightarrow \psi$ into working memory, and to prove it using the ($\rightarrow$ I) rule, ie, by making an assumption.
 
-\subsection{Tic Tac Toe example}
+\begin{tcolorbox}[breakable, parbox=false, fonttitle=\bfseries, title=Tic Tac Toe example]
+
+% \subsection{Tic Tac Toe example}
 
 Assume the current board is
 \scalebox{0.5}{
@@ -178,6 +212,8 @@ We can easily express the conditions for \bX-can-win, but the difficult part is 
 The difficulty lies in that the LHS is \textbf{not true} under the current facts.  This conditional statement must be proven by, first, assuming the LHS, and then deriving the RHS.  Then the assumption is \textbf{discharged} and the conditional statement is proven, via the ($\rightarrow$ I) rule.
 
 In the old days, in classical AI, assumptions are handled with \textbf{Truth Maintenance Systems} that keep track of inference traces symbolically.  These systems can get quite complicated with the need to track multiple assumptions.  For example, when we plan a bank robbery, we need to consider many possible forking scenarios.  
+
+\end{tcolorbox}
 
 \textbf{Algorithm:}  Put the assumption $A$ in Working Memory.  Make inferences, marking all conclusions with $A \rightarrow *$.  When enough conclusions are obtained, remove the assumption $A$ from Working Memory.
 
