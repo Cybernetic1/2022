@@ -124,12 +124,22 @@ This then evolved into the \textbf{Self Attention} mechanism used in all Transfo
 
 The research done by Olah \textit{et al}, in their 2021 paper \textit{\uline{A Mathematical Framework for Transformer Circuits}}, is very helpful towards understanding Transformers and Self-Attention.  The paper is technically quite challenging, but thanks to the guidance of professor Xiao Da from Beijing I was able to understand the main ideas.  Here I offer some pointers to help others understand the paper, without explaining it in full details.
 
-The Self Attention $A$ is calculated by matrix operations followed by \textbf{softmax}, and thus is non-linear.  However, when $A$ is held constant, the Transformer becomes a linear operation that can be expressed as \textbf{tensor products}:
+The Self Attention $A$ is calculated by matrix operations followed by \textbf{softmax}, and thus is non-linear.  However, when $A$ is held constant, the Transformer becomes a linear operation that can be expressed as \textbf{tensor products}, for example:
 
 \begin{equation}
 \label{eqn:circuit1}
 \vcenter{\hbox{\includegraphics[scale=0.4]{Transformer-circuit-1.png}}}
 \end{equation}
+
+For example, to understand the equation for a Transformer ``Head'':
+\begin{equation}
+h(x) = (\text{Id} \otimes W_O) \cdot (A \otimes \text{Id}) \cdot (\text{Id} \otimes W_V) \cdot x
+\end{equation}
+it is helpful to know that $x$ is a \textbf{matrix} with dimensions $[n_{\mathrm{context}}, d_{\mathrm{model}}]$, ie, one dimension being the number of tokens and the other dimension representing the token's vector.  When a tensor such as $U \otimes V$ acts on $x$, $U$ acts on the ``position'' dimension of the matrix while $V$ acts on the ``vector'' dimension.  So the above equation can be collapsed to:
+\begin{equation}
+h(x) = (A \otimes W_O W_V) \cdot x .
+\end{equation}
+Thus tensor products are very convenient for expressing such operations.
 
 \begin{tcolorbox}[breakable, parbox=false, fonttitle=\bfseries, title=Tensor product]
 	
@@ -148,8 +158,6 @@ The Self Attention $A$ is calculated by matrix operations followed by \textbf{so
 	Monoidal categories can be depicted by \textbf{String Diagrams}.  There are also \textbf{Neural String Diagrams} that describe the structure of neural networks.  For example, the Transformer layer is \textbf{equivariant} in its inputs.
 
 \end{tcolorbox}
-
-In equation (\ref{eqn:circuit1}), it is helpful to know the rows and columns of the input, and that the tensor product takes care of them separately.  For example $\mathrm{Id} \otimes W$ means that ....
 
 In the Transformer, we can see \textbf{Input Values} flowing through some ``circuits'' defined by matrices to yield the \textbf{Output Values}:
 \begin{equation}
