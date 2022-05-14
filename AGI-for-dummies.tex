@@ -126,8 +126,8 @@ These are ``patterns'' of a \textbf{rewriting system}.  My hypothesis is that th
 \Uparrow & \\
 & \mbox{human}\tikzmark{h}({\color{red}x}) \tikzmark{x1} \nonumber
 \begin{tikzpicture}[overlay,remember picture,distance=1cm]
-\draw[->,red, transform canvas={shift={(-11pt,5pt)}}, out=90,in=270, shorten <=5pt, shorten >=5pt] (x1.north) to (x2.south);
-\draw[->,     transform canvas={shift={(-20pt,5pt)}}, out=90,in=270, shorten <=5pt, shorten >=5pt] (h.north) to (m.south);
+\draw[->,red, transform canvas={shift={(-11pt,5pt)}}, shorten <=3pt, shorten >=3pt] (x1.north) -- (x2.south);
+\draw[->,     transform canvas={shift={(-20pt,5pt)}}, shorten <=3pt, shorten >=3pt] (h.north) -- (m.south);
 \end{tikzpicture}
 \end{eqnarray}
 A more complicated example:
@@ -149,6 +149,7 @@ A more complicated example:
 Notice that the bottom link ${\color{red}y \mbox{ -- } y}$ signifies a requirement of \textbf{pattern matching}: the two ${\color{red}y}$'s must be substituted by the \textbf{same} object, otherwise the pattern does not match and the rule will not be applied.
 
 \subsection{How the Transformer performs rewriting}
+
 
 
 \subsection{Rete algorithm for rules-matching}
