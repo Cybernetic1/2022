@@ -81,38 +81,72 @@ Using the masked-word trick, there is no longer the need to prepare \textbf{anno
 
 \subsection{Transformers -- the most advanced AI component}
 
-The above language models are based on a key component known as \textbf{Transformers}, invented by a research team in Google.
+The above language models are based on a key component known as \textbf{Transformers}, invented by a research team in Google:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=1]{Transformer_next-word-predict.png}}}
+\end{equation}
 
 In principle, we only need a ``fully-connected'' neural network and train it to predict the masked words.  But such a network without \textbf{additional structure} is too inefficient to learn the desired knowledge.  One of the key ideas in machine learning is to give a machine some ``\textbf{bias}'' to make it learn faster.  An example of bias is to ``cut'' some connections in a fully-connected neural network, so that it looks like partitioned into blocks.
 
 The Transformer has an internal structure known as the \textbf{Attention} mechanism.  It looks like this:
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.3]{self-attention.png}}}
+\vcenter{\hbox{\includegraphics[scale=0.9]{self-attention-2.png}}}
 \end{equation}
 
-\subsection{What does the Transformer do?}
-
 This is not widely accepted, but my hypothesis is that \uline{the Transformer performs logic reasoning}.
+
+\subsection{Logic as a form of rewriting}
 
 The following are examples of \textbf{logic rules}:
 
 ``All humans are mortal'':
 \begin{equation}
-\forall x. \; \mbox{human}(x) \Rightarrow \mbox{mortal}(x) \\
+{\color{red}\forall x.} \; \mbox{human}({\color{red}x}) \Rightarrow \mbox{mortal}({\color{red}x}) \\
 \end{equation}
 ``The father's father is the grand-father'':
 \begin{equation}
-\forall x, y, z. \; \mbox{father}(x,y) \wedge \mbox{father}(y,z) \Rightarrow \mbox{grand-father}(x,z) 
+{\color{red}\forall x, y, z.} \; \mbox{father}({\color{red}x,y}) \wedge \mbox{father}({\color{red}y,z}) \Rightarrow \mbox{grand-father}({\color{red}x,z}) 
 \end{equation}
 
 The symbol $\forall$ means ``for all'', $\wedge$ means ``and'', $\Rightarrow$ means ``imply''.
 
 In order for the logic formulas to work, variables such as $x, y, z$ need to be \textbf{copied} from the left-hand-side \textbf{premise} to the right-hand-side \textbf{conclusion}.  For example:
+\vspace{-10pt}
 \begin{eqnarray}
-\mbox{human(Socrates)} & \Rightarrow & \mbox{mortal(Socrates)} \nonumber \\
-\mbox{human(Plato)} & \Rightarrow & \mbox{mortal(Plato)} 
+\mbox{human({\color{red}Socrates})} \tikzmark{s1} & \Rightarrow & \mbox{mortal({\color{red}Socrates})} \tikzmark{s2} \nonumber \\[10pt]
+\mbox{human({\color{red}Plato})} \tikzmark{p1} & \Rightarrow & \mbox{mortal({\color{red}Plato})} \tikzmark{p2}
+\begin{tikzpicture}[overlay,remember picture,distance=1cm]
+\draw[->,red, transform canvas={shift={(-30pt,15pt)}}, out=45,in=135] (s1.center) to (s2.center);
+\draw[->,red, transform canvas={shift={(-25pt,15pt)}}, out=45,in=135] (p1.center) to (p2.center);
+\end{tikzpicture}
 \end{eqnarray}
-These are ``patterns'' of a \textbf{rewriting system}.  My hypothesis is that the Transformer is a kind of rewriting system.
+These are ``patterns'' of a \textbf{rewriting system}.  My hypothesis is that the Transformer is a kind of rewriting system.  If we write the logic $\Rightarrow$ vertically as $\Uparrow$, it will look even more like the Transformer:
+\begin{eqnarray}
+& \mbox{mortal}\tikzmark{m}({\color{red}x}) \tikzmark{x2} \nonumber \\
+\Uparrow & \\
+& \mbox{human}\tikzmark{h}({\color{red}x}) \tikzmark{x1} \nonumber
+\begin{tikzpicture}[overlay,remember picture,distance=1cm]
+\draw[->,red, transform canvas={shift={(-11pt,5pt)}}, out=90,in=270, shorten <=5pt, shorten >=5pt] (x1.north) to (x2.south);
+\draw[->,     transform canvas={shift={(-20pt,5pt)}}, out=90,in=270, shorten <=5pt, shorten >=5pt] (h.north) to (m.south);
+\end{tikzpicture}
+\end{eqnarray}
+A more complicated example:
+\begin{eqnarray}
+& \mbox{grand-\tikzmark{g}father}({\color{red}x\tikzmark{x2}, z\tikzmark{z2}}) \nonumber \\
+\Uparrow & \\
+& \mbox{father}\tikzmark{f1}({\color{red}x\tikzmark{x1}, y\tikzmark{y1}})
+\wedge
+\mbox{father}\tikzmark{f2}({\color{red}y\tikzmark{y2}, z\tikzmark{z1}})
+\nonumber
+\begin{tikzpicture}[overlay,remember picture,distance=1cm]
+\draw[->,red, transform canvas={shift={(-5pt,5pt)}}, out=60,in=270, shorten <=2pt, shorten >=5pt] (x1.north) to (x2.south);
+\draw[->,red, transform canvas={shift={(-5pt,5pt)}}, out=90,in=270, shorten <=2pt, shorten >=5pt] (z1.north) to (z2.south);
+\draw[->, out=90,in=270, shorten <=5pt, shorten >=0pt] (f1.north) +(-25pt,5pt) to (g.south);
+\draw[-, out=90,in=270, shorten <=5pt, shorten >=0pt] (f2.north) +(-25pt,5pt) to (g.south);
+\draw[-,red, transform canvas={shift={(-5pt,0pt)}}, out=-25,in=-155] (y1.south) to (y2.south);
+\end{tikzpicture}
+\end{eqnarray}
+Notice that the bottom link ${\color{red}y \mbox{ -- } y}$ signifies a requirement of \textbf{pattern matching}: the two ${\color{red}y}$'s must be substituted by the \textbf{same} object, otherwise the pattern does not match and the rule will not be applied.
 
 \subsection{How the Transformer performs rewriting}
 
