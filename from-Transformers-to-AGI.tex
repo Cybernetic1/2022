@@ -47,7 +47,7 @@
 
 \begin{document}
 
-\title{\bfseries\color{blue}{\Huge AGI for dummies}}
+\title{\bfseries\color{blue}{\Huge From Transformers to AGI}}
 \author{YKY} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 %{
@@ -58,6 +58,10 @@
 \date{\today} % Date, can be changed to a custom date
 
 \maketitle
+
+\begin{abstract}
+We're just applying ideas from classical logic-based AI to the new perspective of Transformers.
+\end{abstract}
 
 % \vspace*{0.5cm}
 % 多谢 支持 \smiley
@@ -150,7 +154,25 @@ Notice that the bottom link ${\color{red}y \mbox{ -- } y}$ signifies a requireme
 
 \subsection{How the Transformer performs rewriting}
 
+The Transformer's rewriting style is similar to the logical syntax above, but they differ in some details.
 
+First, in the Transformer, each token has an ``axis'' for which it plays the role of the \textbf{Query}.  We can think of each token as one proposition, and each token gives rise to one new proposition along that axis.  So the Transformer layer takes $N$ input propositions and spits out $N$ new propositions:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=1]{Transformer_axis.png}}}
+\end{equation}
+In the logic view, however, we may want to break a proposition into multiple tokens.
+
+Secondly, in the Transformer, the Attention mechanism determines the \textbf{weights} by which the tokens combine, by summing up into a final token vector.  In other words, the new token is a weighted sum of old tokens.  In the logic view, a proposition is represented by multiple tokens, so we may need an alternative Attention mechanism to \textbf{move} tokens around (This ability is already present in the current Transformer).
+
+\subsection{The Transformer as a memory store}
+
+The Transformer uses \textbf{matrix multiplication} to calculate the $Q, K, V$ values from the input.  This involves three matrices which are like \textbf{look-up tables} or memory stores:
+
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=1]{Transformer_memory-store.png}}}
+\end{equation}
+
+In other words, we can view these matrices as storing logic rules implicitly.  The following idea helps explain how these rules are stored....
 
 \subsection{Rete algorithm for rules-matching}
 
