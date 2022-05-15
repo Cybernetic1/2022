@@ -90,7 +90,7 @@ The above language models are based on a key component known as \textbf{Transfor
 \vcenter{\hbox{\includegraphics[scale=1]{Transformer_next-word-predict.png}}}
 \end{equation}
 
-In principle, we only need a ``fully-connected'' neural network and train it to predict the masked words.  But such a network without \textbf{additional structure} is too inefficient to learn the desired knowledge.  One of the key ideas in machine learning is to give a machine some ``\textbf{bias}'' to make it learn faster.  An example of bias is to ``cut'' some connections in a fully-connected neural network, so that it looks like partitioned into blocks.
+In principle, one only needs a ``fully-connected'' neural network and train it to predict the masked words.  But such a network without \textbf{additional structure} is too inefficient to learn the desired knowledge.  One of the key ideas in machine learning is to give a machine some ``\textbf{bias}'' to make it learn faster.  An example of bias is to ``cut'' some connections in a fully-connected neural network, so that it appears as if partitioned into blocks.
 
 The Transformer has an internal structure known as the \textbf{Attention} mechanism.  It looks like this:
 \begin{equation}
@@ -162,14 +162,14 @@ First, in the Transformer, each token has an ``axis'' for which it plays the rol
 \end{equation}
 In the logic view, however, we may want to break a proposition into multiple tokens.
 
-Secondly, in the Transformer, the Attention mechanism determines the \textbf{weights} by which the tokens combine, by summing up into a final token vector.  In other words, the new token is a weighted sum of old tokens.  In the logic view, a proposition is represented by multiple tokens, so we may need an alternative Attention mechanism to \textbf{move} tokens around (This ability is already present in the current Transformer).
+Secondly, in the Transformer, the Attention mechanism determines the \textbf{weights} by which the tokens combine, by summing up into a final token vector.  Because of ``softmax'', the new token is effectively a \textbf{selection} of one token from amongst input tokens.  In the logic view, a proposition is represented by multiple tokens, so we may need an alternative Attention mechanism to \textbf{move} tokens around (This ability is already present in the current Transformer).
 
 \subsection{The Transformer as a memory store}
 
 The Transformer uses \textbf{matrix multiplication} to calculate the $Q, K, V$ values from the input.  This involves three matrices which are like \textbf{look-up tables} or memory stores:
 
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=1]{Transformer_memory-store.png}}}
+\vcenter{\hbox{\includegraphics[scale=0.9]{Transformer_memory-store.png}}}
 \end{equation}
 
 In other words, we can view these matrices as storing logic rules implicitly.  The following idea helps explain how these rules are stored....
