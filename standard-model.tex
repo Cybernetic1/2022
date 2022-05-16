@@ -27,8 +27,8 @@
 	}%
 }%
 
-\newcommand{\bO}[0]{$\pmb{\bm{\Circle}}$}
-\newcommand{\bX}[0]{$\pmb{\bm{\times}}$}
+\newcommand{\bO}[0]{\raisebox{-0.2em}{\textbf{O}}}
+\newcommand{\Xb}[0]{\raisebox{-0.2em}{\textbf{X}}}
 
 \DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
 \DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
@@ -119,7 +119,7 @@ where $D()$ is a similarity measure between the key $K$ and memory item $M_i$.  
 This then evolved into the \textbf{Self Attention} mechanism used in all Transformers.  Now let us refresh with this diagram illustrating Self-Attention (ripped from a blog article on the web):
 
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.35]{self-attention.png}}}
+\vcenter{\hbox{\includegraphics[scale=0.9]{self-attention-2.png}}}
 \end{equation}
 
 The research done by Olah \textit{et al}, in their 2021 paper \textit{\uline{A Mathematical Framework for Transformer Circuits}}, is very helpful towards understanding Transformers and Self-Attention.  The paper is technically quite challenging, but thanks to the guidance of professor Xiao Da from Beijing I was able to understand the main ideas.  Here I offer some pointers to help others understand the paper, without explaining it in full details.
@@ -213,16 +213,16 @@ Example of an assumption:  ``If I play move $x$ now, I will checkmate in 3 moves
 	\scalebox{0.5}{
 		\begin{tabular}{c|c|c}
 			&     & \bO \\ \hline
-			\bO & \bX &     \\ \hline
-			\bX &     & 
-	\end{tabular}} and it's \bX's turn to play.
+			\bO & \Xb &     \\ \hline
+			\Xb &     & 
+	\end{tabular}} and it's \Xb's turn to play.
 	
-	\bX \ can do the ``double fork'' by playing
+	\Xb \ can do the ``double fork'' by playing
 	\scalebox{0.5}{
 		\begin{tabular}{c|c|c}
 			&     & \bO \\ \hline
-			\bO & \bX &     \\ \hline
-			\bX &     & {\color{red}\bX}
+			\bO & \Xb &     \\ \hline
+			\Xb &     & {\color{red}\Xb}
 	\end{tabular}}.
 	
 	But how can an AGI know (or prove) this?
@@ -231,21 +231,21 @@ Example of an assumption:  ``If I play move $x$ now, I will checkmate in 3 moves
 	\scalebox{0.5}{
 		\begin{tabular}{c|c|c}
 			&     & \bO \\ \hline
-			\bO & \bX &     \\ \hline
-			\bX &     & \bX
+			\bO & \Xb &     \\ \hline
+			\Xb &     & \Xb
 	\end{tabular}}  then a double fork exists.  We need a predicate to detect double forks.
 	
 	We need to reason that even if \ \bO \ plays the ``blocking'' move
 	\scalebox{0.5}{
 		\begin{tabular}{c|c|c}
 			{\color{red}\bO} &     & \bO \\ \hline
-			\bO & \bX &     \\ \hline
-			\bX &     & \bX
-	\end{tabular}}  , \bX \ can still win.
+			\bO & \Xb &     \\ \hline
+			\Xb &     & \Xb
+	\end{tabular}}  , \Xb \ can still win.
 	
-	We can easily express the conditions for \bX-can-win, but the difficult part is to make the assumption in {\color{red}red}, in other words:
+	We can easily express the conditions for \Xb-can-win, but the difficult part is to make the assumption in {\color{red}red}, in other words:
 	\begin{equation}
-	\mbox{{\color{red}red-move}} \rightarrow \mbox{\bX-can-win}
+	\mbox{{\color{red}red-move}} \rightarrow \mbox{\Xb-can-win}
 	\end{equation}
 	The difficulty lies in that the LHS is \textbf{not true} under the current facts.  This conditional statement must be proven by, first, assuming the LHS, and then deriving the RHS.  Then the assumption is \textbf{discharged} and the conditional statement is proven, via the ($\rightarrow$ I) rule.
 	
