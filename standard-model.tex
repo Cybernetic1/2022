@@ -4,9 +4,9 @@
 \usepackage{mathtools}
 \usepackage{hyperref}
 
-% \usepackage[backend=biber,style=numeric]{biblatex}
-% \bibliography{../AGI-book}
-% \renewcommand*{\bibfont}{\footnotesize}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\bibliography{../AGI-book}
+\renewcommand*{\bibfont}{\footnotesize}
 
 \usepackage{graphicx} % Allows including images
 \usepackage{tikz-cd}
@@ -189,13 +189,55 @@ There are two distinct aspects in the brain:
 
 One theory has it that the prefrontal cortex maintains a number of ``thoughts'' with sub-populations or, perhaps, with \textbf{micro-columns}.  These activated sub-populations are in competition with each other, through \textbf{lateral inhibition}.  The thought(s) that win are the thoughts we retain -- they ``make sense''.
 
+\subsection{How does symbolic logic emerge in the brain?}
+
+If a room of people see a cat enter the room, one person will say ``There's a cat in the room!'' but afterwards it would be \textbf{redundant} for others to say exactly the same thing.  Likewise, in a neural network, if two output features both identify ``cat'' then they are redundant, a waste of resources.  So it is more efficient for one feature vector to move away to a new location in \textbf{feature space}:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{disentangled-features.png}}}
+\end{equation}
+The result is the emergence of \textbf{disentangled features}.  There is now a lot of research papers on this topic;  Personally I first learned of this from Murray Shanahan's co-authored paper  \parencite{Shanahan2019}.  We can think of this as a first step of \textbf{symbolization}, in which objects are recognized by symbols.
+
+In the cortex, neuronal populations are organized into ``columns'', with \textbf{lateral inhibition}  among themselves.  When one population is activated, it suppresses the activation of nearby populations.  This is likely to be the mechanism that enables disentangled features to emerge:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{lateral-inhibition.png}}}
+\end{equation}
+
+Moreover, the cortex is organized into \textbf{layers} with widespread recurrent (ie, forward and backward) connections \footnote{More accurately, there exist two distinct structures: the cortex has a 6-layer structure which has recurrent connections within it;  and each cortical area has bi-directional connections to and from other areas (which may have hierarchical relations among themselves).  I have sort of glossed over this level of details.}:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{cortex-back-projections.png}}}
+\label{fig:cortex-back-projections}
+\end{equation}
+This bi-directional architecture may be applicable to AGI architecture (see also \S\ref{sec:abductive-reasoning} on abductive reasoning), possibly replacing the current uni-directional model of feed-forward networks and the back-propagation algorithm.  As is well-known, the brain does not use back-prop.  The bi-directional innervation is a very significant brain architectural feature that has not yet been incorporated into current deep learning techniques.
+
+If we consider relations between objects, for example, ``spoon inside a glass'', this too can emerge out of disentanglement of features, because it is a very \textbf{economical} / efficient representation of a complex scene:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=1]{spoon-in-glass-movie.png}}}
+\end{equation}
+Every human can recognize this as ``putting a spoon into a glass'', a symbolic representation.  Many researchers may have under-estimated how much the brain uses symbolic reasoning, and my proposal is that AGI can be based entirely on it.  
+
+One remaining question is how to represent symbolic data in a ``neural'' manner.  A general form of symbolic data may be as a \textbf{tree}.  Taking inspiration from the cortex (\ref{fig:cortex-back-projections}), we may perhaps represent the tree / symbolic data as hierarchically organized neural \textbf{feature vectors}:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{hierarchical-features.png}}}
+\end{equation}
+
+Remember that in the Transformer, symbols are organized as \textbf{sequences}, for example: ``spoon $\cdot$ inside $\cdot$ glass.''  It may be desirable for AGI to have multiple levels of features, such as ``spoon'' and ``glass'' on a lower level, and ``inside'' on a higher level.  Roughly speaking, each \textbf{hidden-layer} state of the Transformer thus corresponds to one such cortical \textbf{state}:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{Transformer-cortex-correspondence.png}}}
+\end{equation}
+It may look complicated, but remember that our reinforcement learning model consists of only the state and its transition function:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{cortex-with-transition-function.png}}}
+\end{equation}
+and the Transformer has many layers because it \textbf{unfolds} along the time axis the training of a recurrent network --- part of the reason why the Transformer is very efficient.  Based on this understanding, we need to figure out how to incorporate the Transformer into our AGI architecture.
+
 \section{Abductive reasoning}
+\label{sec:abductive-reasoning}
 
 Abduction has been relatively neglected in AGI research, which had focused on forward inference.  Recently there is a call to study this important aspect.
 
 In logic, abduction means finding the \textbf{explanation} for some known facts.  An explanation $E$ is simply some propositions that imply the known fact $F$, ie, $E \Rightarrow F$.
 
-For example, why do we think a certain actress, say Marilyn Monroe, is sexy?  That's because we recognize she has some features (visual or otherwise, no need to enumerate them explicitly) that we consider sexy.  So, $E_1 \wedge E_2 \wedge .... \Rightarrow \mathrm{Sexy}$.  Those conditions \textbf{imply} she is sexy, and they are the \textbf{explanation} for her sexiness. \footnote{I use this example because this is the kind of judgements that people make on a daily basis.}
+For example, why do we think a certain actress, say Marilyn Monroe, is ``sexy'' \footnote{I use this example because ``sexy'' is a kind of high-level concept and we apply this concept commonly when we meet other people.  Every one can relate to the ``reasons'' why we think someone is sexy.} ?  That's because we recognize she has some features (visual or otherwise, no need to enumerate them explicitly) that we consider sexy.  So, $E_1 \wedge E_2 \wedge .... \Rightarrow \mathrm{Sexy}$.  Those conditions \textbf{imply} she is sexy, and they are the \textbf{explanation} for her sexiness.
 
 Why is abduction important?  For example, when a waitress says ``The Ham Sandwich left a big tip'', \textit{Ham Sandwich} here refers to the customer who ordered it (an example of metonymy).  The AI knows the plain facts such as that someone ordered a ham sandwich, and then it abduces that the most likely \textbf{interpretation} of the phrase ``Ham Sandwich'' is as the person associated with it.  This is the basis of \textbf{Abductive Interpretation of Natural Language} proposed by Jerry Hobbs:
 \begin{equation}
