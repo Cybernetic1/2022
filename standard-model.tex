@@ -32,6 +32,9 @@
 
 %\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
 %\DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+% \setmathfont{Latin Modern Math}
 
 \newcommand{\highlight}[1]{\colorbox{pink}{$\displaystyle #1$}}
 
@@ -91,11 +94,10 @@ When we add a ``control'' or ``action'' variable $a$ to it, it becomes the most 
 \end{equation}
 which is the setting for Dynamic Programming or \textbf{Reinforcement Learning}.  The optimal solution for such systems is governed by the \textbf{Hamilton-Jacobi-Bellman equation}:
 \begin{equation}
-V^*_t = \max_a \mathbb{E} [ R + V^*_{t+1} ]
+V^*_t = \max_a \mathbb{E} [ R_{t+1} + V^*_{t+1} ]
 \end{equation}
 
 
-Here I want to ask a question:  reinforcement learning is not 
 
 Recently, Yann LeCun's \textbf{Energy-Based Models} offers a way to circumvent the problem of learning probability distributions over actions, when the action space is hugely high-dimensional.  This seems to be an important step towards AGI systems.
 
