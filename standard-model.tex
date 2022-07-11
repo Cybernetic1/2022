@@ -92,12 +92,12 @@ When we add a ``control'' or ``action'' variable $a$ to it, it becomes the most 
 \path (C) edge [out=30,in=150,looseness=7,thick] node [above] {$F(x, a)$} (C);
 \end{tikzpicture}
 \end{equation}
-which is the setting for Dynamic Programming or \textbf{Reinforcement Learning}.  The optimal solution for such systems is governed by the \textbf{Hamilton-Jacobi-Bellman equation}:
+which is the setting for Dynamic Programming or \textbf{Reinforcement Learning}.  The optimal solution for such systems is governed by the \textbf{Hamilton-Jacobi-Bellman equation} \footnote{The Hamilton-Jacobi differential version turns out to be not very fruitful from the computational point of view, as far as I know.}:
 \begin{equation}
 V^*_t = \max_a \mathbb{E} [ R_{t+1} + V^*_{t+1} ]
 \end{equation}
 
-
+TO-DO:  It would be worthwhile to find the brain mechanism that approximates reinforcement learning and use it to help the design of AGI.  
 
 Recently, Yann LeCun's \textbf{Energy-Based Models} offers a way to circumvent the problem of learning probability distributions over actions, when the action space is hugely high-dimensional.  This seems to be an important step towards AGI systems.
 
@@ -200,6 +200,8 @@ One theory has it that the prefrontal cortex maintains a number of ``thoughts'' 
 
 \subsection{How does symbolic logic emerge in the brain?}
 
+\subsubsection{Disentangled features}
+
 If a room of people see a cat enter the room, one person will say ``There's a cat in the room!'' but afterwards it would be \textbf{redundant} for others to say exactly the same thing.  Likewise, in a neural network, if two output features both identify ``cat'' then they are redundant, a waste of resources.  So it is more efficient for one feature vector to move away to a new location in \textbf{feature space}:
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{disentangled-features.png}}}
@@ -212,12 +214,24 @@ In the cortex, neuronal populations are organized into ``columns'', with \textbf
 \end{equation}
 It is remarkable that the \textbf{softmax} in the Transformer / Self-Attention seems to be an abstract implementation of this winner-takes-all \textbf{selection} mechanism.
 
+\subsubsection{Bi-directional connections in the cortex}
+
 Moreover, the cortex is organized into \textbf{layers} with widespread recurrent (ie, forward and backward) connections \footnote{More accurately, there exist two distinct structures: the cortex has a 6-layer structure which has recurrent connections within it;  and each cortical area has bi-directional connections to and from other areas (which may have hierarchical relations among themselves).  I have sort of glossed over this level of details.}:
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{cortex-back-projections.png}}}
 \label{fig:cortex-back-projections}
 \end{equation}
-This bi-directional architecture may be applicable to AGI architecture (see also \S\ref{sec:abductive-reasoning} on abductive reasoning), possibly replacing the current uni-directional model of feed-forward networks and the back-propagation algorithm.  As is well-known, the brain does not use back-prop.  The bi-directional innervation is a very significant brain architectural feature that has not yet been incorporated into current deep learning techniques.
+This bi-directional architecture may be applicable to AGI architecture (see also \S\ref{sec:abductive-reasoning} on abductive reasoning), possibly replacing the current uni-directional model of feed-forward networks and the back-propagation algorithm.
+
+\subsubsection{Alternative to back-propagation?}
+
+As is well-known, the brain does not use back-prop.  The bi-directional innervation is a very significant brain architectural feature that has not yet been incorporated into current deep learning techniques.
+
+In order to find an alternative to back-prop, we need to ask:  What is the essence of deep learning?  I think the answer lies in two words, ``hierarchical'' and ``learned''.  As a counter example, decision trees are hierarchical structures that are learned, but the learning algorithm is too slow because it uses combinatorial search (reminiscent of NP hardness).
+
+But the brain must have a roughly equally powerful learning mechanism as back-prop.  A likely candidate is \textbf{resonance}.  In figure (\ref{fig:cortex-back-projections}) we have a hierarchically connected cortical structure.  What we need is some sort of ``infinitesimal'' learning rule.
+
+\subsubsection{Hierarchy of features}
 
 If we consider relations between objects, for example, ``spoon inside a glass'', this too can emerge out of disentanglement of features, because it is a very \textbf{economical} / efficient representation of a complex scene:
 \begin{equation}
