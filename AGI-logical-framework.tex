@@ -96,22 +96,24 @@ This is our basic \textbf{RL} (reinforcement learning) setup}\footnote{The above
 \textbf{WM} (working memory) is \textbf{updated} by a transition function.  If this transition function is trained in a \textbf{closed loop}, it may be able to "explain" (in the sense of predicting) the input data.	
 }
 
-In classical logic-based AI, \textbf{inductive learning} means searching for a \textbf{theory} $T$ (= set of logic rules) that "explains" or \textbf{implies} positive examples but not negative ones:
+In classical logic-based AI, \textbf{inductive learning} means searching for a \textbf{theory} $T$ (= set of logic rules) that ``explains'' or \textbf{implies} positive examples but not negative ones:
 \begin{equation}
 \mbox{\large\(
 T \vdash e^{+}, \quad T \nvdash e^{-}
 \)}
 \end{equation}
-While logic learning is powerful, it relies on \textbf{combinatorial search} and was too inefficient, which caused "AI Winter".
+While logic learning is powerful, it relies on \textbf{combinatorial search} and was too inefficient, which caused ``AI Winter''.
 
-I want to argue that the function $F$ can be trained to perform like the set of logic rules $T$.  
+\cc{
+我理论的重点是： 透过 $F$ 在 RL 闭环内的训练，可以做到 \textbf{发现} 逻辑理论 $T$ 的效果。 }{
+The main thrust of my argument is that training the function $F$ in the RL closed loop can effectively \textbf{discover} the logic theory $T$.}
 \end{minipage}
 \end{preview}
 
 \begin{preview}
 \setlength{\parskip}{0.4\baselineskip}
 % (2) Circled page number on upper left corner
-\begin{textblock*}{20cm}(2.1cm,2.3cm) % {block width} (coords) 
+\begin{textblock*}{20cm}(2.1cm,2.1cm) % {block width} (coords) 
 	{\color{red}{\large \textcircled{\small 2}}}
 	\hspace{7cm}
 	\bfseries\color{blue}{\small 逻辑化 AGI 基础}
