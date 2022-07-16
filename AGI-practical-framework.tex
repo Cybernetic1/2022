@@ -1,27 +1,26 @@
 \input{../YKY-preamble.tex}
 \setmainfont[BoldFont=AlibabaSans-Regular.otf]{AlibabaSans-Light.otf}
 
-\usepackage[active,tightpage]{preview}
-\renewcommand{\PreviewBorder}{1cm}
+\usepackage[active,tightpage]{preview}		% for continuous page(s)
+\renewcommand{\PreviewBorder}{0.5cm}
+\renewcommand{\thempfootnote}{\arabic{mpfootnote}}
 
-\usepackage[absolute,overlay]{textpos}
+\usepackage[absolute,overlay]{textpos}		% for page number on upper left corner
 
 \usepackage{color}
 \usepackage{mathtools}
-\usepackage{hyperref}
+\usepackage[hyperfootnotes=false]{hyperref}
 
 % \usepackage[backend=biber,style=numeric]{biblatex}
 % \bibliography{../AGI-book}
 % \renewcommand*{\bibfont}{\footnotesize}
 
 \usepackage{graphicx} % Allows including images
-\usepackage{tikz-cd}
-\usepackage{tikz}
 \usetikzlibrary{shapes}
-\usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
+\usepackage[export]{adjustbox}				% ??
 \usepackage{bm}
 \usepackage{verbatim} % for comments
-\usepackage[most]{tcolorbox}
+% \usepackage[most]{tcolorbox}
 % \usepackage{newtxtext,newtxmath}	% Times New Roman font
 
 % \numberwithin{equation}{subsection}
@@ -33,8 +32,9 @@
 	}%
 }%
 
-\newcommand{\bO}[0]{\raisebox{-0.2em}{\textbf{O}}}
-\newcommand{\Xb}[0]{\raisebox{-0.2em}{\textbf{X}}}
+% Tic-Tac-Toe symbols
+% \newcommand{\bO}[0]{\raisebox{-0.2em}{\textbf{O}}}
+% \newcommand{\Xb}[0]{\raisebox{-0.2em}{\textbf{X}}}
 
 %\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
 %\DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
@@ -42,7 +42,7 @@
 \DeclareSymbolFontAlphabet{\mathbb}{AMSb}
 % \setmathfont{Latin Modern Math}
 
-\newcommand{\highlight}[1]{\colorbox{pink}{$\displaystyle #1$}}
+% \newcommand{\highlight}[1]{\colorbox{pink}{$\displaystyle #1$}}
 
 % \newcommand{\emp}[1]{{\color{violet}\textbf{#1}}}
 \let\oldtextbf\textbf
@@ -53,30 +53,49 @@
 \newcommand{\KBsymbol}{\vcenter{\hbox{\includegraphics[scale=1]{../KB-symbol.png}}}}
 \newcommand{\witness}{\scalebox{0.6}{$\blacksquare$}}
 % \newcommand{\Heytingarrow}{\mathrel{-}\mathrel{\triangleright}}
-\providecommand\Heytingarrow{\relbar\joinrel\mathrel{\vcenter{\hbox{\scalebox{0.75}{$\rhd$}}}}}
+% \providecommand\Heytingarrow{\relbar\joinrel\mathrel{\vcenter{\hbox{\scalebox{0.75}{$\rhd$}}}}}
 
 \begin{document}
+
 \begin{preview}
 
-\title{\vspace{-1.8cm} \bfseries\color{blue}{\Large AGI practical framework}}
+\cc{
+\title{\vspace{-2.2cm} \bfseries\color{blue}{\large 逻辑化 AGI 基础}}
+}{
+\title{\vspace{-2.2cm} \bfseries\color{blue}{\large Logical AGI basic framework}}
+}
+
 % \author{YKY} % Your name
-%\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
-%{
-%Independent researcher, Hong Kong \\ % Your institution for the title page
-%\medskip
-%\textit{generic.intelligence@gmail.com} % Your email address
-%}
-\date{\vspace{-3cm}} % Date, can be changed to a custom date
+\date{\vspace{-3.2cm}} % Date, can be changed to a custom date
 
 \maketitle
 
 \setcounter{section}{-1}
 
-\begin{textblock*}{5cm}(1.7cm,2cm) % {block width} (coords) 
+% (1) Circled page number on upper left corner
+\begin{textblock*}{5cm}(2.1cm,2.3cm) % {block width} (coords) 
 {\color{red}{\large \textcircled{\small 1}}}
 \end{textblock*}
 
 \begin{minipage}{\textwidth}
+\setlength{\parskip}{0.4\baselineskip}
+
+\cc{
+这是 \textbf{强化学习} 最基本的 setup}{
+This is our basic \textbf{RL} (reinforcement learning) setup}\footnote{The above diagram is somewhat inaccurate as there are subtle differences between the notions of "state" and Working Memory.  In RL, state usually refers to the external environment  through observations.  WM is slightly different in the sense that an internal belief may be \textit{wrong} about the environment --- eg, mistaking seeing something that doesn't exist.  There is on-going research as to the relation between RL and WM.  I have not fully resolved this issue.
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.5]{../2021/RL-WM-architecture.png}}}
+	\end{equation}
+	\vspace{-0.7cm}}:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{../2021/minimal-RL-architecture.png}}}
+\end{equation}
+\cc{
+	状态转移函数 $F$ 负责 \textbf{更新} 工作记忆 (\textbf{WM}). 如果 $F$ 在一个 \textbf{闭环} 内训练，它似乎可以 ``\textbf{解释}'' (或 预测) 输入的讯息。
+}{
+\textbf{WM} (working memory) is \textbf{updated} by a transition function.  If this transition function is trained in a \textbf{closed loop}, it may be able to "explain" (in the sense of predicting) the input data.	
+}
+
 In classical logic-based AI, \textbf{inductive learning} means searching for a \textbf{theory} $T$ (= set of logic rules) that "explains" or \textbf{implies} positive examples but not negative ones:
 \begin{equation}
 \mbox{\large\(
@@ -85,27 +104,20 @@ T \vdash e^{+}, \quad T \nvdash e^{-}
 \end{equation}
 While logic learning is powerful, it relies on \textbf{combinatorial search} and was too inefficient, which caused "AI Winter".
 
-The advent of \textbf{deep learning} may change this.  The following is our basic \textbf{RL} (reinforcement learning) setup\footnote{The above diagram is somewhat inaccurate as there are subtle differences between the notions of "state" and Working Memory.  In RL, state usually refers to the external environment  through observations.  WM is slightly different in the sense that an internal belief may be \textit{wrong} about the environment --- eg, mistaking seeing something that doesn't exist.  There is on-going research as to the relation between RL and WM.  I have not fully resolved this issue.
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.5]{../2021/RL-WM-architecture.png}}}
-\end{equation}
-}:
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.7]{../2021/minimal-RL-architecture.png}}}
-\end{equation}
-\textbf{WM} (working memory) is \textbf{updated} by a transition function.  If this transition function is trained in a \textbf{closed loop}, it may be able to "explain" (in the sense of predicting) the input data.
+I want to argue that the function $F$ can be trained to perform like the set of logic rules $T$.  
 \end{minipage}
 \end{preview}
+
 \begin{preview}
+\setlength{\parskip}{0.4\baselineskip}
+% (2) Circled page number on upper left corner
+\begin{textblock*}{20cm}(2.1cm,2.3cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 2}}}
+	\hspace{7cm}
+	\bfseries\color{blue}{\small 逻辑化 AGI 基础}
+\end{textblock*}
 
-I want to argue that the function $F$ can be trained to perform like the set of logic rules $T$.  
-
-% \vspace*{0.5cm}
-% 多谢 支持 \smiley
-
-\section{Introduction}
-
-The ``standard model'' is a way of thinking, that may help us better understand the general theory of AGI systems.
+\vspace*{0.7cm} The ``standard model'' is a way of thinking, that may help us better understand the general theory of AGI systems.
 
 The essence of the standard model is just to identify a \textbf{Working Memory} as the ``state'' of the AGI system.
 
