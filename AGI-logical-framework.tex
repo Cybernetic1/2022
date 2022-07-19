@@ -60,7 +60,7 @@
 \cc{
 \title{\vspace{-2.2cm} \bfseries\color{blue}{\large 逻辑化 AGI 基础}}
 }{
-\title{\vspace{-2.2cm} \bfseries\color{blue}{\large Logical AGI basic framework}}
+\title{\vspace{-2.2cm} \bfseries\color{blue}{\large Logicalized AGI basics}}
 }
 
 % \author{YKY} % Your name
@@ -115,18 +115,30 @@ The main thrust of my argument is that training the function $F$ in the RL close
 \begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
 	{\color{red}{\large \textcircled{\small 2}}}
 	\hspace{8cm}
-	\color{blue}{\footnotesize 逻辑化 AGI 基础}
+	\color{blue}{\footnotesize \cc{逻辑化 AGI 基础}{Logicalized AGI}}
 \end{textblock*}
 
 \vspace*{0.3cm} 
-首先可以了解一下几种``机器''之间的关系。 图灵机 演变成 \textbf{神经图灵机}，这是``\textbf{注意力机制}''的起源。 \textbf{自注意力} 的特点是它有 \textbf{equivariance} 这种对称性，亦即是说，输入／输出元素的\textbf{次序}不重要。 也可以将这些元素看成一个 \textbf{集合} (例如 $\{1,2,3\}$ 跟 $\{3,2,1\}$ 是同一个集合)。 这种结构适合处理 \textbf{逻辑命题}，因为 $A \wedge B = B \wedge A$.  
+\cc{
+首先可以了解一下几种``机器''之间的关系。 图灵机 演变成 \textbf{神经图灵机}，这是``\textbf{注意力机制}''的起源。 \textbf{自注意力} 的特点是它有 \textbf{equivariance} 这种对称性，亦即是说，输入／输出元素的\textbf{次序}不重要。 也可以将这些元素看成一个 \textbf{集合} (例如 $\{1,2,3\}$ 跟 $\{3,2,1\}$ 是同一个集合)。 这种结构适合处理 \textbf{逻辑命题}，因为 $A \wedge B = B \wedge A$.}{
+Let's look at the interconnections between some ``learning machines''.  Turing Machines inspired \textbf{Neural Turing Machines}, which is the origin of the \textbf{Attention} mechanism.  \textbf{Self-Attention} has the symmetry of \textbf{equivariance}, which means that the \textbf{order} of input / output elements is unimportant.  Another way to put it is that such elements have a \textbf{set structure}; for example $\{1,2,3\}$ and $\{3,2,1\}$ are the same set.  The set structure is also suitable for handling logic propositions, because $A \wedge B = B \wedge A$.
+}
 
-\textbf{Graph} 也是一种逻辑结构，因为 graph 可以\textbf{分解}为一堆节点之间的关系，例如 张三是李四的朋友 $\Rightarrow$ friend(Zhang$_3$, Li$_4$). 所以 GNN 是一种逻辑处理器。 另方面，语言模型 也使用 \textbf{Transformer} / Self-Attention. 所以我们推测，在 Transformer 语言模型里 也有逻辑规则的\textbf{涌现} (emergence), 而 Transformer circuits 的研究部分地证实了这一想法。 
+\cc{
+\textbf{Graph} 也是一种逻辑结构，因为 graph 可以\textbf{分解}为一堆节点之间的关系，例如 张三是李四的朋友 $\Rightarrow$ friend(Zhang$_3$, Li$_4$). 所以 \textbf{GNN} 是一种逻辑处理器。 另方面，语言模型 也使用 \textbf{Transformer} / Self-Attention. 所以我们推测，在 Transformer 语言模型里 也有逻辑规则的\textbf{涌现} (emergence), 而 Transformer circuits 的研究部分地证实了这一想法。}{
+A \textbf{graph} is also a logical structure, as it can be decomposed into a bunch of nodes and links (relations).  For example, John is Pete's friend $\Rightarrow$ friend(John, Pete).  Thus the \textbf{GNN} is a logic processor.  Similarly, Language Models are built from \textbf{Transformers} / Self-Attention.  So we believe that logic-like rules may \textbf{emerge} in Transformer-based language models.  Research on ``Transformer circuits'' partially confirms this.
+}
+
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.8]{AGI-standard-model.png}}}
 \end{equation}
+\cc{
 然后关键的一步就是将 \textbf{end-to-end} 训练的模型 变成 \textbf{RL} 训练的形式\footnote{通常 RL 的 actions 是在环境中的动作，但我的 RL 模型 要求 actions 是一些 \textbf{思想} (thoughts)，这并不规范，可能产生传统 RL 没有的问题。}。
 前者可以看成是 进行 ``few-steps'' 的逻辑推导，而后者是可以 ``任意多步'' 的推导，而且这些推导 互相之间有 \textbf{协同效应} (一个推出来的结果帮助另一个新的推导)。 正是因为 \textbf{闭环训练} 容许了这些 协同效应，令 RL 系统有可能学习出能够\textbf{解释}世界的 logic theory.
+}{
+The next, crucial step is to change end-to-end training to the RL setting\footnote{Normally, actions in RL refer to what are performed in the external environment, but in my somewhat unorthodox formulation, actions are ``thoughts''.  This may create some problems not seen in traditional RL.}.
+The former can be seen as allowing ``few-steps'' logic inference, whereas the latter allows \textbf{arbitrary number} of inference steps.  This enables logic rules to make use of results from other rules, creating a \textbf{cooperative effect}.  Precisely due to closed-loop training and the synergy, an RL agent may be able to learn a logic theory that \textbf{explains} the world.
+}
 \end{minipage}
 \end{preview}
 
