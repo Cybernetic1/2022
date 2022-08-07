@@ -15,7 +15,7 @@
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
 \usepackage{bm}
 \usepackage{verbatim} % for comments
-\usepackage[most]{tcolorbox}
+% \usepackage[most]{tcolorbox}
 % \usepackage{newtxtext,newtxmath}	% Times New Roman font
 
 \setcounter{secnumdepth}{1}		% no sub-section numbers
@@ -36,7 +36,9 @@
 
 \newcommand{\highlight}[1]{\colorbox{pink}{$\displaystyle #1$}}
 
-\newcommand{\emp}[1]{{\color{violet}\textbf{#1}}}
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{\textcolor{blue}{\oldtextbf{#1}}}
+
 \newcommand*\confoundFace{$\vcenter{\hbox{\includegraphics[scale=0.2]{../2020/../confounded-face.jpg}}}$}
 \newcommand{\underconst}{\includegraphics[scale=0.5]{../2020/UnderConst.png}}
 \newcommand{\witness}{\scalebox{0.6}{$\blacksquare$}}
@@ -156,13 +158,25 @@ Notice that the bottom link ${\color{red}y \mbox{ -- } y}$ signifies a requireme
 
 The Transformer's rewriting style is similar to the logical syntax above, but they differ in some details.
 
-First, in the Transformer, each token has an ``axis'' for which it plays the role of the \textbf{Query}.  We can think of each token as one proposition, and each token gives rise to one new proposition along that axis.  So the Transformer layer takes $N$ input propositions and spits out $N$ new propositions:
+\cc{首先，在 Transformer 里，每个 token 轮流担任一次 Query 的角色。 一个 token 担任 Query 做一次 Self-Attention，我们可以看成是一个垂直的\textbf{轴心} (axis).  每个轴心输出一个新的 token:
+}{First, in the Transformer, each token has its own ``axis'' in which that token is the \textbf{Query}.  We can think of each axis as logic rule, so each axis (rule) gives rise to a new conclusion (which is also a proposition) along that axis.  So the Transformer layer takes $N$ input propositions and spits out $N$ new propositions:
+}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=1]{Transformer_axis.png}}}
 \end{equation}
-In the logic view, however, we may want to break a proposition into multiple tokens.
+一个轴心可以看成是一条 \textbf{逻辑 rule}，但有如下差异：\\
+一个 axis 的输入是整个序列的 tokens（其中一个是 Query），输出是一个 token:
+\begin{equation}
+\mbox{token}_1 \cdot \mbox{token}_2 \cdot .... \rightarrow \mbox{token}_{X}
+\end{equation}
+然而，逻辑 rule 的结构是这样的：
+\begin{equation}
+\mbox{proposition}_1 \wedge \mbox{proposition}_2 \wedge .... \rightarrow \mbox{proposition}_{X}
+\end{equation}
+而每个 proposition 由多个 symbols 组成，例如 $ \mbox{John} \cdot \mbox{loves} \cdot \mbox{Mary} $. \\
+可以这样看：Transformer 用一些 ``micro-rules''，每次输出一个逻辑符号，从而组成输出的逻辑命题。 
 
-Secondly, in the Transformer, the Attention mechanism determines the \textbf{weights} by which the tokens combine, by summing up into a final token vector.  Because of ``softmax'', the new token is effectively a \textbf{selection} of one token from amongst input tokens.  In the logic view, a proposition is represented by multiple tokens, so we may need an alternative Attention mechanism to \textbf{move} tokens around (This ability is already present in the current Transformer).
+The Attention mechanism determines the \textbf{weights} by which the tokens combine, by summing up into a final token vector.  Because of ``softmax'', the new token is effectively a \textbf{selection} of one token from amongst input tokens.  In the logic view, a proposition is made up of multiple symbols, and the Attention mechanism \textbf{moves} tokens around (This ability is already present in the current Transformer).
 
 \subsection{The Transformer as a memory store}
 

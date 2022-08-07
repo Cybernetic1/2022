@@ -8,8 +8,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="AGI-practical-framework.svg"
-   inkscape:version="1.0.2 (1.0.2+r75+1)"
+   sodipodi:docname="AGI-logical-framework.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    id="svg8"
    version="1.1"
    viewBox="0 0 210 297"
@@ -1145,14 +1145,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="217.65087"
-     inkscape:cy="790.62313"
+     inkscape:cx="457.65087"
+     inkscape:cy="-49.37687"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1055"
+     inkscape:window-height="1040"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
@@ -1164,7 +1164,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1172,31 +1172,6 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <text
-       xml:space="preserve"
-       id="text1194-6-8-4-9"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;line-height:1.1;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect1196-3-4-8-4);"
-       x="-32.857346"
-       y="0"
-       transform="translate(6.847768,305.48767)"><tspan
-         x="2.3457031"
-         y="8.3567604"><tspan
-           style="font-size:65%;baseline-shift:super">1</tspan><tspan> </tspan><tspan
-           style="font-size:4.23333px">The above diagram is somewhat inaccurate as there are subtle differences between the notions </tspan></tspan><tspan
-         x="2.3457031"
-         y="14.565645"><tspan
-           style="font-size:4.23333px">of &quot;state&quot; and Working Memory.  In RL, state usually refers to the external environment  through </tspan></tspan><tspan
-         x="2.3457031"
-         y="20.774529"><tspan
-           style="font-size:4.23333px">observations.  WM is slightly different in the sense that an internal belief may be </tspan><tspan
-           style="font-style:italic">wrong</tspan><tspan
-           style="font-size:4.23333px"> about the </tspan></tspan><tspan
-         x="2.3457031"
-         y="26.983412"><tspan
-           style="font-size:4.23333px">environment -- eg, mistaking seeing something that doesn't exist.  There is on-going research as </tspan></tspan><tspan
-         x="2.3457031"
-         y="33.192297"><tspan
-           style="font-size:4.23333px">to the relation between RL and WM.  I have not fully resolved this issue.</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
@@ -1351,8 +1326,7 @@
                width="50.847977"
                id="rect3761" /></flowRegion><flowPara
              id="flowPara3763"
-             style="font-size:20px;line-height:1.25">S1</flowPara></flowRoot>
-        <ellipse
+             style="font-size:20px;line-height:1.25">S1</flowPara></flowRoot>        <ellipse
            id="path3755-3"
            style="fill:none;stroke:#000000;stroke-width:0.3175;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
            cx="295.74176"
@@ -1371,8 +1345,7 @@
                width="50.847977"
                id="rect3761-5" /></flowRegion><flowPara
              id="flowPara3763-3"
-             style="font-size:20px;line-height:1.25">S2</flowPara></flowRoot>
-        <ellipse
+             style="font-size:20px;line-height:1.25">S2</flowPara></flowRoot>        <ellipse
            id="path3755-5"
            style="fill:none;stroke:#000000;stroke-width:0.3175;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
            cx="287.17291"
@@ -1391,8 +1364,7 @@
                width="50.847977"
                id="rect3761-1" /></flowRegion><flowPara
              id="flowPara3763-2"
-             style="font-size:20px;line-height:1.25">S4</flowPara></flowRoot>
-        <ellipse
+             style="font-size:20px;line-height:1.25">S4</flowPara></flowRoot>        <ellipse
            id="path3755-7"
            style="fill:none;stroke:#000000;stroke-width:0.3175;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
            cx="302.94458"
@@ -1411,8 +1383,7 @@
                width="50.847977"
                id="rect3761-6" /></flowRegion><flowPara
              id="flowPara3763-0"
-             style="font-size:20px;line-height:1.25">S5</flowPara></flowRoot>
-        <ellipse
+             style="font-size:20px;line-height:1.25">S5</flowPara></flowRoot>        <ellipse
            id="path3755-6"
            style="fill:none;stroke:#000000;stroke-width:0.3175;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
            cx="305.30411"
@@ -1431,8 +1402,7 @@
                width="50.847977"
                id="rect3761-18" /></flowRegion><flowPara
              id="flowPara3763-7"
-             style="font-size:20px;line-height:1.25">S3</flowPara></flowRoot>
-        <ellipse
+             style="font-size:20px;line-height:1.25">S3</flowPara></flowRoot>        <ellipse
            id="path3755-9"
            style="fill:none;stroke:#000000;stroke-width:0.3175;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
            cx="314.36972"
@@ -1451,8 +1421,7 @@
                width="50.847977"
                id="rect3761-3" /></flowRegion><flowPara
              id="flowPara3763-75"
-             style="font-size:20px;line-height:1.25">S6</flowPara></flowRoot>
-        <ellipse
+             style="font-size:20px;line-height:1.25">S6</flowPara></flowRoot>        <ellipse
            id="path3755-92"
            style="fill:none;stroke:#000000;stroke-width:0.3175;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
            cx="315.5015"
@@ -1471,8 +1440,7 @@
                width="50.847977"
                id="rect3761-36" /></flowRegion><flowPara
              id="flowPara3763-1"
-             style="font-size:20px;line-height:1.25">S7</flowPara></flowRoot>
-        <path
+             style="font-size:20px;line-height:1.25">S7</flowPara></flowRoot>        <path
            sodipodi:nodetypes="cc"
            inkscape:connector-curvature="0"
            id="path3870"
@@ -1596,8 +1564,7 @@
                width="27.379665"
                id="rect4884-8" /></flowRegion><flowPara
              id="flowPara4886-6"
-             style="font-size:20px;line-height:1.25">1 </flowPara></flowRoot>
-        <flowRoot
+             style="font-size:20px;line-height:1.25">1 </flowPara></flowRoot>        <flowRoot
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
            id="flowRoot4880-8"
            xml:space="preserve"
@@ -1609,8 +1576,7 @@
                width="27.379665"
                id="rect4884-4" /></flowRegion><flowPara
              id="flowPara4886-3"
-             style="font-size:20px;line-height:1.25">1 </flowPara></flowRoot>
-        <flowRoot
+             style="font-size:20px;line-height:1.25">1 </flowPara></flowRoot>        <flowRoot
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
            id="flowRoot4880-1"
            xml:space="preserve"
@@ -1622,8 +1588,7 @@
                width="27.379665"
                id="rect4884-9" /></flowRegion><flowPara
              id="flowPara4886-2"
-             style="font-size:20px;line-height:1.25">1 </flowPara></flowRoot>
-        <flowRoot
+             style="font-size:20px;line-height:1.25">1 </flowPara></flowRoot>        <flowRoot
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
            id="flowRoot4880-06"
            xml:space="preserve"
@@ -1635,8 +1600,7 @@
                width="27.379665"
                id="rect4884-2" /></flowRegion><flowPara
              id="flowPara4886-66"
-             style="font-size:20px;line-height:1.25">0</flowPara></flowRoot>
-        <flowRoot
+             style="font-size:20px;line-height:1.25">0</flowPara></flowRoot>        <flowRoot
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
            id="flowRoot4880-06-4"
            xml:space="preserve"
@@ -1648,8 +1612,7 @@
                width="27.379665"
                id="rect4884-2-7" /></flowRegion><flowPara
              id="flowPara4886-66-1"
-             style="font-size:20px;line-height:1.25">0</flowPara></flowRoot>
-        <flowRoot
+             style="font-size:20px;line-height:1.25">0</flowPara></flowRoot>        <flowRoot
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
            id="flowRoot4880-06-7"
            xml:space="preserve"
@@ -1661,8 +1624,7 @@
                width="27.379665"
                id="rect4884-2-72" /></flowRegion><flowPara
              id="flowPara4886-66-2"
-             style="font-size:20px;line-height:1.25">0</flowPara></flowRoot>
-        <flowRoot
+             style="font-size:20px;line-height:1.25">0</flowPara></flowRoot>        <flowRoot
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
            id="flowRoot4880-06-6"
            xml:space="preserve"
@@ -1674,8 +1636,7 @@
                width="27.379665"
                id="rect4884-2-0" /></flowRegion><flowPara
              id="flowPara4886-66-6"
-             style="font-size:20px;line-height:1.25">0</flowPara></flowRoot>
-        <flowRoot
+             style="font-size:20px;line-height:1.25">0</flowPara></flowRoot>        <flowRoot
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
            id="flowRoot4880-06-1"
            xml:space="preserve"
@@ -1687,8 +1648,7 @@
                width="27.379665"
                id="rect4884-2-9" /></flowRegion><flowPara
              id="flowPara4886-66-4"
-             style="font-size:20px;line-height:1.25">0</flowPara></flowRoot>
-        <path
+             style="font-size:20px;line-height:1.25">0</flowPara></flowRoot>        <path
            sodipodi:nodetypes="cc"
            inkscape:connector-curvature="0"
            id="path5067"
@@ -1774,21 +1734,34 @@
        y="0"
        transform="translate(7.3514893,4.3345142)"><tspan
          x="2.3457031"
-         y="8.9268488"><tspan
-           style="shape-inside:url(#rect1196)">In classical logic-based AI, </tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#0000ff">inductive learning</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start"> means searching for a </tspan><tspan
-           style="font-weight:normal;fill:#0000ff">theory</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start"> </tspan></tspan><tspan
+         y="8.9268488"
+         id="tspan10169"><tspan
+           style="shape-inside:url(#rect1196)"
+           id="tspan10159">In classical logic-based AI, </tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#0000ff"
+           id="tspan10161">inductive learning</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start"
+           id="tspan10163"> means searching for a </tspan><tspan
+           style="font-weight:normal;fill:#0000ff"
+           id="tspan10165">theory</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start"
+           id="tspan10167"> </tspan></tspan><tspan
          x="2.3457031"
-         y="16.129155"><tspan
-           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'">T</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start"> (= set of logic rules) that &quot;explains&quot; or </tspan><tspan
-           style="font-weight:normal;fill:#0000ff">entails</tspan><tspan
-           style="shape-inside:url(#rect1196)"> positive examples but not </tspan></tspan><tspan
+         y="16.129155"
+         id="tspan10179"><tspan
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'"
+           id="tspan10171">T</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.64444px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start"
+           id="tspan10173"> (= set of logic rules) that &quot;explains&quot; or </tspan><tspan
+           style="font-weight:normal;fill:#0000ff"
+           id="tspan10175">entails</tspan><tspan
+           style="shape-inside:url(#rect1196)"
+           id="tspan10177"> positive examples but not </tspan></tspan><tspan
          x="2.3457031"
-         y="23.184705"><tspan
-           style="shape-inside:url(#rect1196)">negative ones:</tspan></tspan></text>
+         y="23.184705"
+         id="tspan10183"><tspan
+           style="shape-inside:url(#rect1196)"
+           id="tspan10181">negative ones:</tspan></tspan></text>
     <g
        inkscape:label=""
        transform="translate(-22.526574,-41.465027)"
@@ -1904,13 +1877,19 @@
        y="0"
        transform="translate(7.1950411,43.615639)"><tspan
          x="2.3457031"
-         y="8.7800934"><tspan
-           style="shape-inside:url(#rect1196-3)">While logic learning is powerful, it relies on </tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans';fill:#0000ff">combinatorial search</tspan><tspan
-           style="shape-inside:url(#rect1196-3)"> and was </tspan></tspan><tspan
+         y="8.7800934"
+         id="tspan10212"><tspan
+           style="shape-inside:url(#rect1196-3)"
+           id="tspan10206">While logic learning is powerful, it relies on </tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans';fill:#0000ff"
+           id="tspan10208">combinatorial search</tspan><tspan
+           style="shape-inside:url(#rect1196-3)"
+           id="tspan10210"> and was </tspan></tspan><tspan
          x="2.3457031"
-         y="15.835643"><tspan
-           style="shape-inside:url(#rect1196-3)">too inefficient, which caused &quot;AI Winter&quot;.</tspan></tspan></text>
+         y="15.835643"
+         id="tspan10216"><tspan
+           style="shape-inside:url(#rect1196-3)"
+           id="tspan10214">too inefficient, which caused &quot;AI Winter&quot;.</tspan></tspan></text>
     <g
        id="g2475"
        transform="translate(-167.93327,60.34001)">
@@ -1972,17 +1951,27 @@
        y="0"
        transform="translate(7.1141218,62.153064)"><tspan
          x="2.3457031"
-         y="8.7800934"><tspan
-           style="shape-inside:url(#rect1196-3-4)">The advent of </tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans';fill:#0000ff">deep learning</tspan><tspan
-           style="shape-inside:url(#rect1196-3-4)"> may be able to change this.  The following is </tspan></tspan><tspan
+         y="8.7800934"
+         id="tspan10234"><tspan
+           style="shape-inside:url(#rect1196-3-4)"
+           id="tspan10228">The advent of </tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans';fill:#0000ff"
+           id="tspan10230">deep learning</tspan><tspan
+           style="shape-inside:url(#rect1196-3-4)"
+           id="tspan10232"> may be able to change this.  The following is </tspan></tspan><tspan
          x="2.3457031"
-         y="15.835643"><tspan
-           style="shape-inside:url(#rect1196-3-4)">our basic </tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans';fill:#0000ff">RL</tspan><tspan
-           style="shape-inside:url(#rect1196-3-4)"> (reinforcement learning) setup</tspan><tspan
-           style="font-size:65%;baseline-shift:super">1</tspan><tspan
-           style="shape-inside:url(#rect1196-3-4)">:</tspan></tspan></text>
+         y="15.835643"
+         id="tspan10246"><tspan
+           style="shape-inside:url(#rect1196-3-4)"
+           id="tspan10236">our basic </tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans';fill:#0000ff"
+           id="tspan10238">RL</tspan><tspan
+           style="shape-inside:url(#rect1196-3-4)"
+           id="tspan10240"> (reinforcement learning) setup</tspan><tspan
+           style="font-size:65%;baseline-shift:super"
+           id="tspan10242">1</tspan><tspan
+           style="shape-inside:url(#rect1196-3-4)"
+           id="tspan10244">:</tspan></tspan></text>
     <g
        id="g4019"
        transform="translate(5.1909945,-1.0196002)">
@@ -2125,21 +2114,34 @@
        y="0"
        transform="translate(8.6285447,134.56851)"><tspan
          x="2.3457031"
-         y="8.7800934"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans';fill:#0000ff">WM</tspan><tspan
-           style="shape-inside:url(#rect1196-3-4-8)"> (working memory) is </tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#0000ff">updated</tspan><tspan
-           style="shape-inside:url(#rect1196-3-4-8)"> by a </tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light';fill:#000000">transition function</tspan><tspan
-           style="shape-inside:url(#rect1196-3-4-8)">.  If this transition </tspan></tspan><tspan
+         y="8.7800934"
+         id="tspan10294"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans';fill:#0000ff"
+           id="tspan10282">WM</tspan><tspan
+           style="shape-inside:url(#rect1196-3-4-8)"
+           id="tspan10284"> (working memory) is </tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#0000ff"
+           id="tspan10286">updated</tspan><tspan
+           style="shape-inside:url(#rect1196-3-4-8)"
+           id="tspan10288"> by a </tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light';fill:#000000"
+           id="tspan10290">transition function</tspan><tspan
+           style="shape-inside:url(#rect1196-3-4-8)"
+           id="tspan10292">.  If this transition </tspan></tspan><tspan
          x="2.3457031"
-         y="15.835643"><tspan
-           style="shape-inside:url(#rect1196-3-4-8)">function is trained in a </tspan><tspan
-           style="font-weight:normal;fill:#0000ff">closed loop</tspan><tspan
-           style="shape-inside:url(#rect1196-3-4-8)">, it may be able to &quot;explain&quot; (in the </tspan></tspan><tspan
+         y="15.835643"
+         id="tspan10302"><tspan
+           style="shape-inside:url(#rect1196-3-4-8)"
+           id="tspan10296">function is trained in a </tspan><tspan
+           style="font-weight:normal;fill:#0000ff"
+           id="tspan10298">closed loop</tspan><tspan
+           style="shape-inside:url(#rect1196-3-4-8)"
+           id="tspan10300">, it may be able to &quot;explain&quot; (in the </tspan></tspan><tspan
          x="2.3457031"
-         y="22.891193"><tspan
-           style="shape-inside:url(#rect1196-3-4-8)">sense of predicting) the input data.</tspan></tspan></text>
+         y="22.891193"
+         id="tspan10306"><tspan
+           style="shape-inside:url(#rect1196-3-4-8)"
+           id="tspan10304">sense of predicting) the input data.</tspan></tspan></text>
     <g
        id="g4215"
        transform="matrix(0.5,0,0,0.5,58.731856,242.5456)">
@@ -2396,10 +2398,40 @@
        x="-92.429337"
        y="0"><tspan
          x="9.2089844"
-         y="171.40509"><tspan
-           style="text-align:start;text-anchor:start">I want to argue that the function F can be trained to perform like the set of </tspan></tspan><tspan
+         y="171.40509"
+         id="tspan10363"><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan10361">I want to argue that the function F can be trained to perform like the set of </tspan></tspan><tspan
          x="9.2089844"
-         y="178.46065"><tspan
-           style="text-align:start;text-anchor:start">logic rules T.  </tspan></tspan></text>
-  </g>
+         y="178.46065"
+         id="tspan10367"><tspan
+           style="text-align:start;text-anchor:start"
+           id="tspan10365">logic rules T.  </tspan></tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot10387"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion10389"><rect
+           id="rect10391"
+           width="708.19104"
+           height="144.64185"
+           x="29.80896"
+           y="1154.8778" /></flowRegion><flowPara
+         id="flowPara10393"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot10395"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.5;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,3.4395833,-35.71875)"><flowRegion
+         id="flowRegion10397"
+         style="line-height:0.5"><rect
+           id="rect10399"
+           width="735"
+           height="142"
+           x="7"
+           y="1296.5197"
+           style="line-height:0.5" /></flowRegion><flowPara
+         id="flowPara10401"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:0.5;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"><flowSpan
+   style="font-size:64.99999762%;baseline-shift:super"
+   id="flowSpan10407">1</flowSpan> The above diagram is somewhat inaccurate as there are subtle differences between the notions of &quot;state&quot; and Working Memory.  In RL, state usually refers to the external environment  through observations.  WM is slightly different in the sense that an internal belief may be wrong about the environment -- eg, mistaking seeing something that doesn't exist.  There is on-going research as to the relation between RL and WM.  I have not fully resolved this issue.</flowPara></flowRoot>  </g>
 </svg>
