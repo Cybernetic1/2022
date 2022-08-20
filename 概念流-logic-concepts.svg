@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="218.50061mm"
+   height="127.02923mm"
+   viewBox="0 0 218.50061 127.02923"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (1.0.2+r75+1)"
+   sodipodi:docname="概念流-logic-concepts.svg"
+   inkscape:export-filename="/home/yky/latex/2022/概念流-logic-concepts.png"
+   inkscape:export-xdpi="384"
+   inkscape:export-ydpi="384">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="419.18253"
+     inkscape:cy="388.78921"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1055"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     lock-margins="true"
+     fit-margin-top="10"
+     fit-margin-left="10"
+     fit-margin-right="10"
+     fit-margin-bottom="10" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(5.0753788,-45.29952)">
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="155.58675"
+       y="95.707024"
+       id="text12"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         x="155.58675"
+         y="95.707024"
+         style="stroke-width:0.264583">推理 (inference)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="172.99467"
+       y="118.84999"
+       id="text16"><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         x="172.99467"
+         y="118.84999"
+         style="stroke-width:0.264583">论证 (argument)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="189.82297"
+       y="75.980125"
+       id="text20"><tspan
+         sodipodi:role="line"
+         id="tspan18"
+         x="189.82297"
+         y="75.980125"
+         style="stroke-width:0.264583">真相 (truth)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="158.02493"
+       y="104.50452"
+       id="text24"><tspan
+         sodipodi:role="line"
+         id="tspan22"
+         x="158.02493"
+         y="104.50452"
+         style="stroke-width:0.264583">假设 (assumption)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="174.43317"
+       y="127.87576"
+       id="text28"><tspan
+         sodipodi:role="line"
+         id="tspan26"
+         x="174.43317"
+         y="127.87576"
+         style="stroke-width:0.264583">判断 (judgement)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="94.604782"
+       y="136.82997"
+       id="text32"><tspan
+         sodipodi:role="line"
+         id="tspan30"
+         x="94.604782"
+         y="136.82997"
+         style="stroke-width:0.264583">概念 (concept)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="37.706646"
+       y="158.63829"
+       id="text36"><tspan
+         sodipodi:role="line"
+         id="tspan34"
+         x="37.706646"
+         y="158.63829"
+         style="stroke-width:0.264583">外延 (extension)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="145.05373"
+       y="152.04358"
+       id="text40"><tspan
+         sodipodi:role="line"
+         id="tspan38"
+         x="145.05373"
+         y="152.04358"
+         style="stroke-width:0.264583">划分 (classification)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="141.06049"
+       y="161.19986"
+       id="text44"><tspan
+         sodipodi:role="line"
+         id="tspan42"
+         x="141.06049"
+         y="161.19986"
+         style="stroke-width:0.264583">定义 (definition)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="36.629871"
+       y="148.92412"
+       id="text48"><tspan
+         sodipodi:role="line"
+         id="tspan46"
+         x="36.629871"
+         y="148.92412"
+         style="stroke-width:0.264583">内涵 (intention)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="53.820156"
+       y="104.06326"
+       id="text52"><tspan
+         sodipodi:role="line"
+         id="tspan50"
+         x="53.820156"
+         y="104.06326"
+         style="stroke-width:0.264583">=  属性  = predicate</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="34.103504"
+       y="122.33607"
+       id="text56"><tspan
+         sodipodi:role="line"
+         id="tspan54"
+         x="34.103504"
+         y="122.33607"
+         style="stroke-width:0.264583">关系 (relation)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="22.265066"
+       y="104.4684"
+       id="text60"><tspan
+         sodipodi:role="line"
+         id="tspan58"
+         x="22.265066"
+         y="104.4684"
+         style="stroke-width:0.264583">性质</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="19.569695"
+       y="80.649956"
+       id="text64"><tspan
+         sodipodi:role="line"
+         id="tspan62"
+         x="19.569695"
+         y="80.649956"
+         style="stroke-width:0.264583">观念 (ideas)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="100.73003"
+       y="60.001339"
+       id="text68"><tspan
+         sodipodi:role="line"
+         id="tspan66"
+         x="100.73003"
+         y="60.001339"
+         style="stroke-width:0.264583">逻辑框架</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="-111.81361"
+       y="23.733055"
+       id="text72"
+       transform="rotate(-90)"><tspan
+         sodipodi:role="line"
+         id="tspan70"
+         x="-111.81361"
+         y="23.733055"
+         style="stroke-width:0.264583">⊂</tspan></text>
+  </g>
+</svg>
