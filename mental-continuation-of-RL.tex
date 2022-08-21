@@ -60,7 +60,7 @@
 \cc{
 \title{\vspace{-2cm} \bfseries\color{blue}{\large 强化学习的「思维空间延拓」}}
 }{
-\title{\vspace{-2cm} \bfseries\color{blue}{\large ``Mental space continuation'' of reinforcement learning}}
+\title{\vspace{-2cm} \bfseries\color{blue}{\large ``Mental-Space Continuation'' of Reinforcement Learning}}
 }
 
 % \author{YKY} % Your name
@@ -89,7 +89,7 @@
 	从传统 RL 的角度： 人伸手拿苹果，苹果是\textbf{奖励}，伸手是\textbf{动作}。\\
 	这些都是可以在环境中\textbf{观察}到的：
 }{
-	From the traditional RL perspective:  one reaches out for an apple, the apple is the \textbf{reward}, moving the arm is an \textbf{action}.  These are all observable:
+	From the traditional RL perspective:  an agent reaches out for an apple, the apple is the \textbf{reward}, moving the arm is an \textbf{action}.  These are all \textbf{observables}:
 }
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.5]{man-grab-apple.png}}}
@@ -106,7 +106,7 @@
 \cc{
 	它将 \textbf{终点}状态的\textbf{价值}「反向传递\footnote{注意这不同于神经网络的 back-prop.}」到 终点前一步的状态的价值，就像下棋的情况，可以一直追溯到第一步棋的价值：
 }{
-	It propagates the final state's reward back to the previous state, and the state before that... just like in a chess game... and so on until the very first move:
+	It propagates the final state's reward \textbf{back} to the previous state, and the state before that... just like in a chess game... and so on until the very first move:
 }
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{checkmate-sequence.png}}}
@@ -117,15 +117,15 @@
 	So far so good. \\
 	而同样地，我们可以继续反向传递到决定「伸手取苹果」之前的一连串\textbf{思维}：
 }{
-	In other words, the reward of getting an apple, back-propagates to the action of reaching out an arm for the apple.  So far so good.  And we continue this process back to the \textbf{chain of thoughts} that decided to reach for an apple:
+	In other words, the reward of getting an apple back-propagates to the action of reaching out an arm for the apple.  So far so good.  But we can continue this process back to the \textbf{chain of thoughts} that decided to reach for an apple:
 }
 \begin{equation}
-{\color{blue}\mbox{我肚饿}} \rightarrow {\color{blue}\mbox{我要找食物}} \rightarrow {\color{blue}\mbox{我看见一只苹果}} \rightarrow {\color{blue}\mbox{苹果是食物}} \rightarrow ....
+{\color{blue}\mbox{\cc{我肚饿}{hungry}}} \rightarrow {\color{blue}\mbox{\cc{我要找食物}{need to find food}}} \rightarrow {\color{blue}\mbox{\cc{我看见一只苹果}{see an apple}}} \rightarrow {\color{blue}\mbox{\cc{苹果是食物}{apple is food}}} \rightarrow ....
 \end{equation}
 \cc{
 	换句话说，将\textbf{内部}的思维状态「反转」，看成跟\textbf{外部}的状态，是\uline{同等的地位}：
 }{
-	In other words, we turn our \textbf{internal} mental states ``inside-out'', viewing them as \textbf{external} states, \uline{on an equal footing}:
+	In other words, we turn our \textbf{internal} mental states ``inside-out'', viewing them \uline{on an equal footing} as \textbf{external} states:
 }
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.5]{man-grab-apple-2.png}}}
@@ -146,21 +146,33 @@
 \begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
 	{\color{red}{\large \textcircled{\small 2}}}
 	\hspace{8cm}
-	\color{blue}{\footnotesize \cc{强化学习的「思维空间延拓」}{Mental space continuation of RL}}
+	\color{blue}{\footnotesize \cc{强化学习的「思维空间延拓」}{Mental-Space Continuation of RL}}
 \end{textblock*}
 
 \vspace*{0.3cm} 
 \cc{
 	将 外部和内部状态 \textbf{统一处理}的做法，在哲学上也没有问题，因为其实 brain states 也是物理状态，只是肉眼看不到而已。 大脑状态 即是 神经元群的激活状态，它们之间的 transitions 是由神经\textbf{权重}决定的，而这些权重又是由 \textbf{Hebbian learning} 学习的（至少根据我们现时最好的理解）。 
 }{
-	The above approach of unifying internal and external states is philosophically entirely sound, because our ``brain states'' are actually physical states; they are electrical activations of neuronal populations, and their transitions are governed by synaptic weights between neurons, which weights are updated through \textbf{Hebbian learning}, at least according to our current best understanding.}
+	The approach of unifying internal and external states is philosophically entirely sound, because our ``brain states'' are actually physical states; they are electrical activations of neuronal populations, and their transitions are governed by synaptic weights between neurons, which weights are updated through \textbf{Hebbian learning}, at least according to our current best understanding.}
 
-而 强化学习 又是怎样\textbf{学习} 逻辑内容？ \textbf{动作} 就是由一个逻辑状态 转移到另一个 逻辑状态，也可以看成是 由一些命题 \textbf{推导}出 一个新的命题，那就是 逻辑 \textbf{rule}.  我们要在很多 动作（逻辑 rules）之中选取最好的 动作。 换句话说，要在当前状态下可以执行的 rules 之中选取最好的一个或多个 rule(s).  例如「我很肚饿$\rightarrow$我要找食物」是一条正确的 rule；「我很肚饿$\rightarrow$我要吃屎」就比较差了 \cryLaughFace
+\cc{
+	而 强化学习 又是怎样\textbf{学习} 逻辑内容？ \textbf{动作} 就是由一个逻辑状态 转移到另一个 逻辑状态，也可以看成是 由一些命题 \textbf{推导}出 一个新的命题，那就是 逻辑 \textbf{rule}.  我们要在很多 动作（逻辑 rules）之中选取最好的 动作。 换句话说，要在当前状态下可以执行的 rules 之中选取最好的一个或多个 rule(s).  例如「我很肚饿$\rightarrow$我要找食物」是一条正确的 rule；「我很肚饿$\rightarrow$我要吃屎」就比较差了 \cryLaughFace
+}{
+	So how does RL learn logical content?  An \textbf{action} here is a transition from one logic state to another; or an \textbf{inference} from some propositions to a new proposition, ie, a logic \textbf{rule}.  We need to choose from among many actions (logic rules) the best ones.  In other words, choose the best logic rule(s) from all the logic rules that are applicable to the current state.  For example, ``I'm hungry $\rightarrow$ need to find food'' is a correct rule; ``hungry $\rightarrow$ eat feces'' would be a rather bad one.
+}
 
-而 强化学习 的好处是： 理论上，它可以在无限的思维空间里 学到非常\textbf{抽象}的 rules，情形就像它在复杂的游戏\textbf{迷宫}里，学到破解的方法。
+\cc{
+	而 强化学习 的好处是： 理论上，它可以在无限的思维空间里 学到非常\textbf{抽象}的 rules，情形就像它在复杂的游戏\textbf{迷宫}里，学到破解的方法。
+}{
+	Advantage of doing this:  Theoretically, RL can learn highly \textbf{abstract} rules from the vast mental space, just like it learns to find solutions out of complicated \textbf{mazes} in Atari games.
+}
 
 \setcounter{mpfootnote}{1}
-在经典 AI 里已有研究过 逻辑 rules 的 combinatorial 搜寻，例如有这种形式的搜寻树：（但注意这并不等同于 \textbf{RL 状态空间}的形状 \footnote{我有空的时候会再思考一下： RL 思维状态空间 长什么样子，它有什么特性？ 它跟游戏迷宫 有什么相似/不同？}）
+\cc{
+	在经典 AI 里已有研究过 逻辑 rules 的 combinatorial 搜寻，例如有这种形式的搜寻树：（但注意这并不等同于 \textbf{RL 状态空间}的形状 \footnote{我有空的时候会再思考一下： RL 思维状态空间 长什么样子，它有什么特性？ 它跟游戏迷宫 有什么相似/不同？}）
+}{
+	In classical AI, the \textbf{combinatorial} search of logic rules has been studied, with search trees like below: (This is however not the same as the shape of mental space, which I should definitely spend more time to characterize...)
+}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.5]{induction1.png}}}
 \end{equation}
@@ -175,8 +187,9 @@
 \begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
 {\color{red}{\large \textcircled{\small 3}}}
 \hspace{8cm}
-\color{blue}{\footnotesize \cc{强化学习的「思维空间延拓」}{Mental space continuation of RL}}
+\color{blue}{\footnotesize \cc{强化学习的「思维空间延拓」}{Mental-Space Continuation of RL}}
 \end{textblock*}
+
 \vspace*{0.3cm} 
 \cc{
 在传统 强化学习里 有所谓 \textbf{model-based} 方法，而我们在大脑里面的 \textbf{mental model} of the world 其实是同一个概念，但由于「混合状态」的原因而被「压平」了。
@@ -184,22 +197,39 @@
 In traditional RL, there are \textbf{model-based} methods, and in our brain we build \textbf{mental models} of the world.  These are actually one and the same concept, there is no conflict between the two.
 }
 
-根据经典逻辑哲学，一个 (脑中的) \textbf{逻辑命题}，\\
-对应于现实世界中 某个\textbf{状态}：
+\cc{
+	根据经典逻辑哲学，一个 (脑中的) \textbf{逻辑命题}，\\
+	对应于现实世界中 某个\textbf{状态}：
+}{
+	As is well-known in classical philosophy of logic, a logic proposition (in the mind) corresponds to certain \textbf{states} of the world:
+}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{logic-reality-correspondence.png}}}
 \end{equation}
-而这亦可以推广到，我们知道别人也有 ``other minds'' 的认知：
+\cc{
+	而这亦可以推广到，我们知道别人也有 ``other minds'' 的认知：
+}{
+	This can be extended to our understanding of ``other minds'':
+}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{other-minds.png}}}
 \end{equation}
 
 \setcounter{mpfootnote}{2}
-然而，在「混合状态」或 flattened view 观点下，外部世界 和 思维状态 都存在于同一个状态空间，而 思维状态 是 外部世界 的 model 或 ``theory'':\footnote{符号 $T \models M$ 的意思是： $M$ is a \textbf{model} of $T$; $T$ is a \textbf{theory} of $M$.  这是 逻辑\textbf{模型论} 的术语，有严谨的定义。}
+\cc{
+	然而，在「混合状态」或 flattened view 观点下，外部世界 和 思维状态 都存在于同一个状态空间，而 思维状态 是 外部世界 的 model 或 ``theory'':\footnote{符号 $T \models M$ 的意思是： $M$ is a \textbf{model} of $T$; $T$ is a \textbf{theory} of $M$.  这是 逻辑\textbf{模型论} 的术语，有严谨的定义。}
+}{
+	However, in the mixed or ``flat'' view, both internal and external states belong to the same state space, within which, the internal states ``model'' the external states:\footnote{The notation $T \models M$ means: $M$ is a \textbf{model} of $T$;  $T$ is a \textbf{theory} of $M$. This is rigorously defined in \textbf{model theory} in logic.}
+}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{model-meta-model.png}}}
 \end{equation}
-那么，混合状态空间 本身又有没有 theory 呢？ 那可能是某种 \textbf{元逻辑}。
+\cc{
+	那么，混合状态空间 本身又有没有 theory 呢？ 那可能是某种 \textbf{元逻辑}。
+}{
+	Does the mixed state space has its own ``theory''?  That may be some kind of \textbf{meta-logic}.
+}
+
 
 \footnotesize
 Picture credits:\\
