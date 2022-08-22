@@ -315,6 +315,66 @@
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path2728-7" />
     </marker>
+    <rect
+       x="-166.07623"
+       y="412.0072"
+       width="50.509434"
+       height="16.220465"
+       id="rect742-1-3" />
+    <rect
+       x="-166.07623"
+       y="412.0072"
+       width="50.509434"
+       height="16.220465"
+       id="rect972" />
+    <rect
+       x="-166.07623"
+       y="412.0072"
+       width="50.509434"
+       height="16.220465"
+       id="rect742-1-3-5" />
+    <rect
+       x="-166.07623"
+       y="412.0072"
+       width="50.509434"
+       height="16.220465"
+       id="rect1037" />
+    <rect
+       x="-166.07623"
+       y="412.0072"
+       width="50.509434"
+       height="16.220465"
+       id="rect742-1-3-1" />
+    <rect
+       x="-166.07623"
+       y="412.0072"
+       width="50.509434"
+       height="16.220465"
+       id="rect1037-2" />
+    <rect
+       x="-166.07623"
+       y="412.0072"
+       width="103.61472"
+       height="10.558537"
+       id="rect742-1-3-5-6" />
+    <rect
+       x="-166.07623"
+       y="412.0072"
+       width="50.509434"
+       height="16.220465"
+       id="rect1109" />
+    <rect
+       x="-166.07623"
+       y="412.0072"
+       width="103.61472"
+       height="10.558537"
+       id="rect742-1-3-5-6-1" />
+    <rect
+       x="-166.07623"
+       y="412.0072"
+       width="103.61472"
+       height="10.558537"
+       id="rect1193" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -324,15 +384,15 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="117.11767"
-     inkscape:cy="1114.9055"
+     inkscape:cx="405.61032"
+     inkscape:cy="1816.2388"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:snap-global="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1059"
+     inkscape:window-height="1055"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -1535,7 +1595,7 @@
       <text
          xml:space="preserve"
          id="text740"
-         style="font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect742)"><tspan
+         style="font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect742);"><tspan
            x="-152.05231"
            y="418.39309"><tspan
              style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'">hungry</tspan></tspan></text>
@@ -1589,7 +1649,7 @@
            id="tspan750"
            x="-78.813797"
            y="447.67233"
-           style="stroke-width:0.264583">∀x. round(x) ⇒ edible(x)</tspan></text>
+           style="stroke-width:0.264583">∀x. round(x) → edible(x)</tspan></text>
     </g>
     <text
        xml:space="preserve"
@@ -1740,7 +1800,7 @@
            id="tspan750-9"
            x="-78.813797"
            y="447.67233"
-           style="stroke-width:0.264583">∀x. round(x) ⇒ edible(x)</tspan></text>
+           style="stroke-width:0.264583">∀x. round(x) → edible(x)</tspan></text>
     </g>
     <text
        xml:space="preserve"
@@ -1868,5 +1928,251 @@
          x="-120.73621"
          y="459.22241" />
     </g>
+    <g
+       id="g1176"
+       transform="translate(11.236879,-38.60525)"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576">
+      <rect
+         style="fill:#ffaaaa;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect754-34-7-2-6-6"
+         width="13.401159"
+         height="14.546105"
+         x="-85.654549"
+         y="568.39227"
+         ry="2.983567" />
+      <text
+         xml:space="preserve"
+         style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="-78.918327"
+         y="579.5929"
+         id="text1147"><tspan
+           sodipodi:role="line"
+           id="tspan1145"
+           x="-78.918327"
+           y="579.5929"
+           style="font-size:11.2889px;stroke-width:0.264583">⊥</tspan></text>
+    </g>
+    <g
+       id="g1284"
+       transform="translate(-191.22182,-11.54093)"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576">
+      <rect
+         style="fill:#ffffff;stroke-width:0.26458333;stroke-linecap:square;stroke-dasharray:none;paint-order:markers fill stroke;stroke:#000000;stroke-miterlimit:4;stroke-dashoffset:0"
+         id="rect1237"
+         width="60.073563"
+         height="27.528591"
+         x="30.634912"
+         y="543.7337"
+         ry="6.6256957" />
+      <text
+         xml:space="preserve"
+         style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="60.537544"
+         y="552.10754"
+         id="text1241"><tspan
+           sodipodi:role="line"
+           id="tspan1239"
+           x="60.537544"
+           y="552.10754"
+           style="stroke-width:0.264583">Starts with the</tspan><tspan
+           sodipodi:role="line"
+           x="60.537544"
+           y="559.16309"
+           style="stroke-width:0.264583"
+           id="tspan1243">&quot;empty&quot; formula</tspan><tspan
+           sodipodi:role="line"
+           x="60.537544"
+           y="566.21863"
+           style="stroke-width:0.264583"
+           id="tspan1245">or &quot;bottom clause&quot;</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -115.76831,572.06977 48.51314,-27.33622 47.499523,27.37614"
+       id="path1317"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -67.363739,544.49492 0.985696,28.24692"
+       id="path1319"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -71.946195,581.7708 -32.566065,16.39599"
+       id="path1321"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -18.56948,580.63021 6.652953,39.55597"
+       id="path1323"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576" />
+    <g
+       id="g1674-9-6-7"
+       transform="translate(129.03901,159.68438)"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576">
+      <rect
+         style="fill:#ffaaaa;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect754-34-7-0"
+         width="36.264637"
+         height="11.195182"
+         x="-159.37045"
+         y="410.79373"
+         ry="2.983567" />
+      <text
+         xml:space="preserve"
+         id="text740-7-5-93"
+         style="font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect742-1-3-1);"><tspan
+           x="-156.00728"
+           y="418.39309"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'">female(X)</tspan></tspan></text>
+    </g>
+    <g
+       id="g1674-9-6-6"
+       transform="translate(77.191712,161.40243)"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576">
+      <rect
+         style="fill:#ffaaaa;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect754-34-7-2"
+         width="44.397068"
+         height="11.082725"
+         x="-163.21236"
+         y="410.34048"
+         ry="2.983567" />
+      <text
+         xml:space="preserve"
+         id="text740-7-5-9"
+         style="font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect742-1-3-5);"><tspan
+           x="-162.13955"
+           y="418.39309"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'">female(mary)</tspan></tspan></text>
+    </g>
+    <g
+       id="g1674-9-6"
+       transform="translate(24.476655,160.26822)"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576">
+      <rect
+         style="fill:#ffaaaa;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect754-34-7"
+         width="44.397068"
+         height="11.082725"
+         x="-163.21236"
+         y="410.34048"
+         ry="2.983567" />
+      <text
+         xml:space="preserve"
+         id="text740-7-5"
+         style="font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect742-1-3);"><tspan
+           x="-161.27828"
+           y="418.39309"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'">female(john)</tspan></tspan></text>
+    </g>
+    <g
+       id="g1182"
+       transform="translate(7.0721297,-36.970628)"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576">
+      <rect
+         style="fill:#ffaaaa;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect754-34-7-2-6"
+         width="96.131729"
+         height="11.772317"
+         x="-167.48491"
+         y="633.37585"
+         ry="2.983567" />
+      <text
+         xml:space="preserve"
+         id="text740-7-5-9-2"
+         style="font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect742-1-3-5-6);"
+         transform="translate(-5.1105318,223.1058)"><tspan
+           x="-159.44068"
+           y="418.39309"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'">female(mary) </tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'">→ </tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'">long-hair(X)</tspan></tspan></text>
+    </g>
+    <g
+       id="g1182-8"
+       transform="translate(97.959092,-15.291631)"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576">
+      <rect
+         style="fill:#ffaaaa;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect754-34-7-2-6-7"
+         width="84.277168"
+         height="11.941629"
+         x="-161.82214"
+         y="633.47034"
+         ry="2.983567" />
+      <text
+         xml:space="preserve"
+         id="text740-7-5-9-2-9"
+         style="font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect742-1-3-5-6-1);"
+         transform="translate(-5.1105318,223.1058)"><tspan
+           x="-153.01901"
+           y="418.39309"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'">female(X) </tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'">→</tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'"> </tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'">long-hair(X)</tspan></tspan></text>
+    </g>
+    <path
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -102.31162,542.16468 26.164621,-4.59632 -27.083591,0.4477"
+       id="path1286-2-3"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576" />
+    <g
+       id="g1277"
+       transform="translate(106.40664,-41.087495)"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576">
+      <rect
+         style="fill:#ffffff;stroke-width:0.26458333;stroke-linecap:square;stroke-dasharray:none;paint-order:markers fill stroke;stroke:#000000;stroke-miterlimit:4;stroke-dashoffset:0"
+         id="rect1237-2"
+         width="68.779846"
+         height="20.711519"
+         x="-260.44824"
+         y="657.40918"
+         ry="6.6256957" />
+      <text
+         xml:space="preserve"
+         style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="-226.47134"
+         y="665.82245"
+         id="text1249"><tspan
+           sodipodi:role="line"
+           id="tspan1247"
+           x="-226.47134"
+           y="665.82245"
+           style="stroke-width:0.264583">Generating increasingly</tspan><tspan
+           sodipodi:role="line"
+           x="-226.47134"
+           y="672.87799"
+           style="stroke-width:0.264583"
+           id="tspan1251">more complex formulas</tspan></text>
+    </g>
+    <path
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -98.189301,617.71306 -14.926859,-10.37576 10.83626,10.80869 v 0"
+       id="path1286-0"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576" />
+    <path
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -86.227008,627.09605 20.268668,-4.5591 -21.187638,0.41048"
+       id="path1286-2"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576" />
   </g>
 </svg>

@@ -855,8 +855,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="224.81638"
-     inkscape:cy="1370.6633"
+     inkscape:cx="283.48305"
+     inkscape:cy="1277.33"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -1412,103 +1412,103 @@
     <rect
        style="opacity:0.5;fill:#87cdde;fill-opacity:0.992157;stroke:none;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
        id="rect4956"
-       width="139.74774"
-       height="31.609507"
-       x="-2.458729"
-       y="372.09546"
+       width="140.92995"
+       height="37.69418"
+       x="-3.6409404"
+       y="366.01077"
        ry="6.6703777"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192" />
     <text
        xml:space="preserve"
-       style="font-weight:300;font-size:6.35px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#6f8a91;stroke-width:0.264583"
-       x="68.122406"
-       y="368.95203"
+       style="font-weight:300;font-size:6.35px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;stroke-width:0.264583;"
+       x="67.429924"
+       y="363.18268"
        id="text4960"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192"><tspan
          sodipodi:role="line"
          id="tspan4958"
-         x="68.122406"
-         y="368.95203"
-         style="font-size:6.35px;fill:#6f8a91;stroke-width:0.264583">flattened state-space</tspan></text>
+         x="67.429924"
+         y="363.18268"
+         style="font-size:6.35px;fill:#000000;stroke-width:0.264583;">flattened state-space</tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
-       x="-70.997688"
-       y="390.86057"
+       x="-73.114357"
+       y="388.21469"
        id="text4988"
        transform="scale(-1,1)"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192"><tspan
          sodipodi:role="line"
          id="tspan4986"
-         x="-70.997688"
-         y="390.86057"
+         x="-73.114357"
+         y="388.21469"
          style="font-size:11.2889px;stroke-width:0.264583">⊨</tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
-       x="71.297409"
-       y="398.37128"
+       x="73.414078"
+       y="395.7254"
        id="text4992"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192"><tspan
          sodipodi:role="line"
          id="tspan4990"
-         x="71.297409"
-         y="398.37128"
+         x="73.414078"
+         y="395.7254"
          style="stroke-width:0.264583">model</tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;stroke-width:0.264583"
-       x="-148.0752"
-       y="391.02292"
+       x="-147.54604"
+       y="388.37704"
        id="text4988-9"
        transform="scale(-1,1)"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192"><tspan
          sodipodi:role="line"
          id="tspan4986-7"
-         x="-148.0752"
-         y="391.02292"
+         x="-147.54604"
+         y="388.37704"
          style="font-size:11.2889px;stroke-width:0.264583">⊨</tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;stroke-width:0.264583"
-       x="180.90437"
-       y="389.18509"
+       x="180.37521"
+       y="386.53922"
        id="text4960-3"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192"><tspan
          sodipodi:role="line"
          id="tspan4958-6"
-         x="180.90437"
-         y="389.18509"
+         x="180.37521"
+         y="386.53922"
          style="font-size:8.46667px;stroke-width:0.264583">meta-logic ?</tspan></text>
     <rect
        style="display:inline;opacity:0.5;fill:#00ccff;fill-opacity:0.992157;stroke:none;stroke-width:0.264999;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
        id="rect4956-1"
-       width="61.821747"
-       height="14.574856"
-       x="2.9070809"
-       y="379.65656"
+       width="62.9715"
+       height="21.10001"
+       x="1.7573287"
+       y="373.13141"
        ry="5.5998859"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192" />
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;stroke-width:0.264583"
-       x="68.672401"
+       x="33.747395"
        y="389.51208"
        id="text4960-2"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192"><tspan
          sodipodi:role="line"
          id="tspan4958-8"
-         x="68.672401"
+         x="33.747395"
          y="389.51208"
-         style="font-size:8.46667px;stroke-width:0.264583">external world          internal mind</tspan></text>
+         style="font-size:8.46667px;stroke-width:0.264583">external world</tspan></text>
     <g
        inkscape:label=""
        transform="translate(99.170616,113.79484)"
@@ -1574,6 +1574,32 @@
         </g>
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;stroke-width:0.264583"
+       x="33.711388"
+       y="380.14615"
+       id="text4992-3"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192"><tspan
+         sodipodi:role="line"
+         id="tspan4990-6"
+         x="33.711388"
+         y="380.14615"
+         style="stroke-width:0.264583">(observed states of)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:8.46667px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="106.53745"
+       y="387.02737"
+       id="text813"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192"><tspan
+         sodipodi:role="line"
+         id="tspan811"
+         x="106.53745"
+         y="387.02737"
+         style="font-size:8.46667px;stroke-width:0.264583">internal mind</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

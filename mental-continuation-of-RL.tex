@@ -1,6 +1,6 @@
 \input{../YKY-preamble.tex}
-\setmainfont[BoldFont=AlibabaSans-Regular.otf]{AlibabaSans-Light.otf}
-
+\setmainfont[BoldFont=AlibabaSans-Regular.otf,ItalicFont=AlibabaSans-LightItalic.otf]{AlibabaSans-Light.otf}
+	
 \usepackage[active,tightpage]{preview}		% for continuous page(s)
 \renewcommand{\PreviewBorder}{0.5cm}
 \renewcommand{\thempfootnote}{\arabic{mpfootnote}}
@@ -58,13 +58,14 @@
 \begin{preview}
 
 \cc{
-\title{\vspace{-2cm} \bfseries\color{blue}{\large 强化学习的「思维空间延拓」}}
+\title{\vspace{-1.5cm} \bfseries\color{blue}{\Large 强化学习的「思维空间延拓」}}
 }{
-\title{\vspace{-2cm} \bfseries\color{blue}{\large ``Mental-Space Continuation'' of Reinforcement Learning}}
+\title{\vspace{-1.5cm} \bfseries\color{blue}{\Large ``Mental-Space Continuation'' \\
+		of Reinforcement Learning}}
 }
 
 % \author{YKY} % Your name
-\date{\vspace{-3cm}} % Date, can be changed to a custom date
+\date{\vspace{-2cm}} % Date, can be changed to a custom date
 
 \maketitle
 
@@ -117,7 +118,7 @@
 	So far so good. \\
 	而同样地，我们可以继续反向传递到决定「伸手取苹果」之前的一连串\textbf{思维}：
 }{
-	In other words, the reward of getting an apple back-propagates to the action of reaching out an arm for the apple.  So far so good.  But we can continue this process back to the \textbf{chain of thoughts} that decided to reach for an apple:
+	In other words, the reward of getting an apple \textit{back-propagates}\footnote{Note that this is not the same as ``back-prop'' in deep learning.} to the action of reaching out an arm for the apple.  So far so good.  But we can continue this process back to the \textbf{chain of thoughts} that decided to reach for an apple:
 }
 \begin{equation}
 {\color{blue}\mbox{\cc{我肚饿}{hungry}}} \rightarrow {\color{blue}\mbox{\cc{我要找食物}{need to find food}}} \rightarrow {\color{blue}\mbox{\cc{我看见一只苹果}{see an apple}}} \rightarrow {\color{blue}\mbox{\cc{苹果是食物}{apple is food}}} \rightarrow ....
@@ -133,7 +134,7 @@
 \cc{
 	而这跟象棋的价值函数的反向传递是\uline{完全一样的}。 换句话说，我们可以用强化学习的算法，学习思维空间的内容，提供了 AGI 严谨的基础。
 	}{
-	And this is \uline{exactly analogous} to the propagation of rewards in a chess game.  In other words, we can apply techniques of RL to learn the contents of mental space, thus providing a very rigorous foundation for AGI.
+	And this is \uline{exactly analogous} to the propagation of rewards in a chess game.  In other words, we can apply techniques of RL to learn the contents of mental space, with a very rigorous foundation.
 }
 
 \end{minipage}
@@ -150,31 +151,42 @@
 \end{textblock*}
 
 \vspace*{0.3cm} 
+
+\subsubsection{Learning of logic rules under RL}
+
 \cc{
 	将 外部和内部状态 \textbf{统一处理}的做法，在哲学上也没有问题，因为其实 brain states 也是物理状态，只是肉眼看不到而已。 大脑状态 即是 神经元群的激活状态，它们之间的 transitions 是由神经\textbf{权重}决定的，而这些权重又是由 \textbf{Hebbian learning} 学习的（至少根据我们现时最好的理解）。 
 }{
-	The approach of unifying internal and external states is philosophically entirely sound, because our ``brain states'' are actually physical states; they are electrical activations of neuronal populations, and their transitions are governed by synaptic weights between neurons, which weights are updated through \textbf{Hebbian learning}, at least according to our current best understanding.}
+	The approach of unifying internal and external states is philosophically entirely sound, as ``brain states'' are physical states too, and their transitions are learned via \textbf{Hebbian learning}.}
 
 \cc{
 	而 强化学习 又是怎样\textbf{学习} 逻辑内容？ \textbf{动作} 就是由一个逻辑状态 转移到另一个 逻辑状态，也可以看成是 由一些命题 \textbf{推导}出 一个新的命题，那就是 逻辑 \textbf{rule}.  我们要在很多 动作（逻辑 rules）之中选取最好的 动作。 换句话说，要在当前状态下可以执行的 rules 之中选取最好的一个或多个 rule(s).  例如「我很肚饿$\rightarrow$我要找食物」是一条正确的 rule；「我很肚饿$\rightarrow$我要吃屎」就比较差了 \cryLaughFace
 }{
-	So how does RL learn logical content?  An \textbf{action} here is a transition from one logic state to another; or an \textbf{inference} from some propositions to a new proposition, ie, a logic \textbf{rule}.  We need to choose from among many actions (logic rules) the best ones.  In other words, choose the best logic rule(s) from all the logic rules that are applicable to the current state.  For example, ``I'm hungry $\rightarrow$ need to find food'' is a correct rule; ``hungry $\rightarrow$ eat feces'' would be a rather bad one.
+	So how does RL learn logical content?  An \textbf{action} here is a transition from one logic state (set of propositions) to another, ie, a logic \textbf{rule}.  The agent tries to learn the best actions (= logic rules) among all possible rules that are \textit{applicable} to the current state.  For example:
 }
+\begin{equation}
+\mbox{I'm hungry} \rightarrow \mbox{need to find food}
+\end{equation}
+is a good rule;
+\begin{equation}
+\mbox{hungry} \rightarrow \mbox{eat feces}
+\end{equation}
+is not so good.
 
 \cc{
 	而 强化学习 的好处是： 理论上，它可以在无限的思维空间里 学到非常\textbf{抽象}的 rules，情形就像它在复杂的游戏\textbf{迷宫}里，学到破解的方法。
 }{
-	Advantage of doing this:  Theoretically, RL can learn highly \textbf{abstract} rules from the vast mental space, just like it learns to find solutions out of complicated \textbf{mazes} in Atari games.
+	The advantage of this RL framework is that it may be able to learn highly \textbf{abstract} rules from the vast mental space, just like it learns to find solutions out of complicated \textbf{mazes} in Atari games.
 }
 
 \setcounter{mpfootnote}{1}
 \cc{
 	在经典 AI 里已有研究过 逻辑 rules 的 combinatorial 搜寻，例如有这种形式的搜寻树：（但注意这并不等同于 \textbf{RL 状态空间}的形状 \footnote{我有空的时候会再思考一下： RL 思维状态空间 长什么样子，它有什么特性？ 它跟游戏迷宫 有什么相似/不同？}）
 }{
-	In classical AI, the \textbf{combinatorial} search of logic rules has been studied, with search trees like this:
+	In classical AI, the \textbf{combinatorial} search of logic rules has been studied, with \textbf{search trees} like this:
 }
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.5]{induction1.png}}}
+\vcenter{\hbox{\includegraphics[scale=0.7]{induction1.png}}}
 \end{equation}
 
 A special characteristic of \textbf{mental space} is that \uline{any thought can potentially be deduced from any other thoughts}.  In other words, any two points in thoughts space may be connected by a \textbf{path} (= logic rule = action).  For example, if an agent is hungry and sees a tennis ball, the rule that ``round implies edible'' may satisfy the objective of finding food, only to be punished when one actually eats the object:
@@ -197,10 +209,13 @@ This negative reward would back-propagate through the \textbf{inference chain}, 
 \end{textblock*}
 
 \vspace*{0.3cm} 
+
+\subsubsection{The mind as a ``model'' of the world}
+
 \cc{
 在传统 强化学习里 有所谓 \textbf{model-based} 方法，而我们在大脑里面的 \textbf{mental model} of the world 其实是同一个概念，但由于「混合状态」的原因而被「压平」了。
 }{
-In traditional RL, there are \textbf{model-based} methods, and in our brain we build \textbf{mental models} of the world.  These are actually one and the same concept, there is no conflict between the two.
+In traditional RL, there are \textbf{model-based} methods, and in our brain we build \textbf{mental models} of the world.  These are actually one and the same concept.
 }
 
 \cc{
@@ -212,20 +227,20 @@ In traditional RL, there are \textbf{model-based} methods, and in our brain we b
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{logic-reality-correspondence.png}}}
 \end{equation}
-\cc{
-	而这亦可以推广到，我们知道别人也有 ``other minds'' 的认知：
-}{
-	This can be extended to our understanding of ``other minds'':
-}
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.7]{other-minds.png}}}
-\end{equation}
+%\cc{
+%	而这亦可以推广到，我们知道别人也有 ``other minds'' 的认知：
+%}{
+%	And this is still un-problematic for understanding ``other minds'':
+%}
+%\begin{equation}
+%\vcenter{\hbox{\includegraphics[scale=0.7]{other-minds.png}}}
+%\end{equation}
 
 \setcounter{mpfootnote}{2}
 \cc{
 	然而，在「混合状态」或 flattened view 观点下，外部世界 和 思维状态 都存在于同一个状态空间，而 思维状态 是 外部世界 的 model 或 ``theory'':\footnote{符号 $T \models M$ 的意思是： $M$ is a \textbf{model} of $T$; $T$ is a \textbf{theory} of $M$.  这是 逻辑\textbf{模型论} 的术语，有严谨的定义。}
 }{
-	However, in the mixed or ``flat'' view, both internal and external states belong to the same state space, within which, the internal states ``model'' the external states:\footnote{The notation $T \models M$ means: $M$ is a \textbf{model} of $T$;  $T$ is a \textbf{theory} of $M$. This is rigorously defined in \textbf{model theory} in logic.}
+	However, in the unified or ``flat'' view, both internal and external states belong to the same state space, within which, the internal states ``model'' the external states:\footnote{The notation $T \models M$ means: $M$ is a \textbf{model} of $T$;  $T$ is a \textbf{theory} of $M$. This is rigorously defined in model theory.}
 }
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{model-meta-model.png}}}
@@ -233,7 +248,7 @@ In traditional RL, there are \textbf{model-based} methods, and in our brain we b
 \cc{
 	那么，混合状态空间 本身又有没有 theory 呢？ 那可能是某种 \textbf{元逻辑}。
 }{
-	Does the mixed state space has its own ``theory''?  That may be some kind of \textbf{meta-logic}.
+	Does the unified cognitive space has its own ``theory''?  That may be some kind of \textbf{meta-logic}.  This meta-theory is a form of \textbf{inductive bias} that may be important in accelerating learning on the first-order level.
 }
 
 
