@@ -171,11 +171,17 @@
 \cc{
 	在经典 AI 里已有研究过 逻辑 rules 的 combinatorial 搜寻，例如有这种形式的搜寻树：（但注意这并不等同于 \textbf{RL 状态空间}的形状 \footnote{我有空的时候会再思考一下： RL 思维状态空间 长什么样子，它有什么特性？ 它跟游戏迷宫 有什么相似/不同？}）
 }{
-	In classical AI, the \textbf{combinatorial} search of logic rules has been studied, with search trees like below: (This is however not the same as the shape of mental space, which I should definitely spend more time to characterize...)
+	In classical AI, the \textbf{combinatorial} search of logic rules has been studied, with search trees like this:
 }
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.5]{induction1.png}}}
 \end{equation}
+
+A special characteristic of \textbf{mental space} is that \uline{any thought can potentially be deduced from any other thoughts}.  In other words, any two points in thoughts space may be connected by a \textbf{path} (= logic rule = action).  For example, if an agent is hungry and sees a tennis ball, the rule that ``round implies edible'' may satisfy the objective of finding food, only to be punished when one actually eats the object:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{tennis-ball-edible.png}}}
+\end{equation}
+This negative reward would back-propagate through the \textbf{inference chain}, and after many iterations, the system would eventually find the culprit rule.  In short, a logical system can get ``as crazy as it wants'' without other prior constraints.  Indeed, some geniuses arrive at non-obvious conclusions because they are a bit ``crazy''.  This property of mental space is common to all learning-reasoning systems, not just my architecture.
 
 \end{minipage}
 \end{preview}
