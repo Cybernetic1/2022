@@ -160,18 +160,18 @@
 	The approach of unifying internal and external states is philosophically entirely sound, as ``brain states'' are physical states too, and their transitions are learned via \textbf{Hebbian learning}.}
 
 \cc{
-	而 强化学习 又是怎样\textbf{学习} 逻辑内容？ \textbf{动作} 就是由一个逻辑状态 转移到另一个 逻辑状态，也可以看成是 由一些命题 \textbf{推导}出 一个新的命题，那就是 逻辑 \textbf{rule}.  我们要在很多 动作（逻辑 rules）之中选取最好的 动作。 换句话说，要在当前状态下可以执行的 rules 之中选取最好的一个或多个 rule(s).  例如「我很肚饿$\rightarrow$我要找食物」是一条正确的 rule；「我很肚饿$\rightarrow$我要吃屎」就比较差了 \cryLaughFace
+	而 强化学习 又是怎样\textbf{学习} 逻辑内容？ \textbf{动作} 就是由一个逻辑状态 转移到另一个 逻辑状态，也可以看成是 由一些命题 \textbf{推导}出 一个新的命题，那就是 逻辑 \textbf{rule}.  我们要在很多 动作（逻辑 rules）之中选取最好的 动作。 换句话说，要在当前状态下可以执行的 rules 之中选取最好的一个或多个 rule(s).  例如：
 }{
 	So how does RL learn logical content?  An \textbf{action} here is a transition from one logic state (set of propositions) to another, ie, a logic \textbf{rule}.  The agent tries to learn the best actions (= logic rules) among all possible rules that are \textit{applicable} to the current state.  For example:
 }
 \begin{equation}
-\mbox{I'm hungry} \rightarrow \mbox{need to find food}
+\mbox{\cc{我很肚饿}{I'm hungry}} \rightarrow \mbox{\cc{我要吃苹果}{want to eat an apple}}
 \end{equation}
-is a good rule;
+\cc{是一条正确的 rule；}{is a good rule;}
 \begin{equation}
-\mbox{hungry} \rightarrow \mbox{eat feces}
+\mbox{\cc{肚饿}{hungry}} \rightarrow \mbox{\cc{吃网球}{want to eat a tennis ball}}
 \end{equation}
-is not so good.
+\cc{就比较差了。}{is not so good.}
 
 \cc{
 	而 强化学习 的好处是： 理论上，它可以在无限的思维空间里 学到非常\textbf{抽象}的 rules，情形就像它在复杂的游戏\textbf{迷宫}里，学到破解的方法。
@@ -181,7 +181,7 @@ is not so good.
 
 \setcounter{mpfootnote}{1}
 \cc{
-	在经典 AI 里已有研究过 逻辑 rules 的 combinatorial 搜寻，例如有这种形式的搜寻树：（但注意这并不等同于 \textbf{RL 状态空间}的形状 \footnote{我有空的时候会再思考一下： RL 思维状态空间 长什么样子，它有什么特性？ 它跟游戏迷宫 有什么相似/不同？}）
+	在经典 AI 里已有研究过 逻辑 rules 的 combinatorial 搜寻，例如有这种形式的\textbf{搜寻树}： %（但注意这并不等同于 \textbf{RL 状态空间}的形状 \footnote{我有空的时候会再思考一下： RL 思维状态空间 长什么样子，它有什么特性？ 它跟游戏迷宫 有什么相似/不同？}）
 }{
 	In classical AI, the \textbf{combinatorial} search of logic rules has been studied, with \textbf{search trees} like this:
 }
@@ -189,11 +189,19 @@ is not so good.
 \vcenter{\hbox{\includegraphics[scale=0.7]{induction1.png}}}
 \end{equation}
 
-A special characteristic of \textbf{mental space} is that \uline{any thought can potentially be deduced from any other thoughts}.  In other words, any two points in thoughts space may be connected by a \textbf{path} (= logic rule = action).  For example, if an agent is hungry and sees a tennis ball, the rule that ``round implies edible'' may satisfy the objective of finding food, only to be punished when one actually eats the object:
+\cc{
+思维空间的一个特性是：理论上，\uline{任何思想都有可能推导出任何思想}。 换句话说，任何两点之间都有可能存在一条路径（= 逻辑 rule = 动作）。 例如，如果一个肚饿的人，看见一只网球，那么「圆型的就可以吃」这条 rule 就似乎可以立即解决他的肚饿，直到他真的尝试吃它：
+}{
+A special characteristic of \textbf{mental space} is that \uline{any thought can potentially be deduced from any other thoughts}.  In other words, any two points in thoughts space may be connected by a \textbf{path} (= logic rule = action).  For example, if a person is hungry and sees a tennis ball, the rule that ``round implies edible'' may satisfy the objective of finding food, only to be punished when one actually eats the object:	
+}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{tennis-ball-edible.png}}}
 \end{equation}
-This negative reward would back-propagate through the \textbf{inference chain}, and after many iterations, the system would eventually find the culprit rule.  In short, a logical system can get ``as crazy as it wants'' without other prior constraints.  Indeed, some geniuses arrive at non-obvious conclusions because they are a bit ``crazy''.  This property of mental space is common to all learning-reasoning systems, not just my architecture.
+\cc{
+他得到的负值奖励 会反向传播至 整个\textbf{推导链}。 经过很多次 迭代，系统最终会发现出错的 rule. 简言之，一个初始的逻辑系统可以是任意地「疯狂」的。 事实上，一些天才正是因为有点疯，才发现了其他人想不到的事物。 这是逻辑学习系统必然有的特性，并不只限于我提出的架构。
+}{
+This negative reward would back-propagate through the \textbf{inference chain}, and after many iterations, the system would eventually find the culprit rule.  In short, a logical system can get ``as crazy as it wants'' without other prior constraints.  Indeed, some geniuses arrive at non-obvious conclusions because they are a bit ``crazy''.  This property of mental space is common to all learning-reasoning systems, not just my architecture.	
+}
 
 \end{minipage}
 \end{preview}
@@ -246,7 +254,7 @@ In traditional RL, there are \textbf{model-based} methods, and in our brain we b
 \vcenter{\hbox{\includegraphics[scale=0.7]{model-meta-model.png}}}
 \end{equation}
 \cc{
-	那么，混合状态空间 本身又有没有 theory 呢？ 那可能是某种 \textbf{元逻辑}。
+	那么，混合状态空间 本身又有没有 theory 呢？ 那可能是某种 \textbf{元逻辑}。 元逻辑 是一种 归纳偏置，或许会在加速学习上有重要作用。
 }{
 	Does the unified cognitive space has its own ``theory''?  That may be some kind of \textbf{meta-logic}.  This meta-theory is a form of \textbf{inductive bias} that may be important in accelerating learning on the first-order level.
 }
