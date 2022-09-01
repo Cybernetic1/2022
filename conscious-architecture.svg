@@ -16,6 +16,12 @@
    sodipodi:docname="conscious-architecture.svg">
   <defs
      id="defs2">
+    <rect
+       x="167.0782"
+       y="74.977432"
+       width="228.86818"
+       height="100.92598"
+       id="rect2647" />
     <marker
        inkscape:collect="always"
        inkscape:isstock="true"
@@ -474,8 +480,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="-68.538741"
-     inkscape:cy="196.15282"
+     inkscape:cx="150.12793"
+     inkscape:cy="302.81949"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -499,7 +505,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1616,5 +1622,41 @@
          x="208.62729"
          sodipodi:role="line"
          id="tspan3754-6">loop</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:9.87777px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="246.85757"
+       y="87.118942"
+       id="text2643"><tspan
+         sodipodi:role="line"
+         id="tspan2641"
+         x="246.85757"
+         y="87.118942"
+         style="stroke-width:0.264583" /></text>
+    <text
+       xml:space="preserve"
+       id="text2645"
+       style="font-weight:300;font-size:9.87778px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect2647)"
+       x="-63.435333"
+       y="0"><tspan
+         x="167.07812"
+         y="84.903731"><tspan
+           style="text-align:start;text-anchor:start">其实什么是</tspan><tspan
+           style="text-align:start;text-anchor:start"> </tspan><tspan
+           style="text-align:start;text-anchor:start">meta-reasoning?
+</tspan></tspan><tspan
+         x="167.07812"
+         y="98.238738"><tspan
+           style="text-align:start;text-anchor:start">逻辑本身是学习出来的</tspan><tspan
+           style="text-align:start;text-anchor:start">.
+</tspan></tspan><tspan
+         x="167.07812"
+         y="111.57374"><tspan
+           style="text-align:start;text-anchor:start">什么是逻辑结构？</tspan><tspan
+           style="text-align:start;text-anchor:start"> </tspan><tspan
+           style="text-align:start;text-anchor:start">Transition function </tspan><tspan
+           style="text-align:start;text-anchor:start">的结构</tspan><tspan
+           style="text-align:start;text-anchor:start">.
+</tspan></tspan></text>
   </g>
 </svg>

@@ -1,0 +1,173 @@
+\input{../YKY-preamble.tex}
+\setmainfont[BoldFont=AlibabaSans-Regular.otf,ItalicFont=AlibabaSans-LightItalic.otf]{AlibabaSans-Light.otf}
+	
+\usepackage[active,tightpage]{preview}		% for continuous page(s)
+\renewcommand{\PreviewBorder}{0.5cm}
+\renewcommand{\thempfootnote}{\arabic{mpfootnote}}
+
+\usepackage[absolute,overlay]{textpos}		% for page number on upper left corner
+
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage[hyperfootnotes=false]{hyperref}
+
+% \usepackage[backend=biber,style=numeric]{biblatex}
+% \bibliography{../AGI-book}
+% \renewcommand*{\bibfont}{\footnotesize}
+
+\usetikzlibrary{shapes}
+\usepackage[export]{adjustbox}				% ??
+\usepackage{bm}
+\usepackage{verbatim} % for comments
+% \usepackage{newtxtext,newtxmath}	% Times New Roman font
+
+% \numberwithin{equation}{subsection}
+
+\newcommand{\underdash}[1]{%
+	\tikz[baseline=(toUnderline.base)]{
+		\node[inner sep=1pt,outer sep=10pt] (toUnderline) {#1};
+		\draw[dashed] ([yshift=-0pt]toUnderline.south west) -- ([yshift=-0pt]toUnderline.south east);
+	}%
+}%
+
+% Tic-Tac-Toe symbols
+% \newcommand{\bO}[0]{\raisebox{-0.2em}{\textbf{O}}}
+% \newcommand{\Xb}[0]{\raisebox{-0.2em}{\textbf{X}}}
+
+%\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+%\DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+% \setmathfont{Latin Modern Math}
+
+% \newcommand{\highlight}[1]{\colorbox{pink}{$\displaystyle #1$}}
+
+% \newcommand{\emp}[1]{{\color{violet}\textbf{#1}}}
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{\textcolor{blue}{\oldtextbf{#1}}}
+
+\newcommand*\smileFace{$\vcenter{\hbox{\includegraphics[scale=0.6]{../smiley.jpg}}}$}
+\newcommand{\underconst}{\includegraphics[scale=0.5]{../2020/UnderConst.png}}
+\newcommand{\KBsymbol}{\vcenter{\hbox{\includegraphics[scale=1]{../KB-symbol.png}}}}
+\newcommand{\witness}{\scalebox{0.6}{$\blacksquare$}}
+% \newcommand{\Heytingarrow}{\mathrel{-}\mathrel{\triangleright}}
+% \providecommand\Heytingarrow{\relbar\joinrel\mathrel{\vcenter{\hbox{\scalebox{0.75}{$\rhd$}}}}}
+
+\begin{document}
+
+\begin{preview}
+
+\cc{
+\title{\vspace{-1.5cm} \bfseries\color{blue}{\Large Transformer 的逻辑解释}}
+}{
+\title{\vspace{-1.5cm} \bfseries\color{blue}{\Large Transformer as Logic}}
+}
+
+% \author{YKY} % Your name
+\date{\vspace{-2cm}} % Date, can be changed to a custom date
+
+\maketitle
+
+\setcounter{section}{-1}
+
+% (1) Circled page number on upper left corner
+\begin{textblock*}{5cm}(2.1cm,2.3cm) % {block width} (coords) 
+{\color{red}{\large \textcircled{\small 1}}}
+\end{textblock*}
+
+\begin{minipage}{\textwidth}
+\setlength{\parskip}{0.4\baselineskip}
+
+很多朋友问我, Transformer 是如何做逻辑推理? 在此尝试回答一下.
+
+考虑这个例子:
+\begin{equation}
+\text{\textit{John's father's father is Pete}} \Rightarrow \text{\textit{John's grandfather is Pete}}
+\end{equation}
+省略一些多余的 tokens, 加入变量\footnote{这里使用了 \textbf{relation algebra} 的表达方式, 这种方式更接近人类语言: $a R b$ 表示 $a$ 和 $b$ 之间有关系 $R$.  关系之间可以 compose, 例如 $R \circ S$.  如果用 \textbf{谓词逻辑} 表达, 会比较累赘: father(X, Y) $\wedge$ father(Y,Z) $\Rightarrow$ grandfather(X,Z).  但我们不必太拘泥于逻辑形式的细节, 因为深度学习遵从「\textbf{后结构主义}」, 它只需要 抽取逻辑结构的某些特征, 将之变成 \textbf{inductive bias} 即可.}:
+\begin{equation}
+\forall X, Y. \;  X \text{\textit{ father father }} Y \Rightarrow X \text{\textit{ grandfather }} Y
+\end{equation}
+
+考虑这样一个简单的 $N$-层 Transformer, 它从左到右逐一处理 tokens, {\color{red}红色}表示 担任 Query 的 token (注意左边和右边的 tokens 都有参与 attention, 亦即 bi-directional 处理):
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{Transformer-father-example.png}}}
+\label{fig:transformer-father-example}
+\end{equation}
+我们要回答两个问题:
+\begin{itemize}
+	\item Query \textit{father} 如何产生 \textit{grandfather}?
+	\item 第 4 输入位置的 \textit{Pete} 如何出现在第 3 输出位置?
+\end{itemize}
+
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+\setlength{\parskip}{0.4\baselineskip}
+
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 2}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{Transformer 的逻辑解释}{Transformer as Logic}}
+\end{textblock*}
+
+\vspace*{0.3cm} 
+
+如果各位同学忘记了 \textbf{self-Attention} 机制是如何运作, 可以参考下图 重温一下 (图中第 3 个输入是 {\color{red}Query}):
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{self-attention-2.png}}}
+\end{equation}
+在我们的例子 (\ref{fig:transformer-father-example}) 里, Query(\textit{father}$_1$) 配上 Key(\textit{father}$_2$), 所谓「配」是指 dot product: $\langle$ Query, Key $\rangle$.
+
+重温一下 Attention 的公式:
+\begin{equation}
+\mathrm{Attention}(Q, K, V) = \mathrm{softmax}\left( \frac{\langle Q, K \rangle}{\sqrt{d_k}} \right) V
+\end{equation}
+Softmax 给出的是一组概率, 也就是注意力\textbf{权重}.  例如 给予 Value(\textit{father}$_1$) 30\% 的权重, 给 Value(\textit{father}$_2$) 70\%.
+
+所以输出的向量是 Value(\textit{father}$_1$) 和 Value(\textit{father}$_2$) 的\textbf{线性组合}:
+\begin{equation}
+\boxed{\mbox{Output}} \quad \mathit{grandfather} = \alpha \, \mbox{Value}(\mathit{father}_1) + \beta \, \mbox{Value}(\mathit{father}_2)
+\end{equation}
+留意上式中, \textit{grandfather} 那些是 \textbf{词向量}, 即 vector embedding.
+
+以上这操作是 Transformer 可以轻易做到的, so far so good \smileFace
+
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+	
+\setlength{\parskip}{0.4\baselineskip}
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 3}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{Transformer 的逻辑解释}{Transformer as Logic}}
+\end{textblock*}
+
+\vspace*{0.3cm} 
+
+\subsubsection{Multiple Logic Rules}
+
+其次来考虑, 一层的 Transformer 能不能储存 多个逻辑 rules?  这是重要的, 因为要达到 人类 common sense 的知识, 估计需要的逻辑 rules 数量, 起码达到 百万或千万以上.
+
+
+
+\subsubsection{``Copy'' Mechanism}
+
+\begin{equation}
+\mathit{Pete} = \alpha \, \mbox{Value}(\mathit{father}_1) + \beta \, \mbox{Value}(\mathit{father}_2) + \gamma \, \mbox{Value}(\mathit{Pete})
+\end{equation}
+
+\subsubsection{Multi-Head Attention}
+
+\footnotesize
+Picture credits:\\
+Human figure from www.onlinewebfonts.com licensed by CC BY 3.0\\
+Thought bubble created by Catherine Please from the Noun Project
+\end{minipage}
+\end{preview}
+\end{document}

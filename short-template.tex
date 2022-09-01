@@ -1,0 +1,124 @@
+\input{../YKY-preamble.tex}
+\setmainfont[BoldFont=AlibabaSans-Regular.otf,ItalicFont=AlibabaSans-LightItalic.otf]{AlibabaSans-Light.otf}
+	
+\usepackage[active,tightpage]{preview}		% for continuous page(s)
+\renewcommand{\PreviewBorder}{0.5cm}
+\renewcommand{\thempfootnote}{\arabic{mpfootnote}}
+
+\usepackage[absolute,overlay]{textpos}		% for page number on upper left corner
+
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage[hyperfootnotes=false]{hyperref}
+
+% \usepackage[backend=biber,style=numeric]{biblatex}
+% \bibliography{../AGI-book}
+% \renewcommand*{\bibfont}{\footnotesize}
+
+\usetikzlibrary{shapes}
+\usepackage[export]{adjustbox}				% ??
+\usepackage{bm}
+\usepackage{verbatim} % for comments
+% \usepackage{newtxtext,newtxmath}	% Times New Roman font
+
+% \numberwithin{equation}{subsection}
+
+\newcommand{\underdash}[1]{%
+	\tikz[baseline=(toUnderline.base)]{
+		\node[inner sep=1pt,outer sep=10pt] (toUnderline) {#1};
+		\draw[dashed] ([yshift=-0pt]toUnderline.south west) -- ([yshift=-0pt]toUnderline.south east);
+	}%
+}%
+
+% Tic-Tac-Toe symbols
+% \newcommand{\bO}[0]{\raisebox{-0.2em}{\textbf{O}}}
+% \newcommand{\Xb}[0]{\raisebox{-0.2em}{\textbf{X}}}
+
+%\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+%\DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+% \setmathfont{Latin Modern Math}
+
+% \newcommand{\highlight}[1]{\colorbox{pink}{$\displaystyle #1$}}
+
+% \newcommand{\emp}[1]{{\color{violet}\textbf{#1}}}
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{\textcolor{blue}{\oldtextbf{#1}}}
+
+\newcommand*\cryLaughFace{$\vcenter{\hbox{\includegraphics[scale=0.08]{../crying-laughing.jpg}}}$}
+\newcommand{\underconst}{\includegraphics[scale=0.5]{../2020/UnderConst.png}}
+\newcommand{\KBsymbol}{\vcenter{\hbox{\includegraphics[scale=1]{../KB-symbol.png}}}}
+\newcommand{\witness}{\scalebox{0.6}{$\blacksquare$}}
+% \newcommand{\Heytingarrow}{\mathrel{-}\mathrel{\triangleright}}
+% \providecommand\Heytingarrow{\relbar\joinrel\mathrel{\vcenter{\hbox{\scalebox{0.75}{$\rhd$}}}}}
+
+\begin{document}
+
+\begin{preview}
+
+\cc{
+\title{\vspace{-1.5cm} \bfseries\color{blue}{\Large Transformer 的逻辑解释}}
+}{
+\title{\vspace{-1.5cm} \bfseries\color{blue}{\Large Transformer as Logic}}
+}
+
+% \author{YKY} % Your name
+\date{\vspace{-2cm}} % Date, can be changed to a custom date
+
+\maketitle
+
+\setcounter{section}{-1}
+
+% (1) Circled page number on upper left corner
+\begin{textblock*}{5cm}(2.1cm,2.3cm) % {block width} (coords) 
+{\color{red}{\large \textcircled{\small 1}}}
+\end{textblock*}
+
+\begin{minipage}{\textwidth}
+\setlength{\parskip}{0.4\baselineskip}
+
+
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+\setlength{\parskip}{0.4\baselineskip}
+
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 2}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{Transformer 的逻辑解释}{Transformer as Logic}}
+\end{textblock*}
+
+\vspace*{0.3cm} 
+
+\subsubsection{Learning of logic rules under RL}
+
+\setcounter{mpfootnote}{1}
+
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+	
+\setlength{\parskip}{0.4\baselineskip}
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 3}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{Transformer 的逻辑解释}{Transformer as Logic}}
+\end{textblock*}
+
+\vspace*{0.3cm} 
+
+\subsubsection{The mind as a ``model'' of the world}
+
+\footnotesize
+Picture credits:\\
+Human figure from www.onlinewebfonts.com licensed by CC BY 3.0\\
+Thought bubble created by Catherine Please from the Noun Project
+\end{minipage}
+\end{preview}
+\end{document}
