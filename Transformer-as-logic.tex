@@ -119,7 +119,7 @@
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{self-attention-2.png}}}
 \end{equation}
-在我们的例子 (\ref{fig:transformer-father-example}) 里, Query(\textit{father}$_1$) 配上 Key(\textit{father}$_2$), 所谓「配」是指 dot product: $\langle$ Query, Key $\rangle$.
+在我们的例子 (\ref{fig:transformer-father-example}) 里, Query(\textit{father}$_1$) 配上 Key(\textit{father}$_2$), 所谓「配对」是指 dot product: $\langle$ Query, Key $\rangle$.
 
 重温一下 Attention 的公式:
 \begin{equation}
@@ -133,7 +133,9 @@ Softmax 给出的是一组概率, 也就是注意力\textbf{权重}.  例如 给
 \end{equation}
 留意上式中, \textit{grandfather} 那些是 \textbf{词向量}, 即 vector embedding.
 
-以上这操作是 Transformer 可以轻易做到的, so far so good \smileFace
+其实 Value(\textit{father}$_1$) 和 Value(\textit{father}$_2$) 是一样的, 如果不考虑 positional embedding.  % 那就有个问题: 输入是 \textit{father} 的 rules, 它们的 输出 似乎受到了限制, 后面会讨论这点.
+
+目前为止, 以上的操作是 Transformer 可以轻易做到的, so far so good \smileFace
 
 \end{minipage}
 \end{preview}
@@ -150,24 +152,61 @@ Softmax 给出的是一组概率, 也就是注意力\textbf{权重}.  例如 给
 
 \vspace*{0.3cm} 
 
-\subsubsection{Multiple Logic Rules}
-
-其次来考虑, 一层的 Transformer 能不能储存 多个逻辑 rules?  这是重要的, 因为要达到 人类 common sense 的知识, 估计需要的逻辑 rules 数量, 起码达到 百万或千万以上.
-
-
-
 \subsubsection{``Copy'' Mechanism}
 
+第二个问题是 将 \textit{Pete} 从第 4 位置 ``copy'' 到第 3 位置.
+
+Query 是第 3 位置的 \textit{father}$_2$.
+
+用更简洁的符号表示:
 \begin{equation}
-\mathit{Pete} = \alpha \, \mbox{Value}(\mathit{father}_1) + \beta \, \mbox{Value}(\mathit{father}_2) + \gamma \, \mbox{Value}(\mathit{Pete})
+\forall \vec{x}. \quad \vec{x} = \langle Q f_2, K f_1 \rangle V f_1 + \langle Q f_2, K f_2 \rangle V f_2 + \langle Q f_2, K \vec{x} \rangle V \vec{x}
 \end{equation}
+代入 $\vec{x} = 0$ 可得 前两项 $= 0$, ie:
+\begin{equation}
+\forall \vec{x}. \quad \vec{x} = \langle Q f_2, K \vec{x} \rangle V \vec{x}
+\end{equation}
+如果 $\vec{x}$ 可取的值 $>$ embedding dimension, 那么 $V$ 必然是 $k \cdot I$ 的形式.  那么 $\langle Q f_2, K \vec{x} \rangle = 1/k = \mbox{constant}$ 表示 $K$ 将 $\vec{x}$ 投射到一个超平面上.  以上对于 矩阵 $K, V$ 来说是颇强的约束, 但并非无可能.  而且, $\vec{x}$ 的取值可能只是 embedding 空间的一个子集, 因此 约束 可能更宽松.
+
+问题是: 有了这些约束之后, 似乎这一层的 Transformer 就不能 储存 其他的 逻辑 rules 了 (见下面的分析).  
+
+\subsubsection{Multiple Logic Rules}
+
+现在来考虑, 一层的 Transformer 能不能储存 多个逻辑 rules?
+
+这是重要的, 因为要达到 人类 common sense 的知识, 估计需要的逻辑 rules 数量, 起码达到 百万或千万以上.  BERT/GPT 给了我们一个大约的估算.
+
+考虑 这两条不同的 rules:
+\begin{itemize}
+	\item \textit{father sister} $\Rightarrow$ \textit{aunt}
+	\item \textit{church sister} $\Rightarrow$ \textit{nun}
+\end{itemize}
+这等于要约束:
+\begin{itemize}
+	\item \textit{aunt} = $\gamma \, V$ \textit{father} + $\delta \, V$ \textit{sister}
+	\item \textit{nun} = $\epsilon \, V$ \textit{church} + $\zeta \, V$ \textit{sister}
+\end{itemize}
+于是我们看到, 不同的 逻辑前提之下, 会产生不同的 Values 的线性组合, 这表达的能力是很高的.
+
+而且 还不要忽略 MLP 层的 非线性作用.
+
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+
+\setlength{\parskip}{0.4\baselineskip}
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 4}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{Transformer 的逻辑解释}{Transformer as Logic}}
+\end{textblock*}
+
+\vspace*{0.3cm} 
 
 \subsubsection{Multi-Head Attention}
 
-\footnotesize
-Picture credits:\\
-Human figure from www.onlinewebfonts.com licensed by CC BY 3.0\\
-Thought bubble created by Catherine Please from the Noun Project
 \end{minipage}
 \end{preview}
 \end{document}
