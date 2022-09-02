@@ -158,23 +158,30 @@ Softmax 给出的是一组概率, 也就是注意力\textbf{权重}.  例如 给
 
 Query 是第 3 位置的 \textit{father}$_2$.
 
-用更简洁的符号表示:
+用更简洁的符号表示, 并略去 softmax:
 \begin{equation}
 \forall \vec{x}. \quad \vec{x} = \langle Q f_2, K f_1 \rangle V f_1 + \langle Q f_2, K f_2 \rangle V f_2 + \langle Q f_2, K \vec{x} \rangle V \vec{x}
+\label{eqn:copy-condition}
 \end{equation}
 代入 $\vec{x} = 0$ 可得 前两项 $= 0$, ie:
 \begin{equation}
 \forall \vec{x}. \quad \vec{x} = \langle Q f_2, K \vec{x} \rangle V \vec{x}
 \end{equation}
-如果 $\vec{x}$ 可取的值 $>$ embedding dimension, 那么 $V$ 必然是 $k \cdot I$ 的形式.  那么 $\langle Q f_2, K \vec{x} \rangle = 1/k = \mbox{constant}$ 表示 $K$ 将 $\vec{x}$ 投射到一个超平面上.  以上对于 矩阵 $K, V$ 来说是颇强的约束, 但并非无可能.  而且, $\vec{x}$ 的取值可能只是 embedding 空间的一个子集, 因此 约束 可能更宽松.
+很明显 $\vec{x}$ 需要是矩阵 $V$ 的 eigen-vector.  但如果 $\vec{x}$ 可取的值的数目 $>$ embedding dimension, 那么 $V$ 必然是 $k \cdot I$ 的形式.  那么 $\langle Q f_2, K \vec{x} \rangle = 1/k = \mbox{constant}$ 表示 $K$ 将 $\vec{x}$ 投射到一个超平面上.
 
-问题是: 有了这些约束之后, 似乎这一层的 Transformer 就不能 储存 其他的 逻辑 rules 了 (见下面的分析).  
+% 以上对于 矩阵 $K, V$ 来说是颇强的约束, 但并非无可能.  
+$\vec{x}$ 的取值可能只是 embedding 空间的一个子集, 因此 约束 可能更宽松.
+
+但如果上述条件满足, 那么 (\ref{eqn:copy-condition}) 的前两项不会是 0 而是 $f_1 + f_2$, 导致矛盾.  换句话说, copy 的条件无法满足.  但注意, 我们忽略了 softmax 的作用!
+
+似乎满足 copy 的方法是: softmax 令某些 dot products 的值是 practically zero, 所以实际 $V \vec{x}$ 那项的注意力接近 100\%.
+% 问题是: 有了这些约束之后, 似乎这一层的 Transformer 就不能 储存 其他的 逻辑 rules 了 (见下面的分析).  
 
 \subsubsection{Multiple Logic Rules}
 
 现在来考虑, 一层的 Transformer 能不能储存 多个逻辑 rules?
 
-这是重要的, 因为要达到 人类 common sense 的知识, 估计需要的逻辑 rules 数量, 起码达到 百万或千万以上.  BERT/GPT 给了我们一个大约的估算.
+这是重要的, 因为要达到 人类 common sense 的知识, 估计需要的逻辑 rules 数量, 起码达到 百万或千万以上.  BERT/GPT 的成功给了我们一个大约的估算.
 
 考虑 这两条不同的 rules:
 \begin{itemize}
