@@ -80,6 +80,8 @@
 
 很多朋友问我, Transformer 是如何做逻辑推理? 在此尝试回答一下.
 
+Curry-Howard isomorphism 将逻辑的 $\Rightarrow$ 解释为函数的 $\rightarrow$, 所以 \uline{任何作用在某些 states 之上的函数 都可以看成是某种逻辑}.
+
 考虑这个例子:
 \begin{equation}
 \text{\textit{John's father's father is Pete}} \Rightarrow \text{\textit{John's grandfather is Pete}}
@@ -89,14 +91,14 @@
 \forall X, Y. \;  X \text{\textit{ father father }} Y \Rightarrow X \text{\textit{ grandfather }} Y
 \end{equation}
 
-考虑这样一个简单的 $N$-层 Transformer, 它从左到右逐一处理 tokens, {\color{red}红色}表示 担任 Query 的 token (注意左边和右边的 tokens 都有参与 attention, 亦即 bi-directional 处理):
+考虑这样一个简单的 $N$-层 Transformer, 它从左到右逐一处理 tokens, {\color{red}红色}表示 担任 \  {\color{red}Query} 的 token (注意左边和右边的 tokens 都有参与 attention, 亦即 bi-directional 处理):
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{Transformer-father-example.png}}}
 \label{fig:transformer-father-example}
 \end{equation}
 我们要回答两个问题:
 \begin{itemize}
-	\item Query \textit{father} 如何产生 \textit{grandfather}?
+	\item {\color{red}Query} \textit{father} 如何产生 \textit{grandfather}?
 	\item 第 4 输入位置的 \textit{Pete} 如何出现在第 3 输出位置?
 \end{itemize}
 
@@ -115,11 +117,11 @@
 
 \vspace*{0.3cm} 
 
-如果各位同学忘记了 \textbf{self-Attention} 机制是如何运作, 可以参考下图 重温一下 (图中第 3 个输入是 {\color{red}Query}):
+如果各位同学忘记了 \textbf{self-Attention} 机制是如何运作, 可以参考下图 重温一下 (图中第 3 个输入是 \ {\color{red}Query}):
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{self-attention-2.png}}}
 \end{equation}
-在我们的例子 (\ref{fig:transformer-father-example}) 里, Query(\textit{father}$_1$) 配上 Key(\textit{father}$_2$), 所谓「配对」是指 dot product: $\langle$ Query, Key $\rangle$.
+在我们的例子 (\ref{fig:transformer-father-example}) 里, {\color{red}Query}(\textit{father}$_1$) 配上 Key(\textit{father}$_2$), 所谓「配对」是指 dot product: $\langle$ Query, Key $\rangle$.
 
 重温一下 Attention 的公式:
 \begin{equation}
@@ -133,7 +135,7 @@ Softmax 给出的是一组概率, 也就是注意力\textbf{权重}.  例如 给
 \end{equation}
 留意上式中, \textit{grandfather} 那些是 \textbf{词向量}, 即 vector embedding.
 
-其实 Value(\textit{father}$_1$) 和 Value(\textit{father}$_2$) 是一样的, 如果不考虑 positional embedding.  % 那就有个问题: 输入是 \textit{father} 的 rules, 它们的 输出 似乎受到了限制, 后面会讨论这点.
+其实 Value(\textit{father}$_1$) 和 Value(\textit{father}$_2$) 是一样的, 如果不考虑 positional encoding.  % 那就有个问题: 输入是 \textit{father} 的 rules, 它们的 输出 似乎受到了限制, 后面会讨论这点.
 
 目前为止, 以上的操作是 Transformer 可以轻易做到的, so far so good \smileFace
 
@@ -172,12 +174,12 @@ Query 是第 3 位置的 \textit{father}$_2$.
 % 以上对于 矩阵 $K, V$ 来说是颇强的约束, 但并非无可能.  
 $\vec{x}$ 的取值可能只是 embedding 空间的一个子集, 因此 约束 可能更宽松.
 
-但如果上述条件满足, 那么 (\ref{eqn:copy-condition}) 的前两项不会是 0 而是 $f_1 + f_2$, 导致矛盾.  换句话说, copy 的条件无法满足.  但注意, 我们忽略了 softmax 的作用!
+但如果上述条件满足, 那么 (\ref{eqn:copy-condition}) 的前两项不会是 0 而是 $f_1 + f_2$, 导致\textbf{矛盾}.  换句话说, copy 的条件无法满足.  但注意, 我们忽略了 softmax 的作用!
 
 似乎满足 copy 的方法是: softmax 令某些 dot products 的值是 practically zero, 所以实际 $V \vec{x}$ 那项的注意力接近 100\%.
 % 问题是: 有了这些约束之后, 似乎这一层的 Transformer 就不能 储存 其他的 逻辑 rules 了 (见下面的分析).  
 
-用这种方法, $V = k I$, 则 整层 Transformer 不能储存其他 rules, 它只能作为「copy 层」, 可以在多个位置做独立的 copy 动作.  在实际的 Language Models 里面, copy 是不是都集中在某些层呢?  可以验证一下.
+用这种方法, $V = k I$, 则 整层 Transformer 不能储存其他 rules, 它只能作为「\textbf{copy 层}」, 可以在多个位置做独立的 copy 动作.  在实际的 Language Models 里面, copy 是不是都集中在某些层呢?  可以验证一下.
 
 \subsubsection{Multiple Logic Rules}
 
@@ -187,8 +189,8 @@ $\vec{x}$ 的取值可能只是 embedding 空间的一个子集, 因此 约束 �
 
 考虑 这两条不同的 rules:
 \begin{itemize}
-	\item \textit{father sister} $\Rightarrow$ \textit{aunt}
-	\item \textit{church sister} $\Rightarrow$ \textit{nun}
+	\item \textit{father {\color{red}sister}} $\Rightarrow$ \textit{aunt}
+	\item \textit{church {\color{red}sister}} $\Rightarrow$ \textit{nun}
 \end{itemize}
 这等于要约束:
 \begin{itemize}
@@ -225,23 +227,27 @@ $\vec{x}$ 的取值可能只是 embedding 空间的一个子集, 因此 约束 �
 
 从逻辑角度看, 一个 rule 是被「前提 $\Rightarrow$ 结论」决定的, 它不关心产生这个 rule 的过程的复杂性.
 
-Multi-head 的情况下, rule 的结论 仍是只有一个, \uline{但这个结论是可以根据输入变化的}, 所以它其实包含很多不同的 rules. % 前提 (heads) 增加了.
+Multi-head 的情况下, rule 的结论 仍是只有一个, \uline{但这个结论是可以根据输入变化的}, 所以它可以包含很多不同的 rules. % 前提 (heads) 增加了.
 
-例如 以 \textit{father} 为 Query, 可以有「教父」「父子」「遗传学之父」等 不同的 heads.  这 3 个 heads 的结果 并接起来, 再产生一个 输出:
+例如 以 \textit{father} 为 \ {\color{red}Query}, 可以有「教父」「父子」「遗传学之父」等 不同的 heads.  这 3 个 heads 的结果 并接起来, 再产生一个 输出:
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=1.2]{multi-head-concatenation.png}}}
 \end{equation}
-这个 输出 似乎可以看成是某种 ``complex concept embedding''.
+这个 输出 似乎可以看成是某种 ``complex concept embedding'', 关于 \textit{father} 的更细致的概念表示.
 
-例如对於女人来说, 择偶的简单条件可能是 head$_1$:
+从逻辑 rule 的角度考虑, 例如有 head$_1$:
 \begin{equation}
-\mbox{高} \wedge \mbox{富} \wedge \mbox{帅} \Rightarrow \mbox{吸引}
+\mathit{{\color{red}sunny}} \wedge \mathit{no\ rain} \wedge \mathit{not\ windy} \Rightarrow \mathit{play\ tennis}
 \end{equation}
 在 multi-head 情况下, 可能有另一个 head$_2$:
 \begin{equation}
-\mbox{丑} \wedge \mbox{温柔} \wedge \mbox{爱我} \Rightarrow \mbox{吸引}
+\mathit{{\color{red}sunny}} \wedge \mathit{no\ rain} \wedge \mathit{windy} \Rightarrow \mathit{surfing}
 \end{equation}
-在经典逻辑里, 这些 heads (或其成分) 可以用 $\wedge$ (and) 或 $\vee$ (or) 来粘合.  在 multi-head 里, 各个成分似乎是 $\wedge$ 的 conjunctions.
+在经典逻辑里, 这些 heads (或其成分) 可以用 $\wedge$ (and) 或 $\vee$ (or) 来粘合.  在 multi-head 里, 各个成分 透过 ``concat and then matrix-multiply'' 的方法来做 conjunction.  后者这种方法 似乎有 \textbf{叠加} 的效果, 类似于 ``or'', 但似乎很难做到 ``and'' 的效果.
+
+不要忘记 multi-head 可以产生不只一个结论, 而由于 MLP 层的作用, 这些结论可以分布在任意的 语义空间位置.
+
+结论: Multi-head 在逻辑上相当于容许更多的 rules 储存在单一层的 Transformer.
 
 \end{minipage}
 \end{preview}
