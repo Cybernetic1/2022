@@ -80,7 +80,7 @@
 
 很多朋友问我, Transformer 是如何做逻辑推理? 在此尝试回答一下.
 
-Curry-Howard isomorphism 将逻辑的 $\Rightarrow$ 解释为函数的 $\rightarrow$, 所以 \uline{任何作用在某些 states 之上的函数 都可以看成是某种逻辑}.
+Curry-Howard isomorphism 将逻辑的 $\Rightarrow$ 解释为函数的 $\rightarrow$, 所以 \uline{任何作用在某些 states 之上的 自同态 (endomorphism) 函数 都可以看成是某种逻辑}.
 
 考虑这个例子:
 \begin{equation}
@@ -93,7 +93,7 @@ Curry-Howard isomorphism 将逻辑的 $\Rightarrow$ 解释为函数的 $\rightar
 
 考虑这样一个简单的 $N$-层 Transformer, 它从左到右逐一处理 tokens, {\color{red}红色}表示 担任 \  {\color{red}Query} 的 token (注意左边和右边的 tokens 都有参与 attention, 亦即 bi-directional 处理):
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.7]{Transformer-father-example.png}}}
+\vcenter{\hbox{\includegraphics[scale=1]{Transformer-father-example.png}}}
 \label{fig:transformer-father-example}
 \end{equation}
 我们要回答两个问题:
@@ -119,7 +119,7 @@ Curry-Howard isomorphism 将逻辑的 $\Rightarrow$ 解释为函数的 $\rightar
 
 如果各位同学忘记了 \textbf{self-Attention} 机制是如何运作, 可以参考下图 重温一下 (图中第 3 个输入是 \ {\color{red}Query}):
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.7]{self-attention-2.png}}}
+\vcenter{\hbox{\includegraphics[scale=0.8]{self-attention-2.png}}}
 \end{equation}
 在我们的例子 (\ref{fig:transformer-father-example}) 里, {\color{red}Query}(\textit{father}$_1$) 配上 Key(\textit{father}$_2$), 所谓「配对」是指 dot product: $\langle$ Query, Key $\rangle$.
 
@@ -160,7 +160,17 @@ Softmax 给出的是一组概率, 也就是注意力\textbf{权重}.  例如 给
 
 Query 是第 3 位置的 \textit{father}$_2$.
 
-用更简洁的符号表示, 并略去 softmax:
+之前我做过一个分析, 发觉这种 copying 的条件很难满足 (见下面 box).
+
+其实要做到 copying 实在太容易了, 因为 Transformer 有 equivariance 对称性, 我们只需在输出加上某种 ``positional encoding'' 即可!
+
+例如在 relation algebra 里, 只需 用某种 encoding (或 ``tag'') 表示 subject 或 object 的位置.
+
+其实在 Transformer 的 \textbf{隐层} 里面, 根本没有所谓 position 的概念, 而是很可能有各种学习出来的 ``tags''.
+
+\begin{tcolorbox}[breakable, parbox=false, fonttitle=\bfseries, title={位置 Copy 机制的分析}]
+
+用更简洁的符号表示 copying 的条件, 并略去 softmax:
 \begin{equation}
 \forall \vec{x}. \quad \vec{x} = \langle Q f_2, K f_1 \rangle V f_1 + \langle Q f_2, K f_2 \rangle V f_2 + \langle Q f_2, K \vec{x} \rangle V \vec{x}
 \label{eqn:copy-condition}
@@ -172,14 +182,18 @@ Query 是第 3 位置的 \textit{father}$_2$.
 很明显 $\vec{x}$ 需要是矩阵 $V$ 的 eigen-vector.  但如果 $\vec{x}$ 可取的值的数目 $>$ 矩阵的 rank 或 维数, 那么 $V$ 必然是 $k \cdot I$ 的形式.  那么 $\langle Q f_2, K \vec{x} \rangle = 1/k = \mbox{constant}$ 表示 $K$ 将 $\vec{x}$ 投射到一个超平面上.
 
 % 以上对于 矩阵 $K, V$ 来说是颇强的约束, 但并非无可能.  
-$\vec{x}$ 的取值可能只是 embedding 空间的一个子集, 因此 约束 可能更宽松.
+如果 $\vec{x}$ 的取值只是 embedding 空间的一个子集, 约束 可能更宽松.
 
-但如果上述条件满足, 那么 (\ref{eqn:copy-condition}) 的前两项不会是 0 而是 $f_1 + f_2$, 导致\textbf{矛盾}.  换句话说, copy 的条件无法满足.  但注意, 我们忽略了 softmax 的作用!
+但如果上述条件满足, 那么 (\ref{eqn:copy-condition}) 的前两项不会是 0 而是 $f_1 + f_2$, 导致\textbf{矛盾}.  换句话说, copying 的条件无法满足.  但注意, 我们忽略了 softmax 的作用.
 
-似乎满足 copy 的方法是: softmax 令某些 dot products 的值是 practically zero, 所以实际 $V \vec{x}$ 那项的注意力接近 100\%.
+似乎满足 copying 的方法是: softmax 令某些 dot products 的值是 practically zero, 所以实际 $V \vec{x}$ 那项的注意力接近 100\%.
 % 问题是: 有了这些约束之后, 似乎这一层的 Transformer 就不能 储存 其他的 逻辑 rules 了 (见下面的分析).  
 
-用这种方法, $V = k I$, 则 整层 Transformer 不能储存其他 rules, 它只能作为「\textbf{copy 层}」, 可以在多个位置做独立的 copy 动作.  在实际的 Language Models 里面, copy 是不是都集中在某些层呢?  可以验证一下.
+用这种方法, $V = k I$, 则 整层 Transformer 不能储存其他 rules, 它只能作为「\textbf{copy 层}」, 可以在多个位置做独立的 copy 动作.  
+
+在实际的 Language Models 里面, 这种 copying 机制存在吗?  可以验证一下.
+
+\end{tcolorbox}
 
 \subsubsection{Multiple Logic Rules}
 
@@ -197,7 +211,7 @@ $\vec{x}$ 的取值可能只是 embedding 空间的一个子集, 因此 约束 �
 	\item \textit{aunt} = $\gamma \, V$ \textit{father} + $\delta \, V$ \textit{sister}
 	\item \textit{nun} = $\epsilon \, V$ \textit{church} + $\zeta \, V$ \textit{sister}
 \end{itemize}
-于是我们看到, 不同的 逻辑前提之下, 会产生不同的 Values 的线性组合, 这表达的能力是很高的.
+于是我们看到, 不同的 逻辑前提之下, 会产生不同的 Values 的\textbf{线性组合}\footnote{有人指出这是 convex combination, 因为 $\sum$ softmax = 1.}, 这表达的能力是很高的.
 
 而且 还不要忽略 MLP 层的 非线性作用.
 
@@ -247,7 +261,7 @@ Multi-head 的情况下, rule 的结论 仍是只有一个, \uline{但这个结�
 
 不要忘记 multi-head 可以产生不只一个结论, 而由于 MLP 层的作用, 这些结论可以分布在任意的 语义空间位置.
 
-结论: Multi-head 在逻辑上相当于容许更多的 rules 储存在单一层的 Transformer.
+结论: Multi-head 在逻辑上相当于容许更多的 rules 储存在单一层的 Transformer 里.
 
 \end{minipage}
 \end{preview}
