@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="953.14062"
+   width="881.14081"
    height="509.29449"
-   viewBox="0 0 252.18511 134.75084"
+   viewBox="0 0 233.13516 134.75084"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.2 (1.0.2+r75+1)"
@@ -333,22 +333,6 @@
        inkscape:collect="always">
       <path
          id="path17664-9"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
-         inkscape:connector-curvature="0" />
-    </marker>
-    <marker
-       inkscape:stockid="Arrow2Lend"
-       orient="auto"
-       refY="0"
-       refX="0"
-       id="marker17666-0"
-       style="overflow:visible"
-       inkscape:isstock="true"
-       inkscape:collect="always">
-      <path
-         id="path17664-6"
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
          transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
@@ -772,7 +756,7 @@
     <g
        style="fill:#ff0000"
        id="use6275-7-3-4-1"
-       transform="translate(100.07741,258.99161)"
+       transform="translate(78.910742,253.69994)"
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196">
       <path
@@ -793,7 +777,7 @@
          style="opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
     </g>
     <g
-       transform="matrix(0,-1,-1,0,241.01366,186.89662)"
+       transform="matrix(0,-1,-1,0,221.96366,181.60495)"
        id="g6477-9"
        style="fill:#7fff2a"
        inkscape:export-xdpi="196"
@@ -824,20 +808,20 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#008000;stroke-width:0.264583"
-       x="266.17319"
-       y="119.21419"
+       x="247.12323"
+       y="113.92252"
        id="text1877-29"
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196"><tspan
          sodipodi:role="line"
          id="tspan1875-4"
-         x="266.17319"
-         y="119.21419"
+         x="247.12323"
+         y="113.92252"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;fill:#008000;stroke-width:0.264583">output</tspan></text>
     <g
        style="fill:#800080"
        id="use6275-7-6-3"
-       transform="translate(130.38577,258.99161)"
+       transform="translate(109.21909,253.69994)"
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196">
       <path
@@ -860,7 +844,7 @@
     <g
        style="fill:#ff6600"
        id="use6275-7-3-3"
-       transform="translate(115.23159,258.99161)"
+       transform="translate(94.064916,253.69994)"
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196">
       <path
@@ -882,7 +866,7 @@
     </g>
     <g
        id="g17428"
-       transform="translate(372.40697,173.14505)"
+       transform="translate(351.24029,167.85338)"
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196">
       <g
@@ -1024,7 +1008,7 @@
     </g>
     <g
        id="g17428-8"
-       transform="translate(387.22364,173.14505)"
+       transform="translate(366.05696,167.85338)"
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196">
       <g
@@ -1166,7 +1150,7 @@
     </g>
     <g
        id="g17428-4"
-       transform="translate(402.04031,173.14505)"
+       transform="translate(380.87363,167.85338)"
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196">
       <g
@@ -1308,7 +1292,7 @@
     </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker17666)"
-       d="m 228.70235,155.82303 v -6.30484"
+       d="m 207.53567,150.53136 v -6.30484"
        id="path16996-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
@@ -1316,7 +1300,7 @@
        inkscape:export-ydpi="196" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker17680-3)"
-       d="m 210.34346,155.82303 3.04041,-6.30484"
+       d="m 189.17678,150.53136 3.04041,-6.30484"
        id="path16996-2-0"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
@@ -1324,7 +1308,7 @@
        inkscape:export-ydpi="196" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker17666-2)"
-       d="m 249.71697,155.82303 -5.7832,-6.30484"
+       d="m 228.55029,150.53136 -5.7832,-6.30484"
        id="path16996-2-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
@@ -1333,68 +1317,60 @@
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:4.93889px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
-       x="209.21198"
-       y="160.8074"
+       x="188.04529"
+       y="155.51573"
        id="text9896"
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196"><tspan
          sodipodi:role="line"
          id="tspan9894"
-         x="209.21198"
-         y="160.8074"
+         x="188.04529"
+         y="155.51573"
          style="font-size:4.93889px;stroke-width:0.264583">god</tspan><tspan
          sodipodi:role="line"
-         x="209.21198"
-         y="166.98102"
+         x="188.04529"
+         y="161.68935"
          style="font-size:4.93889px;stroke-width:0.264583"
          id="tspan9898">father</tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:4.93889px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
-       x="228.98592"
-       y="160.81728"
+       x="207.81923"
+       y="155.5256"
        id="text9896-2"
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196"><tspan
          sodipodi:role="line"
-         x="228.98592"
-         y="160.81728"
+         x="207.81923"
+         y="155.5256"
          style="font-size:4.93889px;stroke-width:0.264583"
          id="tspan9898-0">father</tspan><tspan
          sodipodi:role="line"
-         x="228.98592"
-         y="166.99089"
+         x="207.81923"
+         y="161.69922"
          style="font-size:4.93889px;stroke-width:0.264583"
          id="tspan9928">son</tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:4.93889px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
-       x="250.5134"
-       y="160.34808"
+       x="229.34671"
+       y="155.05641"
        id="text9896-9"
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196"><tspan
          sodipodi:role="line"
-         x="250.5134"
-         y="160.34808"
+         x="229.34671"
+         y="155.05641"
          style="font-size:4.93889px;stroke-width:0.264583"
          id="tspan9898-6">father</tspan><tspan
          sodipodi:role="line"
-         x="250.5134"
-         y="166.5217"
+         x="229.34671"
+         y="161.23003"
          style="font-size:4.93889px;stroke-width:0.264583"
          id="tspan9949">of genetics</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker17666-0)"
-       d="m 253.24957,129.5993 h 7.89234"
-       id="path16996-2-2"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="196"
-       inkscape:export-ydpi="196" />
     <g
        inkscape:label=""
-       transform="matrix(0.5,0,0,0.5,178.42292,77.766654)"
+       transform="matrix(0.5,0,0,0.5,157.25624,72.474987)"
        id="g10637"
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196">
@@ -1424,5 +1400,31 @@
         </g>
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:9.87777px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="178.00415"
+       y="126.61767"
+       id="text11214"
+       inkscape:export-xdpi="196"
+       inkscape:export-ydpi="196"><tspan
+         sodipodi:role="line"
+         id="tspan11212"
+         x="178.00415"
+         y="126.61767"
+         style="stroke-width:0.264583">⨉</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:9.87777px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="237.18112"
+       y="127.89985"
+       id="text11218"
+       inkscape:export-xdpi="196"
+       inkscape:export-ydpi="196"><tspan
+         sodipodi:role="line"
+         id="tspan11216"
+         x="237.18112"
+         y="127.89985"
+         style="stroke-width:0.264583">＝</tspan></text>
   </g>
 </svg>
