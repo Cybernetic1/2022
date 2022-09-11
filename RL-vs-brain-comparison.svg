@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="227.69562mm"
+   height="127.48425mm"
+   viewBox="0 0 227.69562 127.48425"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (1.0.2+r75+1)"
+   sodipodi:docname="RL-vs-brain-comparison.svg">
+  <defs
+     id="defs2">
+    <rect
+       x="91.112036"
+       y="203.41648"
+       width="144.06485"
+       height="41.853614"
+       id="rect769" />
+    <rect
+       x="174.46664"
+       y="233.26982"
+       width="36.564111"
+       height="7.3663461"
+       id="rect763" />
+    <marker
+       inkscape:collect="always"
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker4379-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path4377-62" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker1599-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1597-1" />
+    </marker>
+    <marker
+       inkscape:collect="always"
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7221-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path7219-3" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7181-36"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path7179-7" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#ff6666"
+     borderopacity="1"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="472.30751"
+     inkscape:cy="319.03095"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1055"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:snap-global="false"
+     inkscape:showpageshadow="false"
+     fit-margin-top="10"
+     lock-margins="true"
+     fit-margin-left="10"
+     fit-margin-right="10"
+     fit-margin-bottom="10"
+     showborder="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-5.210304,-58.685214)">
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:9.87777px;line-height:0;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="45.855606"
+       y="74.612061"
+       id="text12"><tspan
+         sodipodi:role="line"
+         x="45.855606"
+         y="74.612061"
+         style="font-size:7.05556px;line-height:1;stroke-width:0.264583"
+         id="tspan34">RL + Logic</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="149.09151"
+       y="73.652328"
+       id="text38"><tspan
+         sodipodi:role="line"
+         id="tspan36"
+         x="149.09151"
+         y="73.652328"
+         style="stroke-width:0.264583">Cortex</tspan></text>
+    <g
+       inkscape:export-ydpi="192"
+       inkscape:export-xdpi="192"
+       transform="matrix(0.024675,0,0,0.0233019,32.499941,127.57763)"
+       id="g401-2"
+       inkscape:export-filename="/home/yky/latex/2021/LBAI-architecture.png">
+      <g
+         id="g344-7">
+        <g
+           id="g342-0">
+          <path
+             inkscape:connector-curvature="0"
+             d="m 266.191,402.419 4.36,0.219 c 145.455,0 128.004,-94.543 266.191,-155.638 -81.453,0 -167.277,-112.895 -215.28,-112.895 -48.004,0 -50.911,48.568 -50.911,48.568 l -0.86,4.188 c 0,0 -6.407,-52.747 -54.411,-52.747 C 167.277,134.114 81.453,246.56 0,246.56 138.188,307.654 120.727,402.419 266.191,402.419 Z M 412.746,249.553 c -56.725,13.818 -75.276,45.097 -142.003,45.097 -63.82,0 -119.455,-45.097 -142.003,-45.097 -0.01,0 218.541,2.544 284.006,0 z"
+             id="path340-9" />
+        </g>
+      </g>
+      <g
+         id="g346-3" />
+      <g
+         id="g348-6" />
+      <g
+         id="g350-0" />
+      <g
+         id="g352-62" />
+      <g
+         id="g354-6" />
+      <g
+         id="g356-1" />
+      <g
+         id="g358-8" />
+      <g
+         id="g360-7" />
+      <g
+         id="g362-9" />
+      <g
+         id="g364-2" />
+      <g
+         id="g366-0" />
+      <g
+         id="g368-2" />
+      <g
+         id="g370-3" />
+      <g
+         id="g372-7" />
+      <g
+         id="g374-5" />
+    </g>
+    <g
+       inkscape:export-ydpi="192"
+       inkscape:export-xdpi="192"
+       transform="matrix(0.01937866,0,0,0.01922362,17.29387,128.71151)"
+       id="g467-9"
+       style="fill:#000000"
+       inkscape:export-filename="/home/yky/latex/2021/LBAI-architecture.png">
+      <g
+         id="g455-2">
+        <path
+           inkscape:connector-curvature="0"
+           d="M 256,96 C 144.341,96 47.559,161.021 0,256 47.559,350.979 144.341,416 256,416 367.657,416 464.439,350.979 512,256 464.442,161.021 367.657,96 256,96 Z m 126.225,84.852 c 30.081,19.187 55.571,44.887 74.717,75.148 -19.146,30.261 -44.637,55.961 -74.718,75.149 C 344.427,355.257 300.779,368 256,368 211.22,368 167.572,355.257 129.775,331.148 99.695,311.962 74.205,286.262 55.058,256 c 19.146,-30.262 44.637,-55.962 74.717,-75.148 1.959,-1.25 3.938,-2.461 5.929,-3.65 C 130.725,190.866 128,205.613 128,221 c 0,70.692 57.308,128 128,128 70.692,0 128,-57.308 128,-128 0,-15.387 -2.725,-30.134 -7.704,-43.799 1.99,1.189 3.969,2.401 5.929,3.651 z M 256,205 c 0,26.51 -21.49,48 -48,48 -26.51,0 -48,-21.49 -48,-48 0,-26.51 21.49,-48 48,-48 26.51,0 48,21.49 48,48 z"
+           id="path453-2" />
+      </g>
+    </g>
+    <g
+       inkscape:export-ydpi="192"
+       inkscape:export-xdpi="192"
+       transform="matrix(0.75,0,0,0.75,-39.260791,-0.71332144)"
+       id="g494-8"
+       inkscape:export-filename="/home/yky/latex/2021/LBAI-architecture.png">
+      <rect
+         style="opacity:1;vector-effect:none;fill:#ffffae;fill-opacity:1;stroke:#000000;stroke-width:0.79375;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect481-9"
+         width="62.706253"
+         height="13.758335"
+         x="73.025002"
+         y="144.60001"
+         ry="4.4979167" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="104.40394"
+         y="154.0368"
+         id="text485-7"><tspan
+           sodipodi:role="line"
+           x="104.40394"
+           y="154.0368"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8.46667px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+           id="tspan487-3">State</tspan></text>
+    </g>
+    <path
+       inkscape:export-ydpi="192"
+       inkscape:export-xdpi="192"
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="path1595-6"
+       d="m 51.325871,107.73667 c 6.548429,-15.279693 20.039324,-10.119315 19.942949,6.74688 -0.874665,15.1347 -15.662385,17.51607 -19.446861,4.56408"
+       style="fill:none;stroke:#000000;stroke-width:0.595312;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4379-5);marker-end:url(#marker1599-9)"
+       inkscape:export-filename="/home/yky/latex/2021/LBAI-architecture.png" />
+    <text
+       inkscape:export-ydpi="192"
+       inkscape:export-xdpi="192"
+       id="text3247-1"
+       y="94.441368"
+       x="33.463421"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198436"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/2021/LBAI-architecture.png"><tspan
+         id="tspan7888-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29167px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.198436"
+         y="94.441368"
+         x="33.463421"
+         sodipodi:role="line"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:6.35px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans Light'"
+   id="tspan741">transition function</tspan> <tspan
+   style="font-style:italic;font-size:7.05556px;stroke-width:0.198436"
+   id="tspan2767">F</tspan></tspan></text>
+    <path
+       inkscape:export-ydpi="192"
+       inkscape:export-xdpi="192"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path7169-9"
+       d="m 22.254806,128.77105 v -9.72342"
+       style="fill:none;stroke:#000000;stroke-width:0.595312;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7221-5)"
+       inkscape:export-filename="/home/yky/latex/2021/LBAI-architecture.png" />
+    <path
+       inkscape:export-ydpi="192"
+       inkscape:export-xdpi="192"
+       inkscape:connector-curvature="0"
+       id="path7171-3"
+       d="m 39.121984,118.25386 v 9.525"
+       style="fill:none;stroke:#000000;stroke-width:0.595312;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker7181-36)"
+       inkscape:export-filename="/home/yky/latex/2021/LBAI-architecture.png" />
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="133.39864"
+       y="101.94954"
+       id="text164"><tspan
+         sodipodi:role="line"
+         id="tspan162"
+         x="133.39864"
+         y="101.94954"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
+       x="139.05936"
+       y="131.59715"
+       id="text164-9"><tspan
+         sodipodi:role="line"
+         id="tspan162-9"
+         x="139.05936"
+         y="131.59715"
+         style="font-size:2.82222px;fill:#ff0000;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="140.75764"
+       y="100.74286"
+       id="text164-8"><tspan
+         sodipodi:role="line"
+         id="tspan162-95"
+         x="140.75764"
+         y="100.74286"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
+       x="133.61389"
+       y="95.186607"
+       id="text164-1"><tspan
+         sodipodi:role="line"
+         id="tspan162-8"
+         x="133.61389"
+         y="95.186607"
+         style="font-size:2.82222px;fill:#ff0000;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
+       x="137.58264"
+       y="104.18244"
+       id="text164-0"><tspan
+         sodipodi:role="line"
+         id="tspan162-3"
+         x="137.58264"
+         y="104.18244"
+         style="font-size:2.82222px;fill:#ff0000;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="140.22849"
+       y="95.715775"
+       id="text164-2"><tspan
+         sodipodi:role="line"
+         id="tspan162-4"
+         x="140.22849"
+         y="95.715775"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="138.00102"
+       y="127.89299"
+       id="text164-16"><tspan
+         sodipodi:role="line"
+         id="tspan162-39"
+         x="138.00102"
+         y="127.89299"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="144.35103"
+       y="135.5659"
+       id="text164-15"><tspan
+         sodipodi:role="line"
+         id="tspan162-6"
+         x="144.35103"
+         y="135.5659"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="135.09061"
+       y="136.88882"
+       id="text164-92"><tspan
+         sodipodi:role="line"
+         id="tspan162-81"
+         x="135.09061"
+         y="136.88882"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="143.29269"
+       y="129.48048"
+       id="text164-3"><tspan
+         sodipodi:role="line"
+         id="tspan162-7"
+         x="143.29269"
+         y="129.48048"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="142.23436"
+       y="137.41798"
+       id="text164-7"><tspan
+         sodipodi:role="line"
+         id="tspan162-68"
+         x="142.23436"
+         y="137.41798"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="170.12639"
+       y="100.21369"
+       id="text164-35"><tspan
+         sodipodi:role="line"
+         id="tspan162-85"
+         x="170.12639"
+         y="100.21369"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="170.92015"
+       y="91.217857"
+       id="text164-24"><tspan
+         sodipodi:role="line"
+         id="tspan162-90"
+         x="170.92015"
+         y="91.217857"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="174.35973"
+       y="96.509529"
+       id="text164-08"><tspan
+         sodipodi:role="line"
+         id="tspan162-38"
+         x="174.35973"
+         y="96.509529"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="165.89307"
+       y="96.774109"
+       id="text164-31"><tspan
+         sodipodi:role="line"
+         id="tspan162-80"
+         x="165.89307"
+         y="96.774109"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="176.74098"
+       y="102.33036"
+       id="text164-4"><tspan
+         sodipodi:role="line"
+         id="tspan162-84"
+         x="176.74098"
+         y="102.33036"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
+       x="171.44931"
+       y="96.509529"
+       id="text164-33"><tspan
+         sodipodi:role="line"
+         id="tspan162-79"
+         x="171.44931"
+         y="96.509529"
+         style="font-size:2.82222px;fill:#ff0000;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="178.06389"
+       y="93.069946"
+       id="text164-06"><tspan
+         sodipodi:role="line"
+         id="tspan162-5"
+         x="178.06389"
+         y="93.069946"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
+       x="173.56598"
+       y="101.27203"
+       id="text164-27"><tspan
+         sodipodi:role="line"
+         id="tspan162-33"
+         x="173.56598"
+         y="101.27203"
+         style="font-size:2.82222px;fill:#ff0000;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
+       x="138.79478"
+       y="138.47632"
+       id="text164-99"><tspan
+         sodipodi:role="line"
+         id="tspan162-383"
+         x="138.79478"
+         y="138.47632"
+         style="font-size:2.82222px;fill:#ff0000;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="165.62848"
+       y="124.81995"
+       id="text164-5"><tspan
+         sodipodi:role="line"
+         id="tspan162-57"
+         x="165.62848"
+         y="124.81995"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
+       x="170.65556"
+       y="120.58661"
+       id="text164-272"><tspan
+         sodipodi:role="line"
+         id="tspan162-905"
+         x="170.65556"
+         y="120.58661"
+         style="font-size:2.82222px;fill:#ff0000;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
+       x="174.8889"
+       y="127.99494"
+       id="text164-12"><tspan
+         sodipodi:role="line"
+         id="tspan162-53"
+         x="174.8889"
+         y="127.99494"
+         style="font-size:2.82222px;fill:#ff0000;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="169.86182"
+       y="126.14286"
+       id="text164-52"><tspan
+         sodipodi:role="line"
+         id="tspan162-791"
+         x="169.86182"
+         y="126.14286"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="165.36389"
+       y="119.26369"
+       id="text164-6"><tspan
+         sodipodi:role="line"
+         id="tspan162-72"
+         x="165.36389"
+         y="119.26369"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="171.97849"
+       y="116.88245"
+       id="text164-44"><tspan
+         sodipodi:role="line"
+         id="tspan162-37"
+         x="171.97849"
+         y="116.88245"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="179.91599"
+       y="120.05744"
+       id="text164-79"><tspan
+         sodipodi:role="line"
+         id="tspan162-56"
+         x="179.91599"
+         y="120.05744"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="175.94724"
+       y="122.96786"
+       id="text164-91"><tspan
+         sodipodi:role="line"
+         id="tspan162-62"
+         x="175.94724"
+         y="122.96786"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="128.32224"
+       y="98.097023"
+       id="text164-87"><tspan
+         sodipodi:role="line"
+         id="tspan162-41"
+         x="128.32224"
+         y="98.097023"
+         style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 144.22686,93.993639 23.25907,-2.745172"
+       id="path526"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 145.68222,98.078164 15.75624,-1.521116"
+       id="path528" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 144.86732,102.6931 19.76016,-2.30836"
+       id="path530" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 167.75306,113.28935 2.14401,-10.08218"
+       id="path532" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 173.24199,113.09125 0.25331,-8.30355"
+       id="path534" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 177.26486,116.28223 -0.36033,-10.75728"
+       id="path536" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 165.46199,115.09086 141.39285,104.6769"
+       id="path538" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 161.8146,117.38246 139.14118,106.852"
+       id="path540" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 160.59995,123.6478 -27.0835,-16.29606"
+       id="path542" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 142.59601,125.27229 -1.37535,-21.43542"
+       id="path544" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 138.16156,123.60772 -1.08219,-16.41038"
+       id="path546" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 134.96355,130.64556 -5.40403,-27.7788"
+       id="path548" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 145.51513,131.39815 17.57934,-10.70264"
+       id="path550"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 147.63328,133.73988 18.47646,-6.36246"
+       id="path552"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 145.21909,138.33482 26.33059,-9.7695"
+       id="path554"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="158.06996"
+       y="157.15489"
+       id="text558"><tspan
+         sodipodi:role="line"
+         id="tspan556"
+         x="158.06996"
+         y="157.15489"
+         style="stroke-width:0.264583">state = activation states of all             's</tspan></text>
+    <g
+       id="g646"
+       transform="translate(49.212506,11.112501)">
+      <text
+         xml:space="preserve"
+         style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
+         x="150.41495"
+         y="144.66367"
+         id="text164-9-1"><tspan
+           sodipodi:role="line"
+           id="tspan162-9-0"
+           x="150.41495"
+           y="144.66367"
+           style="font-size:2.82222px;fill:#ff0000;stroke-width:0.264583">●</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="149.35661"
+         y="140.9595"
+         id="text164-16-8"><tspan
+           sodipodi:role="line"
+           id="tspan162-39-1"
+           x="149.35661"
+           y="140.9595"
+           style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="156.23578"
+         y="146.51578"
+         id="text164-15-6"><tspan
+           sodipodi:role="line"
+           id="tspan162-6-7"
+           x="156.23578"
+           y="146.51578"
+           style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="146.97536"
+         y="147.8387"
+         id="text164-92-8"><tspan
+           sodipodi:role="line"
+           id="tspan162-81-8"
+           x="146.97536"
+           y="147.8387"
+           style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="154.64828"
+         y="142.547"
+         id="text164-3-2"><tspan
+           sodipodi:role="line"
+           id="tspan162-7-1"
+           x="154.64828"
+           y="142.547"
+           style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+         x="154.11911"
+         y="148.36786"
+         id="text164-7-3"><tspan
+           sodipodi:role="line"
+           id="tspan162-68-8"
+           x="154.11911"
+           y="148.36786"
+           style="font-size:2.82222px;stroke-width:0.264583">●</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
+         x="150.67953"
+         y="149.42619"
+         id="text164-99-9"><tspan
+           sodipodi:role="line"
+           id="tspan162-383-3"
+           x="150.67953"
+           y="149.42619"
+           style="font-size:2.82222px;fill:#ff0000;stroke-width:0.264583">●</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="160.53189"
+       y="174.00082"
+       id="text650"><tspan
+         sodipodi:role="line"
+         id="tspan648"
+         x="160.53189"
+         y="174.00082"
+         style="stroke-width:0.264583">transition function = weights of              's</tspan></text>
+    <g
+       id="g739"
+       transform="rotate(-90,202.26864,171.28281)">
+      <path
+         style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 197.51139,179.60151 2.14401,-10.08218"
+         id="path532-1" />
+      <path
+         style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 201.94198,179.40341 0.25331,-8.30355"
+         id="path534-0" />
+      <path
+         style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 205.43568,182.59439 -0.36033,-10.75728"
+         id="path536-7" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="160.08687"
+       y="191.42699"
+       id="text755"><tspan
+         sodipodi:role="line"
+         id="tspan753"
+         x="160.08687"
+         y="191.42699"
+         style="stroke-width:0.264583">共震 寻求 最低 能量状态 ＝ best explanation</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="85.850975"
+       y="215.94682"
+       id="text759"><tspan
+         sodipodi:role="line"
+         id="tspan757"
+         x="85.850975"
+         y="215.94682"
+         style="stroke-width:0.264583" /></text>
+    <text
+       xml:space="preserve"
+       id="text761"
+       style="font-family:'Alibaba Sans';font-size:7.05555984px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;writing-mode:lr;font-weight:300;white-space:pre;shape-inside:url(#rect763)" />
+    <text
+       xml:space="preserve"
+       id="text767"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect769)"
+       x="-71.35112"
+       y="0"><tspan
+         x="91.111328"
+         y="209.8013"><tspan
+           style="text-align:start;text-anchor:start">Implicitly, the transition function on this side is </tspan></tspan><tspan
+         x="91.111328"
+         y="218.62076"><tspan
+           style="text-align:start;text-anchor:start">equivalent to the one on that side.</tspan></tspan></text>
+  </g>
+</svg>
