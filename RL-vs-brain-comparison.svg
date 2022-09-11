@@ -19,8 +19,8 @@
     <rect
        x="91.112036"
        y="203.41648"
-       width="144.06485"
-       height="41.853614"
+       width="144.1995"
+       height="55.634001"
        id="rect769" />
     <rect
        x="174.46664"
@@ -98,15 +98,15 @@
      borderopacity="1"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
+     inkscape:zoom="1.4142136"
      inkscape:cx="472.30751"
-     inkscape:cy="319.03095"
+     inkscape:cy="481.02269"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1055"
+     inkscape:window-height="1059"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -126,7 +126,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -635,8 +635,9 @@
        id="path536" />
     <path
        style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 165.46199,115.09086 141.39285,104.6769"
-       id="path538" />
+       d="M 165.46199,115.09086 143.59233,102.65697"
+       id="path538"
+       sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#00ccff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 161.8146,117.38246 139.14118,106.852"
@@ -816,11 +817,11 @@
     <text
        xml:space="preserve"
        id="text761"
-       style="font-family:'Alibaba Sans';font-size:7.05555984px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;writing-mode:lr;font-weight:300;white-space:pre;shape-inside:url(#rect763)" />
+       style="font-family:'Alibaba Sans';font-size:7.05555984px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;writing-mode:lr;font-weight:300;white-space:pre;shape-inside:url(#rect763);" />
     <text
        xml:space="preserve"
        id="text767"
-       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect769)"
+       style="font-weight:300;font-size:7.05556px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect769);"
        x="-71.35112"
        y="0"><tspan
          x="91.111328"
@@ -828,6 +829,16 @@
            style="text-align:start;text-anchor:start">Implicitly, the transition function on this side is </tspan></tspan><tspan
          x="91.111328"
          y="218.62076"><tspan
-           style="text-align:start;text-anchor:start">equivalent to the one on that side.</tspan></tspan></text>
+           style="text-align:start;text-anchor:start">equivalent to that of the other side.
+</tspan></tspan><tspan
+         x="91.111328"
+         y="227.44021"><tspan
+           style="text-align:start;text-anchor:start">We seek the lowest energy of the activation </tspan></tspan><tspan
+         x="91.111328"
+         y="236.25967"><tspan
+           style="text-align:start;text-anchor:start">state.  This energy is defined by the &quot;right&quot; </tspan></tspan><tspan
+         x="91.111328"
+         y="245.07913"><tspan
+           style="text-align:start;text-anchor:start">transition function.</tspan></tspan></text>
   </g>
 </svg>
