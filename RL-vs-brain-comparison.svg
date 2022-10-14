@@ -98,15 +98,15 @@
      borderopacity="1"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="472.30751"
-     inkscape:cy="481.02269"
+     inkscape:zoom="1.7049339"
+     inkscape:cx="170.43852"
+     inkscape:cy="531.07351"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1059"
+     inkscape:window-height="1055"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -840,5 +840,72 @@
          x="91.111328"
          y="245.07913"><tspan
            style="text-align:start;text-anchor:start">transition function.</tspan></tspan></text>
+    <ellipse
+       style="fill:#ff0000;stroke:#000000;stroke-width:0.529;stroke-miterlimit:29;paint-order:markers fill stroke;stop-color:#000000;opacity:1;fill-opacity:0.40000001"
+       id="path9580"
+       cx="-41.146435"
+       cy="198.41017"
+       rx="17.836475"
+       ry="16.680359"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192" />
+    <ellipse
+       style="fill:#ff0000;stroke:#000000;stroke-width:0.52890208;stroke-miterlimit:29;paint-order:markers fill stroke;stop-color:#000000;opacity:1;stroke-dasharray:none;fill-opacity:0.40000001"
+       id="path9580-0"
+       cx="-19.979769"
+       cy="198.41017"
+       rx="17.836475"
+       ry="16.680359"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192" />
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:9.87777px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="-48.53669"
+       y="201.52214"
+       id="text9604"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192"><tspan
+         sodipodi:role="line"
+         x="-48.53669"
+         y="201.52214"
+         style="font-size:6.35px;stroke-width:0.264583"
+         id="tspan9606">女性</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:9.87777px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="-12.382689"
+       y="201.74336"
+       id="text9612"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192"><tspan
+         sodipodi:role="line"
+         id="tspan9610"
+         x="-12.382689"
+         y="201.74336"
+         style="font-size:6.35px;stroke-width:0.264583">学校</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:9.87777px;line-height:0;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
+       x="-30.811989"
+       y="194.0889"
+       id="text9612-0"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192"><tspan
+         sodipodi:role="line"
+         x="-30.811989"
+         y="194.0889"
+         style="font-size:6.35px;line-height:1;stroke-width:0.264583"
+         id="tspan9638">女</tspan><tspan
+         sodipodi:role="line"
+         x="-30.811989"
+         y="201.0739"
+         style="font-size:6.35px;line-height:1;stroke-width:0.264583"
+         id="tspan9642">校</tspan><tspan
+         sodipodi:role="line"
+         x="-30.811989"
+         y="208.0589"
+         style="font-size:6.35px;line-height:1;stroke-width:0.264583"
+         id="tspan9644">？</tspan></text>
   </g>
 </svg>
