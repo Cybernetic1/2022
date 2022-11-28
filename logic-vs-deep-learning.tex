@@ -29,9 +29,6 @@
 	}%
 }%
 
-% Tic-Tac-Toe symbols
-% \newcommand{\bO}[0]{\raisebox{-0.2em}{\textbf{O}}}
-% \newcommand{\Xb}[0]{\raisebox{-0.2em}{\textbf{X}}}
 
 %\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
 %\DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
@@ -39,7 +36,13 @@
 \DeclareSymbolFontAlphabet{\mathbb}{AMSb}
 % \setmathfont{Latin Modern Math}
 
-% \newcommand{\highlight}[1]{\colorbox{pink}{$\displaystyle #1$}}
+% \usepackage[most]{tcolorbox}
+\tcbset{on line, 
+	boxsep=4pt, left=0pt,right=0pt,top=0pt,bottom=0pt,
+	colframe=red,colback=pink,
+	highlight math style={enhanced}
+}
+\newcommand{\atom}{\vcenter{\hbox{\tcbox{....}}}}
 
 % \newcommand{\emp}[1]{{\color{violet}\textbf{#1}}}
 \let\oldtextbf\textbf
@@ -151,7 +154,7 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 \begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
 	{\color{red}{\large \textcircled{\small 3}}}
 	\hspace{8cm}
-	\color{blue}{\footnotesize \cc{Transformer 的逻辑解释}{Transformer as Logic}}
+	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
 \end{textblock*}
 \vspace*{0.3cm} 
 
@@ -182,12 +185,128 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 \begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
 	{\color{red}{\large \textcircled{\small 4}}}
 	\hspace{8cm}
-	\color{blue}{\footnotesize \cc{Transformer 的逻辑解释}{Transformer as Logic}}
+	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
 \end{textblock*}
-
 \vspace*{0.3cm} 
 
+根据我的理论，理想的逻辑形式是这样的（各种元素的数量纯粹示意）：
+\begin{equation}
+\label{fig:logic-symmetry-predicate-level}
+\vcenter{\hbox{\includegraphics[scale=1]{logic-symmetry-predicate-level.png}}}
+\end{equation}
+
+相比之下，我们目前可以写出来的 代数关系 $p \wedge q = p \wedge q$ 只表达了这种结构：
+\begin{equation}
+\label{fig:logic-symmetry-propositional-only}
+\vcenter{\hbox{\includegraphics[scale=1]{logic-symmetry-propositional-only.png}}}
+\end{equation}
+相比于 图 (\ref{fig:logic-symmetry-propositional-only})，图 (\ref{fig:logic-symmetry-predicate-level}) 添加了 $\atom$ 的约束，但这约束怎样用代数表示？
+
+而 Transformer 的结构更像这样：
+\begin{equation}
+\label{fig:logic-symmetry-Transformer}
+\vcenter{\hbox{\includegraphics[scale=1]{logic-symmetry-Transformer.png}}}
+\end{equation}
+它没有 explicit 的命题结构，而是用特别的 token 表示句子的完结，当然还有 positional encoding 这些「伎俩」。 所以，Transformer 是一种比较 \textit{ad hoc} 的设计，我们应该可以改进它。
+
+但由于 $\atom \in$ 非交换自由群（最少结构的群），它没有像 $a \cdot b = b \cdot a$ 那样的对称性公式。
+
+似乎要考虑  $\atom$ 的群结构是如何影响 逻辑 rule (\ref{fig:logic-symmetry-predicate-level}) 的输入和输出？ 类似这样：
+\begin{equation}
+q_1 \cdot q_2 \; \Longleftarrow \; p_{11} \cdot p_{12} \; \wedge \; p_{21} \cdot p_{22}
+\end{equation}
+它跟这样有什么不同：
+\begin{equation}
+Q \; \Longleftarrow \; P_1 \; \wedge \; P_2 \quad ?
+\end{equation}
+
+$Q$ 是由两件东西组成，但这两件东西可以换成另外两件。 但那就不再是同一个 rule.  如果要维持是同一个 rule，则 任何 $\atom$ 元素不可以交换或更换。 那是不是需要考虑所有的 rules？
+
+或者可以考虑一个 $\forall$ rule，它包含很多个 instantiated rules.  而它的 substitutions 总是以 群元素为 unit.  这一点可以怎样表示？
+
+但其实当 rule 改变时，它似乎也是根据群元素的边界而改变的。 似乎一定要涉及大量的 rules 才可以表达 $\atom$ 的对称性。
+
+但从机器学习的角度来看，rules 的更新 似乎没有必要 遵从 $\atom$ 的边界？
+
+从经典 AI 的角度看，lattice of rules 结构 就是 algebra of atomic concepts 的结构。
 
 \end{minipage}
 \end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+
+\setlength{\parskip}{0.4\baselineskip}
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 5}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
+\end{textblock*}
+\vspace*{0.3cm} 
+
+%我们希望 以代数形式表达 谓词 $\atom$ 的颗粒性。 
+在 范畴逻辑 里面有 \textbf{Beck-Chevalley} 条件和 \textbf{Frobenius} 条件，或许是我们所需的对称性？ 但细看之后，发觉还是不能解决问题.....  For completeness，我还是描述一下，没兴趣的可以略过。
+
+首先考虑比较容易明白的 \textbf{Frobenius} 条件。 在逻辑上，它等于说：
+\begin{equation}
+\exists x. [ \phi \wedge \psi(x) ] \equiv \phi \wedge \exists x. \psi(x).
+\end{equation}
+由于 经典逻辑 AI 普遍使用 $\forall$ 而忽略 $\exists$，我将上式改写成：
+\begin{equation}
+\label{eqn:Frobenius-condition}
+\forall x. [ \phi \vee \psi(x) ] \equiv \phi \vee \forall x. \psi(x).
+\end{equation}
+但问题是，(\ref{eqn:Frobenius-condition}) 式的左边和右边，其对应的神经网络 (\ref{fig:logic-symmetry-predicate-level}) 是一样的（看不出有分别）。 也就是说这个差别可能太 subtle 了，它并不影响我们实际 implement 的神经网络。
+
+在逻辑里，任何变量 例如 $x,y$ 等，必须被 $\forall$ 或 $\exists$ quantify，否则不成为合法的句子。 所以 表达 谓词结构的对称性，也很可能要涉及 $\forall$ 或 $\exists$.
+
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+		
+\setlength{\parskip}{0.4\baselineskip}
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 6}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
+\end{textblock*}
+\vspace*{0.3cm} 
+
+以前说过，谓词逻辑 带来 \textbf{fibration} 或 \textbf{indexing} 结构。 Beck-Chevalley 和 Frobenius 条件 基本上是说，这 纤维结构 是 ``preserved by re-indexing functors''.
+
+这是 fibration 结构的示意图：
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{etale-space.png}}}
+\end{equation}
+这整个结构 叫 \textbf{bundle}，而 \textbf{sheaf} 是 bundle 加上某个特殊的 拓扑结构。 
+
+在 $(A,f)$ 和 $(B,g)$ 两个 bundle 之上可以定义 \textbf{fibred product} of $A$ and $B$ over $I$, 记作 $A \times_I B$:
+\begin{equation}
+\label{eqn:fibred-product}
+\begin{tikzcd}[sep = 3cm]
+A \times B \arrow[r, "q"] \arrow[d, swap, "p"] \arrow[rd, "h"] & B \arrow[d, "g"] \\
+A \arrow[r, swap, "f"] & I
+\end{tikzcd}
+\end{equation}
+其中 $h = f \circ p = g \circ q$.  这也是一个 \textbf{pullback}.
+
+\textbf{Beck-Chevalley} 条件是说 下面这幅图 commute： 
+\begin{equation}
+\label{eqn:Beck-Chevalley}
+\begin{tikzcd}[column sep = 3cm]
+K \times J \arrow[r, "u \;\times\; id"] \arrow[d, swap, "\pi"] & I \times J \arrow[d, "\pi"] \\
+K \arrow[r, swap, "u"] & I
+\end{tikzcd}
+\end{equation}
+其中 $\pi$ 就是代表 量词 $\forall$ 或 $\exists$ 的 投影，它们是 weakening map $\pi^*$ 的伴随映射。 
+
+Beck-Chevalley 条件并不完全是空洞的；它有可能不成立。 有一个反例是 Pitts 提出的： 考虑 $X \times Y$， 其中 $X = Y = \mathbb{N} \cup \{\infty\}$ 亦即 自然数加上 $\infty$ 作为 top element； 但 $Y$ 是用 discrete order，亦即所有 order 都是 =.  $A$ 是 $X \times Y$ 上的关系： $A = \{ (x,y) \in \mathbb{N \times N} \;|\; x \le y \}$.  那么 $\exists y. (x,y) \in A$ 会是整个 $X$ 集合。 如果考虑 DCPO 范畴，我们要求 fibration of Scott-closed subsets (ordered by inclusion) over DCPO.  $\exists y. A$ 的 Scott closure 的条件是 它是一个 lower set closed under directed joins; 而这个 Scott closure 条件似乎不成立，因而导致 图 (\ref{eqn:Beck-Chevalley}) 不 commute.（我对 Scott closure 的细节不太理解）
+
+Lawvere 的工作将 Beck-Chevalley 条件变得更一般化： 「简单」的 $\forall$ 和 $\exists$ 量词 是 weakening functor $\pi^*$（基于笛卡尔积）的伴随函子，但 Lawvere 将它扩充到任何 \textbf{substitution} functor $u^*$.
+
+\end{minipage}
+\end{preview}
+
 \end{document}
