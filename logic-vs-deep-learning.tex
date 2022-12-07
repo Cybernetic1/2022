@@ -200,14 +200,30 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 \label{fig:logic-symmetry-propositional-only}
 \vcenter{\hbox{\includegraphics[scale=1]{logic-symmetry-propositional-only.png}}}
 \end{equation}
-相比于 图 (\ref{fig:logic-symmetry-propositional-only})，图 (\ref{fig:logic-symmetry-predicate-level}) 添加了 $\atom$ 的约束，但这约束怎样用代数表示？
+相比于 图 (\ref{fig:logic-symmetry-propositional-only})，图 (\ref{fig:logic-symmetry-predicate-level}) 添加了 $\atom$ 的约束，\uline{但这约束怎样用代数表示}？
 
-而 Transformer 的结构更像这样：
+这就像问 $ 0...9 \times 0...9 $ 跟 $ 00...99 $ 的分别（基本上没有分别，它们是 isomorphic）。 
+
+类似地，$\{$ John, Mary $\} \times \{$ apples, bananas, oranges $\}$ 跟 $\{$ John likes apples, ..., Mary likes bananas $\}$ 等 $2 \times 3 = 6$ 个命题 也是同构的。 但前者可以被 $\forall$ 或 $\exists$ 量化，后者是 命题逻辑，不可以量化。 
+
+而 \textbf{Transformer} 处理 命题 和 概念 的方式是这样：
 \begin{equation}
 \label{fig:logic-symmetry-Transformer}
 \vcenter{\hbox{\includegraphics[scale=1]{logic-symmetry-Transformer.png}}}
 \end{equation}
 它没有 explicit 的命题结构，而是用特别的 token 表示句子的完结，当然还有 positional encoding 这些「伎俩」。 所以，Transformer 是一种比较 \textit{ad hoc} 的设计，我们应该可以改进它。
+
+The proposition structure $P$ is made up of atoms $a$ from a free monoid $A$, and the rule can be quantified by $\forall$ and $\exists$ over such atoms.  ``The rule can be quantified'' means the mapping does not just send one compound element to another element, but that parts of the compound element can be varied and the output element would vary according to the rules of $\forall$ or $\exists$ as adjunctions to substitution maps.
+
+The \textbf{Atomic Condition} says that the input and output of a rule are made up of atoms that can vary according to $\forall$ and $\exists$ as adjoint functors.
+
+The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{ik}$ where some $a_{ij}$ \uline{can vary} according to $\forall$ and $\exists$ as adjoint functors.
+
+The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{ik}$ where some $a_{ij}$ \uline{can be copied} (possibly with some transformation) to another location.  And the transformation has to accord with $\forall$ and $\exists$ as adjunctions.
+
+The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{ik}$ where some $a_{ij}$ \uline{can be copied} (possibly with some transformation) to another location.  And the transformation has to accord with $\forall$ and $\exists$ as adjunctions.
+
+The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{iK}$ where some $a_{ih} = T_{\forall}(a_{jk})$ and the transformation $T_{\forall}$ has to accord with $\forall$ as an adjunction to a substitution functor.
 
 但由于 $\atom \in$ 非交换自由群（最少结构的群），它没有像 $a \cdot b = b \cdot a$ 那样的对称性公式。
 
