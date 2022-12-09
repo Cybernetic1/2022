@@ -189,7 +189,7 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 \end{textblock*}
 \vspace*{0.3cm} 
 
-根据我的理论，理想的逻辑形式是这样的（各种元素的数量纯粹示意）：
+根据我的理论，理想的逻辑形式是这样的（各种元素的个数纯粹示意）：
 \begin{equation}
 \label{fig:logic-symmetry-predicate-level}
 \vcenter{\hbox{\includegraphics[scale=1]{logic-symmetry-predicate-level.png}}}
@@ -202,49 +202,85 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 \end{equation}
 相比于 图 (\ref{fig:logic-symmetry-propositional-only})，图 (\ref{fig:logic-symmetry-predicate-level}) 添加了 $\atom$ 的约束，\uline{但这约束怎样用代数表示}？
 
-这就像问 $ 0...9 \times 0...9 $ 跟 $ 00...99 $ 的分别（基本上没有分别，它们是 isomorphic）。 
-
-类似地，$\{$ John, Mary $\} \times \{$ apples, bananas, oranges $\}$ 跟 $\{$ John likes apples, ..., Mary likes bananas $\}$ 等 $2 \times 3 = 6$ 个命题 也是同构的。 但前者可以被 $\forall$ 或 $\exists$ 量化，后者是 命题逻辑，不可以量化。 
-
 而 \textbf{Transformer} 处理 命题 和 概念 的方式是这样：
 \begin{equation}
 \label{fig:logic-symmetry-Transformer}
 \vcenter{\hbox{\includegraphics[scale=1]{logic-symmetry-Transformer.png}}}
 \end{equation}
-它没有 explicit 的命题结构，而是用特别的 token 表示句子的完结，当然还有 positional encoding 这些「伎俩」。 所以，Transformer 是一种比较 \textit{ad hoc} 的设计，我们应该可以改进它。
+它没有 explicit 的命题结构，而是用特别的 token 表示句子的\textbf{终结}，当然还有 positional encoding 这些「伎俩」。 所以，Transformer 是一种比较 \textit{ad hoc} 的设计，我们应该可以改进它。
 
-The proposition structure $P$ is made up of atoms $a$ from a free monoid $A$, and the rule can be quantified by $\forall$ and $\exists$ over such atoms.  ``The rule can be quantified'' means the mapping does not just send one compound element to another element, but that parts of the compound element can be varied and the output element would vary according to the rules of $\forall$ or $\exists$ as adjunctions to substitution maps.
+\vspace{1cm} \hrule \vspace{1cm}
 
-The \textbf{Atomic Condition} says that the input and output of a rule are made up of atoms that can vary according to $\forall$ and $\exists$ as adjoint functors.
+现在我们企图回答那最重要的问题： 怎样用代数形式表达「命题是由概念原子组成的」？
 
-The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{ik}$ where some $a_{ij}$ \uline{can vary} according to $\forall$ and $\exists$ as adjoint functors.
+亦即是说，以下这两个结构的分别在哪里？ 如何用代数表达这不同？
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.6]{logic-symmetry-predicate-level-1.png}}}
+\quad \mbox{vs} \quad
+\vcenter{\hbox{\includegraphics[scale=0.6]{logic-symmetry-propositional-only-1.png}}}
+\end{equation}
+这就像问 $ 0...9 \times 0...9 $ 跟 $ 00...99 $ 的分别（基本上没有分别，它们是 isomorphic）。 
 
-The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{ik}$ where some $a_{ij}$ \uline{can be copied} (possibly with some transformation) to another location.  And the transformation has to accord with $\forall$ and $\exists$ as adjunctions.
-
-The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{ik}$ where some $a_{ij}$ \uline{can be copied} (possibly with some transformation) to another location.  And the transformation has to accord with $\forall$ and $\exists$ as adjunctions.
-
-The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{iK}$ where some $a_{ih} = T_{\forall}(a_{jk})$ and the transformation $T_{\forall}$ has to accord with $\forall$ as an adjunction to a substitution functor.
+类似地，
+\begin{equation}
+\{ \mbox{ John, Mary } \} \times \{ \mbox{ human, god, worm } \}
+\end{equation}
+跟
+\begin{equation}
+\{ \mbox{ John is human }, \mbox{ Mary is human }, .... \}
+\end{equation}
+等 $2 \times 3 = 6$ 个命题 也是同构的。 但前者是由两组不同的概念结合而成，它的成分可以被 $\forall$ 或 $\exists$ 量化； 后者是 命题逻辑，命题是不可分割的，也不可以拆开来量化。 
 
 但由于 $\atom \in$ 非交换自由群（最少结构的群），它没有像 $a \cdot b = b \cdot a$ 那样的对称性公式。
 
-似乎要考虑  $\atom$ 的群结构是如何影响 逻辑 rule (\ref{fig:logic-symmetry-predicate-level}) 的输入和输出？ 类似这样：
-\begin{equation}
-q_1 \cdot q_2 \; \Longleftarrow \; p_{11} \cdot p_{12} \; \wedge \; p_{21} \cdot p_{22}
-\end{equation}
-它跟这样有什么不同：
-\begin{equation}
-Q \; \Longleftarrow \; P_1 \; \wedge \; P_2 \quad ?
-\end{equation}
+% 似乎要考虑  $\atom$ 的群结构是如何影响 逻辑 rule (\ref{fig:logic-symmetry-predicate-level}) 的输入和输出？ 类似这样：
+%\begin{equation}
+%q_1 \cdot q_2 \; \Longleftarrow \; p_{11} \cdot p_{12} \; \wedge \; p_{21} \cdot p_{22}
+%\end{equation}
+%它跟这样有什么不同：
+%\begin{equation}
+%Q \; \Longleftarrow \; P_1 \; \wedge \; P_2 \quad ?
+%\end{equation}
 
-$Q$ 是由两件东西组成，但这两件东西可以换成另外两件。 但那就不再是同一个 rule.  如果要维持是同一个 rule，则 任何 $\atom$ 元素不可以交换或更换。 那是不是需要考虑所有的 rules？
+% $Q$ 是由两件东西组成，但这两件东西可以换成另外两件。 但那就不再是同一个 rule.  如果要维持是同一个 rule，则 任何 $\atom$ 元素不可以交换或更换。 那是不是需要考虑所有的 rules？
 
-或者可以考虑一个 $\forall$ rule，它包含很多个 instantiated rules.  而它的 substitutions 总是以 群元素为 unit.  这一点可以怎样表示？
+% 或者可以考虑一个 $\forall$ rule，它包含很多个 instantiated rules.  而它的 substitutions 总是以 群元素为 unit.  这一点可以怎样表示？
 
-但其实当 rule 改变时，它似乎也是根据群元素的边界而改变的。 似乎一定要涉及大量的 rules 才可以表达 $\atom$ 的对称性。
+% 但其实当 rule 改变时，它似乎也是根据群元素的边界而改变的。 似乎一定要涉及大量的 rules 才可以表达 $\atom$ 的对称性。
 
-但从机器学习的角度来看，rules 的更新 似乎没有必要 遵从 $\atom$ 的边界？
+% 但从机器学习的角度来看，rules 的更新 似乎没有必要 遵从 $\atom$ 的边界？
 
-从经典 AI 的角度看，lattice of rules 结构 就是 algebra of atomic concepts 的结构。
+% 从经典 AI 的角度看，lattice of rules 结构 就是 algebra of atomic concepts 的结构。
+
+% The proposition structure $P$ is made up of atoms $a$ from a free monoid $A$, and the rule can be quantified by $\forall$ and $\exists$ over such atoms.  ``The rule can be quantified'' means the mapping does not just send one compound element to another element, but that parts of the compound element can be varied and the output element would vary according to the rules of $\forall$ or $\exists$ as adjunctions to substitution maps.
+
+% The \textbf{Atomic Condition} says that the input and output of a rule are made up of atoms that can vary according to $\forall$ and $\exists$ as adjoint functors.
+
+% The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{ik}$ where some $a_{ij}$ \uline{can vary} according to $\forall$ and $\exists$ as adjoint functors.
+
+% The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{ik}$ where some $a_{ij}$ \uline{can be copied} (possibly with some transformation) to another location.  And the transformation has to accord with $\forall$ and $\exists$ as adjunctions.
+
+% The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{ik}$ where some $a_{ij}$ \uline{can be copied} (possibly with some transformation) to another location.  And the transformation has to accord with $\forall$ and $\exists$ as adjunctions.
+
+% The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{iK}$ where some $a_{ih} = T_{\forall}(a_{jk})$ and the transformation $T_{\forall}$ has to accord with $\forall$ as an adjunction to a substitution functor.
+
+最后我得到了「命题是由概念原子构成」的以下条件：
+\newtheorem*{condition}{Atomic Condition}
+\begin{condition}[AC]
+	Each proposition $P$ is made up of $K$ atoms:
+	\begin{equation}
+	\nonumber
+	P_i = a_{i1} \cdot ... \cdot a_{iK}
+	\end{equation}
+	where optionally some atoms are \textbf{copied} to other locations (with a non-linear transformation $\tau$, if they are copied to the output layer) via:
+	\begin{equation}
+	\nonumber
+	a_{ih} = a_{jk} \quad \mbox{or} \quad a_{ih} = \tau(a_{jk})
+	\end{equation}
+	and the transformation $\tau$ has to accord with $\forall$ or $\exists$ as adjunctions to a substitution functor.
+\end{condition}
+
+其实 $\tau$ 只需要是连续函数，就可以符合上述条件。 $\forall$ 和 $\exists$ 作为伴随函子 的范畴论描述 比较复杂，我们会在附录里解释。
 
 \end{minipage}
 \end{preview}

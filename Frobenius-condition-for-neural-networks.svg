@@ -7,7 +7,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="1.2.1 (1:1.2.1+202210291244+9c6d41e410)"
+   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
    sodipodi:docname="Frobenius-condition-for-neural-networks.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -59,7 +59,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1"
      inkscape:cx="355"
-     inkscape:cy="373"
+     inkscape:cy="344"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -98,7 +98,7 @@
        ry="7.6293945e-06"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192"
-       inkscape:export-filename="logic-symmetry-predicate-level.png" />
+       inkscape:export-filename="logic-symmetry-predicate-level-1.png" />
     <rect
        id="rect3967-7"
        width="14.022917"
@@ -498,7 +498,7 @@
        transform="translate(-5.2916667,-47.625002)"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192"
-       inkscape:export-filename="logic-symmetry-propositional-only.png">
+       inkscape:export-filename="logic-symmetry-propositional-only-1.png">
       <rect
          inkscape:export-ydpi="192"
          inkscape:export-xdpi="192"
@@ -849,89 +849,6 @@
          y="0"
          x="0" />
     </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="83.079163"
-       y="54.509392"
-       id="text4264"
-       inkscape:export-xdpi="192"
-       inkscape:export-ydpi="192"><tspan
-         sodipodi:role="line"
-         id="tspan4262"
-         x="83.079163"
-         y="54.509392"
-         style="font-size:4.93889px;fill:#0000ff;stroke-width:0.264583">propositions</tspan></text>
-    <path
-       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 70.776045,41.892771 20.505208,7.276039 7.672923,-7.14375"
-       id="path4266"
-       inkscape:connector-curvature="0"
-       inkscape:export-xdpi="192"
-       inkscape:export-ydpi="192"
-       sodipodi:nodetypes="ccc" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="35.192158"
-       y="54.809822"
-       id="text4264-8"
-       inkscape:export-xdpi="192"
-       inkscape:export-ydpi="192"><tspan
-         sodipodi:role="line"
-         id="tspan4262-4"
-         x="35.192158"
-         y="54.809822"
-         style="font-size:4.93889px;fill:#ff0000;stroke-width:0.264583">atomic concepts</tspan></text>
-    <path
-       style="fill:none;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 141.55476,38.621324 8.0698,10.451006 -4.63289,-10.305667"
-       id="path4266-3"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="192"
-       inkscape:export-ydpi="192" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="121.03236"
-       y="54.416702"
-       id="text4264-8-1"
-       inkscape:export-xdpi="192"
-       inkscape:export-ydpi="192"><tspan
-         sodipodi:role="line"
-         id="tspan4262-4-4"
-         x="121.03236"
-         y="54.416702"
-         style="font-size:4.93889px;fill:#008000;stroke-width:0.264583">vector components</tspan></text>
-    <path
-       style="fill:none;stroke:#ff0000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 49.347372,40.737992 48.156747,49.6015 63.896875,40.712291"
-       id="path4266-3-9"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc"
-       inkscape:export-xdpi="192"
-       inkscape:export-ydpi="192" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="60.721874"
-       y="108.61667"
-       id="text4264-2"
-       inkscape:export-xdpi="192"
-       inkscape:export-ydpi="192"><tspan
-         sodipodi:role="line"
-         id="tspan4262-0"
-         x="60.721874"
-         y="108.61667"
-         style="font-size:4.93889px;fill:#0000ff;stroke-width:0.264583">propositions</tspan></text>
-    <path
-       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 63.367707,95.206303 75.406249,103.54068 88.9,95.338593"
-       id="path4266-6"
-       inkscape:connector-curvature="0"
-       inkscape:export-xdpi="192"
-       inkscape:export-ydpi="192" />
     <g
        id="g5263"
        transform="translate(0,-51.858336)"
@@ -1072,19 +989,6 @@
        sodipodi:nodetypes="csssssccsssssc"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="35.059872"
-       y="19.756281"
-       id="text4264-9"
-       inkscape:export-xdpi="192"
-       inkscape:export-ydpi="192"><tspan
-         sodipodi:role="line"
-         id="tspan4262-6"
-         x="35.059872"
-         y="19.756281"
-         style="font-size:4.93889px;fill:#000000;stroke-width:0.264583">deduced conclusion</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.5291667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 102.92291,26.397391 2.24896,-2.248959 2.24896,2.248961"
@@ -1097,7 +1001,8 @@
        id="g5495"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192"
-       transform="translate(0,52.916667)">
+       transform="translate(0,52.916667)"
+       inkscape:export-filename="logic-symmetry-Transformer.png">
       <rect
          inkscape:export-ydpi="192"
          inkscape:export-xdpi="192"
@@ -1661,19 +1566,6 @@
        sodipodi:nodetypes="csssssccsssssc"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="35.059872"
-       y="125.58961"
-       id="text4264-9-3"
-       inkscape:export-xdpi="192"
-       inkscape:export-ydpi="192"><tspan
-         sodipodi:role="line"
-         id="tspan4262-6-5"
-         x="35.059872"
-         y="125.58961"
-         style="font-size:4.93889px;fill:#000000;stroke-width:0.264583">deduced conclusion</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 102.92291,132.23075 2.24896,-2.24896 2.24896,2.24896"
@@ -1933,5 +1825,107 @@
         </g>
       </g>
     </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="texts"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="60.721874"
+       y="108.61667"
+       id="text4264-2"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192"><tspan
+         sodipodi:role="line"
+         id="tspan4262-0"
+         x="60.721874"
+         y="108.61667"
+         style="font-size:4.93889px;fill:#0000ff;stroke-width:0.264583">propositions</tspan></text>
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 63.367707,95.206303 75.406249,103.54068 88.9,95.338593"
+       id="path4266-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="83.079163"
+       y="54.509392"
+       id="text4264"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192"><tspan
+         sodipodi:role="line"
+         id="tspan4262"
+         x="83.079163"
+         y="54.509392"
+         style="font-size:4.93889px;fill:#0000ff;stroke-width:0.264583">propositions</tspan></text>
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 70.776045,41.892771 20.505208,7.276039 7.672923,-7.14375"
+       id="path4266"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192"
+       sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="35.192158"
+       y="54.809822"
+       id="text4264-8"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192"><tspan
+         sodipodi:role="line"
+         id="tspan4262-4"
+         x="35.192158"
+         y="54.809822"
+         style="font-size:4.93889px;fill:#ff0000;stroke-width:0.264583">atomic concepts</tspan></text>
+    <path
+       style="fill:none;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 141.55476,38.621324 8.0698,10.451006 -4.63289,-10.305667"
+       id="path4266-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="121.03236"
+       y="54.416702"
+       id="text4264-8-1"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192"><tspan
+         sodipodi:role="line"
+         id="tspan4262-4-4"
+         x="121.03236"
+         y="54.416702"
+         style="font-size:4.93889px;fill:#008000;stroke-width:0.264583">vector components</tspan></text>
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 49.347372,40.737992 48.156747,49.6015 63.896875,40.712291"
+       id="path4266-3-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="35.059872"
+       y="19.756281"
+       id="text4264-9"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192"><tspan
+         sodipodi:role="line"
+         id="tspan4262-6"
+         x="35.059872"
+         y="19.756281"
+         style="font-size:4.93889px;fill:#000000;stroke-width:0.264583">deduced conclusion</tspan></text>
   </g>
 </svg>
