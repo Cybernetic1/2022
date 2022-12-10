@@ -174,7 +174,6 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 	\item （可能还有其他的结构特征.....）
 \end{itemize}
 
-
 \end{minipage}
 \end{preview}
 
@@ -209,9 +208,21 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 \end{equation}
 它没有 explicit 的命题结构，而是用特别的 token 表示句子的\textbf{终结}，当然还有 positional encoding 这些「伎俩」。 所以，Transformer 是一种比较 \textit{ad hoc} 的设计，我们应该可以改进它。
 
-\vspace{1cm} \hrule \vspace{1cm}
+\end{minipage}
+\end{preview}
 
-现在我们企图回答那最重要的问题： 怎样用代数形式表达「命题是由概念原子组成的」？
+\begin{preview}
+\begin{minipage}{\textwidth}
+
+\setlength{\parskip}{0.4\baselineskip}
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 5}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
+\end{textblock*}
+\vspace*{0.3cm} 
+
+现在我们企图回答那\uline{最重要的问题}： 怎样用代数形式表达「命题是由概念原子组成的」？
 
 亦即是说，以下这两个结构的分别在哪里？ 如何用代数表达这不同？
 \begin{equation}
@@ -264,26 +275,68 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 
 % The \textbf{Atomic Condition} says that each $P_i = a_{i1} ... a_{iK}$ where some $a_{ih} = T_{\forall}(a_{jk})$ and the transformation $T_{\forall}$ has to accord with $\forall$ as an adjunction to a substitution functor.
 
-最后我得到了「命题是由概念原子构成」的以下条件：
+经过一番分析之后 我得到了「命题是由概念原子构成的」以下条件：
+
+\begin{tcolorbox}[colback=white, enhanced]
 \newtheorem*{condition}{Atomic Condition}
 \begin{condition}[AC]
 	Each proposition $P$ is made up of $K$ atoms:
 	\begin{equation}
-	\nonumber
 	P_i = a_{i1} \cdot ... \cdot a_{iK}
+	\label{eqn:atomic-condition-1}
 	\end{equation}
 	where optionally some atoms are \textbf{copied} to other locations (with a non-linear transformation $\tau$, if they are copied to the output layer) via:
 	\begin{equation}
-	\nonumber
 	a_{ih} = a_{jk} \quad \mbox{or} \quad a_{ih} = \tau(a_{jk})
+	\label{eqn:atomic-condition-2}
 	\end{equation}
 	and the transformation $\tau$ has to accord with $\forall$ or $\exists$ as adjunctions to a substitution functor.
 \end{condition}
+\end{tcolorbox}
 
-其实 $\tau$ 只需要是连续函数，就可以符合上述条件。 $\forall$ 和 $\exists$ 作为伴随函子 的范畴论描述 比较复杂，我们会在附录里解释。
+其实 $\tau$ 只需要是连续函数，就可以符合上述条件。 所以 Atomic condition 的重点在于 (\ref{eqn:atomic-condition-1}) 和 (\ref{eqn:atomic-condition-2}) 这两个\textbf{等式}，其实是非常简单的。 $\forall$ 和 $\exists$ 作为伴随函子 的范畴论描述 比较复杂，我们会在附录里解释。
+
+那么 等式 (\ref{eqn:atomic-condition-2}) 里面的 ``='' 是来自哪里？ 其实太明显了，它就是逻辑 rule 里面 将变量「syntactically 搬动」的动作：
+\vspace{0.5cm}
+\begin{equation}
+\forall X, Y, Z.  \;\;  \text{grandfather}({\color{red}X} \tikzmark{x}, {\color{red}Z} \tikzmark{z}) \leftarrow \text{father}({\color{red}X} \tikzmark{p}, {\color{red}Y} \tikzmark{y}) \wedge \mbox{father}({\color{red}Y} \tikzmark{q}, {\color{red}Z} \tikzmark{r})
+\begin{tikzpicture}[overlay,remember picture,out=45,in=135,distance=1.1cm]
+\draw[-,red, transform canvas={shift={(-5pt,18pt)}}] (x.center) to (p.center);
+\draw[-,red, transform canvas={shift={(-5pt,18pt)}}] (y.center) to (q.center);
+\draw[-,red, transform canvas={shift={(-5pt,-3pt)}}, out=-45,in=225] (z.center) to (r.center);
+\end{tikzpicture}
+\label{linkage-father}
+\end{equation}
+正是 这些「搬动」，构成了 命题由概念组成的结构。
 
 \end{minipage}
 \end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+		
+\setlength{\parskip}{0.4\baselineskip}
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 6}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
+\end{textblock*}
+\vspace*{0.3cm} 
+
+\textbf{Self-Attention} 的本质 可以这样理解：
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=1]{essence-of-self-attention.png}}}
+\end{equation}
+这垂直的「軸」结构 ({\color{red}红色})，重复在每一个轴上。  所以，当 输入的元素 \textbf{交换}时，输出也随着交换。 这就是 self-Attention 能达到 \textbf{equi-variant} 效果的原因。
+
+而我们想用 类似以上 self-Attention 的方法，解决 逻辑结构 的问题：
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=1]{logic-symmetry-logic-Transformer.png}}}
+\end{equation}
+
+\end{minipage}
+\end{preview}
+
 
 \begin{preview}
 \begin{minipage}{\textwidth}
