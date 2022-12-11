@@ -240,7 +240,7 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 \begin{equation}
 \{ \mbox{ John is human }, \mbox{ Mary is human }, .... \}
 \end{equation}
-等 $2 \times 3 = 6$ 个命题 也是同构的。 但前者是由两组不同的概念结合而成，它的成分可以被 $\forall$ 或 $\exists$ 量化； 后者是 命题逻辑，命题是不可分割的，也不可以拆开来量化。 
+等 $2 \times 3 = 6$ 个命题 也是同构的。 但前者是由两组不同的概念结合而成，它的成分可以被 $\forall$ 或 $\exists$ 量化； 后者是 命题逻辑，那些命题是不可分割的，也不可以拆开来量化。 
 
 但由于 $\atom \in$ 非交换自由群（最少结构的群），它没有像 $a \cdot b = b \cdot a$ 那样的对称性公式。
 
@@ -280,12 +280,12 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 \begin{tcolorbox}[colback=white, enhanced]
 \newtheorem*{condition}{Atomic Condition}
 \begin{condition}[AC]
-	Each proposition $P$ is made up of $K$ atoms:
+	Each proposition $P_i$ is made up of $K$ atoms:
 	\begin{equation}
 	P_i = a_{i1} \cdot ... \cdot a_{iK}
 	\label{eqn:atomic-condition-1}
 	\end{equation}
-	where optionally some atoms are \textbf{copied} to other locations (with a non-linear transformation $\tau$, if they are copied to the output layer) via:
+	where optionally some atoms can be \textbf{copied} to other locations (with a non-linear transformation $\tau$, if they are copied to the output layer) via:
 	\begin{equation}
 	a_{ih} = a_{jk} \quad \mbox{or} \quad a_{ih} = \tau(a_{jk})
 	\label{eqn:atomic-condition-2}
@@ -307,7 +307,7 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 \end{tikzpicture}
 \label{linkage-father}
 \end{equation}
-正是 这些「搬动」，构成了 命题由概念组成的结构。
+正是 这些「搬动」，构成了「命题是由概念组成的」结构。
 
 \end{minipage}
 \end{preview}
@@ -323,16 +323,28 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 \end{textblock*}
 \vspace*{0.3cm} 
 
-\textbf{Self-Attention} 的本质 可以这样理解：
+\textbf{Self-Attention} 的本质 可以这样理解（抽象注意力结构）：
 \begin{equation}
+\label{fig:self-attention}
 \vcenter{\hbox{\includegraphics[scale=1]{essence-of-self-attention.png}}}
 \end{equation}
-这垂直的「軸」结构 ({\color{red}红色})，重复在每一个轴上。  所以，当 输入的元素 \textbf{交换}时，输出也随着交换。 这就是 self-Attention 能达到 \textbf{equi-variant} 效果的原因。
+这垂直的「軸」结构 ({\color{red}红色})，重复在每一条轴上。  所以，当 输入的元素 \textbf{交换}时，输出也随着交换。 这就是 self-Attention 能达到 \textbf{equi-variant} 效果的原因。
 
 而我们想用 类似以上 self-Attention 的方法，解决 逻辑结构 的问题：
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=1]{logic-symmetry-logic-Transformer.png}}}
 \end{equation}
+
+首先以函数的方式表达 self-Attention 结构：
+\begin{eqnarray}
+\boxed{\mbox{输出命题 $Q_i$ 由原子 $b_i$ 组成}} \quad Q &=& [b_1 ... b_K] \\
+\boxed{\mbox{输入命题 $P_i$ 由原子 $a_i$ 组成}} \quad P_i &=& [a_1...a_K] \\
+\boxed{\mbox{Self-Attention}} \quad Q &=& \alpha(P_i \;; P_1 ... \hat{P_i} ... P_N)
+\end{eqnarray}
+$P_1 ... \hat{P_i} ... P_N$ 的意思是 $P_1 ... P_N$ 除了 $P_i$. \\
+$\alpha(P_i \;; ... )$ 是图 (\ref{fig:self-attention}) 的函数结构，也可以理解为 以 $P_i$ 为 query 的 self Attention.
+
+
 
 \end{minipage}
 \end{preview}
