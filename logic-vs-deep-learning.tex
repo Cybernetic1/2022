@@ -344,7 +344,13 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 $P_1 ... \hat{P_i} ... P_N$ 的意思是 $P_1 ... P_N$ 除了 $P_i$. \\
 $\alpha(P_i \;; ... )$ 是图 (\ref{fig:self-attention}) 的函数结构，也可以理解为 以 $P_i$ 为 query 的 self Attention.
 
+\begin{itemize}
+	\item 首先留意到，轴心结构 只对 命题层次有用，它的作用不会延伸到 概念原子层次。 然而，有监于 Transformer 也没有充分利用 交换不变性，然而它却因为用了矩阵乘法而变得很有效率，所以从效率的角度看，也有将 轴心结构 延伸到 原子层面的理由。
 
+	\item 另一个可以尝试的想法是： 直接 hard-code copying mechanism.  这可以怎样用 Attention 做到？  以前分析过了，copy 并不容易，因为需要 winner takes all.
+
+	\item 但纯粹用 Hopefield network 又缺乏了 深度。
+\end{itemize}
 
 \end{minipage}
 \end{preview}
