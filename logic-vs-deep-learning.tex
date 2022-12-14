@@ -354,12 +354,19 @@ Self-Attention 已经符合我们的要求，但我们想改进它。 主要有�
 \textbf{Copy:}
 \begin{itemize}
 	\item Copy 不需要什么特别机制，输出就是输入。 但问题是怎样 combine with ``create'' operation.
+	\item 当然 可以用大家都熟悉的 softmax： $ \alpha \mbox{ copy} + \beta \mbox{ create} $, where $\alpha, \beta$ are outputs of softmax.
+	\item 另一个想法是 content-addressable.  用 table-lookup 的形式，找可执行的 rules。 但有 variable matching 的问题。 
 \end{itemize}
 
 \textbf{Create：}
 \begin{itemize}
 	\item 需要的是怎样的函数？
 \end{itemize}
+
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=1]{shallow-rule-base.png}}}
+\end{equation}
+
 
 \begin{itemize}
 	\item 首先留意到，轴心结构 只对 命题层次有用，它的作用不会延伸到 概念原子层次。 然而，有监于 Transformer 也没有充分利用 交换不变性，然而它却因为用了矩阵乘法而变得很有效率，所以从效率的角度看，也有将 轴心结构 延伸到 原子层面的理由。
