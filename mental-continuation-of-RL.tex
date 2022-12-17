@@ -1,5 +1,5 @@
 \input{../YKY-preamble.tex}
-\setmainfont[BoldFont=AlibabaSans-Regular.otf,ItalicFont=AlibabaSans-LightItalic.otf]{AlibabaSans-Light.otf}
+\setmainfont[BoldFont=Alibaba_Sans_Regular.otf,ItalicFont=Alibaba_Sans_Light_Italic.otf]{Alibaba_Sans_Light.otf}
 	
 \usepackage[active,tightpage]{preview}		% for continuous page(s)
 \renewcommand{\PreviewBorder}{0.5cm}
@@ -58,10 +58,10 @@
 \begin{preview}
 
 \cc{
-\title{\vspace{-1.5cm} \bfseries\color{blue}{\Large 强化学习的「思维空间延拓」}}
+\title{\vspace{-1.5cm} \bfseries\color{blue}{\Large 强化学习 (RL) 的「思维空间延拓」}}
 }{
 \title{\vspace{-1.5cm} \bfseries\color{blue}{\Large ``Mental-Space Continuation'' \\
-		of Reinforcement Learning}}
+		of Reinforcement Learning (RL)}}
 }
 
 % \author{YKY} % Your name
@@ -80,7 +80,7 @@
 \setlength{\parskip}{0.4\baselineskip}
 
 \cc{
-	在传统的强化学习里，「环境」只包含 physically observable 的外在环境。\\
+	在传统 强化学习里，「环境」只包含 physically observable 的外在环境。\\
 	我提出将 RL 延续到\textbf{内在的}思维空间。
 }{
 	In conventional RL, the \textbf{environment} is physically observable.  I propose to extend it to the \textbf{internal} mental space.
@@ -137,6 +137,13 @@
 	And this is \uline{exactly analogous} to the propagation of rewards in a chess game.  In other words, we can apply techniques of RL to learn the contents of mental space, with a very rigorous foundation.
 }
 
+\cc{
+	将 外部和内部状态 \textbf{统一处理}的做法，在哲学上也没有问题，因为其实 brain states 也是物理状态，只是肉眼看不到而已。 大脑状态 即是 神经元群的激活状态，它们之间的 transitions 是由神经\textbf{权重}决定的，而这些权重又是由 \textbf{Hebbian learning} 学习的（至少根据我们现时最好的理解）。 
+}{
+	The approach of unifying internal and external states is philosophically entirely sound, as ``brain states'' are physical states too, and their transitions are learned via \textbf{Hebbian learning}.}
+
+也有论文指出，RL 跟 working memory 的理论有点不协调： RL 里面的「状态」跟 working memory 并不等同。 但根据这新的 思维空间 理论，二者是重合的。
+
 \end{minipage}
 \end{preview}
 
@@ -152,12 +159,52 @@
 
 \vspace*{0.3cm} 
 
-\subsubsection{Learning of logic rules under RL}
+\subsubsection{Unifying logic and RL}
 
-\cc{
-	将 外部和内部状态 \textbf{统一处理}的做法，在哲学上也没有问题，因为其实 brain states 也是物理状态，只是肉眼看不到而已。 大脑状态 即是 神经元群的激活状态，它们之间的 transitions 是由神经\textbf{权重}决定的，而这些权重又是由 \textbf{Hebbian learning} 学习的（至少根据我们现时最好的理解）。 
-}{
-	The approach of unifying internal and external states is philosophically entirely sound, as ``brain states'' are physical states too, and their transitions are learned via \textbf{Hebbian learning}.}
+「思维空间」理论 可以 统一 \textbf{强化学习} 和 \textbf{逻辑 AI}； 两者是在同一空间进行的。 
+
+% 逻辑 包括 rules 的学习 (learning) 和 推导 (inference) 两种算法，跟 深度学习／神经网络 相似（前向推导 和 反向传播学习），也跟 强化学习 相似（选择 actions 和 更新价值函数）。 而 逻辑学习 根据的目标是 \textbf{事实} (truth), 正如 强化学习 根据的目标是 \textbf{奖励} (rewards).
+
+逻辑是一种根据 ``truth'' 的学习算法，有以下比较：
+
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	& \oldtextbf{学习算法} & \oldtextbf{推导算法} & \oldtextbf{根据什么学习？} \\
+	\hline
+	\oldtextbf{深度学习} & 学习权重 & 输入 $\rightarrow$ 输出 映射 & 与理想输出之间的 error \\
+	\hline
+	\oldtextbf{逻辑} & 学习逻辑 rules & 逻辑推导 & 观察到的事实 (truth) \\
+	\hline
+	\oldtextbf{强化学习} & 更新价值函数 & 选择行动 & 奖励 (reward) \\
+	\hline
+\end{tabular}
+
+逻辑是没有感情的，在每个状态之下，可以进行很多不同方向的推导； 逻辑本身不能决定选择哪个方向（因为都是真的）。 逻辑推导的每一步 (step) 都是 思维空间中 \textbf{状态}的转移，而 RL 可以给状态 赋予特定的 \textbf{价值} (utility).
+
+在「新古典」AI 时期，我们曾经尝试 给逻辑状态赋予 ``importance'' 或 ``interestingness'' 等测度，现在可以用 RL 理论将二者漂亮地统一起来。
+
+更详细点说，RL 是根据以下的 Bellman 目标而学习的：
+\begin{equation}
+\max_{\pi} \; \underset{\substack{a_t \;\sim\; \pi(\cdot | s_t) \\ s_{t+1} \;\sim\; p(\cdot | s_t, a_t) }} {\mathbb{E}} \left[ \sum_{t} \gamma^t R(s_t, a_t) \right]
+\end{equation}
+它包含两个要学习的概率分布： 策略 $\pi$ 和 世界模型 $p$.
+
+$\pi$ 的学习是 RL 课本上大家熟悉的，而 $p$ 的学习是较少讨论的 \textbf{model-based RL}.  如果选择用 逻辑 建立世界模型，那么 $p$ 就是 逻辑推导的过程，亦即 $s_t, a_t \vdash s_{t+1}$.  注意要使用 probabilistic 逻辑，为了得出的结果是概率分布。
+
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+\setlength{\parskip}{0.4\baselineskip}
+
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 3}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{强化学习的「思维空间延拓」}{Mental-Space Continuation of RL}}
+\end{textblock*}
+
+\vspace*{0.3cm} 
 
 \cc{
 	而 强化学习 又是怎样\textbf{学习} 逻辑内容？ \textbf{动作} 就是由一个逻辑状态 转移到另一个 逻辑状态，也可以看成是 由一些命题 \textbf{推导}出 一个新的命题，那就是 逻辑 \textbf{rule}.  我们要在很多 动作（逻辑 rules）之中选取最好的 动作。 换句话说，要在当前状态下可以执行的 rules 之中选取最好的一个或多个 rule(s).  例如：
@@ -203,6 +250,26 @@ A special characteristic of \textbf{mental space} is that \uline{any thought can
 This negative reward would back-propagate through the \textbf{inference chain}, and after many iterations, the system would eventually find the culprit rule.  In short, a logical system can get ``as crazy as it wants'' without other prior constraints.  Indeed, some geniuses arrive at non-obvious conclusions because they are a bit ``crazy''.  This property of mental space is common to all learning-reasoning systems, not just my architecture.	
 }
 
+%{\color{teal}
+%NOTES:	
+
+%要将 model 和 policy 分开来考虑。 是不是所有 logic rules 都是 model 的一部分？  Mental states 不能被观察到，会否有问题？ 如果不能观察到 mental states，怎么学习它的 dynamics？ 可能就是需要 build model from partially observable states.  Mental states 基本上完全是 hidden 的，我们能学到它是因为 output state 跟 事实相符 或者有奖励。 而 output state 可以是 real actions or predictions.  
+%
+%如果 将 mental state 纯粹视为 model 似乎也可以。 那么，model 是由逻辑算法给出，训练 model 的方式 纯粹是根据 逻辑的「后设规则」。 那么这部分似乎完全脱离了 强化学习，而是 经典 AI 的逻辑学习。 
+%
+%那么，我说过 RL 会帮助 逻辑 rules 的学习，这是错了吗？ 人的思考 的确会改变 逻辑 encode 的知识，而思考的方向是受情感（奖励）影响的。 但如果根据 model learning 的设定，model 的学习完全不受任何「目标」影响。
+%
+%那怎样才可以有「目的性思考」呢？ 有个目标不能达到，根据传统 RL，需要改变的是 actions 而 不是 model，但奇怪的是 需要改变的其实是 model.  为什么会这样呢？ 因为 model 不是准确的，有了更正确的 model 可以改变行为。 这是不是 RL 跟 WM (working memory) 之间的冲突？  
+%
+%之前提出过，state 未必完全等同于 working memory, 因为 state 是可以 observe 的。
+%
+%如果 将 mental states 也看成是 state 的一部分，那是否可以做到 goal-directed thinking?  那是因为 states 可以受 奖励影响....  我 transition to a more valuable state because it is a better direction of thinking.  或者问： 我为什么 好像 drawn towards some direction of thinking?  Under the mental space picture states are attached with utility values.  根据 model 的观点，其实 model 是完全脱离 RL 的独立存在。  Model-based 也应该 配合 mental space picture.  这有矛盾吗？  Mental states 是可观察的，但它的改变却是受我们控制的，而不是外界环境的自身改变。 这就有点奇怪了。 但也可以看成是一种 actions 改变环境的情况。  那么是什么令系统知道某个 transition 是 bad 的呢？  In the real world this is learned as we can observe the transition not occurring.  But in mental space it is entirely up to us whether the transition can occur or not.  So this is not a concern of RL.  It is a concern of logic learning.  The transition can occur if and only if its conclusions accord with observed states.  This algorithm is independent of RL!
+%
+%Or is it really independent of RL?  Perhaps (mental) state transitions are made by considering rewards / utility.  But this may be in conflict with logic...?  In logic, an inference is made if it is logical (ie, truthful) and is interesting / important.  Perhaps the truthfulness is taken care of by logic, whereas the interestingness / importance is handled by RL?  And if so, this amounts to saying that interestingness / importance coincides with RL's utility.
+%
+%所以，到此，断定了 working memory 完全等同于 mental states.
+%}
+
 \end{minipage}
 \end{preview}
 
@@ -211,7 +278,7 @@ This negative reward would back-propagate through the \textbf{inference chain}, 
 	
 \setlength{\parskip}{0.4\baselineskip}
 \begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
-{\color{red}{\large \textcircled{\small 3}}}
+{\color{red}{\large \textcircled{\small 4}}}
 \hspace{8cm}
 \color{blue}{\footnotesize \cc{强化学习的「思维空间延拓」}{Mental-Space Continuation of RL}}
 \end{textblock*}
