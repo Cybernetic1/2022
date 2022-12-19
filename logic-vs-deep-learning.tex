@@ -35,6 +35,7 @@
 \DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
 \DeclareSymbolFontAlphabet{\mathbb}{AMSb}
 % \setmathfont{Latin Modern Math}
+\DeclareMathOperator*{\argmin}{arg\,min}
 
 % \usepackage[most]{tcolorbox}
 \tcbset{on line, 
@@ -140,7 +141,8 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 
 而以 Transformer 来说，它是一种 输入元 \textbf{之间} 的记忆体（这记忆就储存在 Q, K, V 矩阵里），而它 \textbf{implicitly} 做到了 rules 的作用：
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=1]{rete-explained-3b.png}}}
+\label{fig:self-attention-as-Rete}
+\vcenter{\hbox{\includegraphics[scale=0.9]{rete-explained-3b.png}}}
 \end{equation}
 换句话说，Transformer 内部有某种（扭曲了的）逻辑 rules 的结构。 那么很自然的问题就是：能否发掘更多 逻辑／逻辑系统 的结构？ 也就是说，公式 (\ref{eqn:some-kind-of-memory}) 可以有怎样的代数结构约束？ 这个问题 可以参考 范畴逻辑 的理论，还有 经典 logic-based AI 系统的理论。
 
@@ -325,7 +327,7 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 
 \textbf{Self-Attention} 的本质 可以这样理解（抽象注意力结构）：
 \begin{equation}
-\label{fig:self-attention}
+\label{fig:abstract-self-attention}
 \vcenter{\hbox{\includegraphics[scale=1]{essence-of-self-attention.png}}}
 \end{equation}
 这垂直的「軸」结构 ({\color{red}红色})，重复在每一条轴上。  所以，当 输入的元素 \textbf{交换}时，输出也随着交换。 这就是 self-Attention 能达到 \textbf{equi-variant} 效果的原因。
@@ -337,14 +339,51 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 
 首先以函数的方式表达 self-Attention 结构：
 \begin{eqnarray}
-\boxed{\mbox{输出命题 $Q_i$ 由原子 $b_i$ 组成}} \quad Q &=& [b_1 ... b_K] \\
-\boxed{\mbox{输入命题 $P_i$ 由原子 $a_i$ 组成}} \quad P_i &=& [a_1...a_K] \\
-\boxed{\mbox{Self-Attention}} \quad Q &=& \alpha(P_i \;; P_1 ... \hat{P_i} ... P_N)
+\boxed{\mbox{输出命题 $O_i$ 由原子 $b_i$ 组成}} \quad O_i &=& [b_1 ... b_K] \\
+\boxed{\mbox{输入命题 $P_i$ 由原子 $a_i$ 组成}} \quad P_i &=& [a_1 ... a_K] \\
+\boxed{\mbox{Self-Attention}} \quad O_i &=& \alpha(P_i \;; P_1 ... \hat{P_i} ... P_N)
 \end{eqnarray}
 $P_1 ... \hat{P_i} ... P_N$ 的意思是 $P_1 ... P_N$ 除了 $P_i$. \\
-$\alpha(P_i \;; ... )$ 是图 (\ref{fig:self-attention}) 的函数结构，也可以理解为 以 $P_i$ 为 query 的 self Attention.
+$\alpha(P_i \;; ... )$ 是图 (\ref{fig:abstract-self-attention}) 的函数结构，也可以理解为 以 $P_i$ 为 query 的 self Attention.
 
 这里有一个很重要的重点： self-Attention 的前身是来自 Graves \textit{et al.} 的 《Neural Turing Machine》 的 \textbf{content-addressable memory}.
+
+我们要比较 两种做法，前者是简单直接的经典 rule base 结构，后者是以 self-Attention 代替 rule base：
+\begin{equation}
+\label{fig:rule-base}
+\vcenter{\hbox{\includegraphics[scale=1]{shallow-rule-base.png}}}
+\end{equation}
+\hrule
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.9]{rete-explained-3b.png}}}
+\tag{\ref{fig:self-attention-as-Rete}}
+\end{equation}
+
+目前要回答的问题包括：
+\begin{itemize}
+	\item Transformer 做不到某些 逻辑语法上的运作，问题出在哪里？
+	
+	\item Na\"{i}ve rule base 似乎存在旧有的逻辑学习算法的问题，亦即 ``plateau problem''.
+	
+	\item 
+\end{itemize}
+
+How to measure similarity between $(P_i, Q_i)$?
+\begin{equation}
+\argmin_i \sum_i \min_j \langle P_i, Q_j \rangle
+\end{equation}
+
+\color{teal}
+
+\begin{itemize}
+	\item 首先留意到，轴心结构 只对 命题层次有用，它的作用不会延伸到 概念原子层次。 然而，有监于 Transformer 也没有充分利用 交换不变性，然而它却因为用了矩阵乘法而变得很有效率，所以从效率的角度看，也有将 轴心结构 延伸到 原子层面的理由。
+	
+	\item 另一个可以尝试的想法是： 直接 hard-code copying mechanism.  这可以怎样用 Attention 做到？  以前分析过了，copy 并不容易，因为需要 winner takes all.
+	
+	\item 但纯粹用 Hopfield network 又缺乏了 深度。 但似乎 在 RL 场景下，\textbf{广度} 也是重要的。
+	
+	\item 其实 只要有 输入/输出 的函数关系，就等价于有 逻辑 rules 的 KB 库。 问题是它用什么方法给出结论。
+\end{itemize}
 
 Self-Attention 已经符合我们的要求，但我们想改进它。 主要有两个 idea： 其一是更直接的 copy mechanism，其二是 更细致的 函数 dependence.
 \begin{equation}
@@ -361,21 +400,6 @@ Self-Attention 已经符合我们的要求，但我们想改进它。 主要有�
 \textbf{Create：}
 \begin{itemize}
 	\item 需要的是怎样的函数？
-\end{itemize}
-
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=1]{shallow-rule-base.png}}}
-\end{equation}
-
-
-\begin{itemize}
-	\item 首先留意到，轴心结构 只对 命题层次有用，它的作用不会延伸到 概念原子层次。 然而，有监于 Transformer 也没有充分利用 交换不变性，然而它却因为用了矩阵乘法而变得很有效率，所以从效率的角度看，也有将 轴心结构 延伸到 原子层面的理由。
-
-	\item 另一个可以尝试的想法是： 直接 hard-code copying mechanism.  这可以怎样用 Attention 做到？  以前分析过了，copy 并不容易，因为需要 winner takes all.
-
-	\item 但纯粹用 Hopfield network 又缺乏了 深度。 但似乎 在 RL 场景下，\textbf{广度} 也是重要的。
-	
-	\item 其实 只要有 输入/输出 的函数关系，就等价于有 逻辑 rules 的 KB 库。 问题是它用什么方法给出结论。
 \end{itemize}
 
 \end{minipage}
