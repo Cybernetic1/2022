@@ -373,7 +373,7 @@ $\alpha(P_i \;; ... )$ 是图 (\ref{fig:abstract-self-attention}) 的函数结�
 
 我觉得目前要回答的几个关键问题是：
 \begin{itemize}
-	\item 根据例如 刘乾 \textit{et al} 的论文，Transformer 做不到某些 逻辑语法上的运作，问题出在哪里？ 似乎不是 Transformer 根本无法学习那种语法，而是 它不能纯粹靠 prompt 做到。 但其实 prompt 是否具有深层意义，还是它只是一个 hack？  我们没有 explicitly「告诉」Transformer 它应该怎么做，那它做不到是不是一个真的缺憾？ 我觉得很难判断，令 prompt 的研究方向笼罩在迷雾之中。
+	\item 根据例如 刘乾 \textit{et al} 的论文\footnote{Qian Liu, Shengnan An, Jian-Guang Lou, Bei Chen, Zeqi Lin, Yan Gao, Bin Zhou, Nanning Zheng, and Dongmei Zhang. \textit{Compositional Generalization by Learning Analytical Expressions.} Advances in Neural Information Processing Systems 33 (2020).}，Transformer 做不到某些 逻辑语法上的运作，问题出在哪里？ 似乎不是 Transformer 根本无法学习那种语法，而是 它不能纯粹靠 prompt 做到。 但其实 prompt 是否具有深层意义，还是它只是一个 hack？  我们没有 explicitly「告诉」Transformer 它应该怎么做，那它做不到是不是一个真的缺憾？ 我觉得很难判断，令 prompt 的研究方向笼罩在迷雾之中。
 	
 	\item 现在考虑图 (\ref{fig:rule-base}) 即 rule base 的 na\"{i}ve 学习算法。 这个算法当然是很慢的，因为要比较两个集合（working memory 和 rule head）的相似性。 假设两个集合的大小固定为 $N$，那需要 $N \times N$ 次的 dot products，而这只是比较了一条 rule.  所有 rules 还要用 softmax 相加。 当 rule base 很大的时候，这个算法似乎不太实际。
 	
@@ -382,8 +382,22 @@ $\alpha(P_i \;; ... )$ 是图 (\ref{fig:abstract-self-attention}) 的函数结�
 	\tab \code{list(X), head(X,X1), tail(X,X2), append(X2,Y,W), cons(X1,W,Z).} \\
 	这个 rule 有 5个前提。 当 rule 被学习时，前提被逐个加进去，但 rule 的「得分值」一直是零，直到最后的前提 加进去了，得分才突然升到 100\%.  对于机器学习来说，这情况是很糟的。 而 Transformer 将 rules「扭曲地」缠在一起，这做法会不会反而有利于避免困在 local minima 呢？
 	
-	\item 
+	\item 可能存在 介乎 Transformer 与 na\"{i}ve rule base 之间的算法，它比 Transformer 有更强的逻辑结构，但比 na\"{i}ve rule base 用了更多类似 self-Attention 的矩阵运算来加速。 
 \end{itemize}
+
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+
+\setlength{\parskip}{0.4\baselineskip}
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 7}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
+\end{textblock*}
+\vspace*{0.3cm} 
 
 How to measure similarity between $(P_i, Q_i)$?
 \begin{equation}
@@ -421,7 +435,6 @@ Self-Attention 已经符合我们的要求，但我们想改进它。 主要有�
 
 \end{minipage}
 \end{preview}
-
 
 \begin{preview}
 \begin{minipage}{\textwidth}
