@@ -307,7 +307,7 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 \draw[-,red, transform canvas={shift={(-5pt,18pt)}}] (y.center) to (q.center);
 \draw[-,red, transform canvas={shift={(-5pt,-3pt)}}, out=-45,in=225] (z.center) to (r.center);
 \end{tikzpicture}
-\label{linkage-father}
+\label{eqn:linkage-father}
 \end{equation}
 正是 这些「搬动」，构成了「命题是由概念组成的」结构。
 
@@ -358,12 +358,29 @@ $\alpha(P_i \;; ... )$ 是图 (\ref{fig:abstract-self-attention}) 的函数结�
 \vcenter{\hbox{\includegraphics[scale=0.9]{rete-explained-3b.png}}}
 \tag{\ref{fig:self-attention-as-Rete}}
 \end{equation}
+大家要感受到 Transformer 是一种非常 ``twisted'' 的处理 rules matching 的方式。 这个对应很不明显，以至于我们很难分辨出 Transformer 那边的 rules 长什么样子。 然而我觉得 Transformer 的设计者们 或许多少有意识到它跟 rule-based systems 的相似性。 特别地，看看以下这逻辑 rule：
+\vspace{0.5cm}
+\begin{equation}
+\forall X, Y, Z.  \;\;  \text{grandfather}(X \tikzmark{x1}, Z \tikzmark{z1}) \leftarrow \text{father}(X \tikzmark{x2}, {\color{red}Y} \tikzmark{y1}) \wedge \mbox{father}({\color{red}Y} \tikzmark{y2}, Z \tikzmark{z2})
+\begin{tikzpicture}[overlay,remember picture,out=45,in=135,distance=1.1cm]
+\draw[-, transform canvas={shift={(-5pt,18pt)}}] (x1.center) to (x2.center);
+\draw[-,red, transform canvas={shift={(-5pt,18pt)}}] (y1.center) to (y2.center);
+\draw[-, transform canvas={shift={(-5pt,-3pt)}}, out=-45,in=225] (z1.center) to (z2.center);
+\end{tikzpicture}
+\tag{\ref{eqn:linkage-father}}
+\end{equation}
+这 rule 的前提有两个条件，出现两次的变量 $Y$ 必须相等（{\color{red}红色}），matching 才算成功。 而这种在 rule 的前提内部进行的 \textbf{比较} (comparison) 运作，正是 self-Attention 可以方便地做到的。 但 self-Attention 也忽略了 $A \wedge B$ 的对称性，可能还有改进的空间。
 
-目前要回答的问题包括：
+我觉得目前要回答的几个关键问题是：
 \begin{itemize}
-	\item Transformer 做不到某些 逻辑语法上的运作，问题出在哪里？
+	\item 根据例如 刘乾 \textit{et al} 的论文，Transformer 做不到某些 逻辑语法上的运作，问题出在哪里？ 似乎不是 Transformer 根本无法学习那种语法，而是 它不能纯粹靠 prompt 做到。 但其实 prompt 是否具有深层意义，还是它只是一个 hack？  我们没有 explicitly「告诉」Transformer 它应该怎么做，那它做不到是不是一个真的缺憾？ 我觉得很难判断，令 prompt 的研究方向笼罩在迷雾之中。
 	
-	\item Na\"{i}ve rule base 似乎存在旧有的逻辑学习算法的问题，亦即 ``plateau problem''.
+	\item 现在考虑图 (\ref{fig:rule-base}) 即 rule base 的 na\"{i}ve 学习算法。 这个算法当然是很慢的，因为要比较两个集合（working memory 和 rule head）的相似性。 假设两个集合的大小固定为 $N$，那需要 $N \times N$ 次的 dot products，而这只是比较了一条 rule.  所有 rules 还要用 softmax 相加。 当 rule base 很大的时候，这个算法似乎不太实际。
+	
+	\item 图 (\ref{fig:rule-base}) 还有可能出现 旧有的逻辑 rule learning 算法的问题，亦即 ``\textbf{plateau problem}''.  举例来说，用 Prolog 语言写 append 函数：\\
+	\code{append(X,Y,Z) :-} \\
+	\tab \code{list(X), head(X,X1), tail(X,X2), append(X2,Y,W), cons(X1,W,Z).} \\
+	这个 rule 有 5个前提。 当 rule 被学习时，前提被逐个加进去，但 rule 的「得分值」一直是零，直到最后的前提 加进去了，得分才突然升到 100\%.  对于机器学习来说，这情况是很糟的。 而 Transformer 将 rules「扭曲地」缠在一起，这做法会不会反而有利于避免困在 local minima 呢？
 	
 	\item 
 \end{itemize}
