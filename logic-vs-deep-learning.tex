@@ -346,7 +346,7 @@ Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match wit
 $P_1 ... \hat{P_i} ... P_N$ 的意思是 $P_1 ... P_N$ 除了 $P_i$. \\
 $\alpha(P_i \;; ... )$ 是图 (\ref{fig:abstract-self-attention}) 的函数结构，也可以理解为 以 $P_i$ 为 query 的 self Attention.
 
-这里有一个很重要的重点： self-Attention 的前身是来自 Graves \textit{et al.} 的 《Neural Turing Machine》 的 \textbf{content-addressable memory}.
+这里有一个很重要的重点\footnote{谢谢 “子鱼” 告诉我这个重要信息。}： self-Attention 的前身是来自 Graves \textit{et al.} 的 《Neural Turing Machine》 的 \textbf{content-addressable memory}.  我们很有理由将它看成是一种 \textbf{记忆体}。
 
 我们要比较 两种做法，前者是简单直接的经典 rule base 结构，后者是以 self-Attention 代替 rule base：
 \begin{equation}
@@ -358,7 +358,7 @@ $\alpha(P_i \;; ... )$ 是图 (\ref{fig:abstract-self-attention}) 的函数结�
 \vcenter{\hbox{\includegraphics[scale=0.9]{rete-explained-3b.png}}}
 \tag{\ref{fig:self-attention-as-Rete}}
 \end{equation}
-大家要感受到 Transformer 是一种非常 ``twisted'' 的处理 rules matching 的方式。 这个对应很不明显，以至于我们很难分辨出 Transformer 那边的 rules 长什么样子。 然而我觉得 Transformer 的设计者们 或许多少有意识到它跟 rule-based systems 的相似性。 特别地，看看以下这逻辑 rule：
+大家要感受到 Transformer 是一种非常 ``twisted'' 的处理 rules matching 的方式。 这个对应很不明显，以至于我们很难分辨出 Transformer 那边的 rules 长什么样子。 然而我觉得 Transformer 的设计者们 或许多少有意识到它跟 rule-based systems 的相似性。 特别地，看看以下这条逻辑 rule：
 \vspace{0.5cm}
 \begin{equation}
 \forall X, Y, Z.  \;\;  \text{grandfather}(X \tikzmark{x1}, Z \tikzmark{z1}) \leftarrow \text{father}(X \tikzmark{x2}, {\color{red}Y} \tikzmark{y1}) \wedge \mbox{father}({\color{red}Y} \tikzmark{y2}, Z \tikzmark{z2})
