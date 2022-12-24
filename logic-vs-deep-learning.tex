@@ -371,20 +371,6 @@ $\alpha(P_i \;; ... )$ 是图 (\ref{fig:abstract-self-attention}) 的函数结�
 \end{equation}
 这 rule 的前提有两个条件，出现两次的变量 $Y$ 必须相等（{\color{red}红色}），matching 才算成功。 而这种在 rule 的前提内部进行的 \textbf{比较} (comparison) 运作，正是 self-Attention 可以方便地做到的。 但 self-Attention 也忽略了 $A \wedge B$ 的对称性，可能还有改进的空间。
 
-我觉得目前要回答的几个关键问题是：
-\begin{itemize}
-	\item 根据例如 刘乾 \textit{et al} 的论文\footnote{Qian Liu, Shengnan An, Jian-Guang Lou, Bei Chen, Zeqi Lin, Yan Gao, Bin Zhou, Nanning Zheng, and Dongmei Zhang. \textit{Compositional Generalization by Learning Analytical Expressions.} Advances in Neural Information Processing Systems 33 (2020).}，Transformer 做不到某些 逻辑语法上的运作，问题出在哪里？ 似乎不是 Transformer 根本无法学习那种语法，而是 它不能纯粹靠 prompt 做到。 但其实 prompt 是否具有深层意义，还是它只是一个 hack？  我们没有 explicitly「告诉」Transformer 它应该怎么做，那它做不到是不是一个真的缺憾？ 我觉得很难判断，令 prompt 的研究方向笼罩在迷雾之中。
-	
-	\item 现在考虑图 (\ref{fig:rule-base}) 即 rule base 的 na\"{i}ve 学习算法。 这个算法当然是很慢的，因为要比较两个集合（working memory 和 rule head）的相似性。 假设两个集合的大小固定为 $N$，那需要 $N \times N$ 次的 dot products，而这只是比较了一条 rule.  所有 rules 还要用 softmax 相加。 当 rule base 很大的时候，这个算法似乎不太实际。
-	
-	\item 图 (\ref{fig:rule-base}) 还有可能出现 旧有的逻辑 rule learning 算法的问题，亦即 ``\textbf{plateau problem}''.  举例来说，用 Prolog 语言写 append 函数：\\
-	\code{append(X,Y,Z) :-} \\
-	\tab \code{list(X), head(X,X1), tail(X,X2), append(X2,Y,W), cons(X1,W,Z).} \\
-	这个 rule 有 5个前提。 当 rule 被学习时，前提被逐个加进去，但 rule 的「得分值」一直是零，直到最后的前提 加进去了，得分才突然升到 100\%.  对于机器学习来说，这情况是很糟的。 而 Transformer 将 rules「扭曲地」缠在一起，这做法会不会反而有利于避免困在 local minima 呢？
-	
-	\item 可能存在 介乎 Transformer 与 na\"{i}ve rule base 之间的算法，它比 Transformer 有更强的逻辑结构，但比 na\"{i}ve rule base 用了更多类似 self-Attention 的矩阵运算来加速。 
-\end{itemize}
-
 \end{minipage}
 \end{preview}
 
@@ -399,12 +385,26 @@ $\alpha(P_i \;; ... )$ 是图 (\ref{fig:abstract-self-attention}) 的函数结�
 \end{textblock*}
 \vspace*{0.3cm} 
 
+我觉得目前要回答的几个关键问题是：
+\begin{itemize}
+	\item 根据例如 刘乾 \textit{et al} 的论文\footnote{Qian Liu, Shengnan An, Jian-Guang Lou, Bei Chen, Zeqi Lin, Yan Gao, Bin Zhou, Nanning Zheng, and Dongmei Zhang. \textit{Compositional Generalization by Learning Analytical Expressions.} Advances in Neural Information Processing Systems 33 (2020).}，Transformer 做不到某些 逻辑语法上的运作，问题出在哪里？ 似乎不是 Transformer 根本无法学习那种语法，而是 它不能纯粹靠 prompt 做到。 但其实 prompt 是否具有深层意义，还是它只是一个 hack？  我们没有 explicitly「告诉」Transformer 它应该怎么做，那它做不到是不是一个真的缺憾？ 我觉得很难判断，令 prompt 的研究方向笼罩在迷雾之中。
+	
+	\item 现在考虑图 (\ref{fig:rule-base}) 即 rule base 的 na\"{i}ve 学习算法。 这个算法当然是很慢的，因为要比较两个集合（working memory 和 rule head）的相似性。 假设两个集合的大小固定为 $N$，那需要 $N \times N$ 次的 dot products，而这只是比较了一条 rule.  所有 rules 还要用 softmax 相加。 当 rule base 很大的时候，这个算法似乎不太实际。
+	
+	\item 图 (\ref{fig:rule-base}) 还有可能出现 旧有的逻辑 rule learning 算法的问题，亦即 ``\textbf{plateau problem}''.  举例来说，用 Prolog 语言写 append 函数：\\
+	\code{append(X,Y,Z) :-} \\
+	\tab \code{list(X), head(X,X1), tail(X,X2), append(X2,Y,W), cons(X1,W,Z).} \\
+	这个 rule 有 5个前提。 当 rule 被学习时，前提被逐个加进去，但 rule 的「得分值」一直是零，直到最后的前提 加进去了，得分才突然升到 100\%.  对于机器学习来说，这情况是很糟的。 而 Transformer 将 rules「扭曲地」缠在一起，这做法会不会反而有利于避免困在 local minima 呢？
+	
+	\item 可能存在 介乎 Transformer 与 na\"{i}ve rule base 之间的算法，它比 Transformer 有更强的逻辑结构，但比 na\"{i}ve rule base 用了更多类似 self-Attention 的矩阵运算来加速。 
+\end{itemize}
+
+\color{teal} \footnotesize
+
 How to measure similarity between $(P_i, Q_i)$?
 \begin{equation}
 \argmin_i \sum_i \min_j \langle P_i, Q_j \rangle
 \end{equation}
-
-\color{teal}
 
 \begin{itemize}
 	\item 首先留意到，轴心结构 只对 命题层次有用，它的作用不会延伸到 概念原子层次。 然而，有监于 Transformer 也没有充分利用 交换不变性，然而它却因为用了矩阵乘法而变得很有效率，所以从效率的角度看，也有将 轴心结构 延伸到 原子层面的理由。
@@ -441,7 +441,34 @@ Self-Attention 已经符合我们的要求，但我们想改进它。 主要有�
 
 \setlength{\parskip}{0.4\baselineskip}
 \begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
-	{\color{red}{\large \textcircled{\small 5}}}
+	{\color{red}{\large \textcircled{\small 8}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
+\end{textblock*}
+\vspace*{0.3cm} 
+
+现时想到的一个比较可行的 architecture：
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=1]{seq-to-seq-seq-with-Transformer.png}}}
+\end{equation}
+\begin{itemize}
+	\item 在{\color{blue}蓝色}结构里，每个命题要由 fixed \# of 概念原子组成。
+
+	\item 但抽象的 self-Attention 结构也可以容许 \textbf{可变长度} 的命题，只要能计算到 命题之间的 \textbf{dot product} (similarity) ，还有 读取 固定长度的 \textbf{矩阵} 记忆体。
+
+	\item {\color{red}红色}结构： 如何从 不定长度的句子 产生数量和长度不同的命题？ 这就是以前谈过的 sequence to sequence-of-sequences 问题。 这也可以用 ``lossy'' self-Attention 解决。
+	
+\end{itemize}
+
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+
+\setlength{\parskip}{0.4\baselineskip}
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small A}}}
 	\hspace{8cm}
 	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
 \end{textblock*}
@@ -471,7 +498,7 @@ Self-Attention 已经符合我们的要求，但我们想改进它。 主要有�
 		
 \setlength{\parskip}{0.4\baselineskip}
 \begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
-	{\color{red}{\large \textcircled{\small 6}}}
+	{\color{red}{\large \textcircled{\small B}}}
 	\hspace{8cm}
 	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
 \end{textblock*}
