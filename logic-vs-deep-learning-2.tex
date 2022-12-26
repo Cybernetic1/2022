@@ -178,7 +178,7 @@ Next, let's look at the structure of the logical system in detail:
 There are many rules in the Knowledge Base, and the system needs to match these rules one by one with the propositions in the system state (= working memory):
 }
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=1]{rete-explained-1.png}}}
+\vcenter{\hbox{\includegraphics[scale=1]{rete-explained-1b.png}}}
 \end{equation}
 \cc{成功 matched 的 rules 可以导出新的结论，加进 working memory 的状态 里面。
 }{
@@ -530,7 +530,7 @@ Everyone should feel that Transformer is a very "twisted" way of dealing with ru
 \end{equation}
 \cc{这 rule 的前提有两个条件，出现两次的变量 $Y$ 必须相等（{\color{red}红色}），matching 才算成功。 而这种在 rule 的前提内部进行的 \textbf{比较} (comparison) 运作，正是 self-Attention 可以方便地做到的。 但 self-Attention 也忽略了 $A \wedge B$ 的对称性，可能还有改进的空间。
 }{
-The premise of this rule has two conditions, the variable $Y$ that appears twice must be equal ({\color{red}red}), and the matching is considered successful. And this kind of \textbf{comparison} (comparison) operation inside the premise of the rule is exactly what self-Attention can do conveniently. But self-Attention also ignores the symmetry of $A \wedge B$, and there may be room for improvement.
+The premise of this rule has two conditions, the variable $Y$ that appears twice must be equal ({\color{red}red}), and the matching is considered successful. And this kind of \textbf{comparison} operation inside the premise of the rule is exactly what self-Attention can do conveniently. But self-Attention also ignores the symmetry of $A \wedge B$, and there may be room for improvement.
 }
 
 \end{minipage}
@@ -554,7 +554,7 @@ I think the key questions to be answered right now are:
 \begin{itemize}
 \cc{	\item 根据例如 刘乾 \textit{et al} 的论文\footnote{Qian Liu, Shengnan An, Jian-Guang Lou, Bei Chen, Zeqi Lin, Yan Gao, Bin Zhou, Nanning Zheng, and Dongmei Zhang. \textit{Compositional Generalization by Learning Analytical Expressions.} Advances in Neural Information Processing Systems 33 (2020).}，Transformer 做不到某些 逻辑语法上的运作，问题出在哪里？ 似乎不是 Transformer 根本无法学习那种语法，而是 它不能纯粹靠 prompt 做到。 但其实 prompt 是否具有深层意义，还是它只是一个 hack？  我们没有 explicitly「告诉」Transformer 它应该怎么做，那它做不到是不是一个真的缺憾？ 我觉得很难判断，令 prompt 的研究方向笼罩在迷雾之中。
 }{
-\item According to e.g. \footnote{Qian Liu, Shengnan An, Jian-Guang Lou, Bei Chen, Zeqi Lin, Yan Gao, Bin Zhou, Nanning Zheng, and Dongmei Zhang. \textit{ Compositional Generalization by Learning Analytical Expressions.} Advances in Neural Information Processing Systems 33 (2020).}, Transformer can't do some logical and grammatical operations, where is the problem? It doesn't seem like Transformer can't learn that syntax at all, but that it can't do it purely from prompts. But does prompt actually have a deeper meaning, or is it just a hack? We didn't explicitly "tell" the Transformer what it should do, so is it a real shortcoming that it can't do it? I find it difficult to judge, and the research direction of prompt is shrouded in fog.
+\item According to e.g. Qian Liu's paper \footnote{Qian Liu, Shengnan An, Jian-Guang Lou, Bei Chen, Zeqi Lin, Yan Gao, Bin Zhou, Nanning Zheng, and Dongmei Zhang. \textit{ Compositional Generalization by Learning Analytical Expressions.} Advances in Neural Information Processing Systems 33 (2020).}, Transformer can't do some logical and grammatical operations, where is the problem? It doesn't seem like Transformer can't learn that syntax at all, but that it can't do it purely from prompts. But does prompt actually have a deeper meaning, or is it just a hack? We didn't explicitly "tell" the Transformer what it should do, so is it a real shortcoming that it can't do it? I find it difficult to judge, and the research direction of prompt is shrouded in fog.
 }
 	
 \cc{	\item 现在考虑图 (\ref{fig:rule-base}) 即 rule base 的 na\"{i}ve 学习算法。 这个算法当然是很慢的，因为要比较两个集合（working memory 和 rule head）的相似性。 假设两个集合的大小固定为 $N$，那需要 $N \times N$ 次的 dot products，而这只是比较了一条 rule.  所有 rules 还要用 softmax 相加。 当 rule base 很大的时候，这个算法似乎不太实际。
