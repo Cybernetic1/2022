@@ -988,6 +988,66 @@
          id="path2842-0-5-6-5"
          inkscape:connector-curvature="0" />
     </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="marker284470251"
+       id="marker284470251">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#ff0000;fill-opacity:1.0;fill-rule:evenodd;stroke:#ff0000;stroke-width:1pt;stroke-opacity:1.0"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path18424"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="marker2844-263304"
+       id="marker2844-263304">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#ff0000;fill-opacity:1.0;fill-rule:evenodd;stroke:#ff0000;stroke-width:1pt;stroke-opacity:1.0"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path18427"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="marker2844-2-338476"
+       id="marker2844-2-338476">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#ff0000;fill-opacity:1.0;fill-rule:evenodd;stroke:#ff0000;stroke-width:1pt;stroke-opacity:1.0"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path18430"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="marker2844-2-3-977059"
+       id="marker2844-2-3-977059">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#ff0000;fill-opacity:1.0;fill-rule:evenodd;stroke:#ff0000;stroke-width:1pt;stroke-opacity:1.0"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path18433"
+         inkscape:connector-curvature="0" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -997,8 +1057,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="1373"
-     inkscape:cy="1218"
+     inkscape:cx="1481"
+     inkscape:cy="913"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1039,7 +1099,8 @@
        id="g1456"
        transform="matrix(0.10583333,0,0,0.10583333,70.128539,363.46993)"
        inkscape:export-xdpi="196"
-       inkscape:export-ydpi="196">
+       inkscape:export-ydpi="196"
+       inkscape:export-filename="rete-explained-2.png">
       <g
          id="g1271">
         <defs
@@ -7777,7 +7838,7 @@
          y="360.33655"
          style="font-size:7.05556px;fill:#0000ff;stroke-width:0.264583">compiled net of rules</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2844)"
+       style="fill:none;stroke:#ff0000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker284470251)"
        d="m 51.415238,372.07788 c 6.350016,-7.67292 51.633442,-17.62204 62.216782,-8.36162"
        id="path6135-4-8"
        inkscape:connector-curvature="0"
@@ -7785,7 +7846,7 @@
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2844-2)"
+       style="fill:none;stroke:#ff0000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2844-263304)"
        d="m 117.94071,365.23488 c 4.86935,-1.52607 12.41366,-0.75292 17.25366,4.8061"
        id="path6135-4-8-2"
        inkscape:connector-curvature="0"
@@ -7793,7 +7854,7 @@
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2844-2-3)"
+       style="fill:none;stroke:#ff0000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2844-2-338476)"
        d="m 132.95888,372.78054 c -3.46619,-0.87126 -6.42683,0.83733 -7.99278,3.49647"
        id="path6135-4-8-2-5"
        inkscape:connector-curvature="0"
@@ -7801,7 +7862,7 @@
        inkscape:export-xdpi="196"
        inkscape:export-ydpi="196" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2844-2-3-9)"
+       style="fill:none;stroke:#ff0000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2844-2-3-977059)"
        d="m 123.05466,378.88369 c -2.6243,1.28026 -3.99469,3.9243 -0.50925,6.02217"
        id="path6135-4-8-2-5-2"
        inkscape:connector-curvature="0"
@@ -8088,12 +8149,12 @@
          id="tspan6089"
          x="175.87988"
          y="448.22571"
-         style="fill:#0000ff;stroke-width:0.264583">equivalent to</tspan><tspan
+         style="fill:#0000ff;stroke-width:0.264583">is equivalent to</tspan><tspan
          sodipodi:role="line"
          x="175.87988"
          y="455.28128"
          style="fill:#0000ff;stroke-width:0.264583"
-         id="tspan4387">a rule</tspan></text>
+         id="tspan4387">a logic rule</tspan></text>
     <g
        id="g13277"
        transform="translate(67.20417,-19.314583)"
