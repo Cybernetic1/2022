@@ -414,9 +414,9 @@ After some analysis I got the following condition for "propositions are made of 
 \end{condition}
 \end{tcolorbox}
 
-\cc{其实 $\tau$ 只需要是连续函数，就可以符合上述条件。 所以 Atomic condition 的重点在于 (\ref{eqn:atomic-condition-1}) 和 (\ref{eqn:atomic-condition-2}) 这两个\textbf{等式}，其实是非常简单的。 $\forall$ 和 $\exists$ 作为伴随函子 的范畴论描述 比较复杂，我们会在附录里解释。
+\cc{其实 $\tau$ 只需要是连续函数，就可以符合上述条件。 所以 Atomic Condition 的重点在于 (\ref{eqn:atomic-condition-1}) 和 (\ref{eqn:atomic-condition-2}) 这两个\textbf{等式}，其实是非常简单的。 $\forall$ 和 $\exists$ 作为伴随函子 的范畴论描述 比较复杂，我们在 \hyperlink{page:appendix-A}{附录 A} 里解释。
 }{
-In fact, $\tau$ only needs to be a continuous function to meet the above conditions. So the focus of Atomic condition lies in the two \textbf{equations} of (\ref{eqn:atomic-condition-1}) and (\ref{eqn:atomic-condition-2}), which are actually very simple. The category-theoretic description of $\forall$ and $\exists$ as adjoint functors is complicated, and we explain them in the appendix.
+In fact, $\tau$ only needs to be a continuous function to meet the above conditions. So the focus of Atomic Condition lies in the two \textbf{equations} of (\ref{eqn:atomic-condition-1}) and (\ref{eqn:atomic-condition-2}), which are actually very simple. The category-theoretic description of $\forall$ and $\exists$ as adjoint functors is complicated, and we explain them in appendix {\color{red}{\large \textcircled{\small A}}}.
 }
 
 \cc{那么 等式 (\ref{eqn:atomic-condition-2}) 里面的 ``='' 是来自哪里？ 其实太明显了，它就是逻辑 rule 里面 将变量「syntactically 搬动」的动作：
@@ -472,29 +472,6 @@ And we want to use a method similar to the above self-Attention to solve the pro
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=1]{logic-symmetry-logic-Transformer.png}}}
 \end{equation}
-
-\cc{首先以函数的方式表达 self-Attention 结构：
-}{
-First express the self-Attention structure in a functional way:
-}
-\begin{eqnarray}
-\cc{
-\boxed{\mbox{输出命题 $O_i$ 由原子 $b_i$ 组成}} \quad O_i &=& [b_1 ... b_K] \\
-\boxed{\mbox{输入命题 $P_i$ 由原子 $a_i$ 组成}} \quad P_i &=& [a_1 ... a_K] \\
-}{
-\boxed{\mbox{output proposition $O_i$ is composed of atoms $b_i$ }} \quad O_i &=& [b_1 ... b_K] \\
-\boxed{\mbox{input proposition $P_i$ is composed of atoms $a_i$ }} \quad P_i &=& [a_1 ... a_K] \\
-}
-\boxed{\mbox{Self-Attention}} \quad O_i = \alpha(P_i \;; P_1 ... \hat{P_i} ... P_N)
-\end{eqnarray}
-\cc{$P_1 ... \hat{P_i} ... P_N$ 的意思是 $P_1 ... P_N$ 除了 $P_i$. \\
-}{
-$P_1 ... \hat{P_i} ... P_N$ means $P_1 ... P_N$ except $P_i$. \\
-}
-\cc{$\alpha(P_i \;; ... )$ 是图 (\ref{fig:abstract-self-attention}) 的函数结构，也可以理解为 以 $P_i$ 为 query 的 self Attention.
-}{
-$\alpha(P_i \;; ... )$ is the function structure of the graph (\ref{fig:abstract-self-attention}), and it can also be understood as the self Attention with $P_i$ as the query.
-}
 
 \cc{这里有一个很重要的重点\footnote{谢谢 “子鱼” 告诉我这个重要信息。}： self-Attention 的前身是来自 Graves \textit{et al.} 的 《Neural Turing Machine》 的 \textbf{content-addressable memory}.  我们很有理由将它看成是一种 \textbf{记忆体}。
 }{
@@ -573,70 +550,9 @@ I think the key questions to be answered right now are:
 This rule has 5 premises. When the rule is learned, the premise is added one by one, but the "score value" of the rule is always zero, until the last premise is added, the score suddenly rises to 100\%. For machine learning, this situation is Terrible. And the Transformer twists the rules together. Will this approach help avoid being trapped in the local minima?
 }
 	
-\cc{	\item 可能存在 介乎 Transformer 与 na\"{i}ve rule base 之间的算法，它比 Transformer 有更强的逻辑结构，但比 na\"{i}ve rule base 用了更多类似 self-Attention 的矩阵运算来加速。 
+\cc{	\item 可能存在 介乎 Transformer 与 na\"{i}ve rule base 之间的算法，它比 Transformer 有更强的逻辑结构，但比 na\"{i}ve rule base 用了更多类似 self-Attention 的矩阵运算来加速？
 }{
-\item may have an algorithm between Transformer and na\"{i}ve rule base, it has a stronger logical structure than Transformer, but uses more similar self- Attention's matrix operation to speed up.
-}
-\end{itemize}
-
-\color{teal} \footnotesize
-
-How to measure similarity between $(P_i, Q_i)$?
-\begin{equation}
-\argmin_i \sum_i \min_j \langle P_i, Q_j \rangle
-\end{equation}
-
-\begin{itemize}
-\cc{	\item 首先留意到，轴心结构 只对 命题层次有用，它的作用不会延伸到 概念原子层次。 然而，有监于 Transformer 也没有充分利用 交换不变性，然而它却因为用了矩阵乘法而变得很有效率，所以从效率的角度看，也有将 轴心结构 延伸到 原子层面的理由。
-}{
-\item First notice that the pivot structure is only useful at the propositional level, and its effect does not extend to the conceptual atomic level. However, since Transformer does not take full advantage of the exchange invariance, it becomes very efficient because it uses matrix multiplication, so from an efficiency point of view, there are also reasons to extend the axis structure to the atomic level.
-}
-	
-\cc{	\item 另一个可以尝试的想法是： 直接 hard-code copying mechanism.  这可以怎样用 Attention 做到？  以前分析过了，copy 并不容易，因为需要 winner takes all.
-}{
-\item Another idea to try is: direct hard-code copying mechanism. How can this be done with Attention? It has been analyzed before, copy is not easy, because winner takes all.
-}
-	
-\cc{	\item 但纯粹用 Hopfield network 又缺乏了 深度。 但似乎 在 RL 场景下，\textbf{广度} 也是重要的。
-}{
-\item but purely using Hopfield network lacks depth. But it seems that in the RL scenario, \textbf{breadth} is also important.
-}
-	
-\cc{	\item 其实 只要有 输入/输出 的函数关系，就等价于有 逻辑 rules 的 KB 库。 问题是它用什么方法给出结论。
-}{
-In fact, as long as there is an input/output functional relationship, \item is equivalent to a KB library with logic rules. The question is what method it uses to reach its conclusions.
-}
-\end{itemize}
-
-\cc{Self-Attention 已经符合我们的要求，但我们想改进它。 主要有两个 idea： 其一是更直接的 copy mechanism，其二是 更细致的 函数 dependence.
-}{
-Self-Attention already meets our requirements, but we want to improve it. There are two main ideas: one is a more direct copy mechanism, and the other is a more detailed function dependency.
-}
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=1]{logic-Transformer-1.png}}}
-\end{equation}
-
-\textbf{Copy:}
-\begin{itemize}
-\cc{	\item Copy 不需要什么特别机制，输出就是输入。 但问题是怎样 combine with ``create'' operation.
-}{
-\item Copy requires no special mechanism, the output is the input. But the question is how to combine with ``create'' operation.
-}
-\cc{	\item 当然 可以用大家都熟悉的 softmax： $ \alpha \mbox{ copy} + \beta \mbox{ create} $, where $\alpha, \beta$ are outputs of softmax.
-}{
-\item can of course use the familiar softmax: $ \alpha \mbox{ copy} + \beta \mbox{ create} $, where $\alpha, \beta$ are outputs of softmax.
-}
-\cc{	\item 另一个想法是 content-addressable.  用 table-lookup 的形式，找可执行的 rules。 但有 variable matching 的问题。 
-}{
-\item Another idea is content-addressable. Use table-lookup to find executable rules. But there is a problem with variable matching.
-}
-\end{itemize}
-
-\textbf{Create:}
-\begin{itemize}
-\cc{	\item 需要的是怎样的函数？
-}{
-\item What kind of function is needed?
+	\item May have an algorithm between Transformer and na\"{i}ve rule base, it has a stronger logical structure than Transformer, but uses more similar self-Attention's matrix operation to speed up?
 }
 \end{itemize}
 
@@ -685,10 +601,50 @@ A more feasible architecture that I think of now:
 
 \begin{preview}
 \begin{minipage}{\textwidth}
+\hypertarget{page:appendix-A}{}
 
 \setlength{\parskip}{0.4\baselineskip}
 \begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
 	{\color{red}{\large \textcircled{\small A}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
+\end{textblock*}
+\vspace*{0.3cm} 
+
+在这个附录里，我们用简单的方式解释一下 $\forall$ 和 $\exists$ 的理论。 
+
+以下是一个关系 $R$，例如「$Y$爱$X$」，$X, Y$ 都是「人」的集合；两个相同的拷贝。 例如 对角线 代表爱自己（有些人不爱自己）。 注意这个图也不是 对角线 对称的，否则就没有「失恋」了。 将关系 $R$ 的图像 \textbf{投影} 到 $X$ 轴上，可以得到 $\forall_Y$ 和 $\exists_Y$ 集合。 $\forall_Y$ 集合 代表那些「人人都爱」的 $X$，$\exists_Y$ 集合代表那些「有人爱他」的 $X$:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.8]{forall-and-exists.png}}}
+\end{equation}
+范畴论大师 Lawvere 发现，$\forall$ 和 $\exists$ 是一个所谓 \textbf{weakening functor} 的「伴随函子」，所谓 weakening 就是从一个只有 $X$ 变量的\textbf{论域} 扩充到有 $X,Y$ 两个变量的论域，而这里 $Y$ 纯粹是一个 \textbf{dummy} variable:
+\begin{equation}
+\begin{tikzcd}[column sep = 4cm, row sep = 0.3cm]
+{}  & {} \arrow[l, swap, "\forall_Y"] \\
+(X) \arrow[r, "\mbox{weakening}"] & (X,Y) \\
+{}  & {} \arrow[l, swap, "\exists_Y"]
+\end{tikzcd}
+\end{equation}
+例如 $\mbox{Love}(Y,X)$ 是带有两个变量的逻辑式子，但 $\forall Y. \mbox{ Love}(Y,X)$ 其实没有了 $Y$ 这个变量，因为它被 $\forall$ \textbf{绑定}了。
+
+所谓 \textbf{伴随} (adjoint) 的意思是： 有两个范畴：左边和右边。 你可以将 左边的东西搬到右边，在右边的范畴里做「\textbf{比较}」，而这个比较 同样地可以 把东西搬到左边做，两个比较是\textbf{等价}的。 这里「比较」的意思就是范畴内的 morphism, 例如在 $\mathsf{Set}$ 范畴里，比较就是 set inclusion.  
+
+伴随函子 并不是唯一的，所以 weakening 分别有 $\forall$ 和 $\exists$ 两个伴随。
+
+\cc{Lawvere 将 量词 $\forall$ 和 $\exists$ 推广得更一般： 「简单」的 weakening functor 是基于 笛卡尔积 $X \times Y$； Lawvere 将它扩充到任何 \textbf{substitution} functor.  但我暂时缺乏这方面的例子，不清楚它对我们的应用有什么益处。
+}{
+	Lawvere's work made the $\forall$ and $\exists$ quantifiers more general: the ``simple'' weakening functor is based on the Cartesian product $X \times Y$, but Lawvere expanded it to arbitrary \textbf{substitution} functors.  (I don't know of examples of this, so I'm not sure what advantages this could bring to our application.)
+}
+
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+
+\setlength{\parskip}{0.4\baselineskip}
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small B}}}
 	\hspace{8cm}
 	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
 \end{textblock*}
@@ -720,10 +676,10 @@ Since classical logic AI generally uses $\forall$ and ignores $\exists$, I rewri
 But the problem is, the left and right sides of the formula (\ref{eqn:Frobenius-condition}), the corresponding neural network (\ref{fig:logic-symmetry-predicate-level}) is the same (no difference ). In other words, this difference may be too subtle, and it does not affect the neural network we actually implement.
 }
 
-\cc{在逻辑里，任何变量 例如 $x,y$ 等，必须被 $\forall$ 或 $\exists$ quantify，否则不成为合法的句子。 所以 表达 谓词结构的对称性，也很可能要涉及 $\forall$ 或 $\exists$.
-}{
-In logic, any variable such as $x, y$, etc. must be quantified by $\forall$ or $\exists$, otherwise it will not become a legal sentence. So to express the symmetry of the predicate structure, it is also likely to involve $\forall$ or $\exists$.
-}
+%\cc{在逻辑里，任何变量 例如 $x,y$ 等，必须被 $\forall$ 或 $\exists$ quantify，否则不成为合法的句子。 所以 表达 谓词结构的对称性，也很可能要涉及 $\forall$ 或 $\exists$.
+%}{
+%In logic, any variable such as $x, y$, etc. must be quantified by $\forall$ or $\exists$, otherwise it will not become a legal sentence. So to express the symmetry of the predicate structure, it is also likely to involve $\forall$ or $\exists$.
+%}
 
 \end{minipage}
 \end{preview}
@@ -733,7 +689,7 @@ In logic, any variable such as $x, y$, etc. must be quantified by $\forall$ or $
 		
 \setlength{\parskip}{0.4\baselineskip}
 \begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
-	{\color{red}{\large \textcircled{\small B}}}
+	{\color{red}{\large \textcircled{\small C}}}
 	\hspace{8cm}
 	\color{blue}{\footnotesize \cc{逻辑与深度学习}{Logic and Deep Learning}}
 \end{textblock*}
@@ -793,12 +749,97 @@ where $\pi$ is the projection representing the quantifier $\forall$ or $\exists$
 The Beck-Chevalley condition is not entirely hollow; it may not hold. There is a counter-example proposed by Pitts: Consider $X \times Y$, where $X = Y = \mathbb{N} \cup \{\infty\}$ is the natural number plus $\infty$ as the top element; but $Y$ uses discrete order, that is, all orders are =. $A$ is the relationship on $X \times Y$: $A = \{ (x,y) \in \mathbb{N \times N} \;|\; x \le y \}$. Then $\exists y. (x,y) \in A$ will be the entire set of $X$. If we consider the DCPO category, we require the fibration of Scott-closed subsets (ordered by inclusion) over DCPO. The condition of Scott closure of $\exists y. A$ is that it is a lower set closed under directed joins; and this Scott closure condition seems to be is not established, thus causing the graph (\ref{eqn:Beck-Chevalley}) not to commute. (I do not understand the details of Scott closure)
 }
 
-\cc{Lawvere 的工作将 Beck-Chevalley 条件变得更一般化： 「简单」的 $\forall$ 和 $\exists$ 量词 是 weakening functor $\pi^*$（基于笛卡尔积）的伴随函子，但 Lawvere 将它扩充到任何 \textbf{substitution} functor $u^*$.
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+	\begin{minipage}{\textwidth}
+		
+		\color{teal}
+		
+\cc{首先以函数的方式表达 self-Attention 结构：
 }{
-Lawvere's work made the Beck-Chevalley condition more general: the "simple" $\forall$ and $\exists$ quantifiers are adjoint functors of the weakening functor $\pi^*$ (based on Cartesian products), but Lawvere Expand it to any \textbf{substitution} functor $u^*$.
+	First express the self-Attention structure in a functional way:
+}
+\begin{eqnarray}
+\cc{
+	\boxed{\mbox{输出命题 $O_i$ 由原子 $b_i$ 组成}} \quad O_i &=& [b_1 ... b_K] \\
+	\boxed{\mbox{输入命题 $P_i$ 由原子 $a_i$ 组成}} \quad P_i &=& [a_1 ... a_K] \\
+}{
+	\boxed{\mbox{output proposition $O_i$ is composed of atoms $b_i$ }} \quad O_i &=& [b_1 ... b_K] \\
+	\boxed{\mbox{input proposition $P_i$ is composed of atoms $a_i$ }} \quad P_i &=& [a_1 ... a_K] \\
+}
+\boxed{\mbox{Self-Attention}} \quad O_i = \alpha(P_i \;; P_1 ... \hat{P_i} ... P_N)
+\end{eqnarray}
+\cc{$P_1 ... \hat{P_i} ... P_N$ 的意思是 $P_1 ... P_N$ 除了 $P_i$. \\
+}{
+	$P_1 ... \hat{P_i} ... P_N$ means $P_1 ... P_N$ except $P_i$. \\
+}
+\cc{$\alpha(P_i \;; ... )$ 是图 (\ref{fig:abstract-self-attention}) 的函数结构，也可以理解为 以 $P_i$ 为 query 的 self Attention.
+}{
+	$\alpha(P_i \;; ... )$ is the function structure of the graph (\ref{fig:abstract-self-attention}), and it can also be understood as the self Attention with $P_i$ as the query.
 }
 
-\end{minipage}
+		How to measure similarity between $(P_i, Q_i)$?
+		\begin{equation}
+		\argmin_i \sum_i \min_j \langle P_i, Q_j \rangle
+		\end{equation}
+		
+		\begin{itemize}
+			\cc{	\item 首先留意到，轴心结构 只对 命题层次有用，它的作用不会延伸到 概念原子层次。 然而，有监于 Transformer 也没有充分利用 交换不变性，然而它却因为用了矩阵乘法而变得很有效率，所以从效率的角度看，也有将 轴心结构 延伸到 原子层面的理由。
+			}{
+				\item First notice that the pivot structure is only useful at the propositional level, and its effect does not extend to the conceptual atomic level. However, since Transformer does not take full advantage of the exchange invariance, it becomes very efficient because it uses matrix multiplication, so from an efficiency point of view, there are also reasons to extend the axis structure to the atomic level.
+			}
+			
+			\cc{	\item 另一个可以尝试的想法是： 直接 hard-code copying mechanism.  这可以怎样用 Attention 做到？  以前分析过了，copy 并不容易，因为需要 winner takes all.
+			}{
+				\item Another idea to try is: direct hard-code copying mechanism. How can this be done with Attention? It has been analyzed before, copy is not easy, because winner takes all.
+			}
+			
+			\cc{	\item 但纯粹用 Hopfield network 又缺乏了 深度。 但似乎 在 RL 场景下，\textbf{广度} 也是重要的。
+			}{
+				\item but purely using Hopfield network lacks depth. But it seems that in the RL scenario, \textbf{breadth} is also important.
+			}
+			
+			\cc{	\item 其实 只要有 输入/输出 的函数关系，就等价于有 逻辑 rules 的 KB 库。 问题是它用什么方法给出结论。
+			}{
+				In fact, as long as there is an input/output functional relationship, \item is equivalent to a KB library with logic rules. The question is what method it uses to reach its conclusions.
+			}
+		\end{itemize}
+		
+		\cc{Self-Attention 已经符合我们的要求，但我们想改进它。 主要有两个 idea： 其一是更直接的 copy mechanism，其二是 更细致的 函数 dependence.
+		}{
+			Self-Attention already meets our requirements, but we want to improve it. There are two main ideas: one is a more direct copy mechanism, and the other is a more detailed function dependency.
+		}
+		\begin{equation}
+		\vcenter{\hbox{\includegraphics[scale=1]{logic-Transformer-1.png}}}
+		\end{equation}
+		
+		\textbf{Copy:}
+		\begin{itemize}
+			\cc{	\item Copy 不需要什么特别机制，输出就是输入。 但问题是怎样 combine with ``create'' operation.
+			}{
+				\item Copy requires no special mechanism, the output is the input. But the question is how to combine with ``create'' operation.
+			}
+			\cc{	\item 当然 可以用大家都熟悉的 softmax： $ \alpha \mbox{ copy} + \beta \mbox{ create} $, where $\alpha, \beta$ are outputs of softmax.
+			}{
+				\item can of course use the familiar softmax: $ \alpha \mbox{ copy} + \beta \mbox{ create} $, where $\alpha, \beta$ are outputs of softmax.
+			}
+			\cc{	\item 另一个想法是 content-addressable.  用 table-lookup 的形式，找可执行的 rules。 但有 variable matching 的问题。 
+			}{
+				\item Another idea is content-addressable. Use table-lookup to find executable rules. But there is a problem with variable matching.
+			}
+		\end{itemize}
+		
+		\textbf{Create:}
+		\begin{itemize}
+			\cc{	\item 需要的是怎样的函数？
+			}{
+				\item What kind of function is needed?
+			}
+		\end{itemize}
+		
+	\end{minipage}
 \end{preview}
 
 \end{document}
