@@ -10,13 +10,13 @@ We are looking to fill 3 types of roles, but their definitions are  flexible:
 
 1. LLM (Large Language Models) application designer
 2. Machine learning to general AI transition engineer
-3. AI-related web developer
 
 ### Requirements (ideally)
 
 * We're looking for candidates interested in the latest developments in AI such as GPT and LLM (Large Language Models).
 * The candidate should have some familiarity with traditional machine learning (ML).
 * Our approach will combine GPT and traditional ML to provide functions such as chat bots and Q&A (question answering).
+* Experience with web-crawling may be an advantage.
 * We are also planning to train from-scratch our own language model which is based on an improvement over the Transformer.
 * If you are a beginner in these areas you are still encouraged to apply, as we think that a learning attitude is the most important.
 * We're trying to foster a community spirit of knowledge sharing, learning, and creativity.

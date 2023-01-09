@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="175.29149mm"
+   height="245.75246mm"
+   viewBox="0 0 175.29149 245.75246"
+   version="1.1"
+   id="svg48297"
+   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   sodipodi:docname="deep-learning-for-dummies-2.svg"
+   inkscape:export-filename="deep-learning-for-dummies-2.png"
+   inkscape:export-xdpi="192"
+   inkscape:export-ydpi="192"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview48299"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="359.21024"
+     inkscape:cy="403.05087"
+     inkscape:window-width="1920"
+     inkscape:window-height="1055"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs48294" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-9.6375571,-14.063721)">
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="34.311893"
+       y="23.838886"
+       id="text48303"><tspan
+         sodipodi:role="line"
+         id="tspan48301"
+         style="stroke-width:0.264583"
+         x="34.311893"
+         y="23.838886">2013年，出现了革命性的新算法 “word2vec”</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="34.311893"
+         y="30.894436"
+         id="tspan48305">也就是将 词语 转变成 向量 (vector) 的算法。</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.529167;-inkscape-stroke:none;stop-color:#000000"
+       id="rect48307"
+       width="28.113997"
+       height="22.821257"
+       x="82.957466"
+       y="52.344738"
+       ry="0" />
+    <path
+       id="rect48307-9"
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stop-color:#000000"
+       d="m 111.00327,52.344737 12.239,-10.583333 v 43.987923 l -12.239,-10.583333 z"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="rect48307-9-7"
+       style="fill:none;stroke:#000000;stroke-width:0.529167;stop-color:#000000"
+       d="M 83.025574,52.344737 70.786589,41.761404 V 85.749327 L 83.025574,75.165994 Z"
+       sodipodi:nodetypes="ccccc" />
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="52.651291"
+       y="66.244972"
+       id="text48369"><tspan
+         sodipodi:role="line"
+         id="tspan48367"
+         style="stroke-width:0.264583"
+         x="52.651291"
+         y="66.244972">输入</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="131.06421"
+       y="66.340996"
+       id="text48373"><tspan
+         sodipodi:role="line"
+         id="tspan48371"
+         style="stroke-width:0.264583"
+         x="131.06421"
+         y="66.340996">输出</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="91.379807"
+       y="65.942276"
+       id="text48377"><tspan
+         sodipodi:role="line"
+         id="tspan48375"
+         style="stroke-width:0.264583"
+         x="91.379807"
+         y="65.942276">压缩</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:159.383;display:inline;stroke-width:0.264583"
+       x="37.391903"
+       y="101.62347"
+       id="text48488"
+       transform="translate(-18.974278,-2.0832304)"><tspan
+         x="37.391903"
+         y="101.62347"
+         id="tspan48803">这个算法的特点是： 它要求一个算法 对输入 output 一模一样的</tspan><tspan
+         x="37.391903"
+         y="108.67902"
+         id="tspan48805">输出，但中间经过一个 容量不大的 记忆层。 
+</tspan><tspan
+         x="37.391903"
+         y="115.73457"
+         id="tspan48807">
+</tspan><tspan
+         x="37.391903"
+         y="122.79012"
+         id="tspan48809">输入是一些 文本 (text corpora)，由字典里面的词语构成。
+</tspan><tspan
+         x="37.391903"
+         y="129.84567"
+         id="tspan48811">
+</tspan><tspan
+         x="37.391903"
+         y="136.90122"
+         id="tspan48813">人们发现，在 压缩层里，词向量 (vector) 的排列 出现了很奇妙的</tspan><tspan
+         x="37.391903"
+         y="143.95677"
+         id="tspan48815">规则： 例如「男人-女人」的方向 跟「国王-王后」的方向差不多</tspan><tspan
+         x="37.391903"
+         y="151.01233"
+         id="tspan48819">一致的。 为什么有这个现象呢？ 因为，<tspan
+   style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
+   id="tspan48817">最有效率的压缩方法，就</tspan></tspan><tspan
+         x="37.391903"
+         y="158.06789"
+         id="tspan48831"><tspan
+   style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
+   id="tspan48821">是符合</tspan><tspan
+   style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
+   id="tspan48823">「</tspan><tspan
+   style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
+   id="tspan48825">语义</tspan><tspan
+   style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
+   id="tspan48827">」</tspan><tspan
+   style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
+   id="tspan48829">的压缩</tspan>。 例如一段故事或一首诗，人们可以很容</tspan><tspan
+         x="37.391903"
+         y="165.12345"
+         id="tspan48833">易记住，因为我们懂得了它的意思，但如果将那故事拆开，变成</tspan><tspan
+         x="37.391903"
+         y="172.179"
+         id="tspan48835">一堆不顺序的词语，那就很难记住了。 所以，压缩的「副作</tspan><tspan
+         x="37.391903"
+         y="179.23456"
+         id="tspan48837">用」，就是令 word vectors 变成了有意思的一种 representation.  </tspan><tspan
+         x="37.391903"
+         y="186.29012"
+         id="tspan48839">有了这种 representations，我们可以比较「相近」的意思，这是</tspan><tspan
+         x="37.391903"
+         y="193.34568"
+         id="tspan48841">人工智能里重要的一步。
+</tspan><tspan
+         x="37.391903"
+         y="200.40123"
+         id="tspan48843">
+</tspan><tspan
+         x="37.391903"
+         y="207.45679"
+         id="tspan48845">具体地，算法输入一些 文本， 但会随机地 掩盖 (mask) 一些词</tspan><tspan
+         x="37.391903"
+         y="214.51235"
+         id="tspan48847">语，它要求算法 从上下文 的其他词语预测那个被掩盖的词语。
+</tspan><tspan
+         x="37.391903"
+         y="221.5679"
+         id="tspan48849">
+</tspan><tspan
+         x="37.391903"
+         y="228.62346"
+         id="tspan48855">2018年 出现了 <tspan
+   style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
+   id="tspan48851">BERT</tspan>，其后不久有 <tspan
+   style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
+   id="tspan48853">GPT</tspan>，它们是另一个里程碑。
+</tspan><tspan
+         x="37.391903"
+         y="235.67902"
+         id="tspan48857">它们跟 word2vec 的分别是：word2vec 根据 词语 之前或之后的</tspan><tspan
+         x="37.391903"
+         y="242.73458"
+         id="tspan48859">两三个词 （上下文）作出推测，但新的模型是根据整个句子作为</tspan><tspan
+         x="37.391903"
+         y="249.79013"
+         id="tspan48863">上下文，规模更大。 这些被称为 <tspan
+   style="font-weight:normal;-inkscape-font-specification:'Alibaba PuHuiTi'"
+   id="tspan48861">大型语言模型</tspan> (Large Language </tspan><tspan
+         x="37.391903"
+         y="256.84569"
+         id="tspan48865">Models, LLM).</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.529167;-inkscape-stroke:none;stop-color:#000000"
+       id="rect48604"
+       width="174.76233"
+       height="245.2233"
+       x="9.9021406"
+       y="14.328304" />
+  </g>
+</svg>
