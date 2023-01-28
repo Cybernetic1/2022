@@ -1,0 +1,106 @@
+\input{../YKY-preamble.tex}
+\setmainfont[BoldFont=Alibaba_Sans_Regular.otf,ItalicFont=Alibaba_Sans_Light_Italic.otf]{Alibaba_Sans_Light.otf}
+	
+\usepackage[active,tightpage]{preview}		% for continuous page(s)
+\renewcommand{\PreviewBorder}{0.5cm}
+\renewcommand{\thempfootnote}{\arabic{mpfootnote}}
+
+\usepackage[absolute,overlay]{textpos}		% for page number on upper left corner
+
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage[hyperfootnotes=false]{hyperref}
+
+% \usepackage[backend=biber,style=numeric]{biblatex}
+% \bibliography{../AGI-book}
+% \renewcommand*{\bibfont}{\footnotesize}
+
+\usetikzlibrary{shapes}
+\usepackage[export]{adjustbox}				% ??
+\usepackage{verbatim} % for comments
+% \usepackage{newtxtext,newtxmath}	% Times New Roman font
+
+\titleformat{\subsection}[hang]{\bfseries\large\color{blue}}{}{0pt}{} 
+% \numberwithin{equation}{subsection}
+
+\newcommand{\underdash}[1]{%
+	\tikz[baseline=(toUnderline.base)]{
+		\node[inner sep=1pt,outer sep=10pt] (toUnderline) {#1};
+		\draw[dashed] ([yshift=-0pt]toUnderline.south west) -- ([yshift=-0pt]toUnderline.south east);
+	}%
+}%
+
+
+%\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+%\DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+% \setmathfont{Latin Modern Math}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% \usepackage[most]{tcolorbox}
+\tcbset{on line, 
+	boxsep=4pt, left=0pt,right=0pt,top=0pt,bottom=0pt,
+	colframe=red,colback=pink,
+	highlight math style={enhanced}
+}
+\newcommand{\atom}{\vcenter{\hbox{\tcbox{....}}}}
+
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{\textcolor{blue}{\oldtextbf{#1}}}
+
+\newcommand{\logic}[1]{{\color{violet}{\textit{#1}}}}
+\newcommand{\underconst}{\includegraphics[scale=0.5]{../2020/UnderConst.png}}
+\newcommand{\KBsymbol}{\vcenter{\hbox{\includegraphics[scale=1]{../KB-symbol.png}}}}
+\newcommand{\token}{\vcenter{\hbox{\includegraphics[scale=1]{token.png}}}}
+\newcommand{\proposition}{\vcenter{\hbox{\includegraphics[scale=0.8]{proposition.png}}}}
+
+\begin{document}
+
+\begin{preview}
+
+\cc{
+\title{\vspace{-1.5cm} \bfseries\color{blue}{\LARGE 彩云科技 商业建议书}}
+}{
+\title{\vspace{-1.5cm} \bfseries\color{blue}{\LARGE Colorful Cloud business proposal}}
+}
+
+% \author{YKY} % Your name
+\date{\vspace{-2cm}} % Date, can be changed to a custom date
+
+\maketitle
+
+\setcounter{section}{-1}
+
+% (1) Circled page number on upper left corner
+\begin{textblock*}{5cm}(2.1cm,2.3cm) % {block width} (coords) 
+{\color{red}{\large \textcircled{\small 1}}}
+\end{textblock*}
+
+\begin{minipage}{\textwidth}
+\setlength{\parskip}{0.4\baselineskip}
+
+\begin{itemize}
+	\item Pay cash, how much?
+	\item Allot shares, how much?
+	\item What's the deal?
+	\item 
+\end{itemize}
+
+\end{minipage}
+\end{preview}
+
+\begin{preview}
+\begin{minipage}{\textwidth}
+\setlength{\parskip}{0.4\baselineskip}
+
+\begin{textblock*}{20cm}(2.1cm,2cm) % {block width} (coords) 
+	{\color{red}{\large \textcircled{\small 2}}}
+	\hspace{8cm}
+	\color{blue}{\footnotesize \cc{逻辑 Transformer}{Logic Transformer}}
+\end{textblock*}
+\vspace*{0.3cm} 
+
+\end{minipage}
+\end{preview}
+\end{document}

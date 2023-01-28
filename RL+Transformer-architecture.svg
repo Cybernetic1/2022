@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
    height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
    id="svg9913"
-   inkscape:version="1.0.2 (1.0.2+r75+1)"
-   sodipodi:docname="RL+Transformer-architecture.svg">
+   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   sodipodi:docname="RL+Transformer-architecture.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs9907">
     <marker
@@ -62,18 +62,21 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="334.99369"
-     inkscape:cy="588.28908"
+     inkscape:zoom="1"
+     inkscape:cx="718"
+     inkscape:cy="560.5"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1059"
+     inkscape:window-height="1055"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
   <metadata
      id="metadata9910">
     <rdf:RDF>
@@ -82,7 +85,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -92,7 +95,7 @@
      id="layer1">
     <g
        inkscape:label=""
-       transform="translate(78.138379,159.45049)"
+       transform="translate(103.76648,30.903563)"
        id="g1034-7-2-2-9-68-8-39-6-1-8"
        inkscape:export-filename="Self-Attention_repeated.png"
        inkscape:export-xdpi="192"
@@ -122,17 +125,17 @@
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
-       x="82.827461"
-       y="161.70671"
+       x="108.45556"
+       y="33.159821"
        id="text32874-3-2-13-37"><tspan
          sodipodi:role="line"
          id="tspan32872-85-0-74-2"
          style="stroke-width:0.264583"
-         x="82.827461"
-         y="161.70671">. . . .</tspan></text>
+         x="108.45556"
+         y="33.159821">. . . .</tspan></text>
     <g
        inkscape:label=""
-       transform="translate(101.3025,159.38023)"
+       transform="translate(126.93061,30.833303)"
        id="g1034-7-2-2-9-68-8-39-6-4-9-5">
       <g
          id="g1032-5-7-6-0-0-0-0-2-6-0-3"
@@ -159,21 +162,21 @@
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
-       x="105.99159"
-       y="161.63644"
+       x="131.61969"
+       y="33.089546"
        id="text32874-3-2-7-0-6"><tspan
          sodipodi:role="line"
          id="tspan32872-85-0-59-3-4"
          style="stroke-width:0.264583"
-         x="105.99159"
-         y="161.63644">. . . .</tspan></text>
+         x="131.61969"
+         y="33.089546">. . . .</tspan></text>
     <rect
        style="fill:#d5f6ff;stroke:#0000ff;stroke-width:0.264583"
        id="rect4029-2-6-2-6-6-6-0-5-2-0"
        width="5.2647061"
        height="4.7273712"
-       x="70.970467"
-       y="159.11507"
+       x="96.598564"
+       y="30.568176"
        ry="7.6293945e-06"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192" />
@@ -182,8 +185,8 @@
        id="rect4029-2-6-2-6-6-6-0-5-2-0-3"
        width="5.2647061"
        height="4.7273712"
-       x="94.253792"
-       y="159.11507"
+       x="119.88189"
+       y="30.568176"
        ry="7.6293945e-06"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192" />
@@ -192,8 +195,8 @@
        id="rect4029-2-6-2-6-6-6-0-5-2-0-3-6"
        width="5.2647061"
        height="4.7273712"
-       x="117.00797"
-       y="159.11507"
+       x="142.63608"
+       y="30.568176"
        ry="7.6293945e-06"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192" />
@@ -323,7 +326,7 @@
     </g>
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 132.75211,165.17737 -0.005,9.69076 -59.816369,-0.26457 v -7.22125"
+       d="m 158.38022,36.63044 -0.005,9.690754 -59.816375,-0.26457 V 38.83538"
        id="path11479" />
     <g
        id="g1543-3-7-7-9-5-2"
@@ -335,7 +338,7 @@
     <g
        id="g1543-3-7-7-9-5-3"
        style="fill:none;stroke:#0000ff"
-       transform="translate(22.162829,45.447523)"
+       transform="translate(47.790933,-83.099369)"
        inkscape:export-filename="symmetric-Self-Attention.png"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192">
@@ -350,27 +353,27 @@
     </g>
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 95.915429,167.37596 v 5.38523 l -21.263766,-0.0872 0.0662,-5.15938"
+       d="m 121.54354,38.82903 v 5.385227 l -21.26377,-0.0872 0.0662,-5.159377"
        id="path11467" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 71.542803,168.77135 2.24896,-2.24896 2.24896,2.24896"
+       d="m 97.170907,40.22442 2.24896,-2.24896 2.248963,2.24896"
        id="path11465" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 120.41351,167.5146 -0.0663,5.15938 h 10.61508 l 0.0331,-7.53682"
+       d="m 146.04162,38.96767 -0.0663,5.159377 h 10.61508 l 0.0331,-7.536817"
        id="path11459" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 117.2384,168.77137 2.24897,-2.24896 2.24896,2.24896"
+       d="m 142.86651,40.22444 2.24897,-2.24896 2.24896,2.24896"
        id="path11457" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 118.62749,167.38234 -7e-5,5.29167 -20.992201,0.0872 0.0662,-5.25294"
+       d="m 144.2556,38.83541 -7e-5,5.291667 -20.9922,0.0872 0.0662,-5.252937"
        id="path15541-1-0-1-9" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 129.71639,162.50754 2.24896,2.24896 2.24896,-2.24896"
+       d="m 155.3445,33.960613 2.24896,2.248957 2.24896,-2.248957"
        id="path5283-1-2-0-9-4-6-4-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc"
@@ -378,81 +381,81 @@
        inkscape:export-ydpi="192" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 71.542803,151.83805 2.24896,-2.24896 2.24896,2.24896"
+       d="m 97.170907,23.291129 2.24896,-2.24896 2.248963,2.24896"
        id="path10530" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 94.48406,151.83805 2.24896,-2.24896 2.24896,2.24896"
+       d="m 120.11216,23.291129 2.24897,-2.24896 2.24896,2.24896"
        id="path10530-2" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 117.14467,151.83805 2.24897,-2.24896 2.24896,2.24896"
+       d="m 142.77278,23.291129 2.24897,-2.24896 2.24896,2.24896"
        id="path10530-3" />
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
-       x="80.181625"
-       y="151.12337"
+       x="105.80972"
+       y="22.576492"
        id="text32874-3-2-13-37-1"><tspan
          sodipodi:role="line"
          id="tspan32872-85-0-74-2-9"
          style="stroke-width:0.264583"
-         x="80.181625"
-         y="151.12337">. . . .</tspan></text>
+         x="105.80972"
+         y="22.576492">. . . .</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
-       x="103.34578"
-       y="151.0531"
+       x="128.97386"
+       y="22.506218"
        id="text32874-3-2-7-0-6-4"><tspan
          sodipodi:role="line"
          id="tspan32872-85-0-59-3-4-7"
          style="stroke-width:0.264583"
-         x="103.34578"
-         y="151.0531">. . . .</tspan></text>
+         x="128.97386"
+         y="22.506218">. . . .</tspan></text>
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 74.684763,150.65379 -0.0331,6.14197"
+       d="m 100.31287,22.106869 -0.0331,6.141967"
        id="path11433" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 95.915429,156.79581 v -6.16449"
+       d="M 121.54354,28.248886 V 22.084399"
        id="path11429" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 97.635219,156.79584 0.0331,-6.14512"
+       d="m 123.26333,28.248916 0.0331,-6.145117"
        id="rect4444-4-6-6-5-6-3-7" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 118.62745,150.65785 -3e-5,6.13796"
+       d="m 144.25556,22.110929 -3e-5,6.137957"
        id="path11427" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 120.38031,150.67724 -0.0331,6.11858"
+       d="m 146.00842,22.130319 -0.0331,6.118577"
        id="path11463" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 72.931913,156.79584 -10e-7,-6.40931"
+       d="m 98.560017,28.248916 -10e-7,-6.409307"
        id="path10528"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 72.931912,148.99747 v -6.21086 h 59.825198 l -0.005,21.09857"
+       d="m 98.560016,20.450549 v -6.210857 h 59.825204 l -0.005,21.098558"
        id="path11477"
        sodipodi:nodetypes="cccc" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 95.915429,149.04382 v -4.577 l -21.197566,0.045 -0.0331,4.55447"
+       d="m 121.54354,20.496899 v -4.576997 l -21.19757,0.045 -0.0331,4.554467"
        id="path11431"
        sodipodi:nodetypes="cccc" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 97.668319,149.06322 0.0331,-4.55762 20.926071,0.0143 -3e-5,4.55045"
+       d="m 123.29643,20.516299 0.0331,-4.557617 20.92607,0.0143 -3e-5,4.550447"
        id="path11425"
        sodipodi:nodetypes="cccc" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 130.99539,163.78077 0.0331,-19.25462 -10.61498,0.0325 -0.0332,4.53109"
+       d="m 156.6235,35.23384 0.0331,-19.254608 -10.61498,0.0325 -0.0332,4.531087"
        id="path11461"
        sodipodi:nodetypes="cccc" />
     <rect
@@ -460,8 +463,8 @@
        id="rect4029-2-6-2-6-6-6-0-5-2-0-6"
        width="7.5315113"
        height="6.3882017"
-       x="70.095169"
-       y="147.37407"
+       x="95.723267"
+       y="18.827209"
        ry="2.3117092"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192" />
@@ -470,8 +473,8 @@
        id="rect4029-2-6-2-6-6-6-0-5-2-0-6-1"
        width="7.5315113"
        height="6.3882017"
-       x="93.036415"
-       y="147.37407"
+       x="118.66451"
+       y="18.827209"
        ry="2.3117092"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192" />
@@ -480,61 +483,61 @@
        id="rect4029-2-6-2-6-6-6-0-5-2-0-6-9"
        width="7.5315113"
        height="6.3882017"
-       x="115.69704"
-       y="147.37407"
+       x="141.32513"
+       y="18.827209"
        ry="2.3117092"
        inkscape:export-xdpi="192"
        inkscape:export-ydpi="192" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
-       x="73.803154"
-       y="152.50316"
+       x="99.431252"
+       y="23.956284"
        id="text11483"><tspan
          sodipodi:role="line"
          id="tspan11481"
-         x="73.803154"
-         y="152.50316"
+         x="99.431252"
+         y="23.956284"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.264583">T</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
-       x="96.805847"
-       y="152.50316"
+       x="122.43395"
+       y="23.956284"
        id="text11483-6"><tspan
          sodipodi:role="line"
          id="tspan11481-6"
-         x="96.805847"
-         y="152.50316"
+         x="122.43395"
+         y="23.956284"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.264583">T</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
-       x="119.49854"
-       y="152.50316"
+       x="145.12665"
+       y="23.956284"
        id="text11483-9"><tspan
          sodipodi:role="line"
          id="tspan11481-67"
-         x="119.49854"
-         y="152.50316"
+         x="145.12665"
+         y="23.956284"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.264583">T</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;stroke-width:0.264583"
-       x="30.103661"
-       y="163.90649"
+       x="55.731766"
+       y="35.359596"
        id="text32874-3-2-1-3-4-3-2"><tspan
          sodipodi:role="line"
          id="tspan32872-85-0-5-6-4-5-0"
          style="fill:#ff0000;stroke-width:0.264583"
-         x="30.103661"
-         y="163.90649">. . . .</tspan></text>
+         x="55.731766"
+         y="35.359596">. . . .</tspan></text>
     <rect
        id="use1793-9-9-2-6"
        width="4.7399068"
        height="2.3347974"
-       x="-165.95776"
-       y="15.504371"
+       x="-37.410851"
+       y="41.132473"
        style="fill:#ffd5d5;stroke:#ff0000;stroke-width:0.198437"
        ry="1.0834206"
        inkscape:export-xdpi="192"
@@ -546,8 +549,8 @@
        id="use1795-7-8-6-9"
        width="4.7399068"
        height="2.3347974"
-       x="-165.95776"
-       y="20.61587"
+       x="-37.410851"
+       y="46.243969"
        style="fill:#ffd5d5;stroke:#ff0000;stroke-width:0.198437"
        ry="1.0834206"
        inkscape:export-xdpi="192"
@@ -559,8 +562,8 @@
        id="use1797-7-1-1-3"
        width="4.7399068"
        height="2.3347974"
-       x="-165.95776"
-       y="25.727417"
+       x="-37.410851"
+       y="51.355518"
        style="fill:#ffd5d5;stroke:#ff0000;stroke-width:0.198437"
        ry="1.0834206"
        inkscape:export-xdpi="192"
@@ -572,8 +575,8 @@
        id="use1799-6-3-8-7"
        width="4.7399068"
        height="2.3347974"
-       x="-165.95776"
-       y="41.951389"
+       x="-37.410851"
+       y="67.579498"
        style="fill:#ffd5d5;stroke:#ff0000;stroke-width:0.198437"
        ry="1.0834206"
        inkscape:export-xdpi="192"
@@ -585,8 +588,8 @@
        id="use1801-7-3-7-4"
        width="4.7399068"
        height="2.3347974"
-       x="-165.95776"
-       y="47.062939"
+       x="-37.410851"
+       y="72.691048"
        style="fill:#ffd5d5;stroke:#ff0000;stroke-width:0.198437"
        ry="1.0834206"
        inkscape:export-xdpi="192"
@@ -597,23 +600,121 @@
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:7.05556px;line-height:0;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Light';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.264583"
-       x="32.614754"
-       y="171.73976"
+       x="58.242859"
+       y="43.192841"
        id="text12827"><tspan
          sodipodi:role="line"
          id="tspan12825"
-         x="32.614754"
-         y="171.73976"
+         x="58.242859"
+         y="43.192841"
          style="font-size:4.93889px;line-height:1;stroke-width:0.264583">natural language</tspan><tspan
          sodipodi:role="line"
-         x="32.614754"
-         y="176.67865"
+         x="58.242859"
+         y="48.131729"
          style="font-size:4.93889px;line-height:1;stroke-width:0.264583"
          id="tspan12829">sentence input</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.396875;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-       d="m 51.954145,163.60024 c 10.07664,0.0438 9.225898,-1.95868 16.80183,-2.1813"
+       d="m 77.582249,35.05331 c 10.07664,0.0438 9.225898,-1.958677 16.80183,-2.181297"
        id="path32876-2-8-7-0"
        sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:5.64444px;line-height:1.25;font-family:'Alibaba PuHuiTi';-inkscape-font-specification:'Alibaba PuHuiTi, Light';letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:153.644;display:inline;stroke-width:0.264583"
+       x="51.224072"
+       y="196.64122"
+       id="text412"
+       transform="translate(-22.223168,-133.77238)"><tspan
+         x="51.224072"
+         y="196.64122"
+         id="tspan1288">训练：transitions = world model
+</tspan><tspan
+         x="51.224072"
+         y="203.69678"
+         id="tspan1290">utility = reward-based
+</tspan><tspan
+         x="51.224072"
+         y="210.75234"
+         id="tspan1292">probabilities and utilities seem mixed up...
+</tspan><tspan
+         x="51.224072"
+         y="217.80789"
+         id="tspan1294">
+</tspan><tspan
+         x="51.224072"
+         y="224.86345"
+         id="tspan1296">Perhaps output a lot of propositions
+</tspan><tspan
+         x="51.224072"
+         y="231.91901"
+         id="tspan1298">We also need probabilities over propositions
+</tspan><tspan
+         x="51.224072"
+         y="238.97457"
+         id="tspan1300">
+</tspan><tspan
+         x="51.224072"
+         y="246.03012"
+         id="tspan1302">Representation is not enough, only enough for words
+</tspan><tspan
+         x="51.224072"
+         y="253.08568"
+         id="tspan1304"># of propositions that can be represented = too small
+</tspan><tspan
+         x="51.224072"
+         y="260.14124"
+         id="tspan1306">
+</tspan><tspan
+         x="51.224072"
+         y="267.19678"
+         id="tspan1308">inside, the processing seems to be with crisp propositions.
+</tspan><tspan
+         x="51.224072"
+         y="274.25232"
+         id="tspan1310">might as well output crisp propositions but then we lose the </tspan><tspan
+         x="51.224072"
+         y="281.30786"
+         id="tspan1312">probabilities and utilities.
+</tspan><tspan
+         x="51.224072"
+         y="288.36341"
+         id="tspan1314">
+</tspan><tspan
+         x="51.224072"
+         y="295.41895"
+         id="tspan1316">Does utility only depend on the state and not inference </tspan><tspan
+         x="51.224072"
+         y="302.47449"
+         id="tspan1318">trace?  This is true but we need to compare utilities of various </tspan><tspan
+         x="51.224072"
+         y="309.53003"
+         id="tspan1320">states (of combinations of propositions) which seems </tspan><tspan
+         x="51.224072"
+         y="316.58557"
+         id="tspan1322">computationally wasteful...
+</tspan><tspan
+         x="51.224072"
+         y="323.64112"
+         id="tspan1324">
+</tspan><tspan
+         x="51.224072"
+         y="330.69666"
+         id="tspan1326">最新认知是：connections 就是 world model，除此以外 没有 </tspan><tspan
+         x="51.224072"
+         y="337.7522"
+         id="tspan1328">world model。
+</tspan><tspan
+         x="51.224072"
+         y="344.80774"
+         id="tspan1330">Utility 就是 (state, next proposition) 的价值，它可以纯粹是 </tspan><tspan
+         x="51.224072"
+         y="351.86328"
+         id="tspan1332">thought 也可以是现实中的 actions。它决定某些 next 命题 是</tspan><tspan
+         x="51.224072"
+         y="358.91883"
+         id="tspan1334">不是要被采纳。 这起码需要 有一堆 命题 candidates，但 </tspan><tspan
+         x="51.224072"
+         y="365.97437"
+         id="tspan1336">Transformer 似乎将这个功能也纳入进去了。</tspan></text>
   </g>
 </svg>
