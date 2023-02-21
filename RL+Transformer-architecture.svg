@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="152.33745mm"
+   height="218.79697mm"
+   viewBox="0 0 152.33745 218.79696"
    version="1.1"
    id="svg9913"
    inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
    sodipodi:docname="RL+Transformer-architecture.svg"
+   inkscape:export-filename="../2023/AGI-architecture-Q1.png"
+   inkscape:export-xdpi="192"
+   inkscape:export-ydpi="192"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -17,17 +20,17 @@
   <defs
      id="defs9907">
     <marker
-       style="overflow:visible;"
+       style="overflow:visible"
        id="Arrow1Mend"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow1Mend"
        inkscape:isstock="true">
       <path
-         transform="scale(0.4) rotate(180) translate(10,0)"
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path14170" />
     </marker>
     <clipPath
@@ -54,17 +57,55 @@
          d="M 0,0 H 11 V 9.5625 H 0 Z m 0,0"
          id="path8318-6-1-6-0-7-5-9-7-0-2-7-5" />
     </clipPath>
+    <clipPath
+       id="clipPath5942-3-9-0-3-1-2-2-36-4-1-3">
+      <path
+         d="M 0,0 H 11 V 9.5625 H 0 Z m 0,0"
+         id="path8318-6-1-6-0-7-5-9-7-8-2-6" />
+    </clipPath>
+    <clipPath
+       id="clipPath5942-3-9-0-3-1-2-2-36-6-12-4-7">
+      <path
+         d="M 0,0 H 11 V 9.5625 H 0 Z m 0,0"
+         id="path8318-6-1-6-0-7-5-9-7-0-2-7-53" />
+    </clipPath>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path14170-6" />
+    </marker>
+    <clipPath
+       id="clipPath5942-3-9-0-3-1-2-2-36-4-1-3-6">
+      <path
+         d="M 0,0 H 11 V 9.5625 H 0 Z m 0,0"
+         id="path8318-6-1-6-0-7-5-9-7-8-2-6-5" />
+    </clipPath>
+    <clipPath
+       id="clipPath5942-3-9-0-3-1-2-2-36-6-12-4-7-6">
+      <path
+         d="M 0,0 H 11 V 9.5625 H 0 Z m 0,0"
+         id="path8318-6-1-6-0-7-5-9-7-0-2-7-53-9" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     bordercolor="#ff0000"
+     borderopacity="1"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="718"
-     inkscape:cy="560.5"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="194.45436"
+     inkscape:cy="263.39727"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -76,7 +117,7 @@
      inkscape:window-maximized="1"
      inkscape:showpageshadow="0"
      inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1" />
+     inkscape:deskcolor="#ffffff" />
   <metadata
      id="metadata9910">
     <rdf:RDF>
@@ -85,14 +126,14 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-29.001441,-13.975109)">
     <g
        inkscape:label=""
        transform="translate(103.76648,30.903563)"
@@ -627,94 +668,94 @@
        transform="translate(-22.223168,-133.77238)"><tspan
          x="51.224072"
          y="196.64122"
-         id="tspan1288">训练：transitions = world model
+         id="tspan5482">训练：transitions = world model
 </tspan><tspan
          x="51.224072"
          y="203.69678"
-         id="tspan1290">utility = reward-based
+         id="tspan5484">utility = reward-based
 </tspan><tspan
          x="51.224072"
          y="210.75234"
-         id="tspan1292">probabilities and utilities seem mixed up...
+         id="tspan5486">probabilities and utilities seem mixed up...
 </tspan><tspan
          x="51.224072"
          y="217.80789"
-         id="tspan1294">
+         id="tspan5488">
 </tspan><tspan
          x="51.224072"
          y="224.86345"
-         id="tspan1296">Perhaps output a lot of propositions
+         id="tspan5490">Perhaps output a lot of propositions
 </tspan><tspan
          x="51.224072"
          y="231.91901"
-         id="tspan1298">We also need probabilities over propositions
+         id="tspan5492">We also need probabilities over propositions
 </tspan><tspan
          x="51.224072"
          y="238.97457"
-         id="tspan1300">
+         id="tspan5494">
 </tspan><tspan
          x="51.224072"
          y="246.03012"
-         id="tspan1302">Representation is not enough, only enough for words
+         id="tspan5496">Representation is not enough, only enough for words
 </tspan><tspan
          x="51.224072"
          y="253.08568"
-         id="tspan1304"># of propositions that can be represented = too small
+         id="tspan5498"># of propositions that can be represented = too small
 </tspan><tspan
          x="51.224072"
          y="260.14124"
-         id="tspan1306">
+         id="tspan5500">
 </tspan><tspan
          x="51.224072"
          y="267.19678"
-         id="tspan1308">inside, the processing seems to be with crisp propositions.
+         id="tspan5502">inside, the processing seems to be with crisp propositions.
 </tspan><tspan
          x="51.224072"
          y="274.25232"
-         id="tspan1310">might as well output crisp propositions but then we lose the </tspan><tspan
+         id="tspan5504">might as well output crisp propositions but then we lose the </tspan><tspan
          x="51.224072"
          y="281.30786"
-         id="tspan1312">probabilities and utilities.
+         id="tspan5506">probabilities and utilities.
 </tspan><tspan
          x="51.224072"
          y="288.36341"
-         id="tspan1314">
+         id="tspan5508">
 </tspan><tspan
          x="51.224072"
          y="295.41895"
-         id="tspan1316">Does utility only depend on the state and not inference </tspan><tspan
+         id="tspan5510">Does utility only depend on the state and not inference </tspan><tspan
          x="51.224072"
          y="302.47449"
-         id="tspan1318">trace?  This is true but we need to compare utilities of various </tspan><tspan
+         id="tspan5512">trace?  This is true but we need to compare utilities of various </tspan><tspan
          x="51.224072"
          y="309.53003"
-         id="tspan1320">states (of combinations of propositions) which seems </tspan><tspan
+         id="tspan5514">states (of combinations of propositions) which seems </tspan><tspan
          x="51.224072"
          y="316.58557"
-         id="tspan1322">computationally wasteful...
+         id="tspan5516">computationally wasteful...
 </tspan><tspan
          x="51.224072"
          y="323.64112"
-         id="tspan1324">
+         id="tspan5518">
 </tspan><tspan
          x="51.224072"
          y="330.69666"
-         id="tspan1326">最新认知是：connections 就是 world model，除此以外 没有 </tspan><tspan
+         id="tspan5520">最新认知是：connections 就是 world model，除此以外 没有 </tspan><tspan
          x="51.224072"
          y="337.7522"
-         id="tspan1328">world model。
+         id="tspan5522">world model。
 </tspan><tspan
          x="51.224072"
          y="344.80774"
-         id="tspan1330">Utility 就是 (state, next proposition) 的价值，它可以纯粹是 </tspan><tspan
+         id="tspan5524">Utility 就是 (state, next proposition) 的价值，它可以纯粹是 </tspan><tspan
          x="51.224072"
          y="351.86328"
-         id="tspan1332">thought 也可以是现实中的 actions。它决定某些 next 命题 是</tspan><tspan
+         id="tspan5526">thought 也可以是现实中的 actions。它决定某些 next 命题 是</tspan><tspan
          x="51.224072"
          y="358.91883"
-         id="tspan1334">不是要被采纳。 这起码需要 有一堆 命题 candidates，但 </tspan><tspan
+         id="tspan5528">不是要被采纳。 这起码需要 有一堆 命题 candidates，但 </tspan><tspan
          x="51.224072"
          y="365.97437"
-         id="tspan1336">Transformer 似乎将这个功能也纳入进去了。</tspan></text>
+         id="tspan5530">Transformer 似乎将这个功能也纳入进去了。</tspan></text>
   </g>
 </svg>

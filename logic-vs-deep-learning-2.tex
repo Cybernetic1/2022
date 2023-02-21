@@ -84,7 +84,7 @@
 
 \cc{这是经典逻辑 AI 的最基本运作模式：
 }{
-This is the most basic operation of classical logic AI:
+This is the most basic operation of classical logic-based AI:
 }
 \begin{equation}
 \cc{  \vcenter{\hbox{\includegraphics[scale=1]{LBAI-basic-config.png}}}     }{
@@ -93,29 +93,29 @@ This is the most basic operation of classical logic AI:
 
 \cc{它其实包含了两个算法：
 }{
-It actually contains two algorithms:
+It contains two algorithms:
 }
 \begin{itemize}
 \item \textbf{matching} (unification): \\
 \cc{逻辑 rules 是包含变量的条件命题， \\
 }{
-Logical rules are conditional propositions involving variables, \\
+Logic rules are conditional propositions involving variables, \\
 }
 \cc{例如 \tab \logic{$\forall x. \mbox{是人}(x) \Rightarrow \mbox{会死}(x). $ }\\
 }{
-For example: \tab \logic{$\forall x. \mbox{human}(x) \Rightarrow \mbox{mortal}(x). $ }\\
+eg: \tab \logic{$\forall x. \; \mbox{human}(x) \Rightarrow \mbox{mortal}(x). $ }\\
 }
 \cc{Unification 判定一条 rule 是否可以 apply 到某逻辑命题上，\\
 }{
-Unification determines whether a rule can be applied to a proposition,\\
+Unification determines whether a rule can be applied to a proposition,
 }
 \cc{例如：\logic{是人(苏格拉底)} 可以跟上式的左边 unify. \\
 }{
-For example: \logic{human(Socrates)} can unify with the left side of the formula. \\
+eg: \logic{human(Socrates)} can unify with the left side of the above rule. \\
 }
 \cc{Matching 的结果是得到一推 instantiated（特例化，即不包含变量）的命题。
 }{
-The result of Matching is to get a proposition that is instantiated (= specialized, ie, does not contain variables).
+The goal of Matching is to get an instantiated proposition (ie, specialized, does not contain variables).
 }
 
 \item \textbf{forward- or backward-chaining} (resolution): \\
@@ -125,7 +125,7 @@ Deduce new conclusions from known facts, or conversely, judge whether a given co
 }
 \cc{例如：\logic{ 是人(苏格拉底) $\Rightarrow$ 会死(苏格拉底) $\;\; \wedge$ 是人(苏格拉底) } \\
 }{
-For example: \logic{human (Socrates) $\wedge \;$ human(Socrates) $\Rightarrow$ mortal(Socrates)} \\
+eg: \logic{human (Socrates) $\wedge \;$ human(Socrates) $\Rightarrow$ mortal(Socrates)} \\
 }
 \cc{可以推出：\logic{会死(苏格拉底)}。
 }{
@@ -135,19 +135,19 @@ From which can be deduced: \logic{mortal (Socrates)}.
 
 \cc{深度学习的特点，就是将
 }{
-The special thing about deep learning is that it imitates the inference process
+The special thing about deep learning is that it can imitate this inference process:
 }
 \begin{equation}
 \mbox{\cc{状态}{state}}_t  \vdash \mbox{\cc{状态}{state}}_{t+1}
 \end{equation}
 \cc{的逻辑推导过程，通通纳入进去一个非常复杂的非线性函数（= 深度神经网络）里面。 这样做以后，上述的逻辑结构被 ``mingled'' 在一起，以至于很难分辨了。 但也正是由于这种「大杂烩」，深度神经网络 将一套复杂的组合算法 压缩成数量不算太多的一层层的参数。 它同时可以做 learning 和 inference 这两个动作。 这种简单粗暴的方法，其实非常有效率，要超越它的速度并不容易！
 }{
-with a very complex non-linear function (ie, a deep neural network).  After doing so, the logic rules are ``mingled'' together so that it's hard to tell them apart.  But it is precisely because of this ``intertwining'' that the deep neural network compresses a huge number of combinatorial logic rules into a smaller number of layer-by-layer parameters.  It performs both learning and inference.  This simple and crude method is actually extremely efficient, and it is not easy to surpass its speed!
+with a highly complicated non-linear function (ie, a deep neural network).  By doing so, the logic rules are ``mingled'' together so that it's hard to tell them apart.  But it is precisely because of this ``mingling'' that a deep neural network compresses a huge number of combinatorial logic rules into a smaller number of parameters (network weights).  It can perform both learning and inference.  This simple and crude method is actually extremely efficient, and it is not easy to surpass its speed!
 }
 
 \cc{我们知道（或推测）一个智能系统 应该具有 符号逻辑的结构。 这点知识可不可以用来 约束/加速 深度神经网络？ 答案似乎是有可能的。 现时 state-of-the-art 处理 视觉的 CNN 和 处理文字的 GPT，它们都有内部结构， \textbf{而不是 fully-connected}，而且 这内部结构 对应于 被处理的资料的结构。 因此我们有理由相信，逻辑结构 可以用来约束 深度神经网络的结构，达到加速。 
 }{
-We know (or speculate) that an intelligent system should possess the structure of symbolic logic. Can this knowledge be used to constrain/accelerate deep neural networks? The answer seems to be positive. The current state-of-the-art CNN (for vision) and GPT (for language) both have specialized internal structure, \textbf{rather than fully-connected}, and this internal structure corresponds to the structure of the data being processed. Therefore, we have reason to believe that logical structure can be used to constrain the structure of the deep neural network to achieve acceleration.
+We know (or speculate) that an intelligent system should possess the structure of symbolic logic.  Can this insight be used to constrain or accelerate deep neural networks?  The answer seems to be yes.  The current state-of-the-art CNN (for vision) and GPT (for language) both have specialized internal structure, instead of just being \textbf{fully-connected}, and that internal structure is suited to the structure of the data being processed.  We have reason to believe that logical structure can be used to constrain deep neural networks to accelerate logical learning.
 }
 
 \end{minipage}
@@ -166,24 +166,24 @@ We know (or speculate) that an intelligent system should possess the structure o
 
 \cc{接下来我们详细一点看逻辑系统的结构：
 }{
-Next, let's look at the structure of logical systems in detail.
+Next, let's look at the logic-based AI architecture in detail.
 }
 
 \cc{Knowledge Base 里面有很多 rules，系统要将这些 rules 逐一 match with 系统状态 (= working memory) 里面的命题：
 }{
-There are many rules in the Knowledge Base, and the system needs to match these rules one by one against propositions in the system's state (= working memory):
+There are a huge number of rules in the Knowledge Base, and the system needs to match these rules one by one against propositions in the system's state (= working memory):
 }
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=1]{rete-explained-1b.png}}}
 \end{equation}
 \cc{成功 matched 的 rules 可以导出新的结论，加进 working memory 的状态 里面。
 }{
-Successfully matched rules can derive new conclusions and add them back to the state / working memory.
+Successfully matched rules generate new conclusions that can be added back to the state / working memory.
 }
 
 \cc{这个复杂的操作，完全被一个神经网络取代。 或者可以更抽象地说：
 }{
-This complicated process is completely replaced by a neural network.  Or more abstractly:
+This complicated process is entirely replaced by a neural network.  Or more abstractly:
 }
 \begin{equation}
 \label{eqn:some-kind-of-memory}
@@ -193,7 +193,7 @@ This complicated process is completely replaced by a neural network.  Or more ab
 
 \cc{而以 Transformer 来说，它是一种 输入元 \textbf{之间} 的记忆体（这记忆就储存在 $Q, K, V$ 矩阵里），而它 \textbf{implicitly} 做到了 rules 的作用：
 }{
-For the Transformer, it is a kind of memory stored \textbf{between} input elements (stored in the $Q, K, V$ matrices), and it \textbf{implicitly} achieves the role of logic rules:
+For the Transformer, this is a kind of memory stored \textbf{between} input elements (stored as the $Q, K, V$ matrices), and it \textbf{implicitly} plays the role of logic rules:
 }
 \begin{equation}
 \label{fig:self-attention-as-Rete}
@@ -201,7 +201,7 @@ For the Transformer, it is a kind of memory stored \textbf{between} input elemen
 \end{equation}
 \cc{换句话说，Transformer 内部有某种（扭曲了的）逻辑 rules 的结构。 那么很自然的问题就是：能否发掘更多 逻辑／逻辑系统 的结构？ 也就是说，公式 (\ref{eqn:some-kind-of-memory}) 可以有怎样的代数结构约束？ 这个问题 可以参考 范畴逻辑 的理论，还有 经典 logic-based AI 系统的理论。
 }{
-In other words, there is some sort of (distorted) logic rules inside the Transformer.  The natural question then is:  Can we find additional structures of logic / logic systems?  That is, what kind of algebraic structure constrains (\ref{eqn:some-kind-of-memory})?  For this question, we can take insights from categorical logic and classical logic-based AI systems.
+In other words, there are some sort of ``distorted'' logic rules inside the Transformer.  Naturally, we want to find out more structures of logic / logic-based systems.  That is, what kind of algebraic structure constrains (\ref{eqn:some-kind-of-memory})?  To answer this, we can take insights from categorical logic and classical logic-based AI.
 }
 
 \end{minipage}
@@ -220,37 +220,37 @@ In other words, there is some sort of (distorted) logic rules inside the Transfo
 
 \cc{我们希望 勾画出公式 (\ref{eqn:some-kind-of-memory}) 需要具备的代数约束，但暂时先用文字描述比较容易：
 }{
-We wish to formulate algebraic constraints for (\ref{eqn:some-kind-of-memory}), but for now it is easier to describe in words:
+We wish to formulate, in algebraic terms, the constraints for (\ref{eqn:some-kind-of-memory}), but for now it is easier to describe in words:
 }
 \begin{itemize}
 \cc{\item 状态是 \textbf{颗粒化} 的，它是某集合的元素，元素之间可交换，也就是 Transformer 的 equivariance. （注意： Transformer 有 equivariance，但 equivariance 未必一定要用 Transformer 实现）
 }{
-	\item The state is \textbf{granular}, made of elements of a certain set, and such elements can be permuted, which corresponds to the equivariance of the Transformer.  (Note: Transformers are equivariant, but equivariance does not necessarily require Transformers)
+	\item The AI state is \textbf{granular}, as a set of elements, whose order can be permuted, corresponding to equivariance of the Transformer.  (Note: Transformers are equivariant, but equivariance does not necessarily require Transformers)
 }
 
 \cc{\item \textbf{深度结构}：例如多层网络，每层是函数的复合 (composition). Transformer 也用了深度结构。
 }{
-	\item \textbf{Deep structure}:  Such as multi-layer networks, each layer is a composition of functions. Transformer also has a deep structure.
+	\item \textbf{Deep structure}:  in the sense of having many layers, as composition of functions. The Transformer also has deep structure, with many layers of Self-Attention stacked up.
 }
 
 \cc{\item 逻辑 包括了 \textbf{命题}层次 和 \textbf{命题内部}层次 的 颗粒化。 后者是\textbf{谓词} (predicate) 逻辑的结构，例如： \logic{loves( John, Mary )}，也可以简单地将它视为 \textbf{代数元}之间的\textbf{乘积}，例如： \logic{John \bullet\  loves \bullet\   Mary}, 后者也叫做 ``word''.  （不同类别的代数元之间不一定容许乘积，因此有 groupoid 的概念，但暂时来说这细节不重要。） 现时重点是如何将 这两层的 颗粒化 结构 施加到深度神经网络上。 
 }{
-	\item Logic has granularity at the \textbf{proposition} level and at the \textbf{sub-propositional} level.  The latter is the structure of \textbf{predicate} logic, for example: \logic{loves( John, Mary )} can be regarded as the \textbf{product} of \textbf{algebraic elements}, as in: \logic{John \bullet\ loves \bullet\ Mary}, the latter is also called a ``word''.  The details are unimportant.  Our focus is on how to apply this 2-level granular structure to deep neural networks.
+	\item Logic has granularity at the \textbf{proposition} level and at the \textbf{sub-propositional} level.  The latter is the structure of \textbf{predicate} logic, eg: \logic{loves( John, Mary )} can be represented as a \textbf{product} in an \textbf{algebra}: \logic{John \bullet\ loves \bullet\ Mary}, also called a ``word''.  The details are unimportant.  Our focus is on how to impose this 2-level granular structure onto deep neural networks.
 }
 
 \cc{\item 逻辑推导 每步只产生\textbf{一个}新的结论（或其概率分布），然后这个新的结论，再加入到旧的状态中，作为一个命题集合的元素，而旧状态也要 \textbf{遗忘} 一些命题，否则需要无限记忆。 这跟 Transformer 每次输出\textbf{一列}的 tokens 有点不同（虽然我们不太肯定 Transformer tokens 究竟对应于 命题 还是 谓词／原子概念）。 
 }{
-	\item Each step of logic inference produces \textbf{one} new conclusion (or its probability distribution), and this new conclusion is added to the old state as an element of a proposition set, and the old state also needs to \textbf{forget} some old propositions, otherwise infinite memory is required. This is a bit different from the Transformer which always outputs the \textbf{same number} of tokens as its input. (We are also unsure whether Transformer tokens correspond to propositions or to predicates / atomic concepts).
+	\item Each step of logic inference produces \textbf{one} new conclusion (or a probability distribution over conclusions), and this new conclusion is added to the old state as an element in a set of propositions, and the old state also needs to \textbf{forget} some old propositions, otherwise infinite memory is required.  This is slightly different from the Transformer which always outputs the \textbf{same number} of tokens as its input. (We are also unsure whether Transformer tokens correspond to propositions or to predicates / atomic concepts).
 }
 
 \cc{\item 逻辑 rule 通常只跟某几个前提有关，其它前提是\textbf{无关}的，例如： \logic{眼睛好看 $\wedge$ 鼻子好看 $\wedge$ 嘴巴好看 $\Rightarrow$ 帅}，跟 \logic{有钱} 或 \logic{穷} 无关。 Transformer 的 \textbf{softmax} 结构似乎也可以排除一些无关的 tokens 的影响。
 }{
-	\item A logic rule usually depends on some premises while other premises are \textbf{irrelevant};  For example: \logic{talk $\wedge$ dark $\wedge$ handsome $\Rightarrow$ attractive to women}, where \logic{rich} or \logic{poor} is irrelevant.  The Transformer's \textbf{softmax} also seems able to exclude some irrelevant tokens.
+	\item A logic rule usually depends on some premises where other premises are \textbf{irrelevant};  For example: \logic{talk $\wedge$ dark $\wedge$ handsome $\Rightarrow$ attractive to women}, where \logic{rich} or \logic{poor} are irrelevant.  The Transformer's \textbf{softmax} seems to be a mechanism to exclude irrelevant tokens.
 }
 
 \cc{\item （可能还有其他的结构特征.....）
 }{
-	\item (There are possibly other structural features.....)
+	\item (There may be other structures.....)
 }
 \end{itemize}
 
@@ -270,7 +270,7 @@ We wish to formulate algebraic constraints for (\ref{eqn:some-kind-of-memory}), 
 
 \cc{根据我的理论，理想的逻辑形式是这样的（各种元素的个数纯粹示意）：
 }{
-In my theory, the ideal logical structure is something like this (the numbers of various elements may vary):
+In my theory, the ideal logical structure is something like this (the numbers of elements may vary):
 }
 \begin{equation}
 \label{fig:logic-symmetry-predicate-level}
@@ -287,7 +287,7 @@ In contrast, the algebraic relation $p \wedge q = p \wedge q$ expresses only thi
 \end{equation}
 \cc{相比于 图 (\ref{fig:logic-symmetry-propositional-only})，图 (\ref{fig:logic-symmetry-predicate-level}) 添加了 $\atom$ 的约束，\uline{但这约束怎样用代数表示}？
 }{
-Compared to figure (\ref{fig:logic-symmetry-propositional-only}), figure (\ref{fig:logic-symmetry-predicate-level}) is additionally constrained by $\atom$ structure.  \uline{But how can we express this constraint algebraically}?
+Compared to figure (\ref{fig:logic-symmetry-propositional-only}), figure (\ref{fig:logic-symmetry-predicate-level}) is additionally constrained by the $\atom$ structure.  \uline{But how can we express this constraint algebraically}?
 }
 
 \cc{而 \textbf{Transformer} 处理 命题 和 概念 的方式是这样：
@@ -300,7 +300,7 @@ And this is how the \textbf{Transformer} handles propositions and atomic concept
 \end{equation}
 \cc{它没有 explicit 的命题结构，而是用特别的 token 表示句子的\textbf{终结}，当然还有 positional encoding 这些「伎俩」。 所以，Transformer 是一种比较 \textit{ad hoc} 的设计，我们应该可以改进它。
 }{
-It does not represent propositions explicitly, but it uses a special ``stop'' token to signify the \textbf{end} of sentences, and there are other ``tricks'' such as \textbf{positional encoding}.  It seems to be a rather \textit{ad hoc} design, and we should be able to improve it.
+It does not represent propositions (= sentences) explicitly, but it uses a special ``stop'' token to signify the \textbf{end} of sentences, and there are other ``tricks'' such as \textbf{positional encoding}.  It seems to be a rather \textit{ad hoc} design, we should be able to improve it.
 }
 
 \end{minipage}
@@ -354,7 +354,7 @@ are also isomorphic.  But the former is a composition of two different concepts,
 
 \cc{但由于 $\atom \in$ 非交换自由群（最少结构的群），它没有像 $a \cdot b = b \cdot a$ 那样的对称性公式。
 }{
-But since $\atom \in$ a non-commutative free group (the group with the least structure), it does not have a simple symmetry formula like $a \cdot b = b \cdot a$.
+But since $\atom \in$ a non-commutative free group (ie, the group with the least structure), it does not possess a simple symmetry like $a \cdot b = b \cdot a$.
 }
 
 % 似乎要考虑  $\atom$ 的群结构是如何影响 逻辑 rule (\ref{fig:logic-symmetry-predicate-level}) 的输入和输出？ 类似这样：
@@ -390,7 +390,7 @@ But since $\atom \in$ a non-commutative free group (the group with the least str
 
 \cc{经过一番分析之后 我得到了「命题是由概念原子构成的」以下条件：
 }{
-After some analysis I got the following condition for ``propositions are made of conceptual atoms'':
+After some analysis I arrived at the following condition for ``propositions are made of conceptual atoms'':
 }
 
 \begin{tcolorbox}[colback=white, enhanced]
@@ -412,7 +412,7 @@ After some analysis I got the following condition for ``propositions are made of
 
 \cc{其实 $\tau$ 只需要是连续函数，就可以符合上述条件。 所以 Atomic Condition 的重点在于 (\ref{eqn:atomic-condition-1}) 和 (\ref{eqn:atomic-condition-2}) 这两个\textbf{等式}，其实是非常简单的。 $\forall$ 和 $\exists$ 作为伴随函子 的范畴论描述 比较复杂，我们在 \hyperlink{page:appendix-A}{附录 A} 里解释。
 }{
-In fact, $\tau$ only needs to be a continuous function to meet the above requirement.  So the essence of the Atomic Condition lies in the two \textbf{equations} (\ref{eqn:atomic-condition-1}) and (\ref{eqn:atomic-condition-2}), which are actually very simple.  The category-theoretic description of $\forall$ and $\exists$ as adjoint functors is complicated, and we will explain them in  \hyperlink{page:appendix-A}{appendix A}.
+The essence of the Atomic Condition lies in the two \textbf{equations} (\ref{eqn:atomic-condition-1}) and (\ref{eqn:atomic-condition-2}), which are actually very simple.  The category-theoretic description of $\forall$ and $\exists$ as adjoint functors is quite advanced, but not essential, and we shall explain them in  \hyperlink{page:appendix-A}{appendix A}.  In fact, $\tau$ only needs to be a continuous function to meet the above requirement.
 }
 
 \cc{那么 等式 (\ref{eqn:atomic-condition-2}) 里面的 ``='' 是来自哪里？ 其实太明显了，它就是逻辑 rule 里面 将变量「syntactically 搬动」的动作：
