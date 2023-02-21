@@ -240,7 +240,7 @@ We wish to formulate, in algebraic terms, the constraints for (\ref{eqn:some-kin
 
 \cc{\item 逻辑推导 每步只产生\textbf{一个}新的结论（或其概率分布），然后这个新的结论，再加入到旧的状态中，作为一个命题集合的元素，而旧状态也要 \textbf{遗忘} 一些命题，否则需要无限记忆。 这跟 Transformer 每次输出\textbf{一列}的 tokens 有点不同（虽然我们不太肯定 Transformer tokens 究竟对应于 命题 还是 谓词／原子概念）。 
 }{
-	\item Each step of logic inference produces \textbf{one} new conclusion (or a probability distribution over conclusions), and this new conclusion is added to the old state as an element in a set of propositions, and the old state also needs to \textbf{forget} some old propositions, otherwise infinite memory is required.  This is slightly different from the Transformer which always outputs the \textbf{same number} of tokens as its input. (We are also unsure whether Transformer tokens correspond to propositions or to predicates / atomic concepts).
+	\item Each step of logic inference produces \textbf{one} new conclusion (or a probability distribution over conclusions), and this new conclusion is added to the old state as an element in a set of propositions, and the old state also needs to \textbf{forget} some old propositions, otherwise infinite memory is required.  This is slightly different from the Transformer which always outputs the \textbf{same number} of tokens as its input. (We are unsure whether Transformer tokens correspond to propositions or to predicates / atomic concepts \footnote{This is answered in the next version}).
 }
 
 \cc{\item 逻辑 rule 通常只跟某几个前提有关，其它前提是\textbf{无关}的，例如： \logic{眼睛好看 $\wedge$ 鼻子好看 $\wedge$ 嘴巴好看 $\Rightarrow$ 帅}，跟 \logic{有钱} 或 \logic{穷} 无关。 Transformer 的 \textbf{softmax} 结构似乎也可以排除一些无关的 tokens 的影响。
@@ -354,7 +354,7 @@ are also isomorphic.  But the former is a composition of two different concepts,
 
 \cc{但由于 $\atom \in$ 非交换自由群（最少结构的群），它没有像 $a \cdot b = b \cdot a$ 那样的对称性公式。
 }{
-But since $\atom \in$ a non-commutative free group (ie, the group with the least structure), it does not possess a simple symmetry like $a \cdot b = b \cdot a$.
+But since $\atom$ belongs to a non-commutative free group (ie, the group with the least structure), it does not possess a simple symmetry like $a \cdot b = b \cdot a$.
 }
 
 % 似乎要考虑  $\atom$ 的群结构是如何影响 逻辑 rule (\ref{fig:logic-symmetry-predicate-level}) 的输入和输出？ 类似这样：
@@ -417,7 +417,7 @@ The essence of the Atomic Condition lies in the two \textbf{equations} (\ref{eqn
 
 \cc{那么 等式 (\ref{eqn:atomic-condition-2}) 里面的 ``='' 是来自哪里？ 其实太明显了，它就是逻辑 rule 里面 将变量「syntactically 搬动」的动作：
 }{
-So where does the ``='' in the equation (\ref{eqn:atomic-condition-2}) come from?  In fact, it is too obvious, it is just the action of syntactically ``moving'' variables in a logic rule:
+So where does the ``='' in equation (\ref{eqn:atomic-condition-2}) come from?  In fact, it is too obvious, it is just the action of syntactically ``moving'' variables in a logic rule, eg:
 }
 \vspace{0.5cm}
 \begin{equation}
@@ -431,7 +431,7 @@ So where does the ``='' in the equation (\ref{eqn:atomic-condition-2}) come from
 \end{equation}
 \cc{正是 这些「搬动」，构成了「命题是由概念组成的」结构。
 }{
-It is due to such ``movements'' that constitute the structure of ``propositions as composed of concepts''.
+It is due to such ``movements'' that gives rise to the structure ``propositions as composed of atomic concepts''.
 }
 
 \end{minipage}
@@ -450,33 +450,33 @@ It is due to such ``movements'' that constitute the structure of ``propositions 
 
 \cc{\textbf{Self-Attention} 的本质 可以这样理解（抽象注意力结构）：
 }{
-The essence of \textbf{Self-Attention} can be understood as follows (abstract Attention structure):
+The essence of \textbf{Self-Attention} can be understood as follows (what I call abstract Self-Attention):
 }
 \begin{equation}
 \label{fig:abstract-self-attention}
 \vcenter{\hbox{\includegraphics[scale=1]{essence-of-self-attention.png}}}
 \end{equation}
-\cc{这垂直的「軸」结构 ({\color{red}红色})，重复在每一条轴上。  所以，当 输入的元素 \textbf{交换}时，输出也随着交换。 这就是 self-Attention 能达到 \textbf{equi-variant} 效果的原因。
+\cc{这垂直的「軸」结构 ({\color{red}红色})，重复在每一条轴上。  所以，当 输入的元素 \textbf{交换}时，输出也随着交换。 这就是 Self-Attention 能达到 \textbf{equi-variant} 效果的原因。
 }{
 This vertical ``axis'' ({\color{red}red}) is repeated per each input token.  So, when the input elements are \textbf{swapped}, the output is also swapped.  This is how Self-Attention achieves \textbf{equi-variance}.
 }
 
-\cc{而我们想用 类似以上 self-Attention 的方法，解决 逻辑结构 的问题：
+\cc{而我们想用 类似以上 Self-Attention 的方法，解决 逻辑结构 的问题：
 }{
-We want to apply a similar method for logical structure:
+We want to apply a similar method to logical structure:
 }
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=1]{logic-symmetry-logic-Transformer.png}}}
 \end{equation}
 
-\cc{这里有一个很重要的重点\footnote{谢谢 “子鱼” 告诉我这个重要信息。}： self-Attention 的前身是来自 Graves \textit{et al.} 的 《Neural Turing Machine》 的 \textbf{content-addressable memory}.  我们很有理由将它看成是一种 \textbf{记忆体}。
+\cc{这里有一个很重要的重点\footnote{谢谢 “子鱼” 告诉我这个重要信息。}： Self-Attention 的前身是来自 Graves \textit{et al.} 的 《Neural Turing Machine》 的 \textbf{content-addressable memory}.  我们很有理由将它看成是一种 \textbf{记忆体}。
 }{
-Here is a very important point\footnote{Thanks ``Ziyu'' for telling me this important information. }: The precursor of Self-Attention is the \textbf{content-addressable memory} from Graves \textit{et al}'s ``Neural Turing Machines''.  So we have good reason to regard Self-Attention as a form of \textbf{memory}.
+Here is a very important point\footnote{Thanks to ``Ziyu'' for telling me this. }: The precursor of Self-Attention is the \textbf{content-addressable memory} from Graves \textit{et al}'s ``Neural Turing Machines'' \footnote{The book ``Fundamentals of Deep Learning'' [Buduma \& Locascio 2017] has a very nice explanation of Neural Turing Machines. }.  We have good reason to regard Self-Attention as a form of \textbf{memory}.
 }
 
-\cc{我们要比较 两种做法，前者是简单直接的经典 rule base 结构，后者是以 self-Attention 代替 rule base：
+\cc{我们要比较 两种做法，前者是简单直接的经典 rule base 结构，后者是以 Self-Attention 代替 rule base：
 }{
-We want to compare two approaches.  One is the na\"{i}ve classical rule-base structure, and the other uses Self-Attention instead of a rule base:
+Let's compare the two approaches.  One is the na\"{i}ve classical rule-base structure, and the other uses Self-Attention instead of a rule base:
 }
 \begin{equation}
 \label{fig:rule-base}
@@ -489,7 +489,7 @@ We want to compare two approaches.  One is the na\"{i}ve classical rule-base str
 \end{equation}
 \cc{大家要感受到 Transformer 是一种非常 ``twisted'' 的处理 rules matching 的方式。 这个对应很不明显，以至于我们很难分辨出 Transformer 那边的 rules 长什么样子。 然而我觉得 Transformer 的设计者们 或许多少有意识到它跟 rule-based systems 的相似性。 特别地，看看以下这条逻辑 rule：
 }{
-You should get the sense that the Transformer is a very ``twisted'' way of representing rules.  The correspondence is so indirect that it is difficult for us to see what the rules look like on the Transformer side.  However, I think the designers of the Transformer might have had at least an inkling of its similarities to rule-based systems.  In particular, look at the following logic rule:
+You should get the sense that the Transformer is a very ``twisted'' way of representing logic rules.  The correspondence is so indirect that it is difficult for us to see what the rules look like inside the Transformer.  However, I think the designers of Transformer might have had at least an inkling of its similarities to rule-based systems.  In particular, look at the following logic rule:
 }
 \vspace{0.5cm}
 \begin{equation}
@@ -501,9 +501,9 @@ You should get the sense that the Transformer is a very ``twisted'' way of repre
 \end{tikzpicture}
 \tag{\ref{eqn:linkage-father}}
 \end{equation}
-\cc{这 rule 的前提有两个条件，出现两次的变量 $Y$ 必须相等（{\color{red}红色}），matching 才算成功。 而这种在 rule 的前提内部进行的 \textbf{比较} (comparison) 运作，正是 self-Attention 可以方便地做到的。 但 self-Attention 也忽略了 $A \wedge B$ 的对称性，可能还有改进的空间。
+\cc{这 rule 的前提有两个条件，出现两次的变量 $Y$ 必须相等（{\color{red}红色}），matching 才算成功。 而这种在 rule 的前提内部进行的 \textbf{比较} (comparison) 运作，正是 Self-Attention 可以方便地做到的。
 }{
-The premise of this rule has two clauses, the variable $Y$ that appears twice must be identical ({\color{red}red}), for this matching to be considered successful.  And this kind of \textbf{comparison} operation within the premises of the rule is exactly what Self-Attention can perform conveniently.  But Self-Attention also ignores the symmetry of $A \wedge B$, so there may be room for improvement.
+The premise of this rule has two clauses, the variable $Y$ that appears twice must be identical ({\color{red}red}), for this matching to be considered successful.  And this kind of \textbf{comparison} operation within the premises of the rule is exactly what Self-Attention can perform conveniently. 
 }
 
 \end{minipage}
@@ -522,33 +522,33 @@ The premise of this rule has two clauses, the variable $Y$ that appears twice mu
 
 \cc{我觉得目前要回答的几个关键问题是：
 }{
-Some key questions to be answered now:
+Some key questions to be answered:
 }
 \begin{itemize}
 \cc{\item 根据例如 刘乾 \textit{et al} 的论文\footnote{Qian Liu, Shengnan An, Jian-Guang Lou, Bei Chen, Zeqi Lin, Yan Gao, Bin Zhou, Nanning Zheng, and Dongmei Zhang. \textit{Compositional Generalization by Learning Analytical Expressions.} Advances in Neural Information Processing Systems 33 (2020).}，Transformer 做不到某些 逻辑语法上的运作，问题出在哪里？ 似乎不是 Transformer 根本无法学习那种语法，而是 它不能纯粹靠 prompt 做到。 但其实 prompt 是否具有深层意义，还是它只是一个 hack？  我们没有 explicitly「告诉」Transformer 它应该怎么做，那它做不到是不是一个真的缺憾？ 我觉得很难判断，令 prompt 的研究方向笼罩在迷雾之中。
 }{
-\item According to eg. Qian Liu's paper \footnote{Qian Liu, Shengnan An, Jian-Guang Lou, Bei Chen, Zeqi Lin, Yan Gao, Bin Zhou, Nanning Zheng, and Dongmei Zhang. \textit{ Compositional Generalization by Learning Analytical Expressions.} Advances in Neural Information Processing Systems 33 (2020).}, Transformers often fail to perform certain logical and grammatical operations.  Where is the problem?  It doesn't seem that Transformers cannot learn the syntax at all, but that it cannot do it only with prompts.  But do prompts actually have a deeper meaning, or are they just a hack?  We didn't explicitly ``tell'' the Transformer what it should do, so is it a real shortcoming that it failed to solve those problems?  I find it difficult to judge, and the research direction of prompts is shrouded in mystery.
+\item According to eg. Qian Liu's paper \footnote{Qian Liu, Shengnan An, Jian-Guang Lou, Bei Chen, Zeqi Lin, Yan Gao, Bin Zhou, Nanning Zheng, and Dongmei Zhang. \textit{ Compositional Generalization by Learning Analytical Expressions.} Advances in Neural Information Processing Systems 33 (2020).}, Transformers often fail at certain logic and syntactic questions.  Where is the problem?  It is not the case that Transformers cannot learn the syntax at all, but it cannot do so with prompts only.  Prompts are just a hack to encode contextual meaning in tokens.  It seems that this contextual meaning is sometimes insufficient to answer certain questions.  If we have not explicitly ``told'' the Transformer what it should do, is it a real shortcoming that it failed to solve those problems?  This is a problem with Language Models which I think logic-based AGI will provide a clearer solution.
 }
 
-\cc{\item 现在考虑图 (\ref{fig:rule-base}) 即 rule base 的 na\"{i}ve 学习算法。 这个算法当然是很慢的，因为要比较两个集合（working memory 和 rule head）的相似性。 假设两个集合的大小固定为 $N$，那需要 $N \times N$ 次的 dot products，而这只是比较了一条 rule.  所有 rules 还要用 softmax 相加。 当 rule base 很大的时候，这个算法似乎不太实际。
+\cc{\item 现在考虑图 (\ref{fig:rule-base}) 即 rule base 的 na\"{i}ve 学习算法。 这个算法当然是很慢的，因为要比较两个集合（working memory 和 rule heads) 的相似性。 假设集合的大小固定为 $M$ 和 $N$，那需要 $M \times N$ 次的 dot products，而这只是比较了一条 rule.  所有 rules 还要用 softmax 相加。 当 rule base 很大的时候，这个算法似乎不太实际。
 }{
-\item Now consider the na\"{i}ve learning algorithm for the graph (\ref{fig:rule-base}) that is the rule base. This algorithm is of course very slow, since two sets (working memory and rule head ) similarity. Assuming that the size of the two sets is fixed at $N$, then $N \times N$ times of dot products are needed, and this is just a comparison of a rule. All rules need to be added with softmax. When the rule base When it is very large, this algorithm seems impractical.
+\item Now consider the na\"{i}ve rule-base algorithm in diagram (\ref{fig:rule-base}). This algorithm is of course very slow, as we need to compute the similarity between two sets (working memory and rule heads).  Assuming that the size of the sets are fixed at $M$ and $N$, then $M \times N$ dot products need to be computed, and this is for just 1 rule.  The result from all rules need to be added with softmax.  When the rule base is very large, this seems impractical.
 }
 	
 \cc{\item 图 (\ref{fig:rule-base}) 还有可能出现 旧有的逻辑 rule learning 算法的问题，亦即 ``\textbf{plateau problem}''.  举例来说，用 Prolog 语言写 append 函数：\\
 }{
-\item figure (\ref{fig:rule-base}) may also have the problem of the old logic rule learning algorithm, that is ``\textbf{plateau problem}''. For example, write append in Prolog language function:\\
+\item Diagram (\ref{fig:rule-base}) may suffer from an old problem of logic rule-learning, known as the ``\textbf{plateau problem}''. For example, the ``append'' function in Prolog:\\
 }
 	\code{append(X,Y,Z) :-} \\
 	\tab \code{list(X), head(X,X1), tail(X,X2), append(X2,Y,W), cons(X1,W,Z).} \\
 \cc{这个 rule 有 5个前提。 当 rule 被学习时，前提被逐个加进去，但 rule 的「得分值」一直是零，直到最后的前提 加进去了，得分才突然升到 100\%.  对于机器学习来说，这情况是很糟的。 而 Transformer 将 rules「扭曲地」缠在一起，这做法会不会反而有利于避免困在 local minima 呢？
 }{
-This rule has 5 premises. When the rule is learned, the premise is added one by one, but the "score value" of the rule is always zero, until the last premise is added, the score suddenly rises to 100\%. For machine learning, this situation is Terrible. And the Transformer twists the rules together. Will this approach help avoid being trapped in the local minima?
+This rule has 5 premises.  As the rule is learned, premises are added one by one, but the ``score value'' of the rule remains zero until the very last premise is added, and the score suddenly jumps to 100\%.  For machine learning, this situation is terrible.  As the Transformer ``mingles'' logic rules together, it may avoid being trapped in local minima.
 }
 	
-\cc{\item 可能存在 介乎 Transformer 与 na\"{i}ve rule base 之间的算法，它比 Transformer 有更强的逻辑结构，但比 na\"{i}ve rule base 用了更多类似 self-Attention 的矩阵运算来加速？
+\cc{\item 可能存在 介乎 Transformer 与 na\"{i}ve rule base 之间的算法，它比 Transformer 有更强的逻辑结构，但比 na\"{i}ve rule base 用了更多类似 Self-Attention 的矩阵运算来加速？
 }{
-	\item May have an algorithm between Transformer and na\"{i}ve rule base, it has a stronger logical structure than Transformer, but uses more similar self-Attention's matrix operation to speed up?
+	\item Can we design an algorithm halfway between Transformer and na\"{i}ve rule base, which has stronger logical structure than Transformer, but uses efficient matrix operations similar to Self-Attention?
 }
 \end{itemize}
 
@@ -568,7 +568,7 @@ This rule has 5 premises. When the rule is learned, the premise is added one by 
 
 \cc{现时想到的一个比较可行的 architecture：
 }{
-This is a more practical architecture that I can think of:
+Currently I can think of a more practical architecture as follows:
 }
 \begin{equation}
 \cc{  \vcenter{\hbox{\includegraphics[scale=1]{seq-to-seq-seq-with-Transformer.png}}}      }{
@@ -577,17 +577,17 @@ This is a more practical architecture that I can think of:
 \begin{itemize}
 \cc{\item 在{\color{blue}蓝色}结构里，每个命题要由 fixed \# of 概念原子组成。
 }{
-\item In the {\color{blue}blue} structure, each proposition shall consist of fixed \# of concept atoms.
+\item In the {\color{blue}blue} structure, each proposition shall consist of a fixed \# of concept atoms.
 }
 
-\cc{\item 但抽象的 self-Attention 结构也可以容许 \textbf{可变长度} 的命题，只要能计算到 命题之间的 \textbf{dot product} (similarity) ，还有 读取 固定长度的 \textbf{矩阵} 记忆体。
+\cc{\item 但抽象的 Self-Attention 结构也可以容许 \textbf{可变长度} 的命题，只要能计算到 命题之间的 \textbf{dot product} (similarity) ，还有 读取 固定长度的 \textbf{矩阵} 记忆体。
 }{
-\item But the abstract self-Attention structure can also allow \textbf{variable length} propositions, as long as the \textbf{dot product} (similarity) between the propositions can be calculated, and the fixed-length \textbf{ matrix} memory.
+\item Abstract Self-Attention allows \textbf{variable length} propositions, as long as we can calculate the \textbf{dot product} (similarity) between propositions, and if we know how to retrieve from the (fixed-length?) memory \textbf{matrix}.
 }
 
-\cc{\item {\color{red}红色}结构： 如何从 不定长度的句子 产生数量和长度不同的命题？ 这就是以前谈过的 sequence to sequence-of-sequences 问题。 这也可以用 ``lossy'' self-Attention 解决。
+\cc{\item {\color{red}红色}结构： 如何从 不定长度的句子 产生数量和长度不同的命题？ 这就是以前谈过的 sequence to sequence-of-sequences 问题。 这也可以用 ``lossy'' Self-Attention 解决。
 }{
-\item {\color{red}red} structure: how to generate propositions of varying number and length from sentences of indefinite length? This is the sequence to sequence-of-sequences problem discussed before. This can also be solved with ``lossy'' self-Attention.
+\item {\color{red}Red} structure:  We need to read a natural-language sentence and break it down into a (variable) number of propositions (of variable lengths).  This is the ``sequence to sequence-of-sequences'' problem that I have been talking about for some years.  This may be solved with ``lossy'' Self-Attention.
 }
 	
 \end{itemize}
@@ -609,19 +609,19 @@ This is a more practical architecture that I can think of:
 
 \cc{在这个附录里，我们用简单的方式解释一下 $\forall$ 和 $\exists$ 的理论。 
 }{
-	In this appendix, we explain the theory of $\forall$ and $\exists$ in a simple way.
+	In this appendix, we explain the categorical theory of $\forall$ and $\exists$ in a simple way.
 }
 
 \cc{以下是一个关系 $R$，例如「$Y$爱$X$」，$X, Y$ 都是「人」的集合；两个相同的拷贝。 例如 对角线 代表爱自己（有些人不爱自己）。 注意这个图也不是 对角线 对称的，否则就没有「失恋」了。 将关系 $R$ 的图像 \textbf{投影} 到 $X$ 轴上，可以得到 $\forall_Y$ 和 $\exists_Y$ 集合。 $\forall_Y$ 集合 代表那些「人人都爱」的 $X$，$\exists_Y$ 集合代表那些「有人爱他」的 $X$:
 }{
-	The following is a relation $R$, such as "$Y$ loves $X$", where $X, Y$ are both sets of "persons"; two identical copies. For example, the diagonal represents loving yourself (some people don't love themselves). Note that this graph is not diagonally symmetrical, otherwise there will be no "broken love". Projecting the \textbf{projection} of the relation $R$ onto the $X$ axis yields the $\forall_Y$ and $\exists_Y$ sets. The $\forall_Y$ set represents those $X$ that "everyone loves", and the $\exists_Y$ set represents those $X$ that "someone loves him":
+	The following is a relation $R$, such as "$Y$ loves $X$", where $X, Y$ are both sets of ``people''; two identical copies. For example, the diagonal represents loving oneself (some people don't love themselves). Note that this graph is not symmetric about the diagonal, otherwise there would be no such thing as ``heart break''.  Projecting the relation $R$ onto the $X$ axis yields the $\forall_Y$ and $\exists_Y$ sets. The $\forall_Y$ set represents those in $X$ whom ``everybody loves'', and $\exists_Y$ represents those in $X$ whom ``somebody loves'':
 }
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.8]{forall-and-exists.png}}}
 \end{equation}
 \cc{范畴论大师 Lawvere 发现，$\forall$ 和 $\exists$ 是一个所谓 \textbf{weakening functor} 的「伴随函子」，所谓 weakening 就是从一个只有 $X$ 变量的\textbf{论域} 扩充到有 $X,Y$ 两个变量的论域，而这里 $Y$ 纯粹是一个 \textbf{dummy} variable:
 }{
-	The category theory master Lawvere found that $\forall$ and $\exists$ are a so-called \textbf{weakening functor} "accompanying functor", the so-called weakening is to expand from a \textbf{discourse domain} with only $X$ variables to There is a domain of two variables $X,Y$, and here $Y$ is purely a \textbf{dummy} variable:
+	The category theorist Lawvere discovered that $\forall$ and $\exists$ are \textbf{adjunctions} to the so-called \textbf{weakening functor}, which means expanding from the variable domain $(X)$ to the variable domain $(X,Y)$, where $Y$ is just a \textbf{dummy} variable:
 }
 \begin{equation}
 \begin{tikzcd}[column sep = 4cm, row sep = 0.3cm]
@@ -632,22 +632,22 @@ This is a more practical architecture that I can think of:
 \end{equation}
 \cc{例如 $\mbox{Love}(Y,X)$ 是带有两个变量的逻辑式子，但 $\forall Y. \mbox{ Love}(Y,X)$ 其实没有了 $Y$ 这个变量，因为它被 $\forall$ \textbf{绑定}了。
 }{
-	For example, $\mbox{Love}(Y,X)$ is a logical expression with two variables, but $\forall Y. \mbox{ Love}(Y,X)$ actually does not have the variable $Y$, Because it is $\forall$ \textbf{bound}.
+	For example, $\mbox{Love}(Y,X)$ is a logic term with two variables, whereas $\forall Y. \mbox{ Love}(Y,X)$ actually does not contain the variable $Y$, as it is \textbf{bound} by the quantifier $\forall$.
 }
 
 \cc{所谓 \textbf{伴随} (adjoint) 的意思是： 有两个范畴：左边和右边。 你可以将 左边的东西搬到右边，在右边的范畴里做「\textbf{比较}」，而这个比较 同样地可以 把东西搬到左边做，两个比较是\textbf{等价}的。 这里「比较」的意思就是范畴内的 morphism, 例如在 $\mathsf{Set}$ 范畴里，比较就是 set inclusion.  
 }{
-	The so-called \textbf{adjoint} (adjoint) means: There are two categories: left and right. You can move things from the left to the right, and do "\textbf{comparison}" in the category on the right, and this comparison can also move things to the left, and the two comparisons are \textbf{equivalent}. Here "comparison" means morphism within a category, for example in the category $\mathsf{Set}$ comparison is set inclusion.
+	What \textbf{adjunction} means:  Given two categories: left and right.  You can move objects from the left to the right, and ``\textbf{compare}'' them in the right category.  This comparison can also be performed in the left category by moving objects to the left.   And these two ways of comparison are \textbf{equivalent}.  By ``comparison'' we mean morphism in the category.  For example, in the category $\mathsf{Set}$, comparison is set inclusion.
 }
 
 \cc{伴随函子 并不是唯一的，所以 weakening 分别有 $\forall$ 和 $\exists$ 两个伴随。
 }{
-	Adjoint functors are not unique, so weakening has two adjoints $\forall$ and $\exists$ respectively.
+	Adjunctions are not unique, so weakening has two adjoints, $\forall$ and $\exists$.
 }
 
 \cc{Lawvere 将 量词 $\forall$ 和 $\exists$ 推广得更一般： 「简单」的 weakening functor 是基于 笛卡尔积 $X \times Y$； Lawvere 将它扩充到任何 \textbf{substitution} functor.  但我暂时缺乏这方面的例子，不清楚它对我们的应用有什么益处。
 }{
-	Lawvere's work made the $\forall$ and $\exists$ quantifiers more general: the ``simple'' weakening functor is based on the Cartesian product $X \times Y$, but Lawvere expanded it to arbitrary \textbf{substitution} functors.  (I don't know of examples of this, so I'm not sure what advantages this could bring to our application.)
+	Lawvere's work made the $\forall$ and $\exists$ quantifiers more general.  The ``simple'' weakening functor is based on the Cartesian product $X \times Y$, but Lawvere generalized it to arbitrary \textbf{substitution} functors.  (At this time I can't give any examples of this, so I don't know how exactly this generalization can be advantageous for our applications....)
 }
 
 \end{minipage}
@@ -667,19 +667,19 @@ This is a more practical architecture that I can think of:
 %我们希望 以代数形式表达 谓词 $\atom$ 的颗粒性。 
 \cc{在 范畴逻辑 里面有 \textbf{Beck-Chevalley} 条件和 \textbf{Frobenius} 条件，或许是我们所需的对称性？ 但细看之后，发觉还是不能解决问题.....  For completeness，我还是描述一下，没兴趣的可以略过。
 }{
-In categorical logic there are \textbf{Beck-Chevalley} conditions and \textbf{Frobenius} conditions, perhaps the symmetry we need? But after a closer look, I found that the problem still cannot be solved... For completeness, I will describe it, and you can skip it if you are not interested.
+In the study of categorical logic, there are the \textbf{Beck-Chevalley} condition and \textbf{Frobenius} condition.  Could they be the conditions I was looking for?  Upon closer look, I found that they are not the solution.  For completeness, I will describe them, but the reader can skip if they're not interested.
 }
 
 \cc{首先考虑比较容易明白的 \textbf{Frobenius} 条件。 在逻辑上，它等于说：
 }{
-Consider first the easier-to-understand \textbf{Frobenius} condition. Logically, it is equivalent to saying:
+The \textbf{Frobenius} condition seems easier to understand.  Logically, it is equivalent to:
 }
 \begin{equation}
 \exists x. [ \phi \wedge \psi(x) ] \equiv \phi \wedge \exists x. \psi(x).
 \end{equation}
 \cc{由于 经典逻辑 AI 普遍使用 $\forall$ 而忽略 $\exists$，我将上式改写成：
 }{
-Since classical logic AI generally uses $\forall$ and ignores $\exists$, I rewrite the above formula as:
+Since logic-based AI generally uses $\forall$ and ignores $\exists$, I rewrite the above formula as:
 }
 \begin{equation}
 \label{eqn:Frobenius-condition}
@@ -687,7 +687,7 @@ Since classical logic AI generally uses $\forall$ and ignores $\exists$, I rewri
 \end{equation}
 \cc{但问题是，(\ref{eqn:Frobenius-condition}) 式的左边和右边，其对应的神经网络 (\ref{fig:logic-symmetry-predicate-level}) 是一样的（看不出有分别）。 也就是说这个差别可能太 subtle 了，它并不影响我们实际 implement 的神经网络。
 }{
-But the problem is, the left and right sides of the formula (\ref{eqn:Frobenius-condition}), the corresponding neural network (\ref{fig:logic-symmetry-predicate-level}) is the same (no difference ). In other words, this difference may be too subtle, and it does not affect the neural network we actually implement.
+The problem is that the left and right sides of equation (\ref{eqn:Frobenius-condition}) correspond to identical neural networks (\ref{fig:logic-symmetry-predicate-level}).  In other words, the condition is too subtle, and it does not affect the neural network we actually implement.
 }
 
 %\cc{在逻辑里，任何变量 例如 $x,y$ 等，必须被 $\forall$ 或 $\exists$ quantify，否则不成为合法的句子。 所以 表达 谓词结构的对称性，也很可能要涉及 $\forall$ 或 $\exists$.
@@ -711,24 +711,24 @@ But the problem is, the left and right sides of the formula (\ref{eqn:Frobenius-
 
 \cc{以前说过，谓词逻辑 带来 \textbf{fibration} 或 \textbf{indexing} 结构。 Beck-Chevalley 和 Frobenius 条件 基本上是说，这 纤维结构 是 ``preserved by re-indexing functors''.
 }{
-As said before, predicate logic leads to \textbf{fibration} or \textbf{indexing} constructs. The Beck-Chevalley and Frobenius conditions basically say that the fiber structure is ``preserved by re-indexing functors''.
+As my categorical logic tutorial said before, predicate logic leads to \textbf{fibration} or \textbf{indexing} constructs. The Beck-Chevalley and Frobenius conditions basically say that the fiber structure is ``preserved by re-indexing functors''.
 }
 
 \cc{这是 fibration 结构的示意图：
 }{
-Here is a diagram of the fibration structure:
+Here is a diagram of a fibration:
 }
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{etale-space.png}}}
 \end{equation}
 \cc{这整个结构 叫 \textbf{bundle}，而 \textbf{sheaf} 是 bundle 加上某个特殊的 拓扑结构。 
 }{
-This whole structure is called \textbf{bundle}, and \textbf{sheaf} is bundle plus some special topology.
+This whole structure is called a \textbf{bundle}, and \textbf{sheaf} is a bundle plus some topological constraint.
 }
 
 \cc{在 $(A,f)$ 和 $(B,g)$ 两个 bundle 之上可以定义 \textbf{fibred product} of $A$ and $B$ over $I$, 记作 $A \times_I B$:
 }{
-\textbf{fibred product} of $A$ and $B$ over $I$ can be defined on top of the two bundles $(A,f)$ and $(B,g)$, denoted as $A \times_I B$ :
+The \textbf{fibred product} of $A$ and $B$ over $I$ can be defined on two bundles $(A,f)$ and $(B,g)$, denoted as $A \times_I B$ :
 }
 \begin{equation}
 \label{eqn:fibred-product}
@@ -744,7 +744,7 @@ where $h = f \circ p = g \circ q$. This is also a \textbf{pullback}.
 
 \cc{\textbf{Beck-Chevalley} 条件是说 下面这幅图 commute： 
 }{
-The \textbf{Beck-Chevalley} condition says that the following image commute:
+The \textbf{Beck-Chevalley} condition says that the following diagram commutes:
 }
 \begin{equation}
 \label{eqn:Beck-Chevalley}
@@ -755,12 +755,12 @@ K \arrow[r, swap, "u"] & I
 \end{equation}
 \cc{其中 $\pi$ 就是代表 量词 $\forall$ 或 $\exists$ 的 投影，它们是 weakening map $\pi^*$ 的伴随映射。 
 }{
-where $\pi$ is the projection representing the quantifier $\forall$ or $\exists$, which are the accompanying maps of the weakening map $\pi^*$.
+where $\pi$ is the projection representing the quantifiers $\forall$ or $\exists$, which are adjoints to the weakening map $\pi^*$.
 }
 
 \cc{Beck-Chevalley 条件并不完全是空洞的；它有可能不成立。 有一个反例是 Pitts 提出的： 考虑 $X \times Y$， 其中 $X = Y = \mathbb{N} \cup \{\infty\}$ 亦即 自然数加上 $\infty$ 作为 top element； 但 $Y$ 是用 discrete order，亦即所有 order 都是 = 关系。  $A$ 是 $X \times Y$ 上的关系： $A = \{ (x,y) \in \mathbb{N \times N} \;|\; x \le y \}$.  那么 $\exists y. (x,y) \in A$ 会是整个 $X$ 集合。 如果考虑 DCPO 范畴，我们要求 fibration of Scott-closed subsets (ordered by inclusion) over DCPO.  $\exists y. A$ 的 Scott closure 的条件是 它是一个 lower set closed under directed joins; 而这个 Scott closure 条件似乎不成立，因而导致 图 (\ref{eqn:Beck-Chevalley}) 不 commute.（我对 Scott closure 的细节不太理解）
 }{
-The Beck-Chevalley condition is not entirely hollow; it may not hold. There is a counter-example from Pitts: Consider $X \times Y$, where $X = Y = \mathbb{N} \cup \{\infty\}$ is the natural number plus $\infty$ as top element; but $Y$ uses discrete order, that is, all orders are = order. $A$ is the relationship on $X \times Y$: $A = \{ (x,y) \in \mathbb{N \times N} \;|\; x \le y \}$. Then $\exists y. (x,y) \in A$ will be the entire set of $X$. If we consider the DCPO category, we require the fibration of Scott-closed subsets (ordered by inclusion) over DCPO. The condition for Scott closure of $\exists y. A$ is that it is a lower set closed under directed joins; and this Scott closure condition seems to be violated, thus causing the graph (\ref{eqn:Beck-Chevalley}) not to commute. (I do not understand the details of Scott closure)
+The Beck-Chevalley condition is not entirely vacuous; it may not hold.  There is a counter-example from Pitts: Consider $X \times Y$, where $X = Y = \mathbb{N} \cup \{\infty\}$ are the natural numbers plus $\infty$ as top element.  $Y$ has discrete order, ie, all orders are the ``='' order. $A$ is the relationship on $X \times Y$: $A = \{ (x,y) \in \mathbb{N \times N} \;|\; x \le y \}$. Then $\exists y. (x,y) \in A$ will be the entire set of $X$. If we consider the DCPO category, we require the fibration of Scott-closed subsets (ordered by inclusion) over DCPO. The condition for Scott closure of $\exists y. A$ is that it is a lower set closed under directed joins; and this Scott closure condition seems to be violated, thus causing the graph (\ref{eqn:Beck-Chevalley}) not to commute. (I do not understand the details of Scott closure)
 }
 
 \end{minipage}
@@ -771,9 +771,9 @@ The Beck-Chevalley condition is not entirely hollow; it may not hold. There is a
 		
 \color{teal}
 
-\cc{首先以函数的方式表达 self-Attention 结构：
+\cc{首先以函数的方式表达 Self-Attention 结构：
 }{
-	First express the self-Attention structure in a functional way:
+	First express the Self-Attention structure in a functional way:
 }
 \begin{eqnarray}
 \cc{
